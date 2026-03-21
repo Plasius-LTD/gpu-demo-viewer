@@ -7,7 +7,7 @@ Static root-level launcher for validating the `gpu-*` package demos from one pla
 This viewer exists to accelerate manual validation across the GPU package surface:
 
 - browser-backed demos can be launched or embedded from one URL
-- the integrated showcase provides a shared 3D harbor scene with GLTF ships and package overlays
+- the integrated showcase consumes the shared 3D harbor runtime from `@plasius/gpu-shared`
 - remaining code-example demos still expose their recommended command and entry file
 - the manifest is tested so new `gpu-*` demo folders do not get missed
 

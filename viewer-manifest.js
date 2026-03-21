@@ -18,6 +18,24 @@ export const demos = [
     tags: ["browser", "3d", "integration"]
   },
   {
+    id: "gpu-shared",
+    packageName: "@plasius/gpu-shared",
+    type: "browser",
+    mode: "3D shared-runtime demo",
+    runtime: "3D harbor scene",
+    launchLabel: "Open browser demo",
+    launchPath: "../gpu-shared/demo/",
+    sourcePath: "../gpu-shared/demo/main.js",
+    docsPath: "../gpu-shared/README.md",
+    command: "cd gpu-shared && npm run demo",
+    summary: "Standalone validation surface for the shared harbor/showcase runtime used across the GPU package family.",
+    notes: [
+      "This package now owns the shared harbor runtime instead of gpu-demo-viewer.",
+      "Use it to validate the shared scene shell independently of the root viewer."
+    ],
+    tags: ["browser", "3d", "shared"]
+  },
+  {
     id: "gpu-camera",
     packageName: "@plasius/gpu-camera",
     type: "browser",

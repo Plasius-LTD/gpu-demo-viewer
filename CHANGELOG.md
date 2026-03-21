@@ -27,6 +27,5 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 - The viewer now classifies the cloth, fluid, lighting, performance, and debug demos as browser-based 3D visual examples.
 - Strengthened the shared showcase lighting and shadow model so the harbor demos
   present a more ray-traced near-field look.
-- The shared showcase is now the family-owned harbor runtime for the rewired
-  lighting, cloth, performance, and debug demos instead of those packages each
-  carrying their own full scene copy.
+- The viewer now consumes the shared harbor runtime from `@plasius/gpu-shared`
+  instead of owning that source directly.
