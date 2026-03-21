@@ -2,4 +2,4 @@ export {
   mountGpuShowcase,
   resolveShowcaseAssetUrl,
   showcaseFocusModes,
-} from "../../gpu-shared/dist/index.js";
+} from "../node_modules/@plasius/gpu-shared/dist/index.js";

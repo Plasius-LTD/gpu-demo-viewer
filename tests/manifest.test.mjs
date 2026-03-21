@@ -15,11 +15,11 @@ test("manifest ids are unique", () => {
   assert.equal(new Set(ids).size, ids.length);
 });
 
-test("manifest covers every sibling gpu-* package with a demo directory", () => {
+test("manifest covers every sibling gpu-* demo package except dependency-only shared runtime packages", () => {
   const siblingPackages = readdirSync(workspaceRoot, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name)
-    .filter((name) => name.startsWith("gpu-") && name !== "gpu-demo-viewer")
+    .filter((name) => name.startsWith("gpu-") && name !== "gpu-demo-viewer" && name !== "gpu-shared")
     .filter((name) => existsSync(path.join(workspaceRoot, name, "demo")))
     .sort();
 

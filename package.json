@@ -11,5 +11,8 @@
     "demo": "python3 -m http.server --directory ..",
     "lint": "node --check index.js && node --check main.js && node --check viewer-manifest.js && node --check shared/gltf-loader.js && node --check shared/showcase-runtime.js && node --check showcase/index.js && node --check showcase/main.js",
     "test": "node --test"
+  },
+  "dependencies": {
+    "@plasius/gpu-shared": "https://registry.npmjs.org/@plasius/gpu-shared/-/gpu-shared-0.1.0.tgz"
   }
 }
