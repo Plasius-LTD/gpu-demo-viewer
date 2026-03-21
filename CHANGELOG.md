@@ -6,6 +6,11 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- **Fixed**
+  - Added `index.js` compatibility entry shims for the root viewer and the
+    showcase so stale cached entry URLs do not 404 when the runtime loads from
+    `main.js`.
+
 ### Added
 
 - Shared 3D harbor showcase with GLTF ships and physics metadata for cross-package validation.
