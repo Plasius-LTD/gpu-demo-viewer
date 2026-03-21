@@ -239,7 +239,9 @@ function createPhysicsDemoSnapshot(input) {
         ? undefined
         : Math.max(0, input.dynamicBodyCount),
     contactCount:
-      input.contactCount === undefined ? undefined : Math.max(0, input.contactCount),
+      input.contactCount === undefined
+        ? undefined
+        : Math.max(0, input.contactCount),
     includesSecondarySimulation: input.secondarySimulationRevision !== undefined,
     metadata: Object.freeze({ ...(input.metadata ?? {}) }),
   });
