@@ -164,20 +164,20 @@ export const demos = [
   {
     id: "gpu-physics",
     packageName: "@plasius/gpu-physics",
-    type: "example",
-    mode: "Code example",
-    runtime: "Node",
-    launchLabel: "Open example source",
-    launchPath: "../gpu-physics/demo/example.mjs",
-    sourcePath: "../gpu-physics/demo/example.mjs",
-    docsPath: "../gpu-physics/demo/README.md",
-    command: "cd gpu-physics && npm run build && node demo/example.mjs",
-    summary: "Stable-world-snapshot and worker-manifest example for the physics package.",
+    type: "browser",
+    mode: "3D physics demo",
+    runtime: "3D harbor scene + stable snapshot overlays",
+    launchLabel: "Open browser demo",
+    launchPath: "../gpu-physics/demo/",
+    sourcePath: "../gpu-physics/demo/main.js",
+    docsPath: "../gpu-physics/README.md",
+    command: "cd gpu-physics && npm run demo",
+    summary: "Stable-world-snapshot physics validation in a 3D harbor scene with GLTF ships, authoritative collisions, and visual follow-up context.",
     notes: [
-      "This is a local code example rather than a browser showcase.",
-      "Use it to validate exports and snapshot contract shape."
+      "The demo now mounts a 3D browser scene instead of a CLI-only example.",
+      "Use it to inspect authoritative collision ordering, snapshot handoff, and downstream visual consumers."
     ],
-    tags: ["example"]
+    tags: ["browser", "3d"]
   },
   {
     id: "gpu-renderer",

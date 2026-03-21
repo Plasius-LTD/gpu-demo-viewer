@@ -3,7 +3,7 @@ import { demos } from "./viewer-manifest.js";
 const state = {
   filter: "all",
   search: "",
-  selectedId: null
+  selectedId: "integration-showcase"
 };
 
 const demoListEl = document.getElementById("demoList");

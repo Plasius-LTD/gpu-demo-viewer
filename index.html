@@ -60,19 +60,33 @@
         <section class="viewer panel">
           <div class="viewer__header">
             <div>
-              <p id="selectedMeta" class="section-eyebrow">Select a demo</p>
-              <h2 id="selectedTitle">Choose a package</h2>
+              <p id="selectedMeta" class="section-eyebrow">@plasius/gpu-demo-viewer</p>
+              <h2 id="selectedTitle">integration-showcase</h2>
               <p id="selectedDescription" class="viewer__description">
-                Pick a package from the left to preview its browser demo or inspect any remaining
-                example entry points.
+                Unified 3D validation scene with GLTF ships, colliding rigid bodies, cloth, fluid
+                continuity, lighting bands, adaptive performance, and telemetry.
               </p>
             </div>
             <div class="viewer__actions">
-              <a id="openDemo" class="action" href="#" target="_blank" rel="noreferrer">Open</a>
-              <a id="openSource" class="action action--ghost" href="#" target="_blank" rel="noreferrer">
+              <a id="openDemo" class="action" href="./showcase/" target="_blank" rel="noreferrer">
+                Open showcase
+              </a>
+              <a
+                id="openSource"
+                class="action action--ghost"
+                href="./showcase/main.js"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Source
               </a>
-              <a id="openDocs" class="action action--ghost" href="#" target="_blank" rel="noreferrer">
+              <a
+                id="openDocs"
+                class="action action--ghost"
+                href="./README.md"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Docs
               </a>
             </div>
@@ -84,37 +98,38 @@
               <dl class="detail-list">
                 <div>
                   <dt>Mode</dt>
-                  <dd id="detailMode">-</dd>
+                  <dd id="detailMode">Unified 3D integration showcase</dd>
                 </div>
                 <div>
                   <dt>Runtime</dt>
-                  <dd id="detailRuntime">-</dd>
+                  <dd id="detailRuntime">3D canvas + GLTF rigid bodies</dd>
                 </div>
                 <div>
                   <dt>Launch</dt>
-                  <dd id="detailLaunch">-</dd>
+                  <dd id="detailLaunch">showcase/</dd>
                 </div>
               </dl>
             </section>
 
             <section class="detail-card">
               <h3>Run Command</h3>
-              <pre id="detailCommand" class="command-block">Select a demo to see its command.</pre>
+              <pre id="detailCommand" class="command-block">cd gpu-demo-viewer && npm run demo</pre>
             </section>
 
             <section class="detail-card detail-card--wide">
               <h3>Notes</h3>
               <ul id="detailNotes" class="notes-list">
-                <li>Select a demo to load notes.</li>
+                <li>This is the top-level cross-package validation surface.</li>
+                <li>The ships are loaded from GLTF and expose physics metadata used by the collision loop.</li>
               </ul>
             </section>
           </div>
 
-          <section id="browserPane" class="preview-pane" hidden>
+          <section id="browserPane" class="preview-pane">
             <div class="preview-pane__header">
               <p class="preview-label">Embedded Preview</p>
               <p id="previewHint" class="preview-hint">
-                Same-origin browser demo preview for fast validation.
+                Mounted canvas preview. Interact with the embedded demo directly.
               </p>
             </div>
             <iframe
@@ -122,6 +137,7 @@
               class="demo-frame"
               title="GPU demo preview"
               loading="lazy"
+              src="./showcase/"
             ></iframe>
           </section>
 

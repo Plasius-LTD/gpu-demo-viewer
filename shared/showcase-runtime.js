@@ -36,12 +36,14 @@ const CAMERA_PRESETS = Object.freeze({
   lighting: Object.freeze({ yaw: -0.28, pitch: 0.28, distance: 23, target: [0, 2.8, 0] }),
   cloth: Object.freeze({ yaw: -1.1, pitch: 0.25, distance: 15, target: [-8.4, 5.3, -1.5] }),
   fluid: Object.freeze({ yaw: -0.4, pitch: 0.18, distance: 18, target: [0, 1.2, 6] }),
+  physics: Object.freeze({ yaw: -0.12, pitch: 0.27, distance: 16, target: [0, 1.8, 6.8] }),
   performance: Object.freeze({ yaw: -0.65, pitch: 0.36, distance: 24, target: [0, 2.2, 0] }),
   debug: Object.freeze({ yaw: -0.7, pitch: 0.32, distance: 24, target: [0, 2.2, 0] }),
 });
 
 const SCENE_NOTES = Object.freeze([
   "Ships are loaded from a GLTF asset and carry physics metadata from node extras.",
+  "Near-field lighting uses the ray-traced-primary shadow and reflection path before stepping down by distance band.",
   "Cloth and fluid continuity stay coherent across near, mid, far, and horizon bands.",
   "Performance pressure reduces visual detail before authoritative collision motion is touched.",
 ]);
@@ -66,6 +68,182 @@ const UNIT_BOX_MESH = Object.freeze({
     4, 5, 1, 4, 1, 0,
   ]),
 });
+
+const PHYSICS_DEMO_PROFILE = "gameplay";
+const PHYSICS_DEMO_PLAN = Object.freeze({
+  profile: PHYSICS_DEMO_PROFILE,
+  description:
+    "Authoritative rigid-body simulation resolves before stable world snapshots are emitted for visual follow-up work.",
+  snapshotStageId: "worldSnapshot",
+  snapshotStability: "post-authoritative-commit",
+  stageOrder: Object.freeze([
+    "intentResolution",
+    "broadphase",
+    "narrowphase",
+    "solver",
+    "authoritativeCommit",
+    "secondarySimulation",
+    "animationStateInputs",
+    "worldSnapshot",
+    "visualFollowUp",
+  ]),
+  secondarySimulationStageIds: Object.freeze(["secondarySimulation"]),
+  stages: Object.freeze([
+    Object.freeze({
+      id: "intentResolution",
+      phase: "simulation",
+      authority: "authoritative",
+      dependencies: Object.freeze([]),
+      output: "movement and action inputs resolved",
+    }),
+    Object.freeze({
+      id: "broadphase",
+      phase: "simulation",
+      authority: "authoritative",
+      dependencies: Object.freeze(["intentResolution"]),
+      output: "potential contacts identified",
+    }),
+    Object.freeze({
+      id: "narrowphase",
+      phase: "simulation",
+      authority: "authoritative",
+      dependencies: Object.freeze(["broadphase"]),
+      output: "contact manifolds generated",
+    }),
+    Object.freeze({
+      id: "solver",
+      phase: "simulation",
+      authority: "authoritative",
+      dependencies: Object.freeze(["narrowphase"]),
+      output: "rigid-body and character motion resolved",
+    }),
+    Object.freeze({
+      id: "authoritativeCommit",
+      phase: "simulation",
+      authority: "authoritative",
+      dependencies: Object.freeze(["solver"]),
+      output: "authoritative transforms committed",
+    }),
+    Object.freeze({
+      id: "secondarySimulation",
+      phase: "secondary-simulation",
+      authority: "non-authoritative-simulation",
+      dependencies: Object.freeze(["authoritativeCommit"]),
+      output: "cloth, spray, and water-response inputs updated",
+    }),
+    Object.freeze({
+      id: "animationStateInputs",
+      phase: "animation-inputs",
+      authority: "visual",
+      dependencies: Object.freeze(["authoritativeCommit"]),
+      output: "animation graph inputs prepared",
+    }),
+    Object.freeze({
+      id: "worldSnapshot",
+      phase: "handoff",
+      authority: "authoritative",
+      dependencies: Object.freeze(["secondarySimulation", "animationStateInputs"]),
+      output: "stable world snapshot emitted",
+    }),
+    Object.freeze({
+      id: "visualFollowUp",
+      phase: "visual-follow-up",
+      authority: "visual",
+      dependencies: Object.freeze(["worldSnapshot"]),
+      output: "lighting, cloth, fluid, and scene proxies consume the snapshot",
+    }),
+  ]),
+});
+
+const PHYSICS_DEMO_MANIFEST = Object.freeze({
+  profile: PHYSICS_DEMO_PROFILE,
+  schedulerMode: "dag",
+  jobs: Object.freeze([
+    Object.freeze({ key: "broadphase", priority: 960, dependencies: Object.freeze([]) }),
+    Object.freeze({
+      key: "narrowphase",
+      priority: 950,
+      dependencies: Object.freeze(["broadphase"]),
+    }),
+    Object.freeze({ key: "solver", priority: 940, dependencies: Object.freeze(["narrowphase"]) }),
+    Object.freeze({
+      key: "authoritativeCommit",
+      priority: 930,
+      dependencies: Object.freeze(["solver"]),
+    }),
+    Object.freeze({
+      key: "secondarySimulation",
+      priority: 780,
+      dependencies: Object.freeze(["authoritativeCommit"]),
+    }),
+    Object.freeze({
+      key: "animationStateInputs",
+      priority: 760,
+      dependencies: Object.freeze(["authoritativeCommit"]),
+    }),
+    Object.freeze({
+      key: "worldSnapshot",
+      priority: 920,
+      dependencies: Object.freeze(["secondarySimulation", "animationStateInputs"]),
+    }),
+    Object.freeze({
+      key: "visualFollowUp",
+      priority: 620,
+      dependencies: Object.freeze(["worldSnapshot"]),
+    }),
+  ]),
+});
+
+function createPhysicsDemoPlan(profile = PHYSICS_DEMO_PROFILE) {
+  if (profile !== PHYSICS_DEMO_PROFILE) {
+    throw new Error(`Unknown physics demo profile "${profile}".`);
+  }
+
+  return PHYSICS_DEMO_PLAN;
+}
+
+function getPhysicsDemoManifest(profile = PHYSICS_DEMO_PROFILE) {
+  if (profile !== PHYSICS_DEMO_PROFILE) {
+    throw new Error(`Unknown physics demo profile "${profile}".`);
+  }
+
+  return PHYSICS_DEMO_MANIFEST;
+}
+
+function createPhysicsDemoSnapshot(input) {
+  if (typeof input !== "object" || input === null || Array.isArray(input)) {
+    throw new Error("physics demo snapshot input must be a plain object.");
+  }
+
+  return Object.freeze({
+    schemaVersion: 1,
+    stage: "worldSnapshot",
+    stability: "post-authoritative-commit",
+    profile: PHYSICS_DEMO_PROFILE,
+    frameId: String(input.frameId),
+    tick: Math.max(0, input.tick ?? 0),
+    simulationTimeMs: Math.max(0, input.simulationTimeMs ?? 0),
+    authoritativeTransformRevision: Math.max(0, input.authoritativeTransformRevision ?? 0),
+    secondarySimulationRevision:
+      input.secondarySimulationRevision === undefined
+        ? undefined
+        : Math.max(0, input.secondarySimulationRevision),
+    animationInputRevision:
+      input.animationInputRevision === undefined
+        ? undefined
+        : Math.max(0, input.animationInputRevision),
+    bodyCount:
+      input.bodyCount === undefined ? undefined : Math.max(0, input.bodyCount),
+    dynamicBodyCount:
+      input.dynamicBodyCount === undefined
+        ? undefined
+        : Math.max(0, input.dynamicBodyCount),
+    contactCount:
+      input.contactCount === undefined ? undefined : Math.max(0, input.contactCount),
+    includesSecondarySimulation: input.secondarySimulationRevision !== undefined,
+    metadata: Object.freeze({ ...(input.metadata ?? {}) }),
+  });
+}
 
 function injectStyles() {
   if (document.getElementById(STYLE_ID)) {
@@ -303,6 +481,11 @@ function normalizeVec3(a) {
   return vec3(a.x / length, a.y / length, a.z / length);
 }
 
+function reflectVec3(vector, normal) {
+  const unitNormal = normalizeVec3(normal);
+  return subVec3(vector, scaleVec3(unitNormal, 2 * dotVec3(vector, unitNormal)));
+}
+
 function rotateY(point, angle) {
   const cosine = Math.cos(angle);
   const sine = Math.sin(angle);
@@ -346,6 +529,20 @@ function colorToRgba(color, alpha = 1) {
   const g = Math.round(clamp(color.g, 0, 1) * 255);
   const b = Math.round(clamp(color.b, 0, 1) * 255);
   return `rgba(${r}, ${g}, ${b}, ${clamp(alpha, 0, 1)})`;
+}
+
+function projectShadowPoint(point, lightDir, planeY) {
+  const shadowDir = scaleVec3(lightDir, -1);
+  if (Math.abs(shadowDir.y) < 0.0001) {
+    return null;
+  }
+
+  const distance = (planeY - point.y) / shadowDir.y;
+  if (!Number.isFinite(distance) || distance < 0) {
+    return null;
+  }
+
+  return addVec3(point, scaleVec3(shadowDir, distance));
 }
 
 function shadeColor(base, normal, lightDir, heightBias = 0, accent = 0) {
@@ -513,6 +710,7 @@ function buildDemoDom(root, options) {
                 <option value="lighting">lighting</option>
                 <option value="cloth">cloth</option>
                 <option value="fluid">fluid</option>
+                <option value="physics">physics</option>
                 <option value="performance">performance</option>
                 <option value="debug">debug</option>
               </select>
@@ -522,7 +720,7 @@ function buildDemoDom(root, options) {
             <strong>Scene</strong>
             GLTF ships carry collision metadata.<br />
             Flag cloth and ocean waves scale by distance band.<br />
-            Adaptive quality keeps the scene stable under pressure.
+            Ray-traced shadow and reflection style is preserved near the camera.
           </div>
         </section>
         <aside class="plasius-demo__sidebar">
@@ -718,6 +916,9 @@ function buildWaterBands(state, fluidDetail) {
 
 function createSceneState(options) {
   const { governor, fluidDetail, clothDetail, lightingDetail } = createPerformanceGovernor();
+  const physicsProfile = PHYSICS_DEMO_PROFILE;
+  const physicsPlan = createPhysicsDemoPlan(physicsProfile);
+  const physicsManifest = getPhysicsDemoManifest(physicsProfile);
   const debugSession = createGpuDebugSession({
     enabled: true,
     adapter: {
@@ -776,6 +977,14 @@ function createSceneState(options) {
     ],
     sprays: [],
     frame: 0,
+    collisionCount: 0,
+    collisionFlash: 0,
+    physics: {
+      profile: physicsProfile,
+      plan: physicsPlan,
+      manifest: physicsManifest,
+      snapshot: null,
+    },
     shipModel: null,
   };
 }
@@ -784,17 +993,18 @@ function setListContent(element, values) {
   element.innerHTML = values.map((value) => `<li>${value}</li>`).join("");
 }
 
-function drawSkyAndShore(ctx, canvas, state) {
+function drawSkyAndShore(ctx, canvas, state, nearLighting, reflectionStrength, shadowStrength) {
+  const premiumShadows = nearLighting.primaryShadowSource === "ray-traced-primary";
   const sky = ctx.createLinearGradient(0, 0, 0, canvas.height * 0.5);
-  sky.addColorStop(0, "#eef7fc");
-  sky.addColorStop(0.6, "#b9d0df");
-  sky.addColorStop(1, "#7ea6bd");
+  sky.addColorStop(0, premiumShadows ? "#f0f7fb" : "#e8f1f7");
+  sky.addColorStop(0.6, premiumShadows ? "#c7d9e5" : "#b9ceda");
+  sky.addColorStop(1, premiumShadows ? "#84a7bd" : "#7b9bb0");
   ctx.fillStyle = sky;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   const shoreline = ctx.createLinearGradient(0, canvas.height * 0.45, 0, canvas.height);
-  shoreline.addColorStop(0, "#25495c");
-  shoreline.addColorStop(0.52, "#174056");
+  shoreline.addColorStop(0, premiumShadows ? "#235064" : "#264c5f");
+  shoreline.addColorStop(0.52, premiumShadows ? "#153e53" : "#173d4f");
   shoreline.addColorStop(1, "#0b2433");
   ctx.fillStyle = shoreline;
   ctx.fillRect(0, canvas.height * 0.45, canvas.width, canvas.height * 0.55);
@@ -808,24 +1018,47 @@ function drawSkyAndShore(ctx, canvas, state) {
   ctx.beginPath();
   ctx.arc(sunX, sunY, 90, 0, Math.PI * 2);
   ctx.fill();
+
+  const track = ctx.createLinearGradient(sunX, canvas.height * 0.46, sunX, canvas.height * 0.96);
+  track.addColorStop(0, `rgba(255, 243, 214, ${0.08 + reflectionStrength * 0.18})`);
+  track.addColorStop(0.42, `rgba(224, 242, 255, ${0.04 + reflectionStrength * 0.2})`);
+  track.addColorStop(1, "rgba(224, 242, 255, 0)");
+  ctx.save();
+  ctx.globalCompositeOperation = "screen";
+  ctx.fillStyle = track;
+  ctx.beginPath();
+  ctx.ellipse(sunX, canvas.height * 0.72, 46 + shadowStrength * 60, canvas.height * 0.26, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  if (state.collisionFlash > 0.01) {
+    ctx.fillStyle = `rgba(255, 243, 228, ${state.collisionFlash * 0.14})`;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  }
 }
 
-function drawTriangles(ctx, triangles, lightDir, reflectionStrength) {
+function drawTriangles(ctx, triangles, lightDir, reflectionStrength, camera, shadowStrength) {
   triangles.sort((left, right) => right.depth - left.depth);
   for (const triangle of triangles) {
+    const surfaceNormal = normalizeVec3(triangle.normal);
     const shaded = shadeColor(
       triangle.baseColor,
-      triangle.normal,
+      surfaceNormal,
       lightDir,
       clamp((triangle.worldCenter.y + 3) / 10, 0, 1),
       triangle.accent
     );
     const reflection = triangle.worldCenter.y < 0.8 ? reflectionStrength : 0;
+    const viewDir = normalizeVec3(subVec3(camera.eye, triangle.worldCenter));
+    const reflectedLight = reflectVec3(scaleVec3(lightDir, -1), surfaceNormal);
+    const gloss = triangle.worldCenter.y < 0.9 ? 1 : triangle.accent > 0.05 ? 0.55 : 0.3;
+    const specular = Math.pow(clamp(dotVec3(reflectedLight, viewDir), 0, 1), triangle.worldCenter.y < 0.9 ? 18 : 12) * gloss;
+    const occlusion = triangle.worldCenter.y < 0.9 ? shadowStrength * 0.035 : 0;
     const fill = colorToRgba(
       {
-        r: shaded.r + reflection * 0.08,
-        g: shaded.g + reflection * 0.08,
-        b: shaded.b + reflection * 0.16,
+        r: clamp(shaded.r + reflection * 0.08 + specular * 0.14 - occlusion, 0, 1),
+        g: clamp(shaded.g + reflection * 0.08 + specular * 0.15 - occlusion, 0, 1),
+        b: clamp(shaded.b + reflection * 0.16 + specular * 0.2 - occlusion * 0.5, 0, 1),
       },
       0.98
     );
@@ -837,6 +1070,33 @@ function drawTriangles(ctx, triangles, lightDir, reflectionStrength) {
     ctx.closePath();
     ctx.fill();
   }
+}
+
+function renderProjectedShadow(ctx, worldPoints, camera, viewport, lightDir, options = {}) {
+  const planeY = options.planeY ?? 0;
+  const projected = worldPoints
+    .map((point) => projectShadowPoint(point, lightDir, planeY))
+    .filter(Boolean)
+    .map((point) => projectPoint(point, camera, viewport))
+    .filter(Boolean);
+
+  if (projected.length < 3) {
+    return;
+  }
+
+  ctx.save();
+  ctx.globalCompositeOperation = "multiply";
+  ctx.fillStyle = options.color ?? `rgba(12, 24, 36, ${clamp(options.alpha ?? 0.16, 0, 0.5)})`;
+  ctx.shadowColor = options.color ?? "rgba(12, 24, 36, 0.22)";
+  ctx.shadowBlur = options.blur ?? 18;
+  ctx.beginPath();
+  ctx.moveTo(projected[0].x, projected[0].y);
+  for (let index = 1; index < projected.length; index += 1) {
+    ctx.lineTo(projected[index].x, projected[index].y);
+  }
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();
 }
 
 function pushHarborGeometry(camera, viewport, triangles) {
@@ -1013,6 +1273,7 @@ function spawnSpray(state, point, intensity) {
 function updateShips(state, dt, shipModel) {
   const physics = shipModel.physics;
   const halfExtents = physics.halfExtents ?? [1.35, 0.95, 3.9];
+  let collided = false;
   for (const ship of state.ships) {
     ship.position = addVec3(ship.position, scaleVec3(ship.velocity, dt));
     ship.rotationY += ship.angularVelocity * dt;
@@ -1046,7 +1307,10 @@ function updateShips(state, dt, shipModel) {
     b.angularVelocity -= 0.55;
     const contactPoint = vec3((a.position.x + b.position.x) * 0.5, (a.position.y + b.position.y) * 0.5 + 0.1, (a.position.z + b.position.z) * 0.5);
     spawnSpray(state, contactPoint, Math.abs(dx) + Math.abs(dz));
+    state.collisionCount += 1;
+    collided = true;
   }
+  state.collisionFlash = collided ? 1 : Math.max(0, state.collisionFlash - dt * 1.8);
 }
 
 function updateSpray(state, dt) {
@@ -1072,10 +1336,15 @@ function recordTelemetry(state, frameTimeMs) {
   };
   const synthetic = frameTimeMs + state.sprays.length * 0.1 + (state.stress ? 6.5 : 0);
   const decision = state.governor.recordFrame({ frameTimeMs: synthetic });
+  const queueDepth = Math.min(32, Math.round(6 + state.sprays.length / 2 + (state.stress ? 10 : 0)));
+  const readyLaneDepth = Math.min(
+    16,
+    4 + Math.round(Math.max(0, Math.sin(state.time * 1.7 + 0.8)) * 9)
+  );
   state.debugSession.recordQueue({
     owner: "renderer",
     queueClass: "render",
-    depth: Math.round(6 + state.sprays.length / 2 + (state.stress ? 10 : 0)),
+    depth: queueDepth,
     capacity: 32,
     frameId,
   });
@@ -1084,7 +1353,7 @@ function recordTelemetry(state, frameTimeMs) {
     queueClass: "lighting",
     laneId: "critical",
     priority: 920,
-    depth: 4 + Math.round(Math.max(0, Math.sin(state.time * 1.7 + 0.8)) * 9),
+    depth: readyLaneDepth,
     capacity: 16,
     frameId,
   });
@@ -1152,19 +1421,53 @@ function renderFlagPole(ctx, camera, viewport) {
   ctx.stroke();
 }
 
+function renderShipShadow(ctx, shipModel, ship, state, camera, viewport, lightDir, shadowStrength) {
+  const bounds = shipModel.bounds;
+  const keelY = (shipModel.physics.waterline ?? 0.42) - 0.28;
+  const transform = { position: ship.position, rotationY: ship.rotationY, scale: 1.1 };
+  const hullCorners = [
+    vec3(bounds.min[0], keelY, bounds.min[2]),
+    vec3(bounds.max[0], keelY, bounds.min[2]),
+    vec3(bounds.max[0], keelY, bounds.max[2]),
+    vec3(bounds.min[0], keelY, bounds.max[2]),
+  ].map((point) => transformPoint(point, transform));
+
+  renderProjectedShadow(ctx, hullCorners, camera, viewport, lightDir, {
+    planeY: sampleWave(ship.position.x, ship.position.z, state.time) * 0.24 - 0.03,
+    alpha: 0.08 + shadowStrength * 0.2,
+    blur: 14 + shadowStrength * 24,
+  });
+}
+
+function renderFlagShadow(ctx, cloth, camera, viewport, lightDir, shadowStrength) {
+  const clothPoints = [
+    cloth.positions[0],
+    cloth.positions[cloth.grid.cols - 1],
+    cloth.positions[cloth.positions.length - 1],
+    cloth.positions[cloth.positions.length - cloth.grid.cols],
+  ];
+
+  renderProjectedShadow(ctx, clothPoints, camera, viewport, lightDir, {
+    planeY: 0.56,
+    alpha: 0.05 + shadowStrength * 0.16,
+    blur: 12 + shadowStrength * 20,
+  });
+}
+
 function renderScene(ctx, canvas, state, shipModel, dom) {
   const viewport = { width: canvas.width, height: canvas.height };
   const camera = buildCamera(state, canvas);
   state.camera.eye = camera.eye;
-  drawSkyAndShore(ctx, canvas, state);
-
   const lightingPlan = createLightingBandPlan({
     profile: state.focus === "lighting" ? defaultLightingProfile : getLightingProfile(defaultLightingProfile).name,
     importance: state.focus === "lighting" ? "critical" : "high",
   });
   const nearLighting = lightingPlan.bands.find((entry) => entry.band === "near") ?? lightingPlan.bands[0];
   const lightDir = normalizeVec3(vec3(-0.45, 0.85, -0.24));
-  const reflectionStrength = state.lightingDetail.getSnapshot().currentLevel.config.reflectionStrength;
+  const lightingSnapshot = state.lightingDetail.getSnapshot();
+  const reflectionStrength = lightingSnapshot.currentLevel.config.reflectionStrength;
+  const shadowStrength = lightingSnapshot.currentLevel.config.shadowStrength;
+  drawSkyAndShore(ctx, canvas, state, nearLighting, reflectionStrength, shadowStrength);
 
   const triangles = [];
   pushHarborGeometry(camera, viewport, triangles);
@@ -1223,7 +1526,12 @@ function renderScene(ctx, canvas, state, shipModel, dom) {
     );
   }
 
-  drawTriangles(ctx, triangles, lightDir, reflectionStrength);
+  for (const ship of state.ships) {
+    renderShipShadow(ctx, shipModel, ship, state, camera, viewport, lightDir, shadowStrength);
+  }
+  renderFlagShadow(ctx, cloth, camera, viewport, lightDir, shadowStrength);
+
+  drawTriangles(ctx, triangles, lightDir, reflectionStrength, camera, shadowStrength);
   renderWaterHighlights(ctx, water.bandMeshes, camera, viewport);
   renderFlagPole(ctx, camera, viewport);
   renderClothAccent(ctx, cloth, camera, viewport);
@@ -1236,40 +1544,59 @@ function renderScene(ctx, canvas, state, shipModel, dom) {
   const quality = {
     fluid: state.fluidDetail.getSnapshot(),
     cloth: state.clothDetail.getSnapshot(),
-    lighting: state.lightingDetail.getSnapshot(),
+    lighting: lightingSnapshot,
   };
 
-  setListContent(dom.sceneMetrics, [
+  const sceneMetrics = [
     `focus: ${state.focus}`,
     `ships: ${state.ships.length} active GLTF hulls`,
+    `physics snapshot: ${state.physics.snapshot.stage} (${state.physics.snapshot.stability})`,
+    `physics contacts: ${state.physics.snapshot.contactCount ?? 0}`,
     `cloth band: ${cloth.band} -> ${cloth.representation.output}`,
     `fluid near band: ${water.bandMeshes[0].representation.output}`,
     `lighting profile: ${lightingPlan.profile} (${lightingDistanceBands.length} bands)`,
-  ]);
-  setListContent(dom.qualityMetrics, [
+  ];
+  const qualityMetrics = [
     `fluid detail: ${quality.fluid.currentLevel.id} (${quality.fluid.currentLevel.config.nearResolution} near cells)`,
     `cloth detail: ${quality.cloth.currentLevel.id} (${quality.cloth.currentLevel.config.cols}x${quality.cloth.currentLevel.config.rows})`,
     `lighting detail: ${quality.lighting.currentLevel.id}`,
+    `near shadows: ${nearLighting.primaryShadowSource}`,
+    `near reflections: ${nearLighting.rtParticipation.reflections}`,
     `governor pressure: ${state.lastDecision.pressureLevel}`,
     `frame avg: ${state.lastDecision.metrics.averageFrameTimeMs.toFixed(2)} ms`,
-  ]);
-  setListContent(dom.debugMetrics, [
+  ];
+  const debugMetrics = [
     `queue samples: ${debugSnapshot.queues.sampleCount}`,
     `dispatch avg: ${(debugSnapshot.dispatch.averageDurationMs ?? 0).toFixed(2)} ms`,
     `ready lane peak: ${debugSnapshot.dag.peakReadyLaneDepth.toFixed(1)}`,
     `pipeline samples: ${debugSnapshot.pipeline.sampleCount}`,
     `tracked memory: ${(debugSnapshot.memory.totalTrackedBytes / (1024 * 1024)).toFixed(1)} MB`,
-  ]);
-  setListContent(dom.sceneNotes, SCENE_NOTES);
+  ];
+  const sceneNotes =
+    state.focus === "physics"
+      ? [
+          "Stable world snapshots are taken after the authoritative rigid-body commit and before visual follow-up work.",
+          "The ships collide on GLTF-derived hull volumes while cloth and fluid remain downstream visual consumers.",
+          "Near-field lighting keeps the ray-traced-primary shadow impression so the collision read stays crisp.",
+        ]
+      : SCENE_NOTES;
+
+  setListContent(dom.sceneMetrics, sceneMetrics);
+  setListContent(dom.qualityMetrics, qualityMetrics);
+  setListContent(dom.debugMetrics, debugMetrics);
+  setListContent(dom.sceneNotes, sceneNotes);
 
   dom.status.textContent = `3D scene live · ${state.lastDecision.metrics.fps.toFixed(1)} FPS`;
   dom.details.textContent =
-    `GLTF ships are colliding with ${shipModel.physics.shape ?? "box"} physics volumes; cloth and fluid remain continuous while the governor pressure is ${state.lastDecision.pressureLevel}.`;
+    state.focus === "physics"
+      ? `Stable world snapshots are emitted from ${state.physics.plan.snapshotStageId} after the authoritative solver; GLTF ships collide on ${shipModel.physics.shape ?? "box"} volumes while visual follow-up remains downstream.`
+      : `GLTF ships are colliding with ${shipModel.physics.shape ?? "box"} physics volumes; cloth and fluid remain continuous while the governor pressure is ${state.lastDecision.pressureLevel}.`;
 }
 
 function updateSceneState(state, dt, shipModel) {
   updateShips(state, dt, shipModel);
   updateSpray(state, dt);
+  updatePhysicsSnapshot(state, shipModel);
 }
 
 function syncTextState(state, shipModel) {
@@ -1288,6 +1615,12 @@ function syncTextState(state, shipModel) {
     shipPhysics: shipModel.physics,
     sprays: state.sprays.length,
     pressure: state.lastDecision?.pressureLevel ?? "stable",
+    physics: {
+      profile: state.physics.profile,
+      snapshotStageId: state.physics.plan.snapshotStageId,
+      workerJobCount: state.physics.manifest.jobs.length,
+      snapshot: state.physics.snapshot,
+    },
   };
   window.render_game_to_text = () => JSON.stringify(snapshot);
   window.advanceTime = (ms) => {
@@ -1304,7 +1637,7 @@ function syncTextState(state, shipModel) {
 export async function mountGpuShowcase(options = {}) {
   injectStyles();
   const root = options.root ?? document.body;
-  const focus = options.focus ?? "integrated";
+  const focus = options.focus ?? new URLSearchParams(window.location.search).get("focus") ?? "integrated";
   const dom = buildDemoDom(root, {
     packageName: options.packageName ?? "@plasius/gpu-demo-viewer",
     title: options.title ?? DEFAULT_TITLE,
@@ -1315,6 +1648,7 @@ export async function mountGpuShowcase(options = {}) {
   const state = createSceneState({ focus });
   const shipModel = await loadGltfModel(new URL("../assets/brigantine.gltf", import.meta.url));
   state.shipModel = shipModel;
+  updatePhysicsSnapshot(state, shipModel);
   state.lastDecision = recordTelemetry(state, 16.4);
   syncTextState(state, shipModel);
 
@@ -1359,4 +1693,24 @@ export async function mountGpuShowcase(options = {}) {
     shipModel,
     canvas: dom.canvas,
   };
+}
+
+function updatePhysicsSnapshot(state, shipModel) {
+  state.physics.snapshot = createPhysicsDemoSnapshot({
+    frameId: `showcase-${state.frame}`,
+    tick: state.frame,
+    simulationTimeMs: Number((state.time * 1000).toFixed(2)),
+    profile: state.physics.profile,
+    authoritativeTransformRevision: state.frame,
+    secondarySimulationRevision: state.frame,
+    animationInputRevision: state.frame,
+    bodyCount: state.ships.length + 2,
+    dynamicBodyCount: state.ships.length,
+    contactCount: state.collisionFlash > 0.02 ? 1 : 0,
+    metadata: {
+      collisionCount: state.collisionCount,
+      snapshotStageId: state.physics.plan.snapshotStageId,
+      rigidBodyShape: shipModel.physics.shape ?? "box",
+    },
+  });
 }
