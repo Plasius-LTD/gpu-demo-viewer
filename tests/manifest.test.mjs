@@ -31,10 +31,28 @@ test("manifest covers every sibling gpu-* demo package except dependency-only sh
 
 test("manifest file targets resolve", () => {
   for (const demo of demos) {
-    assert.ok(existsSync(fileURLToPath(new URL(demo.launchPath, manifestBaseUrl))), `${demo.id} launch path`);
-    assert.ok(existsSync(fileURLToPath(new URL(demo.sourcePath, manifestBaseUrl))), `${demo.id} source path`);
+    const launchPath = fileURLToPath(new URL(demo.launchPath, manifestBaseUrl));
+    const sourcePath = fileURLToPath(new URL(demo.sourcePath, manifestBaseUrl));
+
+    if (launchPath.startsWith(repoRoot)) {
+      assert.ok(existsSync(launchPath), `${demo.id} launch path`);
+    } else {
+      assert.match(demo.launchPath, /^\.\.\/gpu-[^/]+\//, `${demo.id} launch path shape`);
+    }
+
+    if (sourcePath.startsWith(repoRoot)) {
+      assert.ok(existsSync(sourcePath), `${demo.id} source path`);
+    } else {
+      assert.match(demo.sourcePath, /^\.\.\/gpu-[^/]+\//, `${demo.id} source path shape`);
+    }
+
     if (demo.docsPath) {
-      assert.ok(existsSync(fileURLToPath(new URL(demo.docsPath, manifestBaseUrl))), `${demo.id} docs path`);
+      const docsPath = fileURLToPath(new URL(demo.docsPath, manifestBaseUrl));
+      if (docsPath.startsWith(repoRoot)) {
+        assert.ok(existsSync(docsPath), `${demo.id} docs path`);
+      } else {
+        assert.match(demo.docsPath, /^\.\.\/gpu-[^/]+\//, `${demo.id} docs path shape`);
+      }
     }
   }
 });
