@@ -21,19 +21,19 @@ export const demos = [
     id: "gpu-camera",
     packageName: "@plasius/gpu-camera",
     type: "browser",
-    mode: "State-only browser demo",
-    runtime: "DOM state viewer",
+    mode: "3D camera orchestration demo",
+    runtime: "Shared 3D harbor scene + camera overlays",
     launchLabel: "Open browser demo",
     launchPath: "../gpu-camera/demo/",
     sourcePath: "../gpu-camera/demo/main.js",
     docsPath: "../gpu-camera/README.md",
     command: "cd gpu-camera && npm run demo",
-    summary: "Camera registration, switching, and multiview planning without a mounted 3D canvas.",
+    summary: "Camera registration, switching, and multiview planning validated against a mounted 3D harbor scene.",
     notes: [
-      "No WebGPU renderer is started in this demo by design.",
-      "Use it to validate camera state transitions and render-plan output."
+      "The scene is family-owned through gpu-shared while gpu-camera controls active-view and multiview planning state.",
+      "Use it to validate camera transitions on a real 3D surface instead of a state-only page."
     ],
-    tags: ["browser", "state"]
+    tags: ["browser", "3d"]
   },
   {
     id: "gpu-cloth",
@@ -111,37 +111,37 @@ export const demos = [
     id: "gpu-lock-free-queue",
     packageName: "@plasius/gpu-lock-free-queue",
     type: "browser",
-    mode: "2D queue visualization",
-    runtime: "WebGPU compute + 2D canvases",
+    mode: "3D DAG queue demo",
+    runtime: "Shared 3D harbor scene + scheduler overlays",
     launchLabel: "Open browser demo",
     launchPath: "../gpu-lock-free-queue/demo/",
     sourcePath: "../gpu-lock-free-queue/demo/main.js",
     docsPath: "../gpu-lock-free-queue/README.md",
     command: "cd gpu-lock-free-queue && npm run demo",
-    summary: "Spectrogram-based queue visualization that validates the lock-free GPU queue on live canvases.",
+    summary: "Priority-aware DAG queue validation surfaced on top of the shared 3D harbor scene.",
     notes: [
-      "Requires localhost or HTTPS because WebGPU must run in a secure context.",
-      "The display is 2D visualization, not a 3D scene."
+      "The package now validates roots, lanes, and dependency joins on the same 3D family-owned scene used elsewhere.",
+      "Use it to inspect the queue architecture without dropping back to a 2D-only visualizer."
     ],
-    tags: ["browser", "2d"]
+    tags: ["browser", "3d"]
   },
   {
     id: "gpu-particles",
     packageName: "@plasius/gpu-particles",
     type: "browser",
-    mode: "2D particle preview canvases",
-    runtime: "WebGPU compute + 2D canvases",
+    mode: "3D particle contract demo",
+    runtime: "Shared 3D harbor scene + particle overlays",
     launchLabel: "Open browser demo",
     launchPath: "../gpu-particles/demo/",
     sourcePath: "../gpu-particles/demo/main.js",
     docsPath: "../gpu-particles/README.md",
     command: "cd gpu-particles && npm run demo",
-    summary: "GPU particle scenes rendered into 2D preview canvases for fire, sparks, rain, snow, and fireworks.",
+    summary: "Particle effect manifests and snapshot policy visualized against the shared 3D harbor scene.",
     notes: [
-      "Requires localhost or HTTPS because the particle simulation depends on WebGPU.",
-      "The canvases show GPU-driven buffers, but this is not a 3D world renderer."
+      "The visual surface is shared, while the particle package still owns effect selection and worker-manifest policy.",
+      "Use it to inspect effect roots and stable-world-snapshot requirements on a mounted 3D canvas."
     ],
-    tags: ["browser", "2d"]
+    tags: ["browser", "3d"]
   },
   {
     id: "gpu-performance",
@@ -198,6 +198,24 @@ export const demos = [
     tags: ["browser", "3d"]
   },
   {
+    id: "gpu-shared",
+    packageName: "@plasius/gpu-shared",
+    type: "browser",
+    mode: "3D shared runtime demo",
+    runtime: "Shared 3D harbor scene",
+    launchLabel: "Open browser demo",
+    launchPath: "../gpu-shared/demo/",
+    sourcePath: "../gpu-shared/demo/main.js",
+    docsPath: "../gpu-shared/README.md",
+    command: "cd gpu-shared && npm run demo",
+    summary: "The shared 3D harbor runtime demo that the family-owned browser showcases build on top of.",
+    notes: [
+      "Use this to validate the core shared scene without package-specific overlays layered on top.",
+      "This is the common 3D runtime surface used by the migrated family demos."
+    ],
+    tags: ["browser", "3d"]
+  },
+  {
     id: "gpu-worker",
     packageName: "@plasius/gpu-worker",
     type: "browser",
@@ -219,17 +237,17 @@ export const demos = [
     id: "gpu-world-generator",
     packageName: "@plasius/gpu-world-generator",
     type: "browser",
-    mode: "3D canvas demo",
-    runtime: "Built Vite bundle + WebGPU canvas",
-    launchLabel: "Open built demo",
-    launchPath: "../gpu-world-generator/demo/dist/",
+    mode: "3D representation-band demo",
+    runtime: "Shared 3D harbor scene + world overlays",
+    launchLabel: "Open browser demo",
+    launchPath: "../gpu-world-generator/demo/",
     sourcePath: "../gpu-world-generator/demo/main.js",
     docsPath: "../gpu-world-generator/demo/README.md",
-    command: "cd gpu-world-generator/demo && npm run dev",
-    summary: "Procedural terrain and water simulation demo with a mounted WebGPU canvas.",
+    command: "cd gpu-world-generator && npm run demo",
+    summary: "Chunk representation and worker-manifest policy validated on a mounted 3D harbor scene.",
     notes: [
-      "The viewer launches the built static dist bundle for fast validation.",
-      "Use the demo package directly when you need the source Vite workflow."
+      "The demo is now static-server friendly and no longer relies on a bundler-only browser entry.",
+      "Use it to validate near/mid/far/horizon representation policy on the shared showcase surface."
     ],
     tags: ["browser", "3d"]
   },
@@ -237,18 +255,18 @@ export const demos = [
     id: "gpu-xr",
     packageName: "@plasius/gpu-xr",
     type: "browser",
-    mode: "Lifecycle browser demo",
-    runtime: "WebXR capability viewer",
+    mode: "3D XR target demo",
+    runtime: "Shared 3D harbor scene + XR pacing overlays",
     launchLabel: "Open browser demo",
     launchPath: "../gpu-xr/demo/",
     sourcePath: "../gpu-xr/demo/main.js",
     docsPath: "../gpu-xr/README.md",
     command: "cd gpu-xr && npm run demo",
-    summary: "WebXR lifecycle and capability demo without binding a renderer canvas.",
+    summary: "XR frame-target negotiation and worker-budget hints shown against a mounted 3D harbor scene.",
     notes: [
-      "No 3D surface is mounted by design in this demo.",
-      "Use @plasius/gpu-renderer with gpu-xr when you want a rendered XR surface."
+      "The demo now mounts a 3D scene while gpu-xr remains responsible for target negotiation, not rendering.",
+      "Use it to compare inline versus immersive pacing policy on the family showcase."
     ],
-    tags: ["browser", "state"]
+    tags: ["browser", "3d"]
   }
 ];

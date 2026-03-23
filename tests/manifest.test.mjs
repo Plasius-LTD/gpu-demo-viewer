@@ -15,11 +15,11 @@ test("manifest ids are unique", () => {
   assert.equal(new Set(ids).size, ids.length);
 });
 
-test("manifest covers every sibling gpu-* demo package except dependency-only shared runtime packages", () => {
+test("manifest covers every sibling gpu-* demo package", () => {
   const siblingPackages = readdirSync(workspaceRoot, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name)
-    .filter((name) => name.startsWith("gpu-") && name !== "gpu-demo-viewer" && name !== "gpu-shared")
+    .filter((name) => name.startsWith("gpu-") && name !== "gpu-demo-viewer")
     .filter((name) => existsSync(path.join(workspaceRoot, name, "demo")))
     .sort();
 
@@ -54,5 +54,15 @@ test("manifest file targets resolve", () => {
         assert.match(demo.docsPath, /^\.\.\/gpu-[^/]+\//, `${demo.id} docs path shape`);
       }
     }
+  }
+});
+
+test("browser demos in the catalog expose mounted 3D surfaces", () => {
+  const browserDemos = demos.filter((demo) => demo.type === "browser");
+  for (const demo of browserDemos) {
+    assert.ok(
+      demo.tags.includes("3d"),
+      `${demo.id} should advertise a mounted 3D validation surface`
+    );
   }
 });

@@ -60,8 +60,8 @@ function matchesFilter(demo) {
   if (state.filter === "3d") {
     return demo.tags.includes("3d");
   }
-  if (state.filter === "state") {
-    return demo.tags.includes("state") || demo.tags.includes("2d");
+  if (state.filter === "integration") {
+    return demo.tags.includes("integration");
   }
   return true;
 }
@@ -223,10 +223,9 @@ function renderSelection(demo) {
   if (demo.type === "browser") {
     browserPaneEl.hidden = false;
     examplePaneEl.hidden = true;
-    previewHintEl.textContent =
-      demo.tags.includes("3d")
-        ? "Mounted canvas preview. Interact with the embedded demo directly."
-        : "Embedded browser demo. Use this for quick state and availability checks.";
+    previewHintEl.textContent = demo.tags.includes("integration")
+      ? "Integrated cross-package harbor preview. Use this to validate the full family together."
+      : "Mounted 3D preview. Interact with the embedded demo directly.";
     demoFrameEl.src = demo.launchPath;
   } else {
     browserPaneEl.hidden = true;
