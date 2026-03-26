@@ -29,3 +29,6 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   present a more ray-traced near-field look.
 - The viewer now consumes the shared harbor runtime from `@plasius/gpu-shared`
   instead of owning that source directly.
+- The showcase browser entry now imports `@plasius/gpu-shared` through an
+  import map instead of coupling directly to a deep `node_modules/.../dist`
+  path.

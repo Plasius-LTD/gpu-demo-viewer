@@ -31,6 +31,7 @@ The server points at the workspace root, so sibling package demos remain reachab
 
 - Browser-backed WebGPU demos still require `localhost` or `HTTPS`.
 - The shared integration showcase is 3D but does not require WebGPU initialization just to render the validation scene.
+- The showcase now resolves `@plasius/gpu-shared` through an import map so the browser entry uses the package public surface instead of a deep internal file path.
 - `gpu-world-generator` is launched from its built `demo/dist/` bundle in the viewer because its source demo uses a Vite workflow.
 - Code-example packages are listed for discovery but are not embedded in an iframe.
 

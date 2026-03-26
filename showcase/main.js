@@ -1,4 +1,4 @@
-import { mountGpuShowcase } from "../node_modules/@plasius/gpu-shared/dist/index.js";
+import { mountGpuShowcase } from "@plasius/gpu-shared";
 
 const focus = new URLSearchParams(window.location.search).get("focus") ?? "integrated";
 
