@@ -10,10 +10,11 @@ export const demos = [
     sourcePath: "./showcase/main.js",
     docsPath: "./README.md",
     command: "cd gpu-demo-viewer && npm run demo",
-    summary: "Flag-by-the-sea 3D validation scene combining GLTF ships, cloth, fluid, lighting, debug telemetry, adaptive performance, and collisions.",
+    summary: "Flag-by-the-sea 3D validation scene combining moonlit GLTF ships, lantern lighting, cloth, fluid, lighting, debug telemetry, adaptive performance, and mass-aware collisions.",
     notes: [
       "This is the top-level cross-package validation surface.",
-      "The ships are loaded from GLTF and expose physics metadata used by the collision loop."
+      "The ships are loaded from GLTF and expose physics metadata used by the collision loop.",
+      "The shared showcase now uses moonlight, ship lanterns, and heavier-vs-lighter hull responses to make collision reads more realistic."
     ],
     tags: ["browser", "3d", "integration"]
   },
