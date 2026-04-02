@@ -13,6 +13,6 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@plasius/gpu-shared": "^0.1.2"
+    "@plasius/gpu-shared": "^0.1.4"
   }
 }
