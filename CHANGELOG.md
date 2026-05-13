@@ -24,6 +24,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ### Changed
 
+- Refreshed the viewer's shared GPU package baselines onto the latest stable
+  published `@plasius/gpu-*` releases.
 - The viewer now classifies the cloth, fluid, lighting, performance, and debug demos as browser-based 3D visual examples.
 - Strengthened the shared showcase lighting and shadow model so the harbor demos
   present a more ray-traced near-field look.
