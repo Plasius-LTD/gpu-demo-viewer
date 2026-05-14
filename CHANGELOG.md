@@ -21,6 +21,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 - Browser manifest coverage tests and a GLTF asset contract test.
 - Added a physics focus mode for the shared showcase and promoted
   `gpu-physics` to a browser-backed 3D demo entry.
+- Added baseline governance and validation scripts for repo standardization:
+  `NFR.md`, `docs/adrs`, `npm run build`, and `npm run typecheck`.
 
 ### Changed
 

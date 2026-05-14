@@ -38,6 +38,17 @@ The server points at the workspace root, so sibling package demos remain reachab
 ## Local Checks
 
 ```bash
+npm run build
+npm run typecheck
 npm run lint
 npm test
 ```
+
+## Governance
+
+- Non-functional requirements: [`NFR.md`](./NFR.md)
+- Delivery workflow: [`WORKFLOW.md`](./WORKFLOW.md)
+- Feature flags and capabilities: [`FLAGS_AND_CAPABILITIES.md`](./FLAGS_AND_CAPABILITIES.md)
+- Architectural decision log:
+  - [`docs/adrs/index.md`](./docs/adrs/index.md)
+  - [`docs/adrs/adr-0001-gpu-demo-viewer-governance-baseline.md`](./docs/adrs/adr-0001-gpu-demo-viewer-governance-baseline.md)

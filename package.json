@@ -8,8 +8,10 @@
     "node": ">=24"
   },
   "scripts": {
+    "build": "npm run lint",
     "demo": "python3 -m http.server --directory ..",
     "lint": "node --check index.js && node --check main.js && node --check viewer-manifest.js && node --check showcase/index.js && node --check showcase/main.js",
+    "typecheck": "node --check index.js main.js viewer-manifest.js showcase/index.js showcase/main.js",
     "test": "node --test"
   },
   "dependencies": {
