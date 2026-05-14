@@ -14,7 +14,10 @@ verification commands to remain release-safe and auditable across repo sweeps.
 
 - Add repository-level governance documentation required by default (`NFR.md`).
 - Add ADR index and baseline ADR for public reasoning traceability.
-- Introduce `build` and `typecheck` scripts as first-class verification commands.
+- Introduce `typecheck` as the canonical syntax-validation gate for shipped
+  browser entrypoints and manifest modules.
+- Define `build` as a static-contract verification step rather than a bundler
+  pipeline.
 - Record a short changelog line for the baseline completion.
 
 ## Consequences
