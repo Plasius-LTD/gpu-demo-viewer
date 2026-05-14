@@ -8,8 +8,10 @@
     "node": ">=24"
   },
   "scripts": {
+    "build": "node scripts/verify-static-viewer-contract.cjs",
     "demo": "python3 -m http.server --directory ..",
-    "lint": "node --check index.js && node --check main.js && node --check viewer-manifest.js && node --check showcase/index.js && node --check showcase/main.js",
+    "lint": "npm run typecheck",
+    "typecheck": "node --check index.js && node --check main.js && node --check viewer-manifest.js && node --check showcase/index.js && node --check showcase/main.js",
     "test": "node --test"
   },
   "dependencies": {

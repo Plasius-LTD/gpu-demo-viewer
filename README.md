@@ -27,6 +27,18 @@ http://localhost:8000/gpu-demo-viewer/
 
 The server points at the workspace root, so sibling package demos remain reachable from the viewer.
 
+## Static Validation Contract
+
+This repository is intentionally a static validation surface rather than a
+bundled application package.
+
+- `npm run demo` serves the workspace root so sibling `gpu-*` demos are
+  reachable from one URL.
+- `npm run typecheck` syntax-checks the shipped browser entrypoints and
+  manifest modules.
+- `npm run build` verifies the static contract documented in
+  `docs/adrs/adr-0001-gpu-demo-viewer-governance-baseline.md`.
+
 ## Validation Notes
 
 - Browser-backed WebGPU demos still require `localhost` or `HTTPS`.
@@ -38,6 +50,15 @@ The server points at the workspace root, so sibling package demos remain reachab
 ## Local Checks
 
 ```bash
+npm run build
+npm run typecheck
 npm run lint
 npm test
 ```
+
+## Governance
+
+- Non-functional requirements: [`NFR.md`](./NFR.md)
+- Delivery workflow: [`WORKFLOW.md`](./WORKFLOW.md)
+- Feature flags and capabilities: [`FLAGS_AND_CAPABILITIES.md`](./FLAGS_AND_CAPABILITIES.md)
+- Architectural decision log: [`docs/adrs/index.md`](./docs/adrs/index.md)
