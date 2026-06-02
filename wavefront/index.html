@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wavefront Path Tracing Demo</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "@plasius/gpu-renderer": "../node_modules/@plasius/gpu-renderer/dist/index.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main class="wavefront-shell">
+      <section class="render-panel" aria-label="Wavefront path tracing render">
+        <div class="render-toolbar">
+          <div>
+            <p class="eyebrow">Experimental renderer path</p>
+            <h1>Wavefront Path Tracing</h1>
+          </div>
+          <div class="toolbar-actions">
+            <button id="renderButton" type="button">Render frame</button>
+            <a id="captureLink" href="./?experimental=wavefront&capture=1">Capture mode</a>
+          </div>
+        </div>
+        <canvas
+          id="renderCanvas"
+          class="render-canvas"
+          width="192"
+          height="120"
+          aria-label="Deterministic low-resolution wavefront path tracing output"
+        ></canvas>
+        <div class="render-strip" aria-live="polite">
+          <p id="renderStatus">Preparing deterministic wavefront scene.</p>
+          <p id="renderMode">Feature flag: gpu.wavefrontPathTracingDemo</p>
+        </div>
+      </section>
+
+      <aside class="debug-panel" aria-label="Wavefront debug overlay">
+        <section>
+          <p class="eyebrow">Controls</p>
+          <div class="control-grid">
+            <label>
+              Max depth
+              <select id="maxDepthSelect">
+                <option value="3">3 bounces</option>
+                <option value="4">4 bounces</option>
+                <option value="5" selected>5 bounces</option>
+                <option value="6">6 bounces</option>
+                <option value="8">8 bounces</option>
+              </select>
+            </label>
+            <label>
+              Resolution
+              <select id="resolutionSelect">
+                <option value="capture">Capture</option>
+                <option value="balanced" selected>Balanced</option>
+                <option value="detail">Detail</option>
+              </select>
+            </label>
+            <label>
+              Post pass
+              <select id="denoiseSelect">
+                <option value="on" selected>Denoise on</option>
+                <option value="off">Raw samples</option>
+              </select>
+            </label>
+          </div>
+        </section>
+        <section>
+          <p class="eyebrow">Termination</p>
+          <dl id="terminationStats" class="metric-grid"></dl>
+        </section>
+        <section>
+          <p class="eyebrow">Bounce queue</p>
+          <div id="bounceRows" class="bounce-list"></div>
+        </section>
+        <section>
+          <p class="eyebrow">Renderer contract</p>
+          <dl id="contractStats" class="contract-list"></dl>
+        </section>
+      </aside>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -16,6 +16,10 @@ function requirePath(relativePath, label) {
   return fullPath;
 }
 
+function staticPathFromUrl(relativePath) {
+  return relativePath.split(/[?#]/, 1)[0];
+}
+
 async function main() {
   requirePath("README.md", "README");
   requirePath("CHANGELOG.md", "CHANGELOG");
@@ -39,15 +43,15 @@ async function main() {
     assert(typeof demo.sourcePath === "string", `${demo.id} sourcePath is required`);
 
     if (demo.launchPath.startsWith("./")) {
-      requirePath(demo.launchPath.slice(2), `${demo.id} launchPath`);
+      requirePath(staticPathFromUrl(demo.launchPath.slice(2)), `${demo.id} launchPath`);
     }
 
     if (demo.sourcePath.startsWith("./")) {
-      requirePath(demo.sourcePath.slice(2), `${demo.id} sourcePath`);
+      requirePath(staticPathFromUrl(demo.sourcePath.slice(2)), `${demo.id} sourcePath`);
     }
 
     if (typeof demo.docsPath === "string" && demo.docsPath.startsWith("./")) {
-      requirePath(demo.docsPath.slice(2), `${demo.id} docsPath`);
+      requirePath(staticPathFromUrl(demo.docsPath.slice(2)), `${demo.id} docsPath`);
     }
   }
 
