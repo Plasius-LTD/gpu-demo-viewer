@@ -22,6 +22,9 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   settings, emissive/skybox termination, reflection, refraction, fluid surface
   interaction, smooth normals, dark no-light paths, a denoise post-pass toggle,
   and queue-depth telemetry.
+- Ambient residual handling for shallow no-light and max-depth wavefront paths
+  so the demo approximates unresolved high-order indirect bounces without
+  replacing active-ray emissive or environment hits.
 - Browser manifest coverage tests and a GLTF asset contract test.
 - Added a physics focus mode for the shared showcase and promoted
   `gpu-physics` to a browser-backed 3D demo entry.

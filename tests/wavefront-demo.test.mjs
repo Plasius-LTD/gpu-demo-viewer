@@ -30,6 +30,9 @@ test("wavefront demo imports the renderer package public surface", () => {
 test("wavefront demo covers active-ray termination and continuation cases", () => {
   const source = read("wavefront/main.js");
   assert.match(source, /createWavefrontPathTracingPlan/);
+  assert.match(source, /SCENE_AMBIENT/);
+  assert.match(source, /sampleAmbientResidual/);
+  assert.match(source, /primaryRayCount/);
   assert.match(source, /explicitLightSampling:\s*false/);
   assert.match(source, /kind:\s*"emissive"/);
   assert.match(source, /kind:\s*"reflective"/);
@@ -37,6 +40,7 @@ test("wavefront demo covers active-ray termination and continuation cases", () =
   assert.match(source, /kind:\s*"water"/);
   assert.match(source, /kind:\s*"absorber"/);
   assert.match(source, /applyDenoise/);
+  assert.match(source, /ambientFallback/);
   assert.match(source, /termination\.maxDepth/);
   assert.match(source, /smoothNormals:\s*true/);
   assert.ok(repoRoot.endsWith("/gpu-demo-viewer/"), "test fixture resolves from repo root");

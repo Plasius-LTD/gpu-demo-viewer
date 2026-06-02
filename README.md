@@ -41,6 +41,17 @@ Deterministic capture settings are available at:
 http://localhost:8000/gpu-demo-viewer/wavefront/?experimental=wavefront&capture=1
 ```
 
+The displayed primary-ray count is calculated as:
+
+```text
+render width x render height x samples per pixel
+```
+
+Continuation rays are then spawned from the active queue by bounce depth. The
+demo keeps the default presets intentionally modest because the image is scaled
+up for inspection and a simple denoise post-pass can hide much of the visual
+benefit from very high primary-ray counts.
+
 ## Static Validation Contract
 
 This repository is intentionally a static validation surface rather than a
@@ -59,10 +70,12 @@ bundled application package.
 - The wavefront path-tracing demo is intentionally deterministic and runs as a
   static canvas reference surface. It uses the renderer wavefront plan contract,
   disables optional explicit light probes, and demonstrates that active paths
-  terminate on emissive geometry, skybox/environment hits, no-light absorption,
-  or maximum depth. The demo includes a simple spatial denoise post-pass toggle;
-  raw no-light/max-depth samples still contribute zero radiance before that
-  post-process smooths neighboring pixels.
+  terminate on emissive geometry, skybox/environment hits, ambient fallback, or
+  maximum depth. Shallow no-light/max-depth paths return an explicit off-black
+  ambient residual to approximate unresolved high-order indirect bounces. The
+  demo includes a simple spatial denoise post-pass toggle; denoise smooths
+  neighboring pixels but does not replace active-ray emissive or environment
+  hits as the primary lighting source.
 - The shared integration showcase is 3D but does not require WebGPU initialization just to render the validation scene.
 - The showcase now resolves `@plasius/gpu-shared` through an import map so the browser entry uses the package public surface instead of a deep internal file path.
 - `gpu-world-generator` is launched from its built `demo/dist/` bundle in the viewer because its source demo uses a Vite workflow.
