@@ -33,6 +33,12 @@ test("wavefront demo covers active-ray termination and continuation cases", () =
   assert.match(source, /SCENE_AMBIENT/);
   assert.match(source, /sampleAmbientResidual/);
   assert.match(source, /primaryRayCount/);
+  assert.match(source, /hd720/);
+  assert.match(source, /hd1080/);
+  assert.match(source, /createTiles/);
+  assert.match(source, /createRenderJob/);
+  assert.match(source, /tilesPerFrame/);
+  assert.match(source, /targetFps/);
   assert.match(source, /explicitLightSampling:\s*false/);
   assert.match(source, /kind:\s*"emissive"/);
   assert.match(source, /kind:\s*"reflective"/);

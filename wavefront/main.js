@@ -77,9 +77,30 @@ const sceneObjects = Object.freeze([
 ]);
 
 const resolutionModes = Object.freeze({
-  capture: Object.freeze({ width: 160, height: 100, samples: 1 }),
-  balanced: Object.freeze({ width: 240, height: 150, samples: 1 }),
-  detail: Object.freeze({ width: 320, height: 200, samples: 1 }),
+  preview: Object.freeze({
+    width: 640,
+    height: 360,
+    samples: 1,
+    tileSize: 64,
+    tilesPerFrame: 4,
+    targetFps: 24,
+  }),
+  hd720: Object.freeze({
+    width: 1280,
+    height: 720,
+    samples: 1,
+    tileSize: 64,
+    tilesPerFrame: 2,
+    targetFps: 18,
+  }),
+  hd1080: Object.freeze({
+    width: 1920,
+    height: 1080,
+    samples: 1,
+    tileSize: 64,
+    tilesPerFrame: 1,
+    targetFps: 10,
+  }),
 });
 
 function add(a, b) {
@@ -152,7 +173,7 @@ function createCamera() {
   return Object.freeze({ origin, forward, right, up, fovRadians: (47 * Math.PI) / 180 });
 }
 
-function createPrimaryRay(pixelX, pixelY, sample, settings, camera) {
+function createPrimaryRay(pixelX, pixelY, sample, settings, camera, sourcePixelIdOverride = null) {
   const jitterX = settings.samples === 1 ? 0.5 : 0.28 + 0.44 * hash(sample + pixelX * 17);
   const jitterY = settings.samples === 1 ? 0.5 : 0.28 + 0.44 * hash(sample + pixelY * 29);
   const aspect = settings.width / settings.height;
@@ -165,7 +186,8 @@ function createPrimaryRay(pixelX, pixelY, sample, settings, camera) {
       add(scale(camera.right, ndcX * aspect * viewScale), scale(camera.up, ndcY * viewScale))
     )
   );
-  const sourcePixelId = pixelY * settings.width + pixelX;
+  const sourcePixelId =
+    sourcePixelIdOverride == null ? pixelY * settings.width + pixelX : sourcePixelIdOverride;
   return {
     rayId: sourcePixelId * settings.samples + sample,
     parentRayId: 0,
@@ -483,13 +505,10 @@ function applyDenoise(image, width, height) {
   }
 }
 
-function writeImageData(canvas, accumulation, settings) {
-  canvas.width = settings.width;
-  canvas.height = settings.height;
-  const context = canvas.getContext("2d");
-  const image = context.createImageData(settings.width, settings.height);
-  const invSamples = 1 / settings.samples;
-  for (let pixel = 0; pixel < settings.width * settings.height; pixel += 1) {
+function createImageDataFromAccumulation(context, accumulation, width, height, samples, denoise) {
+  const image = context.createImageData(width, height);
+  const invSamples = 1 / samples;
+  for (let pixel = 0; pixel < width * height; pixel += 1) {
     const src = pixel * 3;
     const dst = pixel * 4;
     image.data[dst] = Math.round(toneMap(accumulation[src] * invSamples) * 255);
@@ -497,21 +516,64 @@ function writeImageData(canvas, accumulation, settings) {
     image.data[dst + 2] = Math.round(toneMap(accumulation[src + 2] * invSamples) * 255);
     image.data[dst + 3] = 255;
   }
-  if (settings.denoise) {
-    applyDenoise(image, settings.width, settings.height);
+  if (denoise) {
+    applyDenoise(image, width, height);
   }
+  return image;
+}
+
+function writeImageData(canvas, accumulation, settings) {
+  canvas.width = settings.width;
+  canvas.height = settings.height;
+  const context = canvas.getContext("2d");
+  const image = createImageDataFromAccumulation(
+    context,
+    accumulation,
+    settings.width,
+    settings.height,
+    settings.samples,
+    settings.denoise
+  );
   context.putImageData(image, 0, 0);
+}
+
+function writeTileImageData(canvas, tile, accumulation, settings) {
+  const context = canvas.getContext("2d");
+  const image = createImageDataFromAccumulation(
+    context,
+    accumulation,
+    tile.width,
+    tile.height,
+    settings.samples,
+    settings.denoise
+  );
+  context.putImageData(image, tile.x, tile.y);
+}
+
+function clearCanvas(canvas, settings) {
+  canvas.width = settings.width;
+  canvas.height = settings.height;
+  const context = canvas.getContext("2d");
+  context.fillStyle = "#05070b";
+  context.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function createSettings() {
   const params = new URLSearchParams(window.location.search);
   const capture = params.has("capture");
+  const requestedResolution = params.get("resolution");
+  const aliasedResolution =
+    requestedResolution === "capture" || requestedResolution === "balanced"
+      ? "preview"
+      : requestedResolution === "detail"
+        ? "hd720"
+        : requestedResolution;
   const resolutionKey =
-    params.get("resolution") && resolutionModes[params.get("resolution")]
-      ? params.get("resolution")
+    aliasedResolution && resolutionModes[aliasedResolution]
+      ? aliasedResolution
       : capture
-        ? "capture"
-        : "balanced";
+        ? "hd720"
+        : "hd720";
   const resolution = resolutionModes[resolutionKey];
   const requestedDepth = Number(params.get("maxDepth"));
   return {
@@ -520,6 +582,7 @@ function createSettings() {
     maxDepth: Number.isInteger(requestedDepth) ? clamp(requestedDepth, 3, 8) : capture ? 6 : 5,
     capture,
     denoise: params.get("denoise") !== "off",
+    frameIntervalMs: 1000 / resolution.targetFps,
     experimentalEnabled:
       params.get("experimental") === "wavefront" ||
       params.get("quality") === "experimental" ||
@@ -540,6 +603,84 @@ function createPrimaryQueue(settings) {
   return rays;
 }
 
+function createTilePrimaryQueue(tile, settings) {
+  const camera = createCamera();
+  const rays = [];
+  for (let y = tile.y; y < tile.y + tile.height; y += 1) {
+    for (let x = tile.x; x < tile.x + tile.width; x += 1) {
+      const localPixelId = (y - tile.y) * tile.width + (x - tile.x);
+      for (let sample = 0; sample < settings.samples; sample += 1) {
+        rays.push(createPrimaryRay(x, y, sample, settings, camera, localPixelId));
+      }
+    }
+  }
+  return rays;
+}
+
+function createTiles(settings) {
+  const tiles = [];
+  for (let y = 0; y < settings.height; y += settings.tileSize) {
+    for (let x = 0; x < settings.width; x += settings.tileSize) {
+      tiles.push(
+        Object.freeze({
+          id: tiles.length,
+          x,
+          y,
+          width: Math.min(settings.tileSize, settings.width - x),
+          height: Math.min(settings.tileSize, settings.height - y),
+        })
+      );
+    }
+  }
+  return tiles;
+}
+
+function createStats(plan, settings) {
+  return {
+    plan,
+    settings,
+    renderMs: 0,
+    queueOverflow: 0,
+    processedTiles: 0,
+    totalTiles: 0,
+    pacedFrames: 0,
+    bounces: [],
+    termination: { emissive: 0, environment: 0, ambientFallback: 0, maxDepth: 0 },
+  };
+}
+
+function mergeBounceStats(target, source) {
+  for (const sourceBounce of source.bounces) {
+    let targetBounce = target.bounces[sourceBounce.bounce];
+    if (!targetBounce) {
+      targetBounce = {
+        bounce: sourceBounce.bounce,
+        active: 0,
+        surfaceHits: 0,
+        emissiveHits: 0,
+        environmentHits: 0,
+        spawned: 0,
+      };
+      target.bounces[sourceBounce.bounce] = targetBounce;
+    }
+    targetBounce.active += sourceBounce.active;
+    targetBounce.surfaceHits += sourceBounce.surfaceHits;
+    targetBounce.emissiveHits += sourceBounce.emissiveHits;
+    targetBounce.environmentHits += sourceBounce.environmentHits;
+    targetBounce.spawned += sourceBounce.spawned;
+  }
+}
+
+function mergeStats(target, source) {
+  target.renderMs += source.renderMs;
+  target.queueOverflow += source.queueOverflow;
+  target.termination.emissive += source.termination.emissive;
+  target.termination.environment += source.termination.environment;
+  target.termination.ambientFallback += source.termination.ambientFallback;
+  target.termination.maxDepth += source.termination.maxDepth;
+  mergeBounceStats(target, source);
+}
+
 function renderWavefrontFrame(canvas, settings) {
   const plan = createWavefrontPathTracingPlan({
     maxDepth: settings.maxDepth,
@@ -551,6 +692,43 @@ function renderWavefrontFrame(canvas, settings) {
   const stats = processWavefrontBounces(createPrimaryQueue(settings), accumulation, plan, settings);
   writeImageData(canvas, accumulation, settings);
   return stats;
+}
+
+function renderWavefrontTile(canvas, tile, settings, plan) {
+  const accumulation = new Float32Array(tile.width * tile.height * 3);
+  const tileStats = processWavefrontBounces(
+    createTilePrimaryQueue(tile, settings),
+    accumulation,
+    plan,
+    settings
+  );
+  writeTileImageData(canvas, tile, accumulation, settings);
+  return tileStats;
+}
+
+function createRenderJob(canvas, settings) {
+  const tiles = createTiles(settings);
+  const plan = createWavefrontPathTracingPlan({
+    maxDepth: settings.maxDepth,
+    queueCapacity: settings.tileSize * settings.tileSize * settings.samples * 2,
+    explicitLightSampling: false,
+    accumulationResetEpoch: settings.capture ? 1 : 0,
+  });
+  const stats = createStats(plan, settings);
+  stats.totalTiles = tiles.length;
+  clearCanvas(canvas, settings);
+
+  return {
+    canvas,
+    settings,
+    plan,
+    tiles,
+    stats,
+    nextTileIndex: 0,
+    startedAt: performance.now(),
+    lastFrameAt: 0,
+    cancelled: false,
+  };
 }
 
 function primaryRayCount(settings) {

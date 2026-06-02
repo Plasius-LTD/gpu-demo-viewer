@@ -47,10 +47,18 @@ The displayed primary-ray count is calculated as:
 render width x render height x samples per pixel
 ```
 
+The current presets target inspection resolutions rather than tiny preview
+buffers:
+
+- preview: `640 x 360 x 1 = 230,400` primary rays
+- 720p: `1280 x 720 x 1 = 921,600` primary rays
+- 1080p: `1920 x 1080 x 1 = 2,073,600` primary rays
+
 Continuation rays are then spawned from the active queue by bounce depth. The
-demo keeps the default presets intentionally modest because the image is scaled
-up for inspection and a simple denoise post-pass can hide much of the visual
-benefit from very high primary-ray counts.
+demo avoids blocking full-frame work by splitting the image into deterministic
+tiles and pacing graph steps by preset. Higher resolutions intentionally render
+at a lower graph cadence so the browser stays responsive while the image
+progressively fills in.
 
 ## Static Validation Contract
 
@@ -76,6 +84,9 @@ bundled application package.
   demo includes a simple spatial denoise post-pass toggle; denoise smooths
   neighboring pixels but does not replace active-ray emissive or environment
   hits as the primary lighting source.
+- 720p and 1080p modes are progressive tile renders. They are intended to show
+  target-resolution ray budgets while keeping graph cadence bounded instead of
+  forcing all primary and continuation rays through one blocking frame.
 - The shared integration showcase is 3D but does not require WebGPU initialization just to render the validation scene.
 - The showcase now resolves `@plasius/gpu-shared` through an import map so the browser entry uses the package public surface instead of a deep internal file path.
 - `gpu-world-generator` is launched from its built `demo/dist/` bundle in the viewer because its source demo uses a Vite workflow.

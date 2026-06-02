@@ -25,6 +25,9 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 - Ambient residual handling for shallow no-light and max-depth wavefront paths
   so the demo approximates unresolved high-order indirect bounces without
   replacing active-ray emissive or environment hits.
+- 720p and 1080p wavefront demo presets with progressive tile scheduling and
+  paced graph steps so higher target resolutions do not require a single
+  blocking full-frame render.
 - Browser manifest coverage tests and a GLTF asset contract test.
 - Added a physics focus mode for the shared showcase and promoted
   `gpu-physics` to a browser-backed 3D demo entry.
