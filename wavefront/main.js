@@ -77,9 +77,30 @@ const sceneObjects = Object.freeze([
 ]);
 
 const resolutionModes = Object.freeze({
-  capture: Object.freeze({ width: 160, height: 100, samples: 1 }),
-  balanced: Object.freeze({ width: 240, height: 150, samples: 1 }),
-  detail: Object.freeze({ width: 320, height: 200, samples: 1 }),
+  preview: Object.freeze({
+    width: 640,
+    height: 360,
+    samples: 1,
+    tileSize: 64,
+    tilesPerFrame: 4,
+    targetFps: 24,
+  }),
+  hd720: Object.freeze({
+    width: 1280,
+    height: 720,
+    samples: 1,
+    tileSize: 64,
+    tilesPerFrame: 2,
+    targetFps: 18,
+  }),
+  hd1080: Object.freeze({
+    width: 1920,
+    height: 1080,
+    samples: 1,
+    tileSize: 64,
+    tilesPerFrame: 1,
+    targetFps: 10,
+  }),
 });
 
 function add(a, b) {
@@ -152,7 +173,7 @@ function createCamera() {
   return Object.freeze({ origin, forward, right, up, fovRadians: (47 * Math.PI) / 180 });
 }
 
-function createPrimaryRay(pixelX, pixelY, sample, settings, camera) {
+function createPrimaryRay(pixelX, pixelY, sample, settings, camera, sourcePixelIdOverride = null) {
   const jitterX = settings.samples === 1 ? 0.5 : 0.28 + 0.44 * hash(sample + pixelX * 17);
   const jitterY = settings.samples === 1 ? 0.5 : 0.28 + 0.44 * hash(sample + pixelY * 29);
   const aspect = settings.width / settings.height;
@@ -165,7 +186,8 @@ function createPrimaryRay(pixelX, pixelY, sample, settings, camera) {
       add(scale(camera.right, ndcX * aspect * viewScale), scale(camera.up, ndcY * viewScale))
     )
   );
-  const sourcePixelId = pixelY * settings.width + pixelX;
+  const sourcePixelId =
+    sourcePixelIdOverride == null ? pixelY * settings.width + pixelX : sourcePixelIdOverride;
   return {
     rayId: sourcePixelId * settings.samples + sample,
     parentRayId: 0,
