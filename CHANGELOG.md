@@ -18,6 +18,9 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ### Added
 
 - Shared 3D harbor showcase with GLTF ships and physics metadata for cross-package validation.
+- Experimental wavefront path-tracing technique demo with deterministic capture
+  settings, emissive/skybox termination, reflection, refraction, fluid surface
+  interaction, smooth normals, dark no-light paths, and queue-depth telemetry.
 - Browser manifest coverage tests and a GLTF asset contract test.
 - Added a physics focus mode for the shared showcase and promoted
   `gpu-physics` to a browser-backed 3D demo entry.
