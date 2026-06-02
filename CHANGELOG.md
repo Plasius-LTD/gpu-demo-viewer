@@ -25,6 +25,11 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 - Ambient residual handling for shallow no-light and max-depth wavefront paths
   so the demo approximates unresolved high-order indirect bounces without
   replacing active-ray emissive or environment hits.
+- WebGPU compute-backed wavefront inspection mode with 360p, 720p, and 1080p
+  presets, GPU primary-ray dispatch, compacted continuation queues, fixed tile
+  bounce dispatch, and renderer-owned stats.
+- Added tiled GPU ray queues and a 4K UHD preset so ray queue memory scales by
+  tile size instead of full output resolution.
 - Browser manifest coverage tests and a GLTF asset contract test.
 - Added a physics focus mode for the shared showcase and promoted
   `gpu-physics` to a browser-backed 3D demo entry.

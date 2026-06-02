@@ -9,7 +9,7 @@
     <script type="importmap">
       {
         "imports": {
-          "@plasius/gpu-renderer": "../node_modules/@plasius/gpu-renderer/dist/index.js"
+          "@plasius/gpu-renderer": "../../gpu-renderer/dist/index.js?v=webgpu-fixed-tile-dispatch-1"
         }
       }
     </script>
@@ -32,7 +32,7 @@
           class="render-canvas"
           width="192"
           height="120"
-          aria-label="Deterministic low-resolution wavefront path tracing output"
+          aria-label="WebGPU compute wavefront path tracing output"
         ></canvas>
         <div class="render-strip" aria-live="polite">
           <p id="renderStatus">Preparing deterministic wavefront scene.</p>
@@ -57,16 +57,16 @@
             <label>
               Resolution
               <select id="resolutionSelect">
-                <option value="capture">Capture</option>
-                <option value="balanced" selected>Balanced</option>
-                <option value="detail">Detail</option>
+                <option value="preview">Preview 360p</option>
+                <option value="hd720" selected>720p</option>
+                <option value="hd1080">1080p</option>
+                <option value="uhd4k">4K UHD</option>
               </select>
             </label>
             <label>
               Post pass
-              <select id="denoiseSelect">
-                <option value="on" selected>Denoise on</option>
-                <option value="off">Raw samples</option>
+              <select id="postPassSelect">
+                <option value="resolve" selected>GPU resolve</option>
               </select>
             </label>
           </div>

@@ -24,24 +24,28 @@ test("wavefront path tracing demo is exposed as an experimental browser demo", (
 test("wavefront demo imports the renderer package public surface", () => {
   const html = read("wavefront/index.html");
   assert.match(html, /@plasius\/gpu-renderer/);
-  assert.match(html, /node_modules\/@plasius\/gpu-renderer\/dist\/index\.js/);
+  assert.match(html, /gpu-renderer\/dist\/index\.js/);
 });
 
-test("wavefront demo covers active-ray termination and continuation cases", () => {
+test("wavefront demo uses the renderer-owned WebGPU compute path", () => {
   const source = read("wavefront/main.js");
-  assert.match(source, /createWavefrontPathTracingPlan/);
-  assert.match(source, /SCENE_AMBIENT/);
-  assert.match(source, /sampleAmbientResidual/);
+  assert.match(source, /createWavefrontPathTracingComputeRenderer/);
+  assert.match(source, /createWavefrontPathTracingComputeConfig/);
+  assert.match(source, /supportsWavefrontPathTracingCompute/);
+  assert.match(source, /rendererWavefrontComputeMode/);
+  assert.match(source, /rendererWavefrontComputeWorkgroupSize/);
+  assert.match(source, /hd720/);
+  assert.match(source, /hd1080/);
+  assert.match(source, /uhd4k/);
   assert.match(source, /primaryRayCount/);
-  assert.match(source, /explicitLightSampling:\s*false/);
-  assert.match(source, /kind:\s*"emissive"/);
-  assert.match(source, /kind:\s*"reflective"/);
-  assert.match(source, /kind:\s*"refractive"/);
-  assert.match(source, /kind:\s*"water"/);
-  assert.match(source, /kind:\s*"absorber"/);
-  assert.match(source, /applyDenoise/);
+  assert.match(source, /readStats:\s*true/);
+  assert.match(source, /indirect bounces/);
+  assert.match(source, /readOutputProbe:\s*true/);
+  assert.match(source, /outputProbe/);
+  assert.match(source, /queue bytes/);
+  assert.match(source, /cpu reference", "off"/);
   assert.match(source, /ambientFallback/);
-  assert.match(source, /termination\.maxDepth/);
-  assert.match(source, /smoothNormals:\s*true/);
+  assert.doesNotMatch(source, /intersectSphere/);
+  assert.doesNotMatch(source, /processWavefrontBounces/);
   assert.ok(repoRoot.endsWith("/gpu-demo-viewer/"), "test fixture resolves from repo root");
 });

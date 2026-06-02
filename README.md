@@ -8,8 +8,8 @@ This viewer exists to accelerate manual validation across the GPU package surfac
 
 - browser-backed demos can be launched or embedded from one URL
 - the integrated showcase consumes the shared 3D harbor runtime from `@plasius/gpu-shared`
-- the experimental wavefront path-tracing demo exposes active-ray bounce behavior from
-  the published `@plasius/gpu-renderer` contract
+- the experimental wavefront path-tracing demo runs the `@plasius/gpu-renderer`
+  WebGPU compute wavefront path
 - remaining code-example demos still expose their recommended command and entry file
 - the manifest is tested so new `gpu-*` demo folders do not get missed
 
@@ -47,10 +47,27 @@ The displayed primary-ray count is calculated as:
 render width x render height x samples per pixel
 ```
 
-Continuation rays are then spawned from the active queue by bounce depth. The
-demo keeps the default presets intentionally modest because the image is scaled
-up for inspection and a simple denoise post-pass can hide much of the visual
-benefit from very high primary-ray counts.
+The local inspection demo dispatches this work through WebGPU compute:
+
+```text
+Preview 360p: 640 x 360 x 1 = 230,400 primary rays = 3,600 workgroups at 64 lanes
+720p:         1280 x 720 x 1 = 921,600 primary rays = 14,400 workgroups at 64 lanes
+1080p:        1920 x 1080 x 1 = 2,073,600 primary rays = 32,400 workgroups at 64 lanes
+4K UHD:       3840 x 2160 x 1 = 8,294,400 primary rays = 129,600 workgroups at 64 lanes
+```
+
+Primary rays are scheduled through bounded 256 x 256 GPU tiles, so ray queue
+memory scales with tile size rather than full output resolution. Each active or
+next ray queue currently needs `256 x 256 x 80 = 5,242,880` bytes, keeping 720p,
+1080p, and 4K below common WebGPU `maxStorageBufferBindingSize` limits.
+Continuation rays are compacted into ping-pong GPU queues by bounce depth.
+Paths that hit emissive geometry, the skybox/environment, ambient fallback, or
+maximum depth stop contributing to continuation queues. The local inspection
+build currently dispatches each bounce over the fixed tile workgroup count and
+lets the shader early-exit using the compacted active count; the optimized
+indirect-dispatch path needs separate indirect-argument buffers to satisfy
+WebGPU synchronization rules. The CPU path tracer is not the renderer path for
+this demo.
 
 ## Static Validation Contract
 
@@ -67,15 +84,13 @@ bundled application package.
 ## Validation Notes
 
 - Browser-backed WebGPU demos still require `localhost` or `HTTPS`.
-- The wavefront path-tracing demo is intentionally deterministic and runs as a
-  static canvas reference surface. It uses the renderer wavefront plan contract,
-  disables optional explicit light probes, and demonstrates that active paths
-  terminate on emissive geometry, skybox/environment hits, ambient fallback, or
-  maximum depth. Shallow no-light/max-depth paths return an explicit off-black
-  ambient residual to approximate unresolved high-order indirect bounces. The
-  demo includes a simple spatial denoise post-pass toggle; denoise smooths
-  neighboring pixels but does not replace active-ray emissive or environment
-  hits as the primary lighting source.
+- The wavefront path-tracing demo is a WebGPU compute validation surface. It
+  imports the renderer package public API, generates primary rays on the GPU,
+  traces breadth-first bounces through tiled GPU storage-buffer queues,
+  accumulates terminal radiance on the GPU, and resolves to a WebGPU storage
+  texture.
+  Compact end-of-frame stats are read back for the overlay; ray passes do not
+  require CPU readback between bounces.
 - The shared integration showcase is 3D but does not require WebGPU initialization just to render the validation scene.
 - The showcase now resolves `@plasius/gpu-shared` through an import map so the browser entry uses the package public surface instead of a deep internal file path.
 - `gpu-world-generator` is launched from its built `demo/dist/` bundle in the viewer because its source demo uses a Vite workflow.
