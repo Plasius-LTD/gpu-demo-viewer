@@ -3,6 +3,10 @@ import { createWavefrontPathTracingPlan } from "@plasius/gpu-renderer";
 const FEATURE_FLAG = "gpu.wavefrontPathTracingDemo";
 const EPSILON = 0.001;
 const FAR = 1e6;
+const SCENE_AMBIENT = Object.freeze({
+  color: Object.freeze([0.03, 0.034, 0.04]),
+  strength: 0.72,
+});
 
 const materials = Object.freeze({
   clay: Object.freeze({ id: 1, kind: "diffuse", color: [0.74, 0.42, 0.28] }),
@@ -73,9 +77,9 @@ const sceneObjects = Object.freeze([
 ]);
 
 const resolutionModes = Object.freeze({
-  capture: Object.freeze({ width: 192, height: 120, samples: 1 }),
-  balanced: Object.freeze({ width: 320, height: 200, samples: 1 }),
-  detail: Object.freeze({ width: 448, height: 280, samples: 2 }),
+  capture: Object.freeze({ width: 160, height: 100, samples: 1 }),
+  balanced: Object.freeze({ width: 240, height: 150, samples: 1 }),
+  detail: Object.freeze({ width: 320, height: 200, samples: 1 }),
 });
 
 function add(a, b) {
@@ -285,6 +289,12 @@ function sampleEnvironment(direction) {
   return add(base, scale([1.0, 0.72, 0.34], glint * 8));
 }
 
+function sampleAmbientResidual(material = null) {
+  const materialTint = material?.color ?? [1, 1, 1];
+  const residual = scale(SCENE_AMBIENT.color, SCENE_AMBIENT.strength);
+  return multiply(residual, mix([1, 1, 1], materialTint, 0.35));
+}
+
 function hemisphereDirection(normal, seed) {
   const u = hash(seed + 3.17);
   const v = hash(seed + 9.91);
@@ -307,7 +317,7 @@ function evaluateSurface(ray, hit, nextRayId) {
     return { terminal: true, reason: "emissive", radiance: material.emission };
   }
   if (material.kind === "absorber") {
-    return { terminal: true, reason: "noLight", radiance: [0, 0, 0] };
+    return { terminal: true, reason: "ambientFallback", radiance: sampleAmbientResidual(material) };
   }
 
   const seed = ray.sourcePixelId * 97 + ray.sampleId * 13 + ray.bounce * 31;
@@ -375,7 +385,7 @@ function processWavefrontBounces(primaryRays, accumulation, plan, settings) {
     renderMs: 0,
     queueOverflow: 0,
     bounces: [],
-    termination: { emissive: 0, environment: 0, noLight: 0, maxDepth: 0 },
+    termination: { emissive: 0, environment: 0, ambientFallback: 0, maxDepth: 0 },
   };
   let activeQueue = primaryRays;
   let nextRayId = primaryRays.length + 1;
@@ -422,7 +432,11 @@ function processWavefrontBounces(primaryRays, accumulation, plan, settings) {
     activeQueue = nextQueue;
   }
 
+  for (const ray of activeQueue) {
+    addRadiance(accumulation, ray.sourcePixelId, ray.throughput, sampleAmbientResidual());
+  }
   stats.termination.maxDepth += activeQueue.length;
+  stats.termination.ambientFallback += activeQueue.length;
   stats.renderMs = performance.now() - startedAt;
   return stats;
 }
@@ -539,10 +553,18 @@ function renderWavefrontFrame(canvas, settings) {
   return stats;
 }
 
+function primaryRayCount(settings) {
+  return settings.width * settings.height * settings.samples;
+}
+
 function renderMetricList(root, metrics) {
   root.innerHTML = metrics
     .map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`)
     .join("");
+}
+
+function rgbString(color) {
+  return color.map((channel) => Math.round(clamp(channel, 0, 1) * 255)).join(",");
 }
 
 function renderBounceRows(root, stats) {
@@ -570,7 +592,7 @@ function updateDebugOverlay(stats) {
   renderMetricList(document.getElementById("terminationStats"), [
     ["emissive", stats.termination.emissive],
     ["skybox", stats.termination.environment],
-    ["no light", stats.termination.noLight],
+    ["ambient", stats.termination.ambientFallback],
     ["max depth", stats.termination.maxDepth],
   ]);
   renderMetricList(document.getElementById("contractStats"), [
@@ -580,7 +602,9 @@ function updateDebugOverlay(stats) {
     ["render", `${stats.renderMs.toFixed(1)} ms`],
     ["samples", stats.settings.samples],
     ["resolution", `${stats.settings.width}x${stats.settings.height}`],
+    ["primary rays", primaryRayCount(stats.settings).toLocaleString()],
     ["denoise", stats.settings.denoise ? "on" : "off"],
+    ["ambient", rgbString(scale(SCENE_AMBIENT.color, SCENE_AMBIENT.strength))],
   ]);
   renderBounceRows(document.getElementById("bounceRows"), stats);
 }
@@ -621,7 +645,7 @@ function boot() {
     requestAnimationFrame(() => {
       const stats = renderWavefrontFrame(canvas, settings);
       updateDebugOverlay(stats);
-      status.textContent = `Rendered ${settings.width * settings.height * settings.samples} primary rays breadth-first. Direct light probes are disabled; light arrives only from emissive or skybox hits.`;
+      status.textContent = `Rendered ${primaryRayCount(settings).toLocaleString()} primary rays (${settings.width} x ${settings.height} x ${settings.samples}) breadth-first. Continuation rays add bounce workload; direct light probes are disabled.`;
     });
   };
 
