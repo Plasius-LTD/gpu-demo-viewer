@@ -506,12 +506,19 @@ function writeImageData(canvas, accumulation, settings) {
 function createSettings() {
   const params = new URLSearchParams(window.location.search);
   const capture = params.has("capture");
+  const requestedResolution = params.get("resolution");
+  const aliasedResolution =
+    requestedResolution === "capture" || requestedResolution === "balanced"
+      ? "preview"
+      : requestedResolution === "detail"
+        ? "hd720"
+        : requestedResolution;
   const resolutionKey =
-    params.get("resolution") && resolutionModes[params.get("resolution")]
-      ? params.get("resolution")
+    aliasedResolution && resolutionModes[aliasedResolution]
+      ? aliasedResolution
       : capture
-        ? "capture"
-        : "balanced";
+        ? "hd720"
+        : "hd720";
   const resolution = resolutionModes[resolutionKey];
   const requestedDepth = Number(params.get("maxDepth"));
   return {
@@ -520,6 +527,7 @@ function createSettings() {
     maxDepth: Number.isInteger(requestedDepth) ? clamp(requestedDepth, 3, 8) : capture ? 6 : 5,
     capture,
     denoise: params.get("denoise") !== "off",
+    frameIntervalMs: 1000 / resolution.targetFps,
     experimentalEnabled:
       params.get("experimental") === "wavefront" ||
       params.get("quality") === "experimental" ||
@@ -540,6 +548,84 @@ function createPrimaryQueue(settings) {
   return rays;
 }
 
+function createTilePrimaryQueue(tile, settings) {
+  const camera = createCamera();
+  const rays = [];
+  for (let y = tile.y; y < tile.y + tile.height; y += 1) {
+    for (let x = tile.x; x < tile.x + tile.width; x += 1) {
+      const localPixelId = (y - tile.y) * tile.width + (x - tile.x);
+      for (let sample = 0; sample < settings.samples; sample += 1) {
+        rays.push(createPrimaryRay(x, y, sample, settings, camera, localPixelId));
+      }
+    }
+  }
+  return rays;
+}
+
+function createTiles(settings) {
+  const tiles = [];
+  for (let y = 0; y < settings.height; y += settings.tileSize) {
+    for (let x = 0; x < settings.width; x += settings.tileSize) {
+      tiles.push(
+        Object.freeze({
+          id: tiles.length,
+          x,
+          y,
+          width: Math.min(settings.tileSize, settings.width - x),
+          height: Math.min(settings.tileSize, settings.height - y),
+        })
+      );
+    }
+  }
+  return tiles;
+}
+
+function createStats(plan, settings) {
+  return {
+    plan,
+    settings,
+    renderMs: 0,
+    queueOverflow: 0,
+    processedTiles: 0,
+    totalTiles: 0,
+    pacedFrames: 0,
+    bounces: [],
+    termination: { emissive: 0, environment: 0, ambientFallback: 0, maxDepth: 0 },
+  };
+}
+
+function mergeBounceStats(target, source) {
+  for (const sourceBounce of source.bounces) {
+    let targetBounce = target.bounces[sourceBounce.bounce];
+    if (!targetBounce) {
+      targetBounce = {
+        bounce: sourceBounce.bounce,
+        active: 0,
+        surfaceHits: 0,
+        emissiveHits: 0,
+        environmentHits: 0,
+        spawned: 0,
+      };
+      target.bounces[sourceBounce.bounce] = targetBounce;
+    }
+    targetBounce.active += sourceBounce.active;
+    targetBounce.surfaceHits += sourceBounce.surfaceHits;
+    targetBounce.emissiveHits += sourceBounce.emissiveHits;
+    targetBounce.environmentHits += sourceBounce.environmentHits;
+    targetBounce.spawned += sourceBounce.spawned;
+  }
+}
+
+function mergeStats(target, source) {
+  target.renderMs += source.renderMs;
+  target.queueOverflow += source.queueOverflow;
+  target.termination.emissive += source.termination.emissive;
+  target.termination.environment += source.termination.environment;
+  target.termination.ambientFallback += source.termination.ambientFallback;
+  target.termination.maxDepth += source.termination.maxDepth;
+  mergeBounceStats(target, source);
+}
+
 function renderWavefrontFrame(canvas, settings) {
   const plan = createWavefrontPathTracingPlan({
     maxDepth: settings.maxDepth,
@@ -551,6 +637,43 @@ function renderWavefrontFrame(canvas, settings) {
   const stats = processWavefrontBounces(createPrimaryQueue(settings), accumulation, plan, settings);
   writeImageData(canvas, accumulation, settings);
   return stats;
+}
+
+function renderWavefrontTile(canvas, tile, settings, plan) {
+  const accumulation = new Float32Array(tile.width * tile.height * 3);
+  const tileStats = processWavefrontBounces(
+    createTilePrimaryQueue(tile, settings),
+    accumulation,
+    plan,
+    settings
+  );
+  writeTileImageData(canvas, tile, accumulation, settings);
+  return tileStats;
+}
+
+function createRenderJob(canvas, settings) {
+  const tiles = createTiles(settings);
+  const plan = createWavefrontPathTracingPlan({
+    maxDepth: settings.maxDepth,
+    queueCapacity: settings.tileSize * settings.tileSize * settings.samples * 2,
+    explicitLightSampling: false,
+    accumulationResetEpoch: settings.capture ? 1 : 0,
+  });
+  const stats = createStats(plan, settings);
+  stats.totalTiles = tiles.length;
+  clearCanvas(canvas, settings);
+
+  return {
+    canvas,
+    settings,
+    plan,
+    tiles,
+    stats,
+    nextTileIndex: 0,
+    startedAt: performance.now(),
+    lastFrameAt: 0,
+    cancelled: false,
+  };
 }
 
 function primaryRayCount(settings) {
@@ -574,7 +697,7 @@ function renderBounceRows(root, stats) {
       const width = Math.max(3, Math.round((entry.active / peak) * 100));
       return `
         <div class="bounce-row">
-          <div class="bounce-row__top"><strong>Bounce ${entry.bounce}</strong><span>${entry.active} active</span></div>
+          <div class="bounce-row__top"><strong>Bounce ${entry.bounce}</strong><span>${entry.active.toLocaleString()} active</span></div>
           <div class="bounce-meter"><span style="width: ${width}%"></span></div>
           <div class="bounce-row__meta">
             <span>${entry.surfaceHits} surfaces</span>
@@ -603,6 +726,8 @@ function updateDebugOverlay(stats) {
     ["samples", stats.settings.samples],
     ["resolution", `${stats.settings.width}x${stats.settings.height}`],
     ["primary rays", primaryRayCount(stats.settings).toLocaleString()],
+    ["tiles", `${stats.processedTiles}/${stats.totalTiles}`],
+    ["target fps", stats.settings.targetFps],
     ["denoise", stats.settings.denoise ? "on" : "off"],
     ["ambient", rgbString(scale(SCENE_AMBIENT.color, SCENE_AMBIENT.strength))],
   ]);
@@ -613,7 +738,7 @@ function updateControls(settings) {
   document.getElementById("maxDepthSelect").value = String(settings.maxDepth);
   document.getElementById("resolutionSelect").value = settings.resolutionKey;
   document.getElementById("denoiseSelect").value = settings.denoise ? "on" : "off";
-  document.getElementById("captureLink").href = `./?experimental=wavefront&capture=1&maxDepth=${settings.maxDepth}`;
+  document.getElementById("captureLink").href = `./?experimental=wavefront&capture=1&resolution=hd720&maxDepth=${settings.maxDepth}&denoise=${settings.denoise ? "on" : "off"}`;
 }
 
 function createUrlFromControls() {
@@ -628,25 +753,72 @@ function boot() {
   const status = document.getElementById("renderStatus");
   const mode = document.getElementById("renderMode");
   let settings = createSettings();
+  let activeJob = null;
 
   updateControls(settings);
   mode.textContent = settings.experimentalEnabled
     ? `Feature flag: ${FEATURE_FLAG} enabled`
     : `Feature flag: ${FEATURE_FLAG} disabled`;
 
+  const finishJob = (job) => {
+    job.stats.renderMs = performance.now() - job.startedAt;
+    updateDebugOverlay(job.stats);
+    status.textContent = `Completed ${primaryRayCount(job.settings).toLocaleString()} primary rays (${job.settings.width} x ${job.settings.height} x ${job.settings.samples}) across ${job.stats.totalTiles} tiles. Continuation rays were compacted per tile; direct light probes are disabled.`;
+  };
+
+  const runJobFrame = (job, now) => {
+    if (job.cancelled) {
+      return;
+    }
+    if (job.lastFrameAt > 0 && now - job.lastFrameAt < job.settings.frameIntervalMs) {
+      requestAnimationFrame((nextNow) => runJobFrame(job, nextNow));
+      return;
+    }
+
+    job.lastFrameAt = now;
+    job.stats.pacedFrames += 1;
+    const frameStartedAt = performance.now();
+    let processedThisFrame = 0;
+
+    while (
+      processedThisFrame < job.settings.tilesPerFrame &&
+      job.nextTileIndex < job.tiles.length
+    ) {
+      const tile = job.tiles[job.nextTileIndex];
+      const tileStats = renderWavefrontTile(job.canvas, tile, job.settings, job.plan);
+      mergeStats(job.stats, tileStats);
+      job.nextTileIndex += 1;
+      job.stats.processedTiles += 1;
+      processedThisFrame += 1;
+    }
+
+    job.stats.renderMs = performance.now() - job.startedAt;
+    updateDebugOverlay(job.stats);
+    const progress = Math.round((job.stats.processedTiles / job.stats.totalTiles) * 100);
+    status.textContent = `Rendering ${job.settings.resolutionKey} at ${job.settings.targetFps} fps pacing: ${job.stats.processedTiles}/${job.stats.totalTiles} tiles (${progress}%). Last graph step processed ${processedThisFrame} tiles in ${(performance.now() - frameStartedAt).toFixed(1)} ms.`;
+
+    if (job.nextTileIndex >= job.tiles.length) {
+      finishJob(job);
+      return;
+    }
+
+    requestAnimationFrame((nextNow) => runJobFrame(job, nextNow));
+  };
+
   const render = () => {
     settings = createSettings();
     updateControls(settings);
+    if (activeJob) {
+      activeJob.cancelled = true;
+    }
     if (!settings.experimentalEnabled) {
       status.textContent = "Open with ?experimental=wavefront to run the experimental path.";
       return;
     }
-    status.textContent = "Running primary rays, intersection, surface evaluation, and bounce queues.";
-    requestAnimationFrame(() => {
-      const stats = renderWavefrontFrame(canvas, settings);
-      updateDebugOverlay(stats);
-      status.textContent = `Rendered ${primaryRayCount(settings).toLocaleString()} primary rays (${settings.width} x ${settings.height} x ${settings.samples}) breadth-first. Continuation rays add bounce workload; direct light probes are disabled.`;
-    });
+    activeJob = createRenderJob(canvas, settings);
+    updateDebugOverlay(activeJob.stats);
+    status.textContent = `Queued ${primaryRayCount(settings).toLocaleString()} primary rays (${settings.width} x ${settings.height} x ${settings.samples}) as ${activeJob.tiles.length} tiles. Rendering is paced to ${settings.targetFps} fps with ${settings.tilesPerFrame} tile(s) per graph step.`;
+    requestAnimationFrame((now) => runJobFrame(activeJob, now));
   };
 
   document.getElementById("renderButton").addEventListener("click", render);
