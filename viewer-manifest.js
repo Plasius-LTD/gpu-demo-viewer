@@ -19,6 +19,25 @@ export const demos = [
     tags: ["browser", "3d", "integration"]
   },
   {
+    id: "wavefront-path-tracing",
+    packageName: "@plasius/gpu-renderer",
+    type: "browser",
+    mode: "Experimental active-ray wavefront demo",
+    runtime: "Deterministic canvas path tracer + renderer wavefront plan",
+    launchLabel: "Open wavefront demo",
+    launchPath: "./wavefront/?experimental=wavefront",
+    sourcePath: "./wavefront/main.js",
+    docsPath: "./README.md",
+    command: "cd gpu-demo-viewer && npm run demo",
+    summary: "Screen-pixel rays are processed breadth-first through hit records, material evaluation, emissive/skybox termination, reflection, refraction, fluid interaction, and max-depth dark paths.",
+    notes: [
+      "This demo uses the published gpu-renderer wavefront contract and keeps explicit light probes disabled.",
+      "The scene includes emissive geometry, skybox misses, a reflective sphere, a refractive sphere, a fluid water plane, smooth normals, and a dark no-light target.",
+      "Use capture mode for deterministic low-resolution validation frames while the GPU shader implementation remains experimental."
+    ],
+    tags: ["browser", "3d", "integration", "experimental"]
+  },
+  {
     id: "gpu-camera",
     packageName: "@plasius/gpu-camera",
     type: "browser",
