@@ -8,8 +8,8 @@ This viewer exists to accelerate manual validation across the GPU package surfac
 
 - browser-backed demos can be launched or embedded from one URL
 - the integrated showcase consumes the shared 3D harbor runtime from `@plasius/gpu-shared`
-- the experimental wavefront path-tracing demo exposes active-ray bounce behavior from
-  the published `@plasius/gpu-renderer` contract
+- the experimental wavefront path-tracing demo mounts the
+  `@plasius/gpu-renderer` WebGPU mesh BVH renderer
 - remaining code-example demos still expose their recommended command and entry file
 - the manifest is tested so new `gpu-*` demo folders do not get missed
 
@@ -35,7 +35,7 @@ To open the experimental wavefront path-tracing technique demo directly:
 http://localhost:8000/gpu-demo-viewer/wavefront/?experimental=wavefront
 ```
 
-Deterministic capture settings are available at:
+Deterministic 540p capture settings are available at:
 
 ```text
 http://localhost:8000/gpu-demo-viewer/wavefront/?experimental=wavefront&capture=1
@@ -47,10 +47,22 @@ The displayed primary-ray count is calculated as:
 render width x render height x samples per pixel
 ```
 
-Continuation rays are then spawned from the active queue by bounce depth. The
-demo keeps the default presets intentionally modest because the image is scaled
-up for inspection and a simple denoise post-pass can hide much of the visual
-benefit from very high primary-ray counts.
+The debug panel also reports the separate screen-pixel count so render
+resolution and stochastic sampling cost remain visible independently.
+Continuation rays are then spawned from the active queue by bounce depth inside
+the renderer. The active demo presets are 960x540 capture, 1280x720 balanced,
+1920x1080 detail, and a 3840x2160 4K target. The 540p/720p/1080p presets
+default to 8 samples per pixel, while 4K defaults to 4 samples per pixel; the
+renderer keeps queue buffers tile-bounded so these targets do not require
+full-frame ray queues.
+
+The wavefront page runs a live render loop by default. The performance panel
+shows FPS, frame timing, primary rays per second, and a 100% stacked timing bar
+for the viewer-observed frame budget: WebGPU command dispatch, GPU completion
+wait, optional probe/readback, overlay update, and requestAnimationFrame pacing.
+These timings are browser-side measurements; they identify where the viewer is
+blocked each frame but do not yet replace future GPU timestamp-query profiling
+inside individual compute passes.
 
 ## Static Validation Contract
 
@@ -67,15 +79,22 @@ bundled application package.
 ## Validation Notes
 
 - Browser-backed WebGPU demos still require `localhost` or `HTTPS`.
-- The wavefront path-tracing demo is intentionally deterministic and runs as a
-  static canvas reference surface. It uses the renderer wavefront plan contract,
-  disables optional explicit light probes, and demonstrates that active paths
-  terminate on emissive geometry, skybox/environment hits, ambient fallback, or
-  maximum depth. Shallow no-light/max-depth paths return an explicit off-black
-  ambient residual to approximate unresolved high-order indirect bounces. The
-  demo includes a simple spatial denoise post-pass toggle; denoise smooths
-  neighboring pixels but does not replace active-ray emissive or environment
-  hits as the primary lighting source.
+- The wavefront path-tracing demo is a WebGPU renderer mount, not a CPU/static
+  canvas tracer. It submits triangle meshes with `displayQuality: true`, builds
+  the renderer mesh BVH on the GPU, and rejects the old analytic scene-object
+  path for customer-visible output. Shallow no-light/max-depth paths return the
+  renderer ambient residual to approximate unresolved high-order indirect
+  bounces. The demo exposes 1, 4, 8, and 16 samples-per-pixel settings and
+  defaults to 8 spp for the 540p, 720p, and 1080p presets. The denoise toggle
+  runs the renderer post pass; denoise smooths neighboring pixels but does not
+  replace active-ray emissive or environment hits as the primary lighting
+  source.
+- The wavefront performance chart is intended for local tuning: compare
+  resolution, depth, samples-per-pixel, and denoise settings while watching
+  whether time is dominated by command dispatch, sampled GPU completion sync,
+  readback, overlay work, or frame pacing. The demo does not hard-sync every
+  frame; completion sync is sampled periodically to avoid making the viewer
+  itself serialize the GPU queue.
 - The shared integration showcase is 3D but does not require WebGPU initialization just to render the validation scene.
 - The showcase now resolves `@plasius/gpu-shared` through an import map so the browser entry uses the package public surface instead of a deep internal file path.
 - `gpu-world-generator` is launched from its built `demo/dist/` bundle in the viewer because its source demo uses a Vite workflow.

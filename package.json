@@ -15,7 +15,7 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@plasius/gpu-renderer": "^0.1.13",
-    "@plasius/gpu-shared": "^0.1.11"
+    "@plasius/gpu-renderer": "^0.1.15",
+    "@plasius/gpu-shared": "^0.1.15"
   }
 }

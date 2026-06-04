@@ -18,13 +18,21 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ### Added
 
 - Shared 3D harbor showcase with GLTF ships and physics metadata for cross-package validation.
-- Experimental wavefront path-tracing technique demo with deterministic capture
-  settings, emissive/skybox termination, reflection, refraction, fluid surface
-  interaction, smooth normals, dark no-light paths, a denoise post-pass toggle,
-  and queue-depth telemetry.
+- Experimental wavefront path-tracing technique demo using the renderer WebGPU
+  mesh BVH path with 540p, 720p, and 1080p presets, emissive/skybox termination,
+  reflection, refraction, fluid surface interaction, smooth normals, dark
+  no-light paths, a denoise post-pass toggle, and queue-depth telemetry.
+- Live wavefront assessment controls with pause/resume, render-once, a 4K
+  target preset, FPS/rays-per-second telemetry, and a 100% stacked frame timing
+  chart for dispatch, GPU wait, probe/readback, overlay, and frame pacing.
 - Ambient residual handling for shallow no-light and max-depth wavefront paths
   so the demo approximates unresolved high-order indirect bounces without
   replacing active-ray emissive or environment hits.
+- WebGPU compute-backed wavefront inspection mode with 360p, 720p, and 1080p
+  presets, GPU primary-ray dispatch, compacted continuation queues, fixed tile
+  bounce dispatch, and renderer-owned stats.
+- Added tiled GPU ray queues and a 4K UHD preset so ray queue memory scales by
+  tile size instead of full output resolution.
 - Browser manifest coverage tests and a GLTF asset contract test.
 - Added a physics focus mode for the shared showcase and promoted
   `gpu-physics` to a browser-backed 3D demo entry.
@@ -35,6 +43,15 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 - Refreshed the viewer's shared GPU package baselines onto the latest stable
   published `@plasius/gpu-*` releases.
+- Replaced the old CPU/static wavefront tracer with a renderer-owned mesh BVH
+  WebGPU mount so customer-visible wavefront output no longer uses analytic
+  scene objects.
+- The wavefront demo now exposes samples-per-pixel controls, defaults its
+  540p/720p/1080p presets to 8 spp, and reports screen pixels separately from
+  primary ray samples.
+- The wavefront performance panel now treats GPU completion as a sampled sync
+  metric instead of hard-blocking every frame, reducing viewer-side queue
+  serialization while still showing where occasional GPU waits land.
 - The viewer now classifies the cloth, fluid, lighting, performance, and debug demos as browser-based 3D visual examples.
 - Strengthened the shared showcase lighting and shadow model so the harbor demos
   present a more ray-traced near-field look.
