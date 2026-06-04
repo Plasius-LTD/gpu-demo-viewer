@@ -16,6 +16,7 @@
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   color: var(--ink);
   background:
     radial-gradient(circle at 18% 8%, rgba(235, 188, 98, 0.26), transparent 30%),
@@ -39,6 +40,7 @@ code {
 }
 .render-panel,
 .debug-panel {
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: 18px;
   background: var(--panel);
@@ -97,7 +99,6 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 14px;
   background: #05070b;
-  image-rendering: pixelated;
 }
 .render-strip {
   align-items: center;
@@ -112,15 +113,18 @@ a {
   display: grid;
   gap: 18px;
   align-content: start;
+  overflow: hidden;
 }
 .debug-panel section,
 .control-grid,
 .bounce-list,
 .bounce-row {
+  min-width: 0;
   display: grid;
   gap: 10px;
 }
 label {
+  min-width: 0;
   display: grid;
   gap: 7px;
   color: var(--muted);
@@ -128,6 +132,8 @@ label {
 }
 select {
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 10px;
@@ -136,14 +142,61 @@ select {
 }
 .metric-grid,
 .contract-list {
+  min-width: 0;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
+.timing-stack {
+  display: flex;
+  width: 100%;
+  height: 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+}
+.timing-stack__segment {
+  min-width: 2px;
+  height: 100%;
+}
+.timing-legend {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+  list-style: none;
+}
+.timing-legend li {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr) auto auto;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.timing-legend strong,
+.timing-legend code {
+  color: var(--ink);
+  font-size: 0.78rem;
+}
+.timing-legend span:not(.timing-swatch) {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.timing-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
 .metric-grid div,
 .contract-list div,
 .bounce-row {
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.05);
@@ -159,6 +212,7 @@ dd {
   margin: 4px 0 0;
   font-size: 1.05rem;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 .bounce-row {
   gap: 6px;
@@ -167,6 +221,9 @@ dd {
 .bounce-row__meta {
   color: var(--muted);
   font-size: 0.84rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow-wrap: anywhere;
 }
 .bounce-meter {
   height: 8px;
