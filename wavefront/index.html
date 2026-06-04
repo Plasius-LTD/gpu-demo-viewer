@@ -9,7 +9,7 @@
     <script type="importmap">
       {
         "imports": {
-          "@plasius/gpu-renderer": "../../gpu-renderer/dist/index.js?v=webgpu-fixed-tile-dispatch-1"
+          "@plasius/gpu-renderer": "../node_modules/@plasius/gpu-renderer/dist/index.js"
         }
       }
     </script>
@@ -23,19 +23,20 @@
             <h1>Wavefront Path Tracing</h1>
           </div>
           <div class="toolbar-actions">
-            <button id="renderButton" type="button">Render frame</button>
+            <button id="toggleLoopButton" type="button">Pause loop</button>
+            <button id="renderButton" type="button">Render once</button>
             <a id="captureLink" href="./?experimental=wavefront&capture=1">Capture mode</a>
           </div>
         </div>
         <canvas
           id="renderCanvas"
           class="render-canvas"
-          width="192"
-          height="120"
-          aria-label="WebGPU compute wavefront path tracing output"
+          width="1280"
+          height="720"
+          aria-label="WebGPU mesh BVH wavefront path tracing output"
         ></canvas>
         <div class="render-strip" aria-live="polite">
-          <p id="renderStatus">Preparing deterministic wavefront scene.</p>
+          <p id="renderStatus">Preparing mesh BVH wavefront scene.</p>
           <p id="renderMode">Feature flag: gpu.wavefrontPathTracingDemo</p>
         </div>
       </section>
@@ -57,19 +58,40 @@
             <label>
               Resolution
               <select id="resolutionSelect">
-                <option value="preview">Preview 360p</option>
-                <option value="hd720" selected>720p</option>
-                <option value="hd1080">1080p</option>
-                <option value="uhd4k">4K UHD</option>
+                <option value="capture">Capture</option>
+                <option value="balanced" selected>Balanced</option>
+                <option value="detail">Detail</option>
+                <option value="uhd">4K target</option>
+              </select>
+            </label>
+            <label>
+              Samples
+              <select id="samplesSelect">
+                <option value="1">1 spp</option>
+                <option value="4">4 spp</option>
+                <option value="8" selected>8 spp</option>
+                <option value="16">16 spp</option>
               </select>
             </label>
             <label>
               Post pass
-              <select id="postPassSelect">
-                <option value="resolve" selected>GPU resolve</option>
+              <select id="denoiseSelect">
+                <option value="on" selected>Denoise on</option>
+                <option value="off">Raw samples</option>
               </select>
             </label>
           </div>
+        </section>
+        <section>
+          <p class="eyebrow">Performance</p>
+          <div
+            id="timingStack"
+            class="timing-stack"
+            role="img"
+            aria-label="Frame timing breakdown"
+          ></div>
+          <ol id="timingLegend" class="timing-legend"></ol>
+          <dl id="performanceStats" class="metric-grid performance-grid"></dl>
         </section>
         <section>
           <p class="eyebrow">Termination</p>
@@ -85,6 +107,6 @@
         </section>
       </aside>
     </main>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./main.js?v=mesh-bvh-renderer-performance-2"></script>
   </body>
 </html>
