@@ -57,8 +57,14 @@ test("wavefront demo uses the renderer mesh BVH path", () => {
   assert.match(source, /Number\.NaN/);
   assert.match(source, /probeMs/);
   assert.match(source, /paceMs/);
+  assert.match(source, /expectedToken = state\.loopToken/);
+  assert.match(source, /const renderer = state\.renderer/);
+  assert.match(source, /const settings = state\.settings/);
+  assert.match(source, /state\.loopToken === expectedToken/);
+  assert.match(source, /readProbe\(renderer, settings\)/);
   assert.match(source, /const setupToken = state\.loopToken/);
   assert.match(source, /state\.loopToken !== setupToken[\s\S]*renderer\.destroy\?\.\(\)/);
+  assert.match(source, /renderOneFrame\(\{ includeProbe: true, expectedToken: setupToken \}\)/);
   assert.match(source, /runLoop\(setupToken\)/);
   assert.match(source, /requestAnimationFrame/);
   assert.match(source, /samplesPerPixel:\s*settings\.samplesPerPixel/);

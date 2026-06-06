@@ -14,8 +14,9 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
     `Open showcase` action works before client-side hydration completes.
   - Clamped showcase telemetry queue depths so the embedded preview no longer
     throws on arrival when stress or spray counts spike.
-  - Guarded wavefront renderer setup against stale async settings changes so an
-    older GPU BVH build cannot replace the current renderer or restart the loop.
+  - Guarded wavefront renderer setup and initial probe rendering against stale
+    async settings changes so older GPU work cannot replace the current renderer,
+    update overlays, or restart the loop.
 
 ### Added
 

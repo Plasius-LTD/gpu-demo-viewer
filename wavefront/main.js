@@ -576,8 +576,12 @@ function boot() {
     updateStatus(performanceSummary);
   }
 
-  async function renderOneFrame({ includeProbe = false } = {}) {
-    if (!state.renderer || state.renderingFrame) {
+  async function renderOneFrame({ includeProbe = false, expectedToken = state.loopToken } = {}) {
+    const renderer = state.renderer;
+    const settings = state.settings;
+    const isCurrentFrame = () =>
+      state.renderer === renderer && state.settings === settings && state.loopToken === expectedToken;
+    if (!renderer || !settings || state.renderingFrame || !isCurrentFrame()) {
       return;
     }
     state.renderingFrame = true;
@@ -587,7 +591,7 @@ function boot() {
       : 0;
     try {
       const submitStartedAt = performance.now();
-      const stats = state.renderer.renderOnce();
+      const stats = renderer.renderOnce();
       const dispatchMs = performance.now() - submitStartedAt;
       const shouldSyncGpu =
         includeProbe ||
@@ -597,19 +601,27 @@ function boot() {
       if (shouldSyncGpu) {
         const gpuWaitStartedAt = performance.now();
         await withTimeout(
-          state.renderer.device.queue.onSubmittedWorkDone?.() ?? Promise.resolve(),
+          renderer.device.queue.onSubmittedWorkDone?.() ?? Promise.resolve(),
           5000,
           null
         );
         gpuWaitMs = performance.now() - gpuWaitStartedAt;
       }
-      state.stats = stats;
+      if (!isCurrentFrame()) {
+        return;
+      }
       let probeMs = 0;
+      let probe = state.probe;
       if (includeProbe || state.performance.frameCount === 1) {
         const probeStartedAt = performance.now();
-        state.probe = await readProbe(state.renderer, state.settings);
+        probe = await readProbe(renderer, settings);
         probeMs = performance.now() - probeStartedAt;
+        if (!isCurrentFrame()) {
+          return;
+        }
       }
+      state.stats = stats;
+      state.probe = probe;
       const pendingSample = {
         dispatchMs,
         gpuWaitMs,
@@ -620,21 +632,21 @@ function boot() {
       const overlayStartedAt = performance.now();
       const provisionalSummary = summarizePerformance(
         state.performance,
-        state.stats,
+        stats,
         state.running,
         pendingSample
       );
       updateDebugOverlay({
-        stats: state.stats,
-        settings: state.settings,
-        probe: state.probe,
+        stats,
+        settings,
+        probe,
         performanceSummary: provisionalSummary,
       });
       installSnapshotHook({
-        renderer: state.renderer,
-        stats: state.stats,
-        settings: state.settings,
-        probe: state.probe,
+        renderer,
+        stats,
+        settings,
+        probe,
         performanceSummary: provisionalSummary,
       });
       updateStatus(provisionalSummary);
@@ -649,7 +661,7 @@ function boot() {
 
   async function runLoop(token) {
     while (state.running && state.loopToken === token) {
-      await renderOneFrame();
+      await renderOneFrame({ expectedToken: token });
       await new Promise((resolve) => window.requestAnimationFrame(resolve));
     }
   }
@@ -692,7 +704,7 @@ function boot() {
       return;
     }
     state.renderer = renderer;
-    await renderOneFrame({ includeProbe: true });
+    await renderOneFrame({ includeProbe: true, expectedToken: setupToken });
     if (state.running && state.loopToken === setupToken) {
       runLoop(setupToken).catch((error) => {
         status.textContent = error instanceof Error ? error.message : String(error);
