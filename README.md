@@ -80,15 +80,18 @@ bundled application package.
 
 - Browser-backed WebGPU demos still require `localhost` or `HTTPS`.
 - The wavefront path-tracing demo is a WebGPU renderer mount, not a CPU/static
-  canvas tracer. It submits triangle meshes with `displayQuality: true`, builds
-  the renderer mesh BVH on the GPU, and rejects the old analytic scene-object
-  path for customer-visible output. Shallow no-light/max-depth paths return the
-  renderer ambient residual to approximate unresolved high-order indirect
-  bounces. The demo exposes 1, 4, 8, and 16 samples-per-pixel settings and
-  defaults to 8 spp for the 540p, 720p, and 1080p presets. The denoise toggle
-  runs the renderer post pass; denoise smooths neighboring pixels but does not
-  replace active-ray emissive or environment hits as the primary lighting
-  source.
+  canvas tracer. It submits only the benchmark model mesh set with
+  `displayQuality: true`, builds the renderer mesh BVH on the GPU, disables
+  environment portals, and leaves skybox/environment lighting as the only
+  scene lighting source. The demo intentionally excludes the previous synthetic
+  room, floor, wall, emissive-panel, and fluid-surface geometry so most escaped
+  paths should terminate against the skybox rather than unlit scene blockers.
+  Shallow no-light/max-depth paths return the renderer ambient residual to
+  approximate unresolved high-order indirect bounces. The demo exposes 1, 4, 8,
+  and 16 samples-per-pixel settings and defaults to 8 spp for the 540p, 720p,
+  and 1080p presets. The denoise toggle runs the renderer post pass; denoise
+  smooths neighboring pixels but does not replace active-ray skybox/environment
+  hits as the primary lighting source.
 - The wavefront performance chart is intended for local tuning: compare
   resolution, depth, samples-per-pixel, and denoise settings while watching
   whether time is dominated by command dispatch, sampled GPU completion sync,
