@@ -15,14 +15,16 @@ const resolutionModes = Object.freeze({
 });
 
 const environmentLighting = Object.freeze({
-  environmentColor: Object.freeze([0.35, 0.43, 0.49, 1]),
-  ambientColor: Object.freeze([0.018, 0.021, 0.025, 1]),
+  environmentColor: Object.freeze([0.58, 0.66, 0.76, 1]),
+  ambientColor: Object.freeze([0.04, 0.046, 0.052, 1]),
+  environmentPortalMode: "disabled",
+  environmentPortals: Object.freeze([]),
   environmentLighting: Object.freeze({
-    horizonColor: Object.freeze([0.43, 0.52, 0.58, 1]),
-    zenithColor: Object.freeze([0.07, 0.1, 0.14, 1]),
-    sunDirection: Object.freeze([0.24, 0.82, -0.52]),
-    sunColor: Object.freeze([2.2, 1.85, 1.35, 1]),
-    intensity: 1.08,
+    horizonColor: Object.freeze([0.7, 0.78, 0.86, 1]),
+    zenithColor: Object.freeze([0.18, 0.24, 0.34, 1]),
+    sunDirection: Object.freeze([0.18, 0.9, -0.4]),
+    sunColor: Object.freeze([2.8, 2.55, 2.2, 1]),
+    intensity: 1.35,
     mode: 1,
     exposure: 1,
   }),
@@ -40,49 +42,9 @@ function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
-function cross(a, b) {
-  return [
-    a[1] * b[2] - a[2] * b[1],
-    a[2] * b[0] - a[0] * b[2],
-    a[0] * b[1] - a[1] * b[0],
-  ];
-}
-
 function normalize(vector) {
   const length = Math.hypot(vector[0], vector[1], vector[2]) || 1;
   return [vector[0] / length, vector[1] / length, vector[2] / length];
-}
-
-function createQuadMesh({
-  id,
-  corners,
-  color,
-  emission = [0, 0, 0, 1],
-  materialKind = "diffuse",
-  roughness = 0.72,
-  metallic = 0,
-  opacity = color[3] ?? 1,
-}) {
-  const [a, b, c] = corners;
-  const normal = normalize(
-    cross(
-      [b[0] - a[0], b[1] - a[1], b[2] - a[2]],
-      [c[0] - a[0], c[1] - a[1], c[2] - a[2]]
-    )
-  );
-
-  return {
-    id,
-    positions: corners.flat(),
-    indices: [0, 1, 2, 0, 2, 3],
-    normals: [normal, normal, normal, normal].flat(),
-    color,
-    emission,
-    materialKind,
-    roughness,
-    metallic,
-    opacity,
-  };
 }
 
 function createSmoothMesh({
@@ -151,80 +113,8 @@ function createSmoothMesh({
   };
 }
 
-function createWavefrontDemoMeshes() {
+function createWavefrontDemoModelMeshes() {
   return [
-    createQuadMesh({
-      id: 100,
-      corners: [
-        [-3.1, -0.86, 2],
-        [3.1, -0.86, 2],
-        [3.1, -0.86, -3],
-        [-3.1, -0.86, -3],
-      ],
-      color: [0.52, 0.6, 0.62, 1],
-      materialKind: "metal",
-      metallic: 0.25,
-      roughness: 0.38,
-    }),
-    createQuadMesh({
-      id: 101,
-      corners: [
-        [-3.1, -0.86, -3],
-        [3.1, -0.86, -3],
-        [3.1, 3, -3],
-        [-3.1, 3, -3],
-      ],
-      color: [0.5, 0.49, 0.46, 1],
-      roughness: 0.84,
-    }),
-    createQuadMesh({
-      id: 102,
-      corners: [
-        [-3.1, -0.86, -3],
-        [-3.1, 3, -3],
-        [-3.1, 3, 2],
-        [-3.1, -0.86, 2],
-      ],
-      color: [0.42, 0.52, 0.62, 1],
-      roughness: 0.8,
-    }),
-    createQuadMesh({
-      id: 103,
-      corners: [
-        [3.1, -0.86, -3],
-        [3.1, -0.86, 2],
-        [3.1, 3, 2],
-        [3.1, 3, -3],
-      ],
-      color: [0.58, 0.46, 0.42, 1],
-      roughness: 0.8,
-    }),
-    createQuadMesh({
-      id: 104,
-      corners: [
-        [-0.72, 2.52, -0.92],
-        [0.72, 2.52, -0.92],
-        [0.72, 2.52, -1.92],
-        [-0.72, 2.52, -1.92],
-      ],
-      color: [1, 0.93, 0.76, 1],
-      emission: [9, 8.2, 6.4, 1],
-      materialKind: "emissive",
-      roughness: 0,
-    }),
-    createQuadMesh({
-      id: 105,
-      corners: [
-        [-2.2, -0.42, 0.6],
-        [1.5, -0.42, 0.6],
-        [1.28, -0.42, -2.25],
-        [-2.05, -0.42, -2.15],
-      ],
-      color: [0.43, 0.78, 0.9, 0.58],
-      materialKind: "transparent",
-      roughness: 0.05,
-      opacity: 0.58,
-    }),
     createSmoothMesh({
       id: 200,
       center: [-0.95, -0.08, -1.1],
@@ -247,9 +137,9 @@ function createWavefrontDemoMeshes() {
       id: 202,
       center: [0.04, -0.32, -0.16],
       radius: 0.34,
-      color: [0.05, 0.08, 0.13, 1],
+      color: [0.38, 0.42, 0.46, 1],
       materialKind: "diffuse",
-      roughness: 0.92,
+      roughness: 0.58,
     }),
   ];
 }
@@ -523,6 +413,7 @@ function updateDebugOverlay({ stats, settings, probe, performanceSummary }) {
   updatePerformanceOverlay({ stats, performanceSummary });
   renderMetricList(document.getElementById("terminationStats"), [
     ["geometry", "mesh BVH"],
+    ["scene", "model + skybox"],
     ["display quality", stats.displayQuality ? "true" : "false"],
     ["mesh triangles", stats.triangleCount.toLocaleString("en-GB")],
     ["acceleration", stats.accelerationBuildMode],
@@ -536,6 +427,10 @@ function updateDebugOverlay({ stats, settings, probe, performanceSummary }) {
     ["BVH nodes", stats.bvhNodeCount.toLocaleString("en-GB")],
     ["max depth", `${stats.maxDepth} bounces`],
     ["tiles", `${stats.tiles} @ ${stats.tileSize}px`],
+    [
+      "environment portals",
+      stats.environmentPortalCount > 0 ? String(stats.environmentPortalCount) : "off",
+    ],
     ["denoise", settings.denoise ? "on" : "off"],
     ["probe", probe ? probe.luminance.toFixed(4) : "pending"],
     ["memory", summarizeMemory(stats.memory)],
@@ -585,7 +480,7 @@ async function renderWavefrontFrame(canvas, settings) {
     tileSize: 128,
     displayQuality: true,
     denoise: settings.denoise,
-    meshes: createWavefrontDemoMeshes(),
+    meshes: createWavefrontDemoModelMeshes(),
     camera: {
       position: [0, 0.5, 2.85],
       target: [-0.08, -0.12, -1.12],

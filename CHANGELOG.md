@@ -19,9 +19,9 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 - Shared 3D harbor showcase with GLTF ships and physics metadata for cross-package validation.
 - Experimental wavefront path-tracing technique demo using the renderer WebGPU
-  mesh BVH path with 540p, 720p, and 1080p presets, emissive/skybox termination,
-  reflection, refraction, fluid surface interaction, smooth normals, dark
-  no-light paths, a denoise post-pass toggle, and queue-depth telemetry.
+  mesh BVH path with 540p, 720p, and 1080p presets, model-only skybox/environment
+  termination, reflection, refraction, smooth normals, a denoise post-pass toggle,
+  and queue-depth telemetry.
 - Live wavefront assessment controls with pause/resume, render-once, a 4K
   target preset, FPS/rays-per-second telemetry, and a 100% stacked frame timing
   chart for dispatch, GPU wait, probe/readback, overlay, and frame pacing.
@@ -52,6 +52,9 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 - The wavefront performance panel now treats GPU completion as a sampled sync
   metric instead of hard-blocking every frame, reducing viewer-side queue
   serialization while still showing where occasional GPU waits land.
+- The wavefront demo now submits only benchmark model meshes with ungated
+  skybox/environment lighting, removing the previous synthetic floor, wall,
+  emissive-panel, and fluid-surface blockers from the validation scene.
 - The viewer now classifies the cloth, fluid, lighting, performance, and debug demos as browser-based 3D visual examples.
 - Strengthened the shared showcase lighting and shadow model so the harbor demos
   present a more ray-traced near-field look.
