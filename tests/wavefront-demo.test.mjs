@@ -57,6 +57,9 @@ test("wavefront demo uses the renderer mesh BVH path", () => {
   assert.match(source, /Number\.NaN/);
   assert.match(source, /probeMs/);
   assert.match(source, /paceMs/);
+  assert.match(source, /const setupToken = state\.loopToken/);
+  assert.match(source, /state\.loopToken !== setupToken[\s\S]*renderer\.destroy\?\.\(\)/);
+  assert.match(source, /runLoop\(setupToken\)/);
   assert.match(source, /requestAnimationFrame/);
   assert.match(source, /samplesPerPixel:\s*settings\.samplesPerPixel/);
   assert.match(source, /samplesPerPixel = document\.getElementById\("samplesSelect"\)\.value/);

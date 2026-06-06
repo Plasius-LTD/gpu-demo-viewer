@@ -656,6 +656,7 @@ function boot() {
 
   async function applySettings({ keepRunning = state.running } = {}) {
     state.loopToken += 1;
+    const setupToken = state.loopToken;
     const settings = createSettings();
     state.settings = settings;
     state.running = keepRunning;
@@ -681,12 +682,19 @@ function boot() {
       return;
     }
 
-    state.renderer?.destroy?.();
+    const previousRenderer = state.renderer;
+    state.renderer = null;
+    previousRenderer?.destroy?.();
     status.textContent = "Building GPU mesh BVH and preparing the live wavefront loop.";
-    state.renderer = await renderWavefrontFrame(canvas, settings);
+    const renderer = await renderWavefrontFrame(canvas, settings);
+    if (state.loopToken !== setupToken) {
+      renderer.destroy?.();
+      return;
+    }
+    state.renderer = renderer;
     await renderOneFrame({ includeProbe: true });
-    if (state.running) {
-      runLoop(state.loopToken).catch((error) => {
+    if (state.running && state.loopToken === setupToken) {
+      runLoop(setupToken).catch((error) => {
         status.textContent = error instanceof Error ? error.message : String(error);
       });
     }
