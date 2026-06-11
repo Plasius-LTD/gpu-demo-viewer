@@ -30,6 +30,13 @@ const environmentLighting = Object.freeze({
   }),
 });
 
+const realtimeCamera = Object.freeze({
+  target: Object.freeze([-0.08, -0.12, -1.12]),
+  up: Object.freeze([0, 1, 0]),
+  fovYDegrees: 47,
+  basePosition: Object.freeze([0, 0.5, 2.85]),
+});
+
 const performancePhaseDefinitions = Object.freeze([
   Object.freeze({ key: "dispatchMs", label: "dispatch", color: "#ebbc62" }),
   Object.freeze({ key: "gpuWaitMs", label: "GPU sync", color: "#58c6d1" }),
@@ -187,6 +194,28 @@ function screenRayCount(settings) {
 
 function primaryRayCount(settings) {
   return screenRayCount(settings) * settings.samplesPerPixel;
+}
+
+function createRealtimeCamera(elapsedSeconds = 0) {
+  const orbit = elapsedSeconds * 0.42;
+  const breathing = elapsedSeconds * 0.31;
+  const lateral = Math.sin(orbit) * 0.42;
+  const depth = Math.cos(orbit) * 0.12;
+  const height = Math.sin(breathing) * 0.05;
+  return {
+    position: [
+      realtimeCamera.basePosition[0] + lateral,
+      realtimeCamera.basePosition[1] + height,
+      realtimeCamera.basePosition[2] + depth,
+    ],
+    target: [
+      realtimeCamera.target[0] + Math.sin(orbit * 0.7) * 0.06,
+      realtimeCamera.target[1],
+      realtimeCamera.target[2],
+    ],
+    up: [...realtimeCamera.up],
+    fovYDegrees: realtimeCamera.fovYDegrees,
+  };
 }
 
 function renderMetricList(root, metrics) {
@@ -414,6 +443,7 @@ function updateDebugOverlay({ stats, settings, probe, performanceSummary }) {
   renderMetricList(document.getElementById("terminationStats"), [
     ["geometry", "mesh BVH"],
     ["scene", "model + skybox"],
+    ["animation", "camera orbit"],
     ["display quality", stats.displayQuality ? "true" : "false"],
     ["mesh triangles", stats.triangleCount.toLocaleString("en-GB")],
     ["acceleration", stats.accelerationBuildMode],
@@ -481,14 +511,13 @@ async function renderWavefrontFrame(canvas, settings) {
     displayQuality: true,
     denoise: settings.denoise,
     meshes: createWavefrontDemoModelMeshes(),
-    camera: {
-      position: [0, 0.5, 2.85],
-      target: [-0.08, -0.12, -1.12],
-      up: [0, 1, 0],
-      fovYDegrees: 47,
-    },
+    camera: createRealtimeCamera(0),
     ...environmentLighting,
   });
+  if (typeof renderer.updateCamera !== "function") {
+    renderer.destroy?.();
+    throw new Error("Realtime wavefront animation requires @plasius/gpu-renderer 0.2.3 or newer.");
+  }
   return renderer;
 }
 
@@ -518,6 +547,11 @@ function installSnapshotHook({ renderer, stats, settings, probe, performanceSumm
       stats,
       probe,
       performance: performanceSummary,
+      animation: Object.freeze({
+        mode: "camera-orbit",
+        elapsedSeconds: performanceSummary.elapsedSeconds,
+        camera: settings.camera,
+      }),
     });
   window.__plasiusWavefrontPerformance = performanceSummary;
 }
@@ -538,6 +572,7 @@ function boot() {
     performance: createPerformanceState(),
     renderingFrame: false,
     lastFrameCompletedAt: Number.NaN,
+    animationStartedAt: performance.now(),
   };
 
   function getPerformanceSummary() {
@@ -591,6 +626,10 @@ function boot() {
       : 0;
     try {
       const submitStartedAt = performance.now();
+      const elapsedSeconds = (submitStartedAt - state.animationStartedAt) / 1000;
+      const camera = createRealtimeCamera(elapsedSeconds);
+      renderer.updateCamera(camera);
+      settings.camera = camera;
       const stats = renderer.renderOnce();
       const dispatchMs = performance.now() - submitStartedAt;
       const shouldSyncGpu =
@@ -676,6 +715,7 @@ function boot() {
     state.stats = null;
     state.probe = null;
     state.lastFrameCompletedAt = Number.NaN;
+    state.animationStartedAt = performance.now();
     updateControls(settings);
     toggleLoopButton.textContent = state.running ? "Pause loop" : "Resume loop";
     mode.textContent = settings.experimentalEnabled
