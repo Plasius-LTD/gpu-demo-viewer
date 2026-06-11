@@ -1,16 +1,50 @@
 {
   "name": "@plasius/gpu-demo-viewer",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "description": "Root validation viewer for Plasius gpu-* demos.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Plasius-LTD/gpu-demo-viewer.git"
+  },
+  "homepage": "https://github.com/Plasius-LTD/gpu-demo-viewer#readme",
+  "bugs": {
+    "url": "https://github.com/Plasius-LTD/gpu-demo-viewer/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./viewer-manifest.js",
+    "./viewer-manifest": "./viewer-manifest.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "assets/",
+    "docs/",
+    "scripts/",
+    "showcase/",
+    "wavefront/",
+    "CHANGELOG.md",
+    "NFR.md",
+    "README.md",
+    "index.html",
+    "index.js",
+    "main.js",
+    "styles.css",
+    "viewer-manifest.js"
+  ],
   "engines": {
     "node": ">=24"
   },
   "scripts": {
+    "audit:npm": "npm audit --audit-level=high --omit=dev",
     "build": "node scripts/verify-static-viewer-contract.cjs",
     "demo": "python3 -m http.server --directory ..",
     "lint": "npm run typecheck",
+    "pack:check": "node scripts/verify-public-package.cjs",
+    "prepublishOnly": "npm run build && npm run pack:check",
     "typecheck": "node --check index.js && node --check main.js && node --check viewer-manifest.js && node --check showcase/index.js && node --check showcase/main.js && node --check wavefront/main.js",
     "test": "node --test"
   },

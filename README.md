@@ -66,8 +66,8 @@ inside individual compute passes.
 
 ## Static Validation Contract
 
-This repository is intentionally a static validation surface rather than a
-bundled application package.
+This repository is a public npm package that ships the static validation
+surface for the `gpu-*` family.
 
 - `npm run demo` serves the workspace root so sibling `gpu-*` demos are
   reachable from one URL.
@@ -75,6 +75,10 @@ bundled application package.
   manifest modules.
 - `npm run build` verifies the static contract documented in
   `docs/adrs/adr-0001-gpu-demo-viewer-governance-baseline.md`.
+- `npm run pack:check` verifies the public npm package payload before GitHub
+  Actions publishes it.
+- Releases are published only through `.github/workflows/cd.yml` with npm
+  provenance and the GitHub `production` environment.
 
 ## Validation Notes
 
@@ -112,6 +116,7 @@ bundled application package.
 npm run build
 npm run typecheck
 npm run lint
+npm run pack:check
 npm test
 ```
 

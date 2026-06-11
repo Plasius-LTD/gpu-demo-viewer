@@ -69,3 +69,6 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 - The showcase browser entry now imports `@plasius/gpu-shared` through an
   import map instead of coupling directly to a deep `node_modules/.../dist`
   path.
+- The viewer package now has public npm metadata, package payload validation,
+  and a GitHub Actions CD workflow so it follows the same release posture as
+  the other public `@plasius/*` package repositories.
