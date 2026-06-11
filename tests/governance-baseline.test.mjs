@@ -16,6 +16,7 @@ test("package exposes canonical baseline validation scripts", () => {
   );
   assert.match(packageJson.scripts.typecheck, /node --check index\.js/);
   assert.equal(packageJson.scripts.lint, "npm run typecheck");
+  assert.equal(packageJson.scripts["pack:check"], "node scripts/verify-public-package.cjs");
 });
 
 test("baseline governance documents exist for the static viewer contract", () => {
@@ -31,4 +32,12 @@ test("baseline governance documents exist for the static viewer contract", () =>
       )
     )
   );
+});
+
+test("package is configured as a public npm package with CD", () => {
+  assert.notEqual(packageJson.private, true);
+  assert.equal(packageJson.publishConfig?.access, "public");
+  assert.equal(packageJson.license, "Apache-2.0");
+  assert.ok(packageJson.repository?.url?.includes("Plasius-LTD/gpu-demo-viewer"));
+  assert.ok(existsSync(path.join(repoRoot, ".github", "workflows", "cd.yml")));
 });
