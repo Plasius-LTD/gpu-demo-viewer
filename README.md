@@ -91,7 +91,10 @@ bundled application package.
   and 16 samples-per-pixel settings and defaults to 8 spp for the 540p, 720p,
   and 1080p presets. The denoise toggle runs the renderer post pass; denoise
   smooths neighboring pixels but does not replace active-ray skybox/environment
-  hits as the primary lighting source.
+  hits as the primary lighting source. The loop updates camera uniforms every
+  animation frame through `@plasius/gpu-renderer` so the FPS counter represents
+  a moving realtime render rather than repeated presentation of one static
+  frame.
 - The wavefront performance chart is intended for local tuning: compare
   resolution, depth, samples-per-pixel, and denoise settings while watching
   whether time is dominated by command dispatch, sampled GPU completion sync,

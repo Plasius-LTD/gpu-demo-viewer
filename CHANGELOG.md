@@ -52,6 +52,9 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 - The wavefront demo now exposes samples-per-pixel controls, defaults its
   540p/720p/1080p presets to 8 spp, and reports screen pixels separately from
   primary ray samples.
+- The wavefront demo now updates renderer camera uniforms every RAF frame so
+  the mesh BVH view has visible realtime motion instead of repeating one static
+  path-traced frame.
 - The wavefront performance panel now treats GPU completion as a sampled sync
   metric instead of hard-blocking every frame, reducing viewer-side queue
   serialization while still showing where occasional GPU waits land.

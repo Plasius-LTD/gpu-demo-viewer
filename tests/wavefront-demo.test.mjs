@@ -22,7 +22,10 @@ test("wavefront path tracing demo is exposed as an experimental browser demo", (
 });
 
 test("wavefront demo imports the renderer package public surface", () => {
+  const packageJson = JSON.parse(read("package.json"));
   const html = read("wavefront/index.html");
+  assert.equal(packageJson.dependencies["@plasius/gpu-renderer"], "^0.2.3");
+  assert.equal(packageJson.dependencies["@plasius/gpu-shared"], "^0.1.16");
   assert.match(html, /@plasius\/gpu-renderer/);
   assert.match(html, /\.\.\/node_modules\/@plasius\/gpu-renderer\/dist\/index\.js/);
   assert.match(html, /id="samplesSelect"/);
@@ -44,6 +47,7 @@ test("wavefront demo uses the renderer mesh BVH path", () => {
   assert.match(source, /environmentPortalMode:\s*"disabled"/);
   assert.match(source, /environmentPortals:\s*Object\.freeze\(\[\]\)/);
   assert.match(source, /\["scene", "model \+ skybox"\]/);
+  assert.match(source, /\["animation", "camera orbit"\]/);
   assert.match(source, /"environment portals"[\s\S]*stats\.environmentPortalCount > 0 \? String\(stats\.environmentPortalCount\) : "off"/);
   assert.match(source, /primaryRayCount/);
   assert.match(source, /screenRayCount/);
@@ -62,6 +66,11 @@ test("wavefront demo uses the renderer mesh BVH path", () => {
   assert.match(source, /const settings = state\.settings/);
   assert.match(source, /state\.loopToken === expectedToken/);
   assert.match(source, /readProbe\(renderer, settings\)/);
+  assert.match(source, /createRealtimeCamera/);
+  assert.match(source, /renderer\.updateCamera\(camera\)/);
+  assert.match(source, /settings\.camera = camera/);
+  assert.match(source, /Realtime wavefront animation requires @plasius\/gpu-renderer 0\.2\.3 or newer/);
+  assert.match(source, /mode:\s*"camera-orbit"/);
   assert.match(source, /const setupToken = state\.loopToken/);
   assert.match(source, /state\.loopToken !== setupToken[\s\S]*renderer\.destroy\?\.\(\)/);
   assert.match(source, /renderOneFrame\(\{ includeProbe: true, expectedToken: setupToken \}\)/);
