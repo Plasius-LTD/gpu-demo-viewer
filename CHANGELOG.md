@@ -6,6 +6,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.1.1] - 2026-06-22
+
 - **Fixed**
   - Added `index.js` compatibility entry shims for the root viewer and the
     showcase so stale cached entry URLs do not 404 when the runtime loads from
@@ -72,3 +86,6 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 - The viewer package now has public npm metadata, package payload validation,
   and a GitHub Actions CD workflow so it follows the same release posture as
   the other public `@plasius/*` package repositories.
+
+
+[0.1.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.1
