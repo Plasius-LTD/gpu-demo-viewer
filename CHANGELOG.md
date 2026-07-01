@@ -10,6 +10,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - (placeholder)
 
 - **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.1.3] - 2026-07-01
+
+- **Added**
+  - (placeholder)
+
+- **Changed**
   - Updated runtime GPU dependencies to `@plasius/gpu-shared` `^1.0.2` and
     `@plasius/gpu-renderer` `^0.2.23`.
   - (placeholder)
@@ -106,3 +120,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 [0.1.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.1
 [0.1.2]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.2
+[0.1.3]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.3
