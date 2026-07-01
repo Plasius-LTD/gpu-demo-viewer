@@ -49,7 +49,7 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@plasius/gpu-renderer": "^0.2.3",
-    "@plasius/gpu-shared": "^0.1.16"
+    "@plasius/gpu-renderer": "^0.2.23",
+    "@plasius/gpu-shared": "^1.0.2"
   }
 }

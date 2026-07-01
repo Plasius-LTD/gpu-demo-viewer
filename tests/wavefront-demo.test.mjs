@@ -24,8 +24,8 @@ test("wavefront path tracing demo is exposed as an experimental browser demo", (
 test("wavefront demo imports the renderer package public surface", () => {
   const packageJson = JSON.parse(read("package.json"));
   const html = read("wavefront/index.html");
-  assert.equal(packageJson.dependencies["@plasius/gpu-renderer"], "^0.2.3");
-  assert.equal(packageJson.dependencies["@plasius/gpu-shared"], "^0.1.16");
+  assert.equal(packageJson.dependencies["@plasius/gpu-renderer"], "^0.2.23");
+  assert.equal(packageJson.dependencies["@plasius/gpu-shared"], "^1.0.2");
   assert.match(html, /@plasius\/gpu-renderer/);
   assert.match(html, /\.\.\/node_modules\/@plasius\/gpu-renderer\/dist\/index\.js/);
   assert.match(html, /id="samplesSelect"/);
