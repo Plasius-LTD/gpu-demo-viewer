@@ -10,6 +10,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - (placeholder)
 
 - **Changed**
+  - Updated runtime GPU dependencies to `@plasius/gpu-shared` `^1.0.2` and
+    `@plasius/gpu-renderer` `^0.2.23`.
   - (placeholder)
 
 - **Fixed**
