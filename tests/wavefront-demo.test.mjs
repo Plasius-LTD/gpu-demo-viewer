@@ -1,11 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
 
 import { demos } from "../viewer-manifest.js";
-
-const repoRoot = fileURLToPath(new URL("../", import.meta.url));
 
 function read(relativePath) {
   return readFileSync(new URL(`../${relativePath}`, import.meta.url), "utf8");
@@ -24,8 +21,8 @@ test("wavefront path tracing demo is exposed as an experimental browser demo", (
 test("wavefront demo imports the renderer package public surface", () => {
   const packageJson = JSON.parse(read("package.json"));
   const html = read("wavefront/index.html");
-  assert.equal(packageJson.dependencies["@plasius/gpu-renderer"], "^0.2.23");
-  assert.equal(packageJson.dependencies["@plasius/gpu-shared"], "^1.0.2");
+  assert.equal(packageJson.dependencies["@plasius/gpu-renderer"], "^0.2.39");
+  assert.equal(packageJson.dependencies["@plasius/gpu-shared"], "^1.0.14");
   assert.match(html, /@plasius\/gpu-renderer/);
   assert.match(html, /\.\.\/node_modules\/@plasius\/gpu-renderer\/dist\/index\.js/);
   assert.match(html, /id="samplesSelect"/);
@@ -102,5 +99,5 @@ test("wavefront demo uses the renderer mesh BVH path", () => {
   assert.doesNotMatch(source, /intersectPlane/);
   assert.doesNotMatch(source, /type:\s*"sphere"/);
   assert.doesNotMatch(source, /type:\s*"box"/);
-  assert.ok(repoRoot.endsWith("/gpu-demo-viewer/"), "test fixture resolves from repo root");
+  assert.equal(JSON.parse(read("package.json")).name, "@plasius/gpu-demo-viewer");
 });
