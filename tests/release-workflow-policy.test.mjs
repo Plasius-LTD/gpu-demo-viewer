@@ -7,6 +7,15 @@ const workflow = readFileSync(
   resolve(process.cwd(), ".github/workflows/cd.yml"),
   "utf8",
 );
+const ciWorkflow = readFileSync(
+  resolve(process.cwd(), ".github/workflows/ci.yml"),
+  "utf8",
+);
+
+test("public package CI uses isolated GitHub-hosted capacity", () => {
+  assert.match(ciWorkflow, /runs-on: ubuntu-latest/u);
+  assert.doesNotMatch(ciWorkflow, /self-hosted|CI_RUNNER_LABELS/u);
+});
 
 test("npm release uses hosted OIDC without a long-lived write token", () => {
   assert.match(workflow, /runs-on: ubuntu-latest/u);
@@ -32,4 +41,3 @@ test("npm release fails closed when npm OIDC is unavailable", () => {
   assert.match(workflow, /"11\.5\.1"/u);
   assert.match(workflow, /--provenance/u);
 });
-

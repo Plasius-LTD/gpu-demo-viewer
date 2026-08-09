@@ -13,6 +13,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - Restored exact-main npm publication on a GitHub-hosted runner through
     short-lived OIDC, with an enforced Node/npm runtime and no long-lived
     write-token fallback.
+  - Moved public package CI to GitHub-hosted capacity so internal and external
+    branches cannot queue on or execute against company-managed runners.
   - Refreshed GPU runtime dependencies to the currently published renderer,
     shared-contract, and XR package versions so clean release installs remain
     reproducible.

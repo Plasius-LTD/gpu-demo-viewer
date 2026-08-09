@@ -11,13 +11,11 @@ permissions:
   contents: read
 
 env:
-  FALLBACK_RUNNER_LABEL: ubuntu-latest
-  SELF_HOSTED_RUNNER_LABELS: '["self-hosted","Linux","X64"]'
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   validate:
-    runs-on: ${{ fromJSON(github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository && '"ubuntu-latest"' || vars.CI_RUNNER_LABELS || '["self-hosted","Linux","X64"]') }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v5
