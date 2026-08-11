@@ -16,11 +16,17 @@ test("manifest ids are unique", () => {
 });
 
 test("manifest covers every sibling gpu-* demo package", () => {
-  if (path.basename(repoRoot) !== "gpu-demo-viewer") {
+  const checkoutName = path.basename(repoRoot);
+  if (checkoutName === ".release-fix-gpu-demo-viewer") {
     // Release-recovery worktrees share a parent with unrelated repositories.
     // Cross-repository coverage is authoritative only in the canonical checkout.
     return;
   }
+  assert.equal(
+    checkoutName,
+    "gpu-demo-viewer",
+    "cross-repository manifest validation requires the canonical checkout or the explicit release-recovery worktree",
+  );
 
   const siblingPackages = readdirSync(workspaceRoot, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
