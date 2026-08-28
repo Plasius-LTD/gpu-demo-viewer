@@ -10,6 +10,7 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - (placeholder)
 
 - **Changed**
+  - Refreshed the browser demo runtime dependencies and package lockfile.
   - (placeholder)
 
 - **Fixed**
