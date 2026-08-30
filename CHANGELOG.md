@@ -10,6 +10,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - (placeholder)
 
 - **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.1.4] - 2026-08-30
+
+- **Added**
+  - (placeholder)
+
+- **Changed**
   - Refreshed the browser demo runtime dependencies and package lockfile.
   - (placeholder)
 
@@ -122,3 +136,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.1.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.1
 [0.1.2]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.2
 [0.1.3]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.3
+[0.1.4]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.4
