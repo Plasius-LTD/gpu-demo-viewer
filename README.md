@@ -1,5 +1,12 @@
 # @plasius/gpu-demo-viewer
 
+[![npm version](https://img.shields.io/npm/v/@plasius/gpu-demo-viewer.svg)](https://www.npmjs.com/package/@plasius/gpu-demo-viewer)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Plasius-LTD/gpu-demo-viewer/ci.yml?branch=main&label=build&style=flat)](https://github.com/Plasius-LTD/gpu-demo-viewer/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/Plasius-LTD/gpu-demo-viewer)](./LICENSE)
+[![Code of Conduct](https://img.shields.io/badge/code%20of%20conduct-yes-blue.svg)](./CODE_OF_CONDUCT.md)
+[![Security Policy](https://img.shields.io/badge/security%20policy-yes-orange.svg)](./SECURITY.md)
+[![Changelog](https://img.shields.io/badge/changelog-md-blue.svg)](./CHANGELOG.md)
+
 Static root-level launcher for validating the `gpu-*` package demos from one place.
 
 ## Purpose
