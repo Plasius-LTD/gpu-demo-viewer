@@ -823,8 +823,8 @@ jobs:
           set -euo pipefail
 
           git fetch origin --tags
-          REMOTE_TAG_SHA="$(git ls-remote origin "refs/tags/${TAG}" | awk 'NR == 1 { print $1 }')"
-          if [ -n "${REMOTE_TAG_SHA}" ]; then
+          if git show-ref --verify --quiet "refs/tags/${TAG}"; then
+            REMOTE_TAG_SHA="$(git rev-list -n 1 "refs/tags/${TAG}")"
             if [ "${REMOTE_TAG_SHA}" != "${EXPECTED_SHA}" ]; then
               echo "Tag ${TAG} points at ${REMOTE_TAG_SHA}, expected ${EXPECTED_SHA}; refusing to rewrite it." >&2
               exit 1

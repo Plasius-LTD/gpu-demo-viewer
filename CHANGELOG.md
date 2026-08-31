@@ -18,12 +18,13 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - Refreshed GPU runtime dependencies to the currently published renderer,
     shared-contract, and XR package versions so clean release installs remain
     reproducible.
-  - Made cross-repository manifest validation ignore isolated recovery
-    worktrees while retaining canonical-workspace coverage.
+  - Made cross-repository manifest validation compare against a committed GPU
+    demo target inventory in canonical checkouts, worktrees, and hosted CI.
   - (placeholder)
 
 - **Fixed**
-  - (placeholder)
+  - Peeled existing annotated release tags to their target commits before
+    exact-main recovery comparisons.
 
 - **Security**
   - (placeholder)

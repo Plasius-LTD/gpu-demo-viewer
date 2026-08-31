@@ -38,6 +38,17 @@ test("npm release admits only the prepared main commit after exact CI", () => {
   assert.match(workflow, /conclusion == "success"/u);
 });
 
+test("release recovery peels annotated tags to their target commit", () => {
+  assert.match(
+    workflow,
+    /git rev-list -n 1 "refs\/tags\/\$\{TAG\}"/u,
+  );
+  assert.doesNotMatch(
+    workflow,
+    /git ls-remote origin "refs\/tags\/\$\{TAG\}"/u,
+  );
+});
+
 test("npm release fails closed when npm OIDC is unavailable", () => {
   assert.match(workflow, /Verify release runtime/u);
   assert.match(workflow, /ACTUAL_NODE%%\.\*/u);
