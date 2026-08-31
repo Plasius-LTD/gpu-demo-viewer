@@ -10,6 +10,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - (placeholder)
 
 - **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.1.5] - 2026-08-31
+
+- **Added**
+  - (placeholder)
+
+- **Changed**
   - Restored exact-main npm publication on a GitHub-hosted runner through
     short-lived OIDC, with an enforced Node/npm runtime and no long-lived
     write-token fallback.
@@ -148,3 +162,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.1.2]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.2
 [0.1.3]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.3
 [0.1.4]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.4
+[0.1.5]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.5
