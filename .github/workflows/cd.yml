@@ -672,10 +672,15 @@ jobs:
             exit 1
           fi
 
-          if ! tar -tzf "${TARBALL}" | grep -E '^package/dist(/|$)' >/dev/null; then
-            echo "Package tarball is missing built dist output." >&2
-            exit 1
-          fi
+          for required_member in \
+            package/index.html \
+            package/main.js \
+            package/viewer-manifest.js; do
+            if ! tar -tzf "${TARBALL}" | grep -Fx "${required_member}" >/dev/null; then
+              echo "Package tarball is missing required static viewer member ${required_member}." >&2
+              exit 1
+            fi
+          done
 
           PACKED_METADATA="$(tar -xOzf "${TARBALL}" package/package.json | jq -er '[.name, .version] | @tsv')"
           IFS=$'\t' read -r PACKED_NAME PACKED_VERSION <<<"${PACKED_METADATA}"

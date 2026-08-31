@@ -13,13 +13,28 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - Restored exact-main npm publication on a GitHub-hosted runner through
     short-lived OIDC, with an enforced Node/npm runtime and no long-lived
     write-token fallback.
-  - Moved public package CI to GitHub-hosted capacity so internal and external
-    branches cannot queue on or execute against company-managed runners.
+  - Routed pull-request validation to isolated GitHub-hosted capacity while
+    retaining exact-main push validation on fixed self-hosted Linux runners.
   - Refreshed GPU runtime dependencies to the currently published renderer,
     shared-contract, and XR package versions so clean release installs remain
     reproducible.
   - Made cross-repository manifest validation ignore isolated recovery
     worktrees while retaining canonical-workspace coverage.
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.1.4] - 2026-08-30
+
+- **Added**
+  - (placeholder)
+
+- **Changed**
+  - Refreshed the browser demo runtime dependencies and package lockfile.
   - (placeholder)
 
 - **Fixed**
@@ -131,3 +146,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.1.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.1
 [0.1.2]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.2
 [0.1.3]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.3
+[0.1.4]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.4

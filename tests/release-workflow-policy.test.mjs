@@ -12,9 +12,12 @@ const ciWorkflow = readFileSync(
   "utf8",
 );
 
-test("public package CI uses isolated GitHub-hosted capacity", () => {
-  assert.match(ciWorkflow, /runs-on: ubuntu-latest/u);
-  assert.doesNotMatch(ciWorkflow, /self-hosted|CI_RUNNER_LABELS/u);
+test("pull-request validation is isolated from main-branch runners", () => {
+  assert.match(
+    ciWorkflow,
+    /runs-on: \$\{\{ fromJSON\(github\.event_name == 'pull_request' && '\["ubuntu-latest"\]' \|\| '\["self-hosted","Linux","X64"\]'\) \}\}/u,
+  );
+  assert.doesNotMatch(ciWorkflow, /pull_request_target|CI_RUNNER_LABELS/u);
 });
 
 test("npm release uses hosted OIDC without a long-lived write token", () => {
