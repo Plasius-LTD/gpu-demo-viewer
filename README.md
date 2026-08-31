@@ -139,9 +139,10 @@ npm test
 Production package publication runs only from `.github/workflows/cd.yml` on
 protected `main`. The job verifies that the prepared commit is still the
 current main commit and has an exact successful `ci.yml` push result before it
-mutates release state. Pull-request validation runs on isolated GitHub-hosted
-capacity, while exact-main push validation uses fixed self-hosted Linux runners
-without caller-controlled labels. npm publication runs on
+mutates release state. Same-repository pull requests and exact-main pushes use
+the organization-owned `Public CI - Quarantined` runner group with fixed
+self-hosted Linux labels; fork code is not admitted to that trusted runner
+boundary. npm publication runs on
 GitHub-hosted Node.js 24 with
 npm 11.5.1 or newer, uses the protected `production` environment and
 short-lived npm OIDC with provenance, and has no long-lived npm write-token
