@@ -10,10 +10,21 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - (placeholder)
 
 - **Changed**
+  - Restored exact-main npm publication on a GitHub-hosted runner through
+    short-lived OIDC, with an enforced Node/npm runtime and no long-lived
+    write-token fallback.
+  - Routed pull-request validation to isolated GitHub-hosted capacity while
+    retaining exact-main push validation on fixed self-hosted Linux runners.
+  - Refreshed GPU runtime dependencies to the currently published renderer,
+    shared-contract, and XR package versions so clean release installs remain
+    reproducible.
+  - Made cross-repository manifest validation compare against a committed GPU
+    demo target inventory in canonical checkouts, worktrees, and hosted CI.
   - (placeholder)
 
 - **Fixed**
-  - (placeholder)
+  - Peeled existing annotated release tags to their target commits before
+    exact-main recovery comparisons.
 
 - **Security**
   - (placeholder)

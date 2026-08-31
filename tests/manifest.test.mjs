@@ -1,32 +1,40 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { existsSync, readdirSync } from "node:fs";
-import path from "node:path";
+import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
 import { demos } from "../viewer-manifest.js";
 
 const repoRoot = fileURLToPath(new URL("../", import.meta.url));
-const workspaceRoot = path.resolve(repoRoot, "..");
 const manifestBaseUrl = new URL("../viewer-manifest.js", import.meta.url);
+const expectedGpuDemoPackages = [
+  "gpu-camera",
+  "gpu-cloth",
+  "gpu-debug",
+  "gpu-fluid",
+  "gpu-lighting",
+  "gpu-lock-free-queue",
+  "gpu-particles",
+  "gpu-performance",
+  "gpu-physics",
+  "gpu-renderer",
+  "gpu-shared",
+  "gpu-worker",
+  "gpu-world-generator",
+  "gpu-xr",
+];
 
 test("manifest ids are unique", () => {
   const ids = demos.map((demo) => demo.id);
   assert.equal(new Set(ids).size, ids.length);
 });
 
-test("manifest covers every sibling gpu-* demo package", () => {
-  const siblingPackages = readdirSync(workspaceRoot, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => entry.name)
-    .filter((name) => name.startsWith("gpu-") && name !== "gpu-demo-viewer")
-    .filter((name) => existsSync(path.join(workspaceRoot, name, "demo")))
+test("manifest covers the committed gpu-* demo package inventory", () => {
+  const manifestPackages = demos
+    .map((demo) => demo.id)
+    .filter((id) => id.startsWith("gpu-"))
     .sort();
-
-  const manifestIds = new Set(demos.map((demo) => demo.id));
-  for (const packageName of siblingPackages) {
-    assert.ok(manifestIds.has(packageName), `${packageName} is included in the manifest`);
-  }
+  assert.deepEqual(manifestPackages, expectedGpuDemoPackages);
 });
 
 test("manifest file targets resolve", () => {
