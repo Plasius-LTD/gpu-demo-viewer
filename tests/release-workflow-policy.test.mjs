@@ -17,9 +17,7 @@ test("trusted validation uses hosted pull-request and trusted repository runners
     ciWorkflow,
     /if: \$\{\{ github\.event_name != 'pull_request' \|\| github\.event\.pull_request\.head\.repo\.full_name == github\.repository \}\}/u,
   );
-  assert.match(ciWorkflow, /runs-on: \$\{\{ fromJSON\(github\.event_name == 'pull_request'/u);
-  assert.match(ciWorkflow, /\["ubuntu-latest"\]/u);
-  assert.match(ciWorkflow, /\["self-hosted","Linux","X64"\]/u);
+  assert.match(ciWorkflow, /runs-on: ubuntu-latest/u);
   assert.doesNotMatch(ciWorkflow, /pull_request_target|CI_RUNNER_LABELS/u);
 });
 
