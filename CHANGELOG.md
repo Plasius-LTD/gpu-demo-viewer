@@ -10,6 +10,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - (placeholder)
 
 - **Changed**
+  - Routed trusted validation through the organization-owned quarantined
+    self-hosted runner group while continuing to reject fork pull-request code.
   - (placeholder)
 
 - **Fixed**
