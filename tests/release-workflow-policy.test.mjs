@@ -12,13 +12,14 @@ const ciWorkflow = readFileSync(
   "utf8",
 );
 
-test("trusted validation uses the quarantined self-hosted runner group", () => {
+test("trusted validation uses hosted pull-request and trusted repository runners", () => {
   assert.match(
     ciWorkflow,
     /if: \$\{\{ github\.event_name != 'pull_request' \|\| github\.event\.pull_request\.head\.repo\.full_name == github\.repository \}\}/u,
   );
-  assert.match(ciWorkflow, /group: Public CI - Quarantined/u);
-  assert.match(ciWorkflow, /labels: \[self-hosted, Linux, X64\]/u);
+  assert.match(ciWorkflow, /runs-on: \$\{\{ fromJSON\(github\.event_name == 'pull_request'/u);
+  assert.match(ciWorkflow, /\["ubuntu-latest"\]/u);
+  assert.match(ciWorkflow, /\["self-hosted","Linux","X64"\]/u);
   assert.doesNotMatch(ciWorkflow, /pull_request_target|CI_RUNNER_LABELS/u);
 });
 
