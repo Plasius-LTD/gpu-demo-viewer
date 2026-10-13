@@ -33,7 +33,8 @@
     "index.js",
     "main.js",
     "styles.css",
-    "viewer-manifest.js"
+    "viewer-manifest.js",
+    "model-library/"
   ],
   "engines": {
     "node": ">=24"
@@ -45,11 +46,18 @@
     "lint": "npm run typecheck",
     "pack:check": "node scripts/verify-public-package.cjs",
     "prepublishOnly": "npm run build && npm run pack:check",
-    "typecheck": "node --check index.js && node --check main.js && node --check viewer-manifest.js && node --check showcase/index.js && node --check showcase/main.js && node --check wavefront/main.js",
-    "test": "node --test"
+    "typecheck": "node --check index.js && node --check main.js && node --check viewer-manifest.js && node --check showcase/index.js && node --check showcase/main.js && node --check wavefront/main.js && node --check model-library/main.js && node --check model-library/controller.js && node --check model-library/acquire.js",
+    "test": "node --test",
+    "models:download": "node scripts/acquire-model-library.mjs",
+    "models:dev": "vite --config model-library/vite.config.js",
+    "test:coverage": "c8 --reporter=lcov --reporter=text node --test"
   },
   "dependencies": {
-    "@plasius/gpu-renderer": "^0.2.43",
-    "@plasius/gpu-shared": "^1.1.1"
+    "@plasius/gpu-renderer": "^0.2.48",
+    "@plasius/gpu-shared": "^1.1.6"
+  },
+  "devDependencies": {
+    "c8": "^11.0.0",
+    "vite": "^8.1.4"
   }
 }

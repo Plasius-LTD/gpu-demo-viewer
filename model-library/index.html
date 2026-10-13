@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plasius · Model studies</title><link rel="icon" href="data:,"><link rel="stylesheet" href="./styles.css">
+<script type="importmap">
+{
+  "imports": {
+    "@plasius/gpu-shared/model-inspection": "../node_modules/@plasius/gpu-shared/dist/model-inspection.js",
+    "@plasius/gpu-shared/feedback-diagnostics": "../node_modules/@plasius/gpu-shared/dist/feedback-diagnostics.js",
+    "@plasius/gpu-renderer": "../node_modules/@plasius/gpu-renderer/dist/index.js",
+    "@plasius/gpu-camera": "../node_modules/@plasius/gpu-camera/dist/index.js",
+    "@plasius/gpu-camera-controls": "../node_modules/@plasius/gpu-camera-controls/dist/index.js",
+    "@plasius/gpu-camera-controls/browser": "../node_modules/@plasius/gpu-camera-controls/dist/browser.js",
+    "@plasius/schema/feedback-diagnostics-vocabulary": "../node_modules/@plasius/schema/dist/feedback-diagnostics-vocabulary.js"
+  }
+}
+</script></head>
+<body><header><a href="https://plasius.co.uk/" target="_blank" rel="noopener">PLASIUS</a><span>Renderer workshop · Local review</span></header>
+<main><div class="intro"><p class="eyebrow">From source to scene</p><h1>Model studies</h1><p>Ten assets. One renderer. Explore the surfaces, silhouettes and details that will shape our next improvements.</p></div>
+<div class="workspace"><aside><label for="model">Choose a model</label><select id="model" disabled></select><p id="category" class="muted"></p><h2 id="name"></h2><p id="target"></p><p id="note"></p><div id="metrics" class="metrics"></div>
+<details><summary>Source and licence</summary><p id="credits"></p><p><a id="source" target="_blank" rel="noopener">Original model</a> · <a id="licence" target="_blank" rel="noopener"></a></p><p>Original files retained. Framing is normalized for inspection. Powered by Poly Haven for its asset metadata.</p></details>
+<details><summary>Camera help</summary><p id="help">Drag to orbit. Shift-drag or right-drag to truck. Alt-drag to pan. Scroll to move closer; Shift-scroll changes the lens. Touch: one finger orbits; two fingers move and pinch. Keyboard: arrows orbit, Shift-arrows truck, + / − move closer or further, Home resets. Keys 1–5 choose orbit, truck, pan, dolly or zoom. Press ? for a brief reminder.</p></details>
+<details open><summary>Review focus</summary><p id="review"></p><p>This is an inspection pass, not a visual-quality approval. Source animations are retained on disk; this view displays static geometry.</p></details></aside>
+<section class="stage" aria-label="Model inspection"><div class="canvas-wrap"><canvas id="canvas" width="800" height="600" tabindex="0" aria-label="Interactive Plasius model view" aria-describedby="help"></canvas><p id="hint" hidden>Drag to orbit · Shift-drag to move · Scroll to approach<br>Touch: drag or pinch · Keyboard: arrows, + / −, Home</p></div><p id="status" role="status" aria-live="polite">Preparing the review…</p></section></div>
+<p class="footnote">Medieval house and Gem are deferred pending their Sketchfab downloads. No replacement models are shown.</p></main>
+<script type="module">import { mountLibrary } from './main.js'; mountLibrary().catch(error => { document.querySelector('#status').textContent = `Unable to open review: ${error.message}`; });</script>
+</body></html>

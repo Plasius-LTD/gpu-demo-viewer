@@ -148,3 +148,11 @@ npm 11.5.1 or newer, uses the protected `production` environment and
 short-lived npm OIDC with provenance, and has no long-lived npm write-token
 fallback. Rollback disables CD; it never rewrites published package history.
 <!-- END PLASIUS RELEASE INTEGRITY -->
+
+## Model library review
+
+`npm run models:download` installs the ten reviewed, freely licensed Poly Haven and Khronos fixtures from `model-library/catalogue.json`, including all buffer/image dependencies. Downloads are bounded and SHA-256 checked; binaries are ignored by Git and npm. `npm run models:dev` opens the localhost server on port 5291. Visit `http://127.0.0.1:5291/?review=first-twelve`. The house and gem remain explicitly deferred, as requested. Source links, creators and licences are available beside each model.
+
+This page consumes the shared model-inspection package entrypoint. While its upstream release is pending, development testing can set `PLASIUS_SHARED_INSPECTION_SOURCE` to an absolute path to the reviewed sibling `src/model-inspection.js`; this explicit source override is for localhost development only, not a released dependency or production deployment.
+
+Mouse/touch/keyboard inspection reuses the material-study camera. No idle animation loop runs. `Home` restores framing and `?` displays a brief gesture reminder. Resizing remounts the view. Fox is static here; its Survey, Walk and Run clips remain in the original download. Amber currently exposes a visible transmission/volume rendering defect. See `docs/model-library-review.md` for the initial findings; none of these fixtures is implicitly approved for the production showcase.
