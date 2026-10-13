@@ -7,8 +7,12 @@ export function acquisitionPlan(assets, root) {
   for(const asset of assets) {
     if(!asset.entry) continue;
     for(const file of asset.files) {
-      const url=new URL(file.url);
-      if(url.protocol!=='https:' || !['dl.polyhaven.org','raw.githubusercontent.com'].includes(url.hostname)) throw new Error('Unapproved asset source.');
+      if(file.acquisition==='manual') {
+        if(file.url!==undefined)throw new Error('Manual asset must not specify a download URL.');
+      } else {
+        const url=new URL(file.url);
+        if(url.protocol!=='https:' || !['dl.polyhaven.org','raw.githubusercontent.com'].includes(url.hostname)) throw new Error('Unapproved asset source.');
+      }
       const path=resolve(root,asset.key,file.path),rel=relative(resolve(root),path);
       if(!rel || rel.startsWith('..') || isAbsolute(rel)) throw new Error('Unsafe asset destination.');
       if(!Number.isSafeInteger(file.bytes)||file.bytes<1||file.bytes>100*1048576||!/^[a-f0-9]{64}$/.test(file.sha256)) throw new Error('Invalid asset bounds or hash.');
@@ -29,6 +33,7 @@ export async function acquireFixtures({assets,root,fetch:request=globalThis.fetc
       const file=plan[cursor++];let existing;
       try{existing=await readFile(file.path);}catch(error){if(error.code!=='ENOENT')throw error;}
       if(existing){if(!verify(file,existing))throw new Error(`Existing file failed integrity: ${file.asset.key}`);continue;}
+      if(file.acquisition==='manual')throw new Error(`Manual asset required: ${file.asset.key}. Place the reviewed file at ${file.path} and retry.`);
       const response=await request(file.url,{redirect:'error',signal:AbortSignal.timeout(60000),headers:{'User-Agent':'Plasius-Renderer-Asset-Research/1.0 (https://plasius.co.uk)'}});
       if(!response.ok)throw new Error(`Asset download failed: ${response.status}`);
       const reader=response.body.getReader(),chunks=[];let length=0;

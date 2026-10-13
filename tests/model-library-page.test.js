@@ -33,7 +33,7 @@ test('disabled review and unavailable catalogue stay visible before GPU allocati
 test('local server and acquisition entry use the checked catalogue without invoking a network in tests',async()=>{
   assert.equal(config.server.host,'127.0.0.1');assert.equal(config.server.strictPort,true);
   const result=await run(async({assets,root})=>({count:assets.filter(a=>a.entry).length,root}));
-  assert.equal(result.count,10);assert.match(result.root,/model-library\/assets\/$/);
+  assert.equal(result.count,11);assert.match(result.root,/model-library\/assets\/$/);
 });
 
 test('resize coalesces remounts at the latest canvas dimensions and teardown cancels pending work',async(t)=>{

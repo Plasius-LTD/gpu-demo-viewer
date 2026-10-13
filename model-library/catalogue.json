@@ -83,10 +83,10 @@
       "key": "sf-house",
       "category": "Buildings and structures",
       "renderer_target": "House-scale lighting, multiple materials, silhouette detail",
-      "preparation": "Inspect downloaded texture channels and prepare a bounded glTF/GLB export.",
+      "preparation": "Inspect stone, plaster, roof and timber response under the same lighting.",
       "priority": "First 12",
       "checked": "2026-10-11",
-      "import_status": "Not imported or visually qualified in this research",
+      "import_status": "Visually inspected in the local Plasius renderer on 2026-10-13",
       "name": "Medieval house",
       "provider": "Sketchfab",
       "source_url": "https://sketchfab.com/3d-models/medieval-house-904038d693b945d4843decee87fb0eb5",
@@ -94,14 +94,14 @@
       "licence": "CC-BY-4.0",
       "licence_url": "http://creativecommons.org/licenses/by/4.0/",
       "licence_status": "Source licence verified",
-      "formats": "Download available; exact bundle formats not verified",
+      "formats": "GLB 2.0, embedded PNG textures",
       "geometry_count": 83052,
       "geometry_unit": "Triangles reported by Sketchfab",
-      "package_mib": null,
-      "package_basis": "Download size not verified",
+      "package_mib": 22.01,
+      "package_basis": "User-supplied original GLB; not GPU memory",
       "format_evidence_url": "https://sketchfab.com/3d-models/medieval-house-904038d693b945d4843decee87fb0eb5",
       "download_entry_url": "https://sketchfab.com/3d-models/medieval-house-904038d693b945d4843decee87fb0eb5",
-      "extensions": "Not inspected",
+      "extensions": "KHR_materials_specular",
       "source_metadata_url": "https://api.sketchfab.com/v3/models/904038d693b945d4843decee87fb0eb5",
       "lods_advertised": false,
       "authoring_style": "Author model; visual qualification pending",
@@ -110,9 +110,28 @@
       "material_count": 5,
       "animation_count": 0,
       "number": 4,
-      "files": [],
-      "status": "deferred-by-user",
-      "entry": null
+      "files": [
+        {
+          "path": "medieval_house.glb",
+          "acquisition": "manual",
+          "bytes": 23076392,
+          "sha256": "8c1c4954bf634baf5fa00713db4fed606fd4a0e3f4184805a30304f90873ceac",
+          "integrity": "sha256-jBxJVL9jS69foAcT20/tYG/UoOP0GEgFowME+Qhzzqw="
+        }
+      ],
+      "status": "acquired",
+      "entry": "medieval_house.glb",
+      "inspection": {
+        "triangles": 83046,
+        "primitives": 6,
+        "materials": 5,
+        "images": 15,
+        "extensions": [
+          "KHR_materials_specular"
+        ],
+        "animations": []
+      },
+      "observed_issue": "House geometry and embedded textures render. Roof and recessed timber read dark; improve lighting separation and sampling before public presentation."
     },
     {
       "key": "fern_02",
@@ -730,7 +749,7 @@
       "name": "Mosquito In Amber",
       "provider": "Khronos sample assets",
       "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MosquitoInAmber",
-      "authors": "Loic Norgeot (Model); \u00a9 2018 Sketchfab; Sketchfab (Real-time refraction); \u00a9 2019 Sketchfab",
+      "authors": "Loic Norgeot (Model); © 2018 Sketchfab; Sketchfab (Real-time refraction); © 2019 Sketchfab",
       "licence": "CC-BY-4.0",
       "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/MosquitoInAmber/README.md",
       "licence_status": "Source licence verified",
@@ -864,7 +883,7 @@
       "name": "Fox",
       "provider": "Khronos sample assets",
       "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Fox",
-      "authors": "PixelMannen (Model); \u00a9 2014 Public; tomkranis (Rigging & Animation); \u00a9 2014 tomkranis; @AsoboStudio and @scurest (Conversion to glTF); \u00a9 2017 @AsoboStudio and @scurest",
+      "authors": "PixelMannen (Model); © 2014 Public; tomkranis (Rigging & Animation); © 2014 tomkranis; @AsoboStudio and @scurest (Conversion to glTF); © 2017 @AsoboStudio and @scurest",
       "licence": "CC0-1.0 + CC-BY-4.0",
       "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/Fox/README.md",
       "licence_status": "Source licence verified",

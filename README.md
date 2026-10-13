@@ -151,7 +151,9 @@ fallback. Rollback disables CD; it never rewrites published package history.
 
 ## Model library review
 
-`npm run models:download` installs the ten reviewed, freely licensed Poly Haven and Khronos fixtures from `model-library/catalogue.json`, including all buffer/image dependencies. Downloads are bounded and SHA-256 checked; binaries are ignored by Git and npm. `npm run models:dev` opens the localhost server on port 5291. Visit `http://127.0.0.1:5291/?review=first-twelve`. The house and gem remain explicitly deferred, as requested. Source links, creators and licences are available beside each model.
+`npm run models:download` installs the ten reviewed, freely licensed Poly Haven and Khronos fixtures from `model-library/catalogue.json`, including all buffer/image dependencies. Downloads are bounded and SHA-256 checked; binaries are ignored by Git and npm. `npm run models:dev` opens the localhost server on port 5291. Visit `http://127.0.0.1:5291/?review=first-twelve`. The Medieval house is a manually supplied eleventh asset; only Gem remains deferred. Source links, creators and licences are available beside each model.
+
+For Medieval house, obtain the original GLB from its credited Sketchfab source and place it at `model-library/assets/sf-house/medieval_house.glb`, then run `npm run models:download` to verify its pinned size and SHA-256 and write its credits. This command never downloads manual assets; a missing file produces an explicit placement message. The catalogue stores no private local paths.
 
 This page consumes the shared model-inspection package entrypoint. While its upstream release is pending, development testing can set `PLASIUS_SHARED_INSPECTION_SOURCE` to an absolute path to the reviewed sibling `src/model-inspection.js`; this explicit source override is for localhost development only, not a released dependency or production deployment.
 

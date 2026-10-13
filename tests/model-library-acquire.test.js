@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, readFile, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
@@ -33,4 +33,23 @@ test('failed and oversize downloads never become installed assets',async()=>{
       await assert.rejects(readFile(join(root,'test/scene.gltf')),/ENOENT/);
     }
   }finally{await rm(root,{recursive:true,force:true});}
+});
+
+test('manual files never download and must match reviewed bytes before receiving credits',async()=>{
+  const root=await mkdtemp(join(tmpdir(),'plasius-model-manual-'));
+  const {url:unused,...manualFile}=file;
+  const manual={...asset,files:[{...manualFile,acquisition:'manual'}]};
+  let requests=0;
+  const fetch=async()=>{requests++;throw new Error('Manual files must not request the network');};
+  try {
+    await assert.rejects(acquireFixtures({assets:[manual],root,fetch}),/Manual asset required: test.*scene\.gltf/);
+    await mkdir(join(root,'test'));
+    await writeFile(join(root,'test/scene.gltf'),data);
+    assert.deepEqual(await acquireFixtures({assets:[manual],root,fetch}),{models:1,files:1,bytes:data.length});
+    assert.match(await readFile(join(root,'test/CREDITS.txt'),'utf8'),/Creator/);
+    await writeFile(join(root,'test/scene.gltf'),'tampered');
+    await assert.rejects(acquireFixtures({assets:[manual],root,fetch}),/Existing file failed integrity/);
+    assert.equal(requests,0);
+    assert.throws(()=>acquisitionPlan([{...manual,files:[{...manual.files[0],url:'https://example.com'}]}],root),/Manual asset must not specify/);
+  } finally {await rm(root,{recursive:true,force:true});}
 });

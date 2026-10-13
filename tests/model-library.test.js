@@ -38,4 +38,13 @@ test('all twelve exact shortlisted identities retain licensing and provenance',a
   assert.equal(assets.length,12);assert.equal(new Set(assets.map(a=>a.key)).size,12);
   for(const a of assets){assert.ok(a.source_url&&a.authors&&a.licence_url);if(a.entry){assert.ok(a.files.length);for(const f of a.files)assert.match(f.sha256,/^[a-f0-9]{64}$/);}}
   assert.deepEqual(assets.find(a=>a.key==='Fox').inspection.animations,['Survey','Walk','Run']);
+  assert.equal(assets.filter(a=>a.entry).length,11);
+  const house=assets.find(a=>a.key==='sf-house');
+  assert.equal(house.entry,'medieval_house.glb');
+  assert.equal(house.files[0].acquisition,'manual');
+  assert.equal(house.files[0].url,undefined);
+  assert.equal(house.licence,'CC-BY-4.0');
+  assert.equal(house.authors,'Vanuartw');
+  assert.equal(house.inspection.triangles,83046);
+  assert.equal(assets.find(a=>a.key==='sf-gem').entry,null);
 });

@@ -10,8 +10,8 @@ export const demos = [
     sourcePath: "./model-library/main.js",
     docsPath: "./docs/model-library-review.md",
     command: "npm run models:download && npm run models:dev",
-    summary: "Inspect ten downloaded models with original materials, source credits and explicit rendering findings.",
-    notes: ["Requires the released shared model-inspection entrypoint, or the documented local source override.", "Medieval house and Gem are deferred. Fox is static; amber has a recorded material defect."],
+    summary: "Inspect eleven acquired models with original materials, source credits and explicit rendering findings.",
+    notes: ["Requires the released shared model-inspection entrypoint, or the documented local source override.", "Gem remains deferred. Fox is static; amber has a recorded material defect."],
     tags: ["browser", "3d", "experimental"]
   },
   {
