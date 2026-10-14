@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
 import { demos } from "../viewer-manifest.js";
@@ -73,4 +73,19 @@ test("browser demos in the catalog expose mounted 3D surfaces", () => {
       `${demo.id} should advertise a mounted 3D validation surface`
     );
   }
+});
+
+test("model studies launch with the local review gate and map shared runtime dependencies", () => {
+  const demo = demos.find(({ id }) => id === "model-library");
+  const launch = new URL(demo.launchPath, manifestBaseUrl);
+  assert.equal(launch.searchParams.get("review"), "first-twelve");
+  assert.match(demo.notes.join(" "), /deferred/);
+  const html = readFileSync(new URL("index.html", launch), "utf8");
+  const { imports } = JSON.parse(html.match(/<script type="importmap">([\s\S]*?)<\/script>/)[1]);
+  for (const name of ["@plasius/gpu-shared/model-inspection", "@plasius/gpu-shared/feedback-diagnostics",
+    "@plasius/gpu-renderer", "@plasius/gpu-camera", "@plasius/gpu-camera-controls",
+    "@plasius/gpu-camera-controls/browser", "@plasius/schema/feedback-diagnostics-vocabulary"]) {
+    assert.match(imports[name], /^\.\.\/node_modules\/@plasius\//);
+  }
+  assert.ok(html.indexOf('type="importmap"') < html.indexOf('type="module"'));
 });

@@ -1,0 +1,991 @@
+{
+  "checked": "2026-10-13",
+  "assets": [
+    {
+      "key": "large_castle_door",
+      "category": "Buildings and structures",
+      "renderer_target": "Wood versus iron; selective ageing and surface roughness",
+      "preparation": "Keep wood wear separate from metal corrosion.",
+      "priority": "First 12",
+      "checked": "2026-10-11",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Large Castle Door",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/large_castle_door",
+      "authors": "Tina (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 12640,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 3.12,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/large_castle_door",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/large_castle_door/large_castle_door_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/large_castle_door",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 2,
+      "files": [
+        {
+          "path": "large_castle_door.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/large_castle_door/large_castle_door.bin",
+          "bytes": 422436,
+          "sha256": "7db2eb9d2b81207a30c849ba5de0f2c25085add88e437bc69764ce792758ff76",
+          "integrity": "sha256-fbLrnSuBIHowyEm6XeDywlCFrdiOQ3vGl2TOeSdY/3Y="
+        },
+        {
+          "path": "large_castle_door_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/large_castle_door/large_castle_door_1k.gltf",
+          "bytes": 6111,
+          "sha256": "e43e0a7bf56cb4f37402a133ae8bed3a010120362ef1a52ff4e59b0d83b2d656",
+          "integrity": "sha256-5D4Ke/VstPN0AqEzrovtOgEBIDYu8aUv9OWbDYOy1lY="
+        },
+        {
+          "path": "textures/large_castle_door_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/large_castle_door/large_castle_door_arm_1k.jpg",
+          "bytes": 1016111,
+          "sha256": "2b1e832840d7393ac8a4d058630f8a8378254ad56f6601da08f1135851861955",
+          "integrity": "sha256-Kx6DKEDXOTrIpNBYYw+Kg3glStVvZgHaCPETWFGGGVU="
+        },
+        {
+          "path": "textures/large_castle_door_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/large_castle_door/large_castle_door_diff_1k.jpg",
+          "bytes": 803253,
+          "sha256": "06b9640df9702ceee23cfd042e858ca03b8c68818a691c55d4ea2a65258db97a",
+          "integrity": "sha256-BrlkDflwLO7iPP0ELoWMoDuMaIGKaRxV1OoqZSWNuXo="
+        },
+        {
+          "path": "textures/large_castle_door_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/large_castle_door/large_castle_door_nor_gl_1k.jpg",
+          "bytes": 1023095,
+          "sha256": "297929524f3a2e6634543ec1c6f0278369d3649a2eba888fa3bf9caf72ab2af1",
+          "integrity": "sha256-KXkpUk86LmY0VD7BxvAng2nTZJouuoiPo7+cr3KrKvE="
+        }
+      ],
+      "entry": "large_castle_door_1k.gltf",
+      "status": "downloaded",
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "sf-house",
+      "category": "Buildings and structures",
+      "renderer_target": "House-scale lighting, multiple materials, silhouette detail",
+      "preparation": "Inspect stone, plaster, roof and timber response under the same lighting.",
+      "priority": "First 12",
+      "checked": "2026-10-11",
+      "import_status": "Visually inspected in the local Plasius renderer on 2026-10-13",
+      "name": "Medieval house",
+      "provider": "Sketchfab",
+      "source_url": "https://sketchfab.com/3d-models/medieval-house-904038d693b945d4843decee87fb0eb5",
+      "authors": "Vanuartw",
+      "licence": "CC-BY-4.0",
+      "licence_url": "http://creativecommons.org/licenses/by/4.0/",
+      "licence_status": "Source licence verified",
+      "formats": "GLB 2.0, embedded PNG textures",
+      "geometry_count": 83052,
+      "geometry_unit": "Triangles reported by Sketchfab",
+      "package_mib": 22.01,
+      "package_basis": "User-supplied original GLB; not GPU memory",
+      "format_evidence_url": "https://sketchfab.com/3d-models/medieval-house-904038d693b945d4843decee87fb0eb5",
+      "download_entry_url": "https://sketchfab.com/3d-models/medieval-house-904038d693b945d4843decee87fb0eb5",
+      "extensions": "KHR_materials_specular",
+      "source_metadata_url": "https://api.sketchfab.com/v3/models/904038d693b945d4843decee87fb0eb5",
+      "lods_advertised": false,
+      "authoring_style": "Author model; visual qualification pending",
+      "cost": "Free",
+      "attribution_required": true,
+      "material_count": 5,
+      "animation_count": 0,
+      "number": 4,
+      "files": [
+        {
+          "path": "medieval_house.glb",
+          "acquisition": "manual",
+          "bytes": 23076392,
+          "sha256": "8c1c4954bf634baf5fa00713db4fed606fd4a0e3f4184805a30304f90873ceac",
+          "integrity": "sha256-jBxJVL9jS69foAcT20/tYG/UoOP0GEgFowME+Qhzzqw="
+        }
+      ],
+      "status": "acquired",
+      "entry": "medieval_house.glb",
+      "inspection": {
+        "triangles": 83046,
+        "primitives": 6,
+        "materials": 5,
+        "images": 15,
+        "extensions": [
+          "KHR_materials_specular"
+        ],
+        "animations": []
+      },
+      "observed_issue": "House geometry and embedded textures render. Roof and recessed timber read dark; improve lighting separation and sampling before public presentation."
+    },
+    {
+      "key": "fern_02",
+      "category": "Trees and plants",
+      "renderer_target": "Leaf cutouts, double-sided shading and backlighting",
+      "preparation": "Test alpha handling first; count the fern clumps as one source asset.",
+      "priority": "First 12",
+      "checked": "2026-10-11",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Fern 02",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/fern_02",
+      "authors": "Rob Tuytel (scanning); Rico Cilliers (modeling)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 6232,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 1.09,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/fern_02",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/fern_02/fern_02_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/fern_02",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 12,
+      "files": [
+        {
+          "path": "fern_02.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/fern_02/fern_02.bin",
+          "bytes": 176176,
+          "sha256": "fe1abb762bcbbc7ad9e86925c8080437a62add257d9280e9142fdc85c226e64c",
+          "integrity": "sha256-/hq7divLvHrZ6GklyAgEN6Yq3SV9koDpFC/chcIm5kw="
+        },
+        {
+          "path": "fern_02_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/fern_02/fern_02_1k.gltf",
+          "bytes": 6899,
+          "sha256": "33974295ee19670af4877705fc7d91f33f42d6302f0d44a625e072271223031f",
+          "integrity": "sha256-M5dCle4ZZwr0h3cF/H2R8z9C1jAvDUSmJeByJxIjAx8="
+        },
+        {
+          "path": "textures/fern_02_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/fern_02/fern_02_arm_1k.jpg",
+          "bytes": 280359,
+          "sha256": "ebfb5d76ce9cbdaec20bcd22dce9b755f0b1b8650ef29ca13555e3e6961025d7",
+          "integrity": "sha256-6/tdds6cva7CC80i3Om3VfCxuGUO8pyhNVXj5pYQJdc="
+        },
+        {
+          "path": "textures/fern_02_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/fern_02/fern_02_diff_1k.jpg",
+          "bytes": 315705,
+          "sha256": "a828a6e7b4c01c826911e2eac4b3afc7457dab7b3b392a31c681ed88b7d50029",
+          "integrity": "sha256-qCim57TAHIJpEeLqxLOvx0V9q3s7OSoxxoHtiLfVACk="
+        },
+        {
+          "path": "textures/fern_02_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/fern_02/fern_02_nor_gl_1k.jpg",
+          "bytes": 367222,
+          "sha256": "45bce132c6e96a0864bc89ab5da51361ab3f4afa83a6669ae499ab5ca811f621",
+          "integrity": "sha256-RbzhMsbpaghkvImrXaUTYas/SvqDpmaa5JmrXKgR9iE="
+        }
+      ],
+      "entry": "fern_02_1k.gltf",
+      "status": "downloaded",
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "MASK"
+        ]
+      }
+    },
+    {
+      "key": "quiver_tree_01",
+      "category": "Trees and plants",
+      "renderer_target": "Distinctive tree form, bark, thick succulent leaves",
+      "preparation": "A manageable first tree study; inspect available LODs.",
+      "priority": "First 12",
+      "checked": "2026-10-11",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Quiver Tree 01",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/quiver_tree_01",
+      "authors": "James Ray Cock (Photography); Dario Barresi (Photography); Rico Cilliers (modeling)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 269522,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 8.47,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/quiver_tree_01",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/quiver_tree_01/quiver_tree_01_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/quiver_tree_01",
+      "lods_advertised": true,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 18,
+      "files": [
+        {
+          "path": "quiver_tree_01.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/quiver_tree_01/quiver_tree_01.bin",
+          "bytes": 4413204,
+          "sha256": "20efdf4aa14825ffd01abb21535afd485a00022c96ad04c1269bb01c137bbe08",
+          "integrity": "sha256-IO/fSqFIJf/QGrshU1r9SFoAAiyWrQTBJpuwHBN7vgg="
+        },
+        {
+          "path": "quiver_tree_01_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/quiver_tree_01/quiver_tree_01_1k.gltf",
+          "bytes": 5080,
+          "sha256": "aa6885a0fe43b274584851b0947e2209dc64afce1d20a75a1567e790a12d0722",
+          "integrity": "sha256-qmiFoP5DsnRYSFGwlH4iCdxkr84dIKdaFWfnkKEtByI="
+        },
+        {
+          "path": "textures/quiver_tree_01_leaf_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/quiver_tree_01/quiver_tree_01_leaf_arm_1k.jpg",
+          "bytes": 737159,
+          "sha256": "c0be7dd1b7dcc61fcbe252b2ca656b1ecf7633d9a1bb52cf7006bc97bf6c560c",
+          "integrity": "sha256-wL590bfcxh/L4lKyymVrHs92M9mhu1LPcAa8l79sVgw="
+        },
+        {
+          "path": "textures/quiver_tree_01_leaf_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/quiver_tree_01/quiver_tree_01_leaf_diff_1k.jpg",
+          "bytes": 652456,
+          "sha256": "5622b466a950b74d296c3d066e0d28d85770232fd5624c5ab0f752de825fae18",
+          "integrity": "sha256-ViK0ZqlQt00pbD0Gbg0o2FdwIy/VYkxasPdS3oJfrhg="
+        },
+        {
+          "path": "textures/quiver_tree_01_leaf_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/quiver_tree_01/quiver_tree_01_leaf_nor_gl_1k.jpg",
+          "bytes": 898833,
+          "sha256": "4480bafa755e1886073546aca1fbd6da377c463849f18588c773460c61b4ed0a",
+          "integrity": "sha256-RIC6+nVeGIYHNUasofvW2jd8RjhJ8YWIx3NGDGG07Qo="
+        },
+        {
+          "path": "textures/quiver_tree_01_trunk_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/quiver_tree_01/quiver_tree_01_trunk_arm_1k.jpg",
+          "bytes": 492139,
+          "sha256": "9271edcab1c7224aa6b9e64f0321ae54ad7c074557290cd366c3392e7c330ab7",
+          "integrity": "sha256-knHtyrHHIkqmueZPAyGuVK18B0VXKQzTZsM5LnwzCrc="
+        },
+        {
+          "path": "textures/quiver_tree_01_trunk_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/quiver_tree_01/quiver_tree_01_trunk_diff_1k.jpg",
+          "bytes": 741115,
+          "sha256": "47963e7a274bf26da0a49019d01268f5dad9e8a2e6cd17fcd3ba1d2606517f57",
+          "integrity": "sha256-R5Y+eidL8m2gpJAZ0BJo9drZ6KLmzRf807odJgZRf1c="
+        },
+        {
+          "path": "textures/quiver_tree_01_trunk_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/quiver_tree_01/quiver_tree_01_trunk_nor_gl_1k.jpg",
+          "bytes": 940495,
+          "sha256": "430ccf8d2545f7fe1119433ef34a02111a81f907dfb4ee50654ffdad4b655438",
+          "integrity": "sha256-QwzPjSVF9/4RGUM+80oCERqB+QfftO5QZU/9rUtlVDg="
+        }
+      ],
+      "entry": "quiver_tree_01_1k.gltf",
+      "status": "downloaded",
+      "inspection": {
+        "materials": 2,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE",
+          "BLEND"
+        ]
+      }
+    },
+    {
+      "key": "rock_moss_set_01",
+      "category": "Terrain and natural objects",
+      "renderer_target": "Stone versus moss, roughness contrast and grounded contact",
+      "preparation": "Treat the rock set as one entry; use selected stones.",
+      "priority": "First 12",
+      "checked": "2026-10-11",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Rock Moss Set 01",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/rock_moss_set_01",
+      "authors": "Kless Gyzen (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 63127,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 1.85,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/rock_moss_set_01",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/rock_moss_set_01/rock_moss_set_01_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/rock_moss_set_01",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 26,
+      "files": [
+        {
+          "path": "rock_moss_set_01.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/rock_moss_set_01/rock_moss_set_01.bin",
+          "bytes": 1466380,
+          "sha256": "de8360e6175879aaf02c171911069cf5f1852547f9ca7f10e440085dbcc3315e",
+          "integrity": "sha256-3oNg5hdYearwLBcZEQac9fGFJUf5yn8Q5EAIXbzDMV4="
+        },
+        {
+          "path": "rock_moss_set_01_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/rock_moss_set_01/rock_moss_set_01_1k.gltf",
+          "bytes": 9987,
+          "sha256": "c36675aca9c6b2be7785c2534cf413b03ec82a5a2a5407a2b1c0cdb0346c9727",
+          "integrity": "sha256-w2Z1rKnGsr53hcJTTPQTsD7IKloqVAeiscDNsDRslyc="
+        },
+        {
+          "path": "textures/rock_moss_set_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rock_moss_set_01/rock_moss_set_01_diff_1k.jpg",
+          "bytes": 168099,
+          "sha256": "40cea65d8aa4ee73a93b04af19963834d061eee9779c3fc2c1cba76eef812ccc",
+          "integrity": "sha256-QM6mXYqk7nOpOwSvGZY4NNBh7ul3nD/Cwcunbu+BLMw="
+        },
+        {
+          "path": "textures/rock_moss_set_01_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rock_moss_set_01/rock_moss_set_01_nor_gl_1k.jpg",
+          "bytes": 209975,
+          "sha256": "eb4aad3f207f1dc5b624d74ae240372171626a66912bd71adf7bd3e518181d6e",
+          "integrity": "sha256-60qtPyB/HcW2JNdK4kA3IXFiamaRK9ca33vT5RgYHW4="
+        },
+        {
+          "path": "textures/rock_moss_set_01_rough_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rock_moss_set_01/rock_moss_set_01_rough_1k.jpg",
+          "bytes": 82624,
+          "sha256": "4d6ec46623abd8e2cdb855f59c7ce31873ad61b36b60e4de579e9e776a497c6b",
+          "integrity": "sha256-TW7EZiOr2OLNuFX1nHzjGHOtYbNrYOTeV56ed2pJfGs="
+        }
+      ],
+      "entry": "rock_moss_set_01_1k.gltf",
+      "status": "downloaded",
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "garden_gloves_01",
+      "category": "Wood, rope and textiles",
+      "renderer_target": "Knitted cloth versus rubber; controlled fraying",
+      "preparation": "Inspect material regions before adding fibre rendering.",
+      "priority": "First 12",
+      "checked": "2026-10-11",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Garden Gloves 01",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/garden_gloves_01",
+      "authors": "Satyaki Mandal (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 6822,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 2.77,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/garden_gloves_01",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/garden_gloves_01/garden_gloves_01_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/garden_gloves_01",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 30,
+      "files": [
+        {
+          "path": "garden_gloves_01.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/garden_gloves_01/garden_gloves_01.bin",
+          "bytes": 168132,
+          "sha256": "8d4d237eaa5d28fe7d5ba8daa700a6a888963e226a44653fc66067232202395b",
+          "integrity": "sha256-jU0jfqpdKP59W6japwCmqIiWPiJqRGU/xmBnIyICOVs="
+        },
+        {
+          "path": "garden_gloves_01_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/garden_gloves_01/garden_gloves_01_1k.gltf",
+          "bytes": 2813,
+          "sha256": "ab36c016f48b8cecf0658a9e3264592265dd159777ee56f3dbfdd765650f0287",
+          "integrity": "sha256-qzbAFvSLjOzwZYqeMmRZImXdFZd37lbz2/3XZWUPAoc="
+        },
+        {
+          "path": "textures/garden_gloves_01_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/garden_gloves_01/garden_gloves_01_arm_1k.jpg",
+          "bytes": 885378,
+          "sha256": "4ca81495947ed5a7c29295caf83014c88a2eebd736f8dfbd92e7672e8e431a86",
+          "integrity": "sha256-TKgUlZR+1afCkpXK+DAUyIou69c2+N+9kudnLo5DGoY="
+        },
+        {
+          "path": "textures/garden_gloves_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/garden_gloves_01/garden_gloves_01_diff_1k.jpg",
+          "bytes": 806038,
+          "sha256": "09aa415fbb228cdc5c7539f0c79bd3caa5fff1b4a7aa8470c6163c497115b062",
+          "integrity": "sha256-CapBX7sijNxcdTnwx5vTyqX/8bSnqoRwxhY8SXEVsGI="
+        },
+        {
+          "path": "textures/garden_gloves_01_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/garden_gloves_01/garden_gloves_01_nor_gl_1k.jpg",
+          "bytes": 1042336,
+          "sha256": "da7ef6105041181532cc69466c645966b0e0d039ae1fdba3986d7e96af121f57",
+          "integrity": "sha256-2n72EFBBGBUyzGlGbGRZZrDg0DmuH9ujmG1+lq8SH1c="
+        }
+      ],
+      "entry": "garden_gloves_01_1k.gltf",
+      "status": "downloaded",
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "wooden_crate_02",
+      "category": "Wood, rope and textiles",
+      "renderer_target": "Wood ageing, rope fibre masks and metal separation",
+      "preparation": "Extend the chest study to a second model; fraying and varnish masks are authoring work.",
+      "priority": "First 12",
+      "checked": "2026-10-11",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Wooden Crate 02",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/wooden_crate_02",
+      "authors": "James Ray Cock (modeling); Jurita Burger (graphic design)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 5176,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 2.13,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/wooden_crate_02",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wooden_crate_02/wooden_crate_02_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/wooden_crate_02",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 40,
+      "files": [
+        {
+          "path": "textures/wooden_crate_02_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_crate_02/wooden_crate_02_arm_1k.jpg",
+          "bytes": 819577,
+          "sha256": "a76af97005a66fe8c7cdcabf20174f06813e6a6d5cd9502157c93a57f3c89d5a",
+          "integrity": "sha256-p2r5cAWmb+jHzcq/IBdPBoE+am1c2VAhV8k6V/PInVo="
+        },
+        {
+          "path": "textures/wooden_crate_02_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_crate_02/wooden_crate_02_diff_1k.jpg",
+          "bytes": 716110,
+          "sha256": "a6e57123110d2899af9493c22b1918174f1c96c707e7126ac67738d98ee10c07",
+          "integrity": "sha256-puVxIxENKJmvlJPCKxkYF08clscH5xJqxnc42Y7hDAc="
+        },
+        {
+          "path": "textures/wooden_crate_02_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wooden_crate_02/wooden_crate_02_nor_gl_1k.jpg",
+          "bytes": 546319,
+          "sha256": "59342f730c9f336950f796ef5e4c3b8c794ce5adbd54d98a2ecb679a7e4ae5e8",
+          "integrity": "sha256-WTQvcwyfM2lQ95bvXkw7jHlM5a29VNmKLstnmn5K5eg="
+        },
+        {
+          "path": "wooden_crate_02.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/wooden_crate_02/wooden_crate_02.bin",
+          "bytes": 150064,
+          "sha256": "e68e272641f704e5241e4108894f0b97363d511944db8b991a48787d0160ea5e",
+          "integrity": "sha256-5o4nJkH3BOUkHkEIiU8LlzY9URlE24uZGkh4fQFg6l4="
+        },
+        {
+          "path": "wooden_crate_02_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wooden_crate_02/wooden_crate_02_1k.gltf",
+          "bytes": 4150,
+          "sha256": "e90985d317664668988cb95ce707784c94ab0ccc6d13c980ca789fa69a5cf7b6",
+          "integrity": "sha256-6QmF0xdmRmiYjLlc5wd4TJSrDMxtE8mAynifpppc97Y="
+        }
+      ],
+      "entry": "wooden_crate_02_1k.gltf",
+      "status": "downloaded",
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "bronze_whale_statue",
+      "category": "Fantasy, sculpture and gems",
+      "renderer_target": "Metallic patina and changing reflections",
+      "preparation": "A compact first metal study under rotating illumination.",
+      "priority": "First 12",
+      "checked": "2026-10-11",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Bronze Whale Statue",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/bronze_whale_statue",
+      "authors": "Tina (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 3816,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 2.09,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/bronze_whale_statue",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/bronze_whale_statue/bronze_whale_statue_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/bronze_whale_statue",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 53,
+      "files": [
+        {
+          "path": "bronze_whale_statue.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/bronze_whale_statue/bronze_whale_statue.bin",
+          "bytes": 102352,
+          "sha256": "675ec5711b4d7653a1bdfd4c25a7ca33652eb173eae1869de8e4759090a1fa21",
+          "integrity": "sha256-Z17FcRtNdlOhvf1MJafKM2UusXPq4Yad6OR1kJCh+iE="
+        },
+        {
+          "path": "bronze_whale_statue_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/bronze_whale_statue/bronze_whale_statue_1k.gltf",
+          "bytes": 3108,
+          "sha256": "97ff882e047f3415601437d6db43a7326a3fa1ac5bddb86ae119b74717888d18",
+          "integrity": "sha256-l/+ILgR/NBVgFDfW20OnMmo/oaxb3bhq4Rm3RxeIjRg="
+        },
+        {
+          "path": "textures/bronze_whale_statue_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/bronze_whale_statue/bronze_whale_statue_arm_1k.jpg",
+          "bytes": 854626,
+          "sha256": "76ffa3b4f0e81208ddd23a13d0605a225d82b6502f5c847c270490ab96717a81",
+          "integrity": "sha256-dv+jtPDoEgjd0joT0GBaIl2CtlAvXIR8JwSQq5ZxeoE="
+        },
+        {
+          "path": "textures/bronze_whale_statue_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/bronze_whale_statue/bronze_whale_statue_diff_1k.jpg",
+          "bytes": 493169,
+          "sha256": "b7cc4ec674f2c49d09eb66bca291104a10c79a9b384faacb031b49df74c82655",
+          "integrity": "sha256-t8xOxnTyxJ0J62a8opEQShDHmps4T6rLAxtJ33TIJlU="
+        },
+        {
+          "path": "textures/bronze_whale_statue_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/bronze_whale_statue/bronze_whale_statue_nor_gl_1k.jpg",
+          "bytes": 736986,
+          "sha256": "2ecf3a3065ff56da0924ebd2f1e712c49d5f8e06823839a898857141e858cc92",
+          "integrity": "sha256-Ls86MGX/VtoJJOvS8ecSxJ1fjgaCODmomIVxQehYzJI="
+        }
+      ],
+      "entry": "bronze_whale_statue_1k.gltf",
+      "status": "downloaded",
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [
+          "KHR_materials_specular"
+        ],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "sf-gem",
+      "category": "Fantasy, sculpture and gems",
+      "renderer_target": "Faceted normals, coloured transmission and refraction",
+      "preparation": "Simple geometry for a new gem material; no physically correct gem shader is promised by the source.",
+      "priority": "First 12",
+      "checked": "2026-10-11",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Gem",
+      "provider": "Sketchfab",
+      "source_url": "https://sketchfab.com/3d-models/gem-ce73ada1698342d2bde0cb7b632a5b94",
+      "authors": "TomaszObloj",
+      "licence": "CC-BY-4.0",
+      "licence_url": "http://creativecommons.org/licenses/by/4.0/",
+      "licence_status": "Source licence verified",
+      "formats": "GLB (original filename declared by author)",
+      "geometry_count": 86,
+      "geometry_unit": "Triangles reported by Sketchfab",
+      "package_mib": null,
+      "package_basis": "Download size not verified",
+      "format_evidence_url": "https://sketchfab.com/3d-models/gem-ce73ada1698342d2bde0cb7b632a5b94",
+      "download_entry_url": "https://sketchfab.com/3d-models/gem-ce73ada1698342d2bde0cb7b632a5b94",
+      "extensions": "Not inspected",
+      "source_metadata_url": "https://api.sketchfab.com/v3/models/ce73ada1698342d2bde0cb7b632a5b94",
+      "lods_advertised": false,
+      "authoring_style": "Author model; visual qualification pending",
+      "cost": "Free",
+      "attribution_required": true,
+      "material_count": 1,
+      "animation_count": 0,
+      "number": 56,
+      "files": [],
+      "status": "deferred-by-user",
+      "entry": null
+    },
+    {
+      "key": "antique_ceramic_vase_01",
+      "category": "Glass, ceramics and lighting",
+      "renderer_target": "Glazed ceramic, patterned colour and surface wear",
+      "preparation": "A good comparison against wood varnish and bare metal.",
+      "priority": "First 12",
+      "checked": "2026-10-11",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Antique Ceramic Vase 01",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/antique_ceramic_vase_01",
+      "authors": "James Ray Cock (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 9408,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 0.5,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/antique_ceramic_vase_01",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/antique_ceramic_vase_01/antique_ceramic_vase_01_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/antique_ceramic_vase_01",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 62,
+      "files": [
+        {
+          "path": "antique_ceramic_vase_01.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/antique_ceramic_vase_01/antique_ceramic_vase_01.bin",
+          "bytes": 217216,
+          "sha256": "ff3224b67b0a20e5033e651c405382fbfcc26ceb034f8dc59065ea0e0b6b708e",
+          "integrity": "sha256-/zIktnsKIOUDPmUcQFOC+/zCbOsDT43FkGXqDgtrcI4="
+        },
+        {
+          "path": "antique_ceramic_vase_01_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/antique_ceramic_vase_01/antique_ceramic_vase_01_1k.gltf",
+          "bytes": 2789,
+          "sha256": "c99f063c1ba4e649e87218265b5ca34f89e3c288ff6560c76b7d9d2dd46aa8cd",
+          "integrity": "sha256-yZ8GPBuk5knochgmW1yjT4njwoj/ZWDHa32dLdRqqM0="
+        },
+        {
+          "path": "textures/antique_ceramic_vase_01_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/antique_ceramic_vase_01/antique_ceramic_vase_01_arm_1k.jpg",
+          "bytes": 80537,
+          "sha256": "d4315346ead607ee6dada9e8e3710c0d804f47942056a2548e083133c0f8b5ce",
+          "integrity": "sha256-1DFTRurWB+5trano43EMDYBPR5QgVqJUjggxM8D4tc4="
+        },
+        {
+          "path": "textures/antique_ceramic_vase_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/antique_ceramic_vase_01/antique_ceramic_vase_01_diff_1k.jpg",
+          "bytes": 192337,
+          "sha256": "8ee51247bf13d76d3d4da3b99ca7d58bc9b14476250800d98385718887dd58de",
+          "integrity": "sha256-juUSR78T1209TaO5nKfVi8mxRHYlCADZg4VxiIfdWN4="
+        },
+        {
+          "path": "textures/antique_ceramic_vase_01_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/antique_ceramic_vase_01/antique_ceramic_vase_01_nor_gl_1k.jpg",
+          "bytes": 33062,
+          "sha256": "98cf0dceb4a95b73f41cb63f26ad6c26cf84ff6ff642bd216f4ce5343cb66cf7",
+          "integrity": "sha256-mM8NzrSpW3P0HLY/Jq1sJs+E/2/2Qr0hb0zlNDy2bPc="
+        }
+      ],
+      "entry": "antique_ceramic_vase_01_1k.gltf",
+      "status": "downloaded",
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "MosquitoInAmber",
+      "category": "Glass, ceramics and lighting",
+      "renderer_target": "Coloured volume, refraction and an enclosed object",
+      "preparation": "Useful amber/gem benchmark; transmission/IOR/volume support is required.",
+      "priority": "First 12",
+      "checked": "2026-10-11",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Mosquito In Amber",
+      "provider": "Khronos sample assets",
+      "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MosquitoInAmber",
+      "authors": "Loic Norgeot (Model); © 2018 Sketchfab; Sketchfab (Real-time refraction); © 2019 Sketchfab",
+      "licence": "CC-BY-4.0",
+      "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/MosquitoInAmber/README.md",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, glTF-Binary",
+      "geometry_count": null,
+      "geometry_unit": "Not measured",
+      "package_mib": null,
+      "package_basis": "Not measured; JSON buffer length excludes external textures",
+      "format_evidence_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/MosquitoInAmber/glTF/MosquitoInAmber.gltf",
+      "download_entry_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/MosquitoInAmber/glTF/MosquitoInAmber.gltf",
+      "extensions": "KHR_materials_transmission, KHR_materials_ior, KHR_materials_volume",
+      "source_metadata_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/MosquitoInAmber/metadata.json",
+      "lods_advertised": false,
+      "authoring_style": "Material / rendering reference",
+      "cost": "Free",
+      "attribution_required": true,
+      "material_count": 3,
+      "animation_count": 0,
+      "legal_records": [
+        {
+          "license": "CC-BY-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "artist": "Loic Norgeot",
+          "year": "2018",
+          "owner": "Sketchfab",
+          "what": "Model",
+          "text": "Creative Commons Attribution 4.0 International",
+          "spdx": "CC-BY-4.0",
+          "icon": "https://licensebuttons.net/l/by/4.0/88x31.png"
+        },
+        {
+          "license": "CC-BY-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "artist": "Sketchfab",
+          "year": "2019",
+          "owner": "Sketchfab",
+          "what": "Real-time refraction",
+          "text": "Creative Commons Attribution 4.0 International",
+          "spdx": "CC-BY-4.0",
+          "icon": "https://licensebuttons.net/l/by/4.0/88x31.png"
+        }
+      ],
+      "number": 68,
+      "files": [
+        {
+          "path": "MosquitoInAmber.bin",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MosquitoInAmber/glTF/MosquitoInAmber.bin",
+          "bytes": 1068732,
+          "sha256": "f14174921fd4ded526935fac13a0b0784d77b5a7a551c0e1e8fa386e52695d7e",
+          "integrity": "sha256-8UF0kh/U3tUmk1+sE6CweE13taelUcDh6Po4blJpXX4="
+        },
+        {
+          "path": "MosquitoInAmber.gltf",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MosquitoInAmber/glTF/MosquitoInAmber.gltf",
+          "bytes": 12108,
+          "sha256": "dc0ec6300ad0682d04a22f4509f93db530f3e391e22560e92e69119a05ad9c43",
+          "integrity": "sha256-3A7GMArQaC0Eoi9FCfk9tTDz45HiJWDpLmkRmgWtnEM="
+        },
+        {
+          "path": "MosquitoInAmber0.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MosquitoInAmber/glTF/MosquitoInAmber0.jpg",
+          "bytes": 5075318,
+          "sha256": "82fff449feeed3f6a70891db0f2ba5d35a4ded27893e988591e7cdf5c6881679",
+          "integrity": "sha256-gv/0Sf7u0/anCJHbDyul01pN7SeJPpiFkefN9caIFnk="
+        },
+        {
+          "path": "MosquitoInAmber1.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MosquitoInAmber/glTF/MosquitoInAmber1.png",
+          "bytes": 8252506,
+          "sha256": "ed4e1f5012d880b9e1cbdddb0de051a9da359cf9b8fa536aef43498a227f7f9a",
+          "integrity": "sha256-7U4fUBLYgLnhy93bDeBRqdo1nPm4+lNq70NJiiJ/f5o="
+        },
+        {
+          "path": "MosquitoInAmber2.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MosquitoInAmber/glTF/MosquitoInAmber2.png",
+          "bytes": 5109210,
+          "sha256": "e42a95d2eedefbdd8ba58e1ca1ff18adf939c652a480ce517f4954c2f9aff186",
+          "integrity": "sha256-5CqV0u7e+92LpY4cof8Yrfk5xlKkgM5Rf0lUwvmv8YY="
+        },
+        {
+          "path": "MosquitoInAmber3.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MosquitoInAmber/glTF/MosquitoInAmber3.jpg",
+          "bytes": 1978714,
+          "sha256": "8b5b85d81fb538a8baf2af209cbfb6f21b164ec4d2e19c1d86ca72184a66d9cc",
+          "integrity": "sha256-i1uF2B+1OKi68q8gnL+28hsWTsTS4ZwdhspyGEpm2cw="
+        },
+        {
+          "path": "MosquitoInAmber4.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MosquitoInAmber/glTF/MosquitoInAmber4.jpg",
+          "bytes": 2738829,
+          "sha256": "a272636397a756db9e87a04773238b0d1e1554bfa200010b06ae1562555d44bf",
+          "integrity": "sha256-onJjY5enVtueh6BHcyOLDR4VVL+iAAELBq4VYlVdRL8="
+        },
+        {
+          "path": "SOURCE-LICENSE.md",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MosquitoInAmber/README.md",
+          "bytes": 2318,
+          "sha256": "ae32397c975638d730ae130c76b95da4c7b2b0ede82aaad56d1b18826bb2d85a",
+          "integrity": "sha256-rjI5fJdWONcwrhMMdrldpMeysO3oKqrVbRsYgmuy2Fo="
+        }
+      ],
+      "source_revision": "edc7c9e67c639d230715049ee31f9a96a6babbbe",
+      "entry": "MosquitoInAmber.gltf",
+      "status": "downloaded",
+      "inspection": {
+        "materials": 3,
+        "animations": [],
+        "skins": 0,
+        "extensions": [
+          "KHR_materials_transmission",
+          "KHR_materials_ior",
+          "KHR_materials_volume"
+        ],
+        "alphaModes": [
+          "OPAQUE",
+          "OPAQUE",
+          "OPAQUE"
+        ]
+      },
+      "review_status": "needs-fix",
+      "observed_issue": "Confirmed visual defect: amber renders too dark with horizontal bands. Transmission, volume scaling and the render pipeline need investigation before this is showcase-ready."
+    },
+    {
+      "key": "Fox",
+      "category": "Vehicles, animals and product variants",
+      "renderer_target": "Skeletal animation, pose changes and ground contact",
+      "preparation": "Three clips in the inspected glTF; stylised animal, not a fur-groom benchmark.",
+      "priority": "First 12",
+      "checked": "2026-10-11",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Fox",
+      "provider": "Khronos sample assets",
+      "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Fox",
+      "authors": "PixelMannen (Model); © 2014 Public; tomkranis (Rigging & Animation); © 2014 tomkranis; @AsoboStudio and @scurest (Conversion to glTF); © 2017 @AsoboStudio and @scurest",
+      "licence": "CC0-1.0 + CC-BY-4.0",
+      "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/Fox/README.md",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, glTF-Binary",
+      "geometry_count": null,
+      "geometry_unit": "Not measured",
+      "package_mib": null,
+      "package_basis": "Not measured; JSON buffer length excludes external textures",
+      "format_evidence_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Fox/glTF/Fox.gltf",
+      "download_entry_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Fox/glTF/Fox.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Fox/metadata.json",
+      "lods_advertised": false,
+      "authoring_style": "Stylised",
+      "cost": "Free",
+      "attribution_required": true,
+      "material_count": 1,
+      "animation_count": 3,
+      "legal_records": [
+        {
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "artist": "PixelMannen",
+          "year": "2014",
+          "owner": "Public",
+          "what": "Model",
+          "text": "Creative Commons Zero v1.0 Universal",
+          "spdx": "CC0-1.0",
+          "icon": "https://licensebuttons.net/p/zero/1.0/88x31.png"
+        },
+        {
+          "license": "CC-BY-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "artist": "tomkranis",
+          "year": "2014",
+          "owner": "tomkranis",
+          "what": "Rigging & Animation",
+          "text": "Creative Commons Attribution 4.0 International",
+          "spdx": "CC-BY-4.0",
+          "icon": "https://licensebuttons.net/l/by/4.0/88x31.png"
+        },
+        {
+          "license": "CC-BY-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "artist": "@AsoboStudio and @scurest",
+          "year": "2017",
+          "owner": "@AsoboStudio and @scurest",
+          "what": "Conversion to glTF",
+          "text": "Creative Commons Attribution 4.0 International",
+          "spdx": "CC-BY-4.0",
+          "icon": "https://licensebuttons.net/l/by/4.0/88x31.png"
+        }
+      ],
+      "number": 72,
+      "files": [
+        {
+          "path": "Fox.bin",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/Fox/glTF/Fox.bin",
+          "bytes": 119904,
+          "sha256": "c7d0d8de28a84d5b25623037f88e063e1502495a2ee6c55f182c61161ad12f80",
+          "integrity": "sha256-x9DY3iioTVslYjA3+I4GPhUCSVou5sVfGCxhFhrRL4A="
+        },
+        {
+          "path": "Fox.gltf",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/Fox/glTF/Fox.gltf",
+          "bytes": 45064,
+          "sha256": "6ddcabf511c0257b87dedf6ac51f1bdb6f21e570eee5fa7c4fa6162d055cb002",
+          "integrity": "sha256-bdyr9RHAJXuH3t9qxR8b228h5XDu5fp8T6YWLQVcsAI="
+        },
+        {
+          "path": "SOURCE-LICENSE.md",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/Fox/README.md",
+          "bytes": 1782,
+          "sha256": "cf767a7943b12f3af0ea14a1b18947a45ed7a03c3e722678df33854d97df0f88",
+          "integrity": "sha256-z3Z6eUOxLzrw6hShsYlHpF7XoDw+ciZ43zOFTZffD4g="
+        },
+        {
+          "path": "Texture.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/Fox/glTF/Texture.png",
+          "bytes": 26764,
+          "sha256": "61c8b109ee7f8bf262791933380fafb1465f7b51cbe6472c2d21eff0b31f83a1",
+          "integrity": "sha256-YcixCe5/i/JieRkzOA+vsUZfe1HL5kcsLSHv8LMfg6E="
+        }
+      ],
+      "source_revision": "edc7c9e67c639d230715049ee31f9a96a6babbbe",
+      "entry": "Fox.gltf",
+      "status": "downloaded",
+      "inspection": {
+        "materials": 1,
+        "animations": [
+          "Survey",
+          "Walk",
+          "Run"
+        ],
+        "skins": 1,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      },
+      "review_status": "static-only",
+      "observed_issue": "Geometry and colour render. The three supplied animation clips are retained, but skinning and clip playback are not wired into this inspection path."
+    }
+  ]
+}

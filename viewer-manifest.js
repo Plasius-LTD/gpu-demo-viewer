@@ -1,5 +1,20 @@
 export const demos = [
   {
+    id: "model-library",
+    packageName: "@plasius/gpu-demo-viewer",
+    type: "browser",
+    mode: "Reviewed model inspection",
+    runtime: "Shared WebGPU model inspection",
+    launchLabel: "Open model studies",
+    launchPath: "./model-library/?review=first-twelve",
+    sourcePath: "./model-library/main.js",
+    docsPath: "./docs/model-library-review.md",
+    command: "npm run models:download && npm run models:dev",
+    summary: "Inspect eleven acquired models with original materials, source credits and explicit rendering findings.",
+    notes: ["Requires the released shared model-inspection entrypoint, or the documented local source override.", "Gem remains deferred. Fox is static; amber has a recorded material defect."],
+    tags: ["browser", "3d", "experimental"]
+  },
+  {
     id: "integration-showcase",
     packageName: "@plasius/gpu-demo-viewer",
     type: "browser",

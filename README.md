@@ -148,3 +148,25 @@ npm 11.5.1 or newer, uses the protected `production` environment and
 short-lived npm OIDC with provenance, and has no long-lived npm write-token
 fallback. Rollback disables CD; it never rewrites published package history.
 <!-- END PLASIUS RELEASE INTEGRITY -->
+
+## Model library review
+
+`npm run models:download` installs the ten reviewed, freely licensed Poly Haven and Khronos fixtures from `model-library/catalogue.json`, including all buffer/image dependencies. Downloads are bounded and SHA-256 checked; binaries are ignored by Git and npm. `npm run models:dev` opens the localhost server on port 5291. Visit `http://127.0.0.1:5291/?review=first-twelve`. The Medieval house is a manually supplied eleventh asset; only Gem remains deferred. Source links, creators and licences are available beside each model.
+
+For Medieval house, obtain the original GLB from its credited Sketchfab source and place it at `model-library/assets/sf-house/medieval_house.glb`, then run `npm run models:download` to verify its pinned size and SHA-256 and write its credits. This command never downloads manual assets; a missing file produces an explicit placement message. The catalogue stores no private local paths.
+
+This page consumes the shared model-inspection package entrypoint. While its upstream release is pending, development testing can set `PLASIUS_SHARED_INSPECTION_SOURCE` to an absolute path to the reviewed sibling `src/model-inspection.js`; this explicit source override is for localhost development only, not a released dependency or production deployment.
+
+Mouse/touch/keyboard inspection reuses the material-study camera. The view progressively refines while the camera is still, stopping at the selected sample target. `Home` restores framing and `?` displays a brief gesture reminder. Resizing updates resolution while preserving the camera. Fox is static here; its Survey, Walk and Run clips remain in the original download. Amber currently exposes a visible transmission/volume rendering defect. See `docs/model-library-review.md` for the initial findings; none of these fixtures is implicitly approved for the production showcase.
+
+Render-quality controls select 1–256 total samples, 2–12 light bounces, 480/800/1280px render width and denoising. Defaults are 64/6/800/on. The first pass is one sample; idle refinement adds up to four samples per batch. Camera and quality changes restart history. Hidden tabs pause further work; the progress bar reports completed samples and actual dimensions. Settings do not reload the source model.
+
+During upstream progressive-renderer development, also set `PLASIUS_RENDERER_SOURCE` to an absolute reviewed `src/index.js` or built `dist/index.js`. Both source overrides are development-only; PRs remain dependency-blocked until approved package CD and final released-version validation. To use another local port: `npm run models:dev -- --port 5292`.
+
+The model review includes native 1920 × 1080, 2560 × 1440 and 3840 × 2160 quality presets. These trace the exact selected pixel dimensions independently of viewport size; the canvas contains the image without stretching. A one-sample target supports quick full-resolution checks. See [UHD inspection design](docs/model-inspection-uhd.md).
+
+### Adaptive radial review
+
+Select **Adaptive radial · Experimental** to use the sampler from the adaptive-pixel work. The sample control becomes a ceiling: 32 uses centre-to-edge tiers 32/16/8/4/2/1 and averages 5.95 SPP at UHD. Maximum ceiling is 256; adaptive depth is up to 20 bounces. Fixed mode retains up to 12 bounces. Both support native 3840×2160. The first pass is an interaction preview, followed by validated adaptive tiles while the camera rests. Progress shows actual counts and the ceiling separately.
+
+For this unreleased integration, set `PLASIUS_ADAPTIVE_RENDERER_SOURCE` to an absolute reviewed renderer `dist/adaptive.js`, and `PLASIUS_LIGHTING_SOURCE` to the reviewed lighting `dist/radial-sampling-plan.js` (the main lighting build also exports the same function). Keep the existing shared and fixed-renderer overrides. These are localhost development settings, not product rollout controls. No production change is included. See [ADR0005](docs/adrs/adr-0005-adaptive-model-quality.md).

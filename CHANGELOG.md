@@ -6,8 +6,14 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- Add experimental radial sampling controls, ceilings up to 256, adaptive depth up to 20, and native UHD inspection.
+
+- Add exact Full HD, QHD and 4K UHD model-review presets, one-sample inspection and aspect-preserving canvas presentation.
+
+- Model-library sample target, bounce, resolution and denoising controls with progressive still-camera refinement and completed-sample progress.
+
 - **Added**
-  - (placeholder)
+  - Local model-library review with eleven acquired fixtures, including the manually supplied Medieval house GLB, source credits, integrity manifests, shared camera inspection and explicit visual-defect/deferred states.
 
 - **Changed**
   - Refreshed compatible @plasius/* lockfile resolutions to the latest published releases.
