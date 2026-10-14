@@ -164,3 +164,5 @@ Render-quality controls select 8–256 total samples, 2–12 light bounces, 480/
 During upstream progressive-renderer development, also set `PLASIUS_RENDERER_SOURCE` to an absolute reviewed `src/index.js` or built `dist/index.js`. Both source overrides are development-only; PRs remain dependency-blocked until approved package CD and final released-version validation. To use another local port: `npm run models:dev -- --port 5292`.
 
 The model review includes native 1920 × 1080, 2560 × 1440 and 3840 × 2160 quality presets. These trace the exact selected pixel dimensions independently of viewport size; the canvas contains the image without stretching. A one-sample target supports quick full-resolution checks. See [UHD inspection design](docs/model-inspection-uhd.md).
+
+The released model review uses fixed progressive sampling with native UHD sizes and requires renderer0.2.49/shared1.1.7 or newer. Adaptive controls remain in a separate qualification branch. See [release scope](docs/model-review-release.md); the local inspection catalogue explicitly retains unresolved visual findings.
