@@ -60,3 +60,8 @@ test('a cancelled quality update cannot overwrite the next model state',async()=
   assert.equal(states.at(-1).asset.key,'new-model');assert.equal(states.at(-1).kind,'ready');
   controller.destroy();
 });
+
+test('experimental depth options are present and unavailable in initial fixed mode',async()=>{
+ const html=await readFile(new URL('../model-library/index.html',import.meta.url),'utf8');
+ for(const value of [16,20])assert.match(html,new RegExp(`<option id="depth-${value}"[^>]*disabled[^>]*>${value}</option>`));
+});

@@ -71,7 +71,7 @@ test('quality controls forward settings without reloading a model and show compl
   assert.equal(f.loads[0].quality.samplesPerPixel,64);
   el('samples').value='128';el('bounces').value='10';el('resolution').value='480';el('denoise').checked=false;
   await el('samples').change();
-  assert.deepEqual(changes.at(-1),{samplesPerPixel:128,maxDepth:10,width:480,height:360,denoise:false});
+  assert.deepEqual(changes.at(-1),{samplingMode:'fixed',samplesPerPixel:128,maxDepth:10,width:480,height:360,denoise:false});
   assert.equal(f.loads.length,1);
   f.loads[0].onProgress({phase:'refining',samples:17,target:128,width:480,height:360});
   assert.equal(el('sample-progress').value,17);assert.match(el('refinement').textContent,/17.*128/);
@@ -113,4 +113,28 @@ test('HD through UHD presets use exact render pixels independent of viewport siz
   el('canvas').clientWidth=280;el('canvas').clientHeight=210;
   await el('resolution').change();assert.equal(f.changes.at(-1).width,3840);assert.equal(f.changes.at(-1).height,2160);
   page.destroy();
+});
+
+test('adaptive controls request the new renderer and show mean SPP rather than uniform counts',async()=>{
+ const f=fixture(),page=await mountLibrary(f.options),el=id=>f.doc.getElementById(id);
+ el('sampling').value='adaptive';el('samples').value='32';await el('sampling').change();
+ assert.equal(f.changes.at(-1).samplingMode,'adaptive');assert.equal(f.loads[0].adaptiveEnabled,true);
+ f.loads[0].onProgress({phase:'refining',samplingMode:'adaptive',samples:1,target:32,width:800,height:600,completedTiles:2,totalTiles:35,meanSpp:5.95,minimumSpp:1,maximumSpp:32});
+ assert.match(el('refinement').textContent,/2.*35.*tiles.*5.95.*SPP/);
+ f.loads[0].onProgress({phase:'complete',samplingMode:'adaptive',samples:32,target:32,width:800,height:600,completedTiles:35,totalTiles:35,meanSpp:5.95,minimumSpp:1,maximumSpp:32});
+ assert.match(el('refinement').textContent,/Complete.*5.95.*SPP/);
+ assert.equal(el('depth-20').disabled,false);el('bounces').value='20';await el('bounces').change();
+ assert.equal(f.changes.at(-1).maxDepth,20);el('sampling').value='fixed';await el('sampling').change();
+ assert.equal(f.changes.at(-1).maxDepth,12);assert.equal(el('depth-20').disabled,true);page.destroy();
+});
+
+ test('experimental source overrides require absolute paths and preserve subpath priority',async()=>{
+ for(const [name,alias] of [['PLASIUS_ADAPTIVE_RENDERER_SOURCE','@plasius/gpu-renderer/adaptive'],['PLASIUS_LIGHTING_SOURCE','@plasius/gpu-lighting/radial-sampling']]){
+  const old=process.env[name];try{
+   process.env[name]='/tmp/experimental/dist/index.js';
+   const {default:c}=await import(`../model-library/vite.config.js?absolute=${name}`);
+   assert.equal(c.resolve.alias[alias],process.env[name]);assert.ok(c.server.fs.allow.includes('/tmp/experimental'));
+   process.env[name]='./relative.js';await assert.rejects(import(`../model-library/vite.config.js?relative=${name}`),/absolute/);
+  }finally{if(old===undefined)delete process.env[name];else process.env[name]=old;}
+ }
 });

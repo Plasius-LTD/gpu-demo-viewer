@@ -22,10 +22,12 @@
 <details open><summary>Review focus</summary><p id="review"></p><p>This is an inspection pass, not a visual-quality approval. Source animations are retained on disk; this view displays static geometry.</p></details></aside>
 <section class="stage" aria-label="Model inspection">
 <fieldset id="quality" class="quality" disabled><legend>Render quality</legend>
-<div><label for="samples">Sample target</label><select id="samples" aria-describedby="quality-help"><option>1</option><option>8</option><option>16</option><option>32</option><option selected>64</option><option>128</option><option>256</option></select></div>
-<div><label for="bounces">Light bounces</label><select id="bounces"><option>2</option><option>4</option><option selected>6</option><option>8</option><option>10</option><option>12</option></select></div>
+<div><label for="sampling">Sampling</label><select id="sampling"><option value="fixed">Fixed SPP</option><option value="adaptive">Adaptive radial · Experimental</option></select></div>
+<div><label for="samples">Samples / ceiling</label><select id="samples" aria-describedby="quality-help"><option>1</option><option>8</option><option>16</option><option>32</option><option selected>64</option><option>128</option><option>256</option></select></div>
+<div><label for="bounces">Light bounces</label><select id="bounces"><option>2</option><option>4</option><option selected>6</option><option>8</option><option>10</option><option>12</option><option id="depth-16" disabled>16</option><option id="depth-20" disabled>20</option></select></div>
 <div><label for="resolution">Render size</label><select id="resolution"><option value="480">480 px · Quick</option><option value="800" selected>800 px · Balanced</option><option value="1280">1280 px · Detailed</option><option value="1920x1080">1920 × 1080 · Full HD</option><option value="2560x1440">2560 × 1440 · QHD</option><option value="3840x2160">3840 × 2160 · 4K UHD</option></select></div>
 <label class="toggle" for="denoise"><input id="denoise" type="checkbox" checked> Denoising</label>
+<p id="sampling-note">Fixed sampling: every pixel progressively accumulates the selected target.</p>
 <p id="quality-help">Hold the camera still to refine. Higher targets reduce noise; more bounces reveal indirect light. HD, QHD and 4K trace at the selected size, even in a smaller window. Higher resolution costs more GPU time; use one sample for a quick inspection.</p>
 </fieldset>
 <div class="refinement"><label id="refinement" for="sample-progress">Waiting for a model…</label><progress id="sample-progress" max="64" value="0"></progress></div>

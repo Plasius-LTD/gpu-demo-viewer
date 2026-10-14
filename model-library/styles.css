@@ -7,3 +7,5 @@
 
 /* Preserve the traced camera aspect when fixed-size frames fit the viewport. */
 canvas{object-fit:contain}
+
+.quality{grid-template-columns:repeat(2,minmax(0,1fr))}.quality>div:first-of-type{grid-column:1/-1}.quality .toggle{margin-top:0}
