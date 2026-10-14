@@ -30,3 +30,7 @@ entry surfaces.
 - This viewer is intentionally non-user-facing runtime infrastructure.
 - Baseline operations are governed by the parent feature flag:
   `platform.repo-hardening-sweep.enabled`.
+
+## Model library review
+
+Inherits `gpu-demo.scene-fidelity.enabled` with a localhost-only fixture override. Model changes abort prior work and release its GPU resources. Downloads use trusted reviewed hosts, no redirects, strict byte/hash limits and bounded concurrency. Preserve source licences. Keep missing downloads and renderer defects visible. Keyboard, touch, reduced-motion and 320px layouts must remain usable.
