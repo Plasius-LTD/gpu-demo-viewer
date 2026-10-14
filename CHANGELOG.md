@@ -6,6 +6,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- Add exact Full HD, QHD and 4K UHD model-review presets, one-sample inspection and aspect-preserving canvas presentation.
+
 - Model-library sample target, bounce, resolution and denoising controls with progressive still-camera refinement and completed-sample progress.
 
 - **Added**

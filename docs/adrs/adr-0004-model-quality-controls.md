@@ -7,3 +7,7 @@ The viewer supplies semantic native controls for sample target, bounce depth, re
 Default: 64 samples, six bounces, 800px width and denoising. Width options 480/800/1280 preserve the visible canvas aspect ratio within the shared 1440px dimension bound. GPU work stops at the selected target. Source credits, deferred assets and known defects remain visible.
 
 `PLASIUS_RENDERER_SOURCE` permits an explicit absolute development entrypoint alongside the shared source override, only on the localhost development server. Published dependencies must replace both overrides after approved upstream CD. No production route or capability is added. Rollback removes the review query/overrides or disables the inherited remote flag in public hosts.
+
+## UHD extension (2026-10-14)
+
+Add exact HD/QHD/UHD presets alongside viewport-shaped widths. Fixed presets do not change on viewport resize. Use contained presentation to avoid stretching and retain exact traced dimensions in the progress label. Shared admission caps the total at UHD pixels. See [design](../model-inspection-uhd.md).

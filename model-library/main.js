@@ -17,9 +17,9 @@ export async function mountLibrary({document:doc=globalThis.document,window:win=
   const {createModelInspection}=await importRuntime();
   el('samples').value='64';el('bounces').value='6';el('resolution').value='800';el('denoise').checked=true;
   const quality=()=>{
-    const width=Number(el('resolution').value);
+    const [width,fixedHeight]=el('resolution').value.split('x').map(Number);
     return {samplesPerPixel:Number(el('samples').value),maxDepth:Number(el('bounces').value),denoise:el('denoise').checked,
-      width,height:Math.max(1,Math.min(1440,Math.round(width*el('canvas').clientHeight/el('canvas').clientWidth)))};
+      width,height:fixedHeight??Math.max(1,Math.min(1440,Math.round(width*el('canvas').clientHeight/el('canvas').clientWidth)))};
   };
   const refinement=p=>{
     el('sample-progress').max=p.target;el('sample-progress').value=p.samples;

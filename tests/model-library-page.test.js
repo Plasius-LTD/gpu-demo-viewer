@@ -101,3 +101,16 @@ test('quality failures remain visible and listeners stop updating after teardown
   assert.match(f.doc.getElementById('status').textContent,/GPU unavailable/);
   page.destroy();assert.equal(f.doc.getElementById('bounces').change,undefined);
 });
+
+test('HD through UHD presets use exact render pixels independent of viewport size',async()=>{
+  const f=fixture(),page=await mountLibrary(f.options),el=id=>f.doc.getElementById(id);
+  el('samples').value='1';
+  for(const [preset,width,height] of [['1920x1080',1920,1080],['2560x1440',2560,1440],['3840x2160',3840,2160]]) {
+    el('resolution').value=preset;await el('resolution').change();
+    assert.equal(f.changes.at(-1).width,width);assert.equal(f.changes.at(-1).height,height);
+    assert.equal(f.changes.at(-1).samplesPerPixel,1);
+  }
+  el('canvas').clientWidth=280;el('canvas').clientHeight=210;
+  await el('resolution').change();assert.equal(f.changes.at(-1).width,3840);assert.equal(f.changes.at(-1).height,2160);
+  page.destroy();
+});

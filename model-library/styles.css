@@ -4,3 +4,6 @@
 
 .quality{display:grid;grid-template-columns:1fr 1fr 1.5fr auto;gap:.8rem;align-items:center;margin:0 0 1rem;padding:1rem;border:1px solid #596775;border-radius:.6rem;min-width:0}
 .quality legend{padding:0 .5rem;color:#dfc88d}.quality label{font-size:.9rem}.quality select{min-width:0;padding:.6rem}.quality>div{min-width:0}.quality .toggle{display:flex;align-items:center;gap:.5rem;margin-top:1.2rem;min-height:44px;cursor:pointer}.toggle input{width:1.2rem;height:1.2rem;accent-color:#dfc88d}.quality p{grid-column:1/-1;font-size:.8rem;line-height:1.5;color:#c1cbd1;margin:.3rem 0 0}input:focus-visible{outline:3px solid #edd7a1;outline-offset:3px}.refinement{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.8rem;font-size:.85rem;color:#dfc88d}.refinement label{margin:0}progress{width:120px;max-width:30%;height:8px;accent-color:#dfc88d}.quality:disabled{opacity:.65}@media(max-width:1100px){.quality{grid-template-columns:1fr 1fr}.quality .toggle{margin-top:1rem}}@media(min-width:781px){.canvas-wrap{height:clamp(300px,calc(100dvh - 505px),760px)}}
+
+/* Preserve the traced camera aspect when fixed-size frames fit the viewport. */
+canvas{object-fit:contain}
