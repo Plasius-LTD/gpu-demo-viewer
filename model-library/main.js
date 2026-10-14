@@ -15,22 +15,35 @@ export async function mountLibrary({document:doc=globalThis.document,window:win=
     option.textContent=asset.name+(asset.entry?'':' — deferred');el('model').append(option);
   }
   const {createModelInspection}=await importRuntime();
+  el('samples').value='64';el('bounces').value='6';el('resolution').value='800';el('denoise').checked=true;
+  const quality=()=>{
+    const width=Number(el('resolution').value);
+    return {samplesPerPixel:Number(el('samples').value),maxDepth:Number(el('bounces').value),denoise:el('denoise').checked,
+      width,height:Math.max(1,Math.min(1440,Math.round(width*el('canvas').clientHeight/el('canvas').clientWidth)))};
+  };
+  const refinement=p=>{
+    el('sample-progress').max=p.target;el('sample-progress').value=p.samples;
+    const phase={complete:'Complete',paused:'Paused',rendering:'Rendering',refining:'Refining'}[p.phase];
+    el('refinement').textContent=`${phase} · ${p.samples} / ${p.target} samples · ${p.width} × ${p.height}`;
+  };
   const controller=createReviewController({
     load:async(asset,signal)=>{
       const request=fixtureRequest(asset,new URL('./',win.location.href));
       el('canvas').hidden=false;
       return createModelInspection({canvas:el('canvas'),...request,signal,enabled:true,
-        width:800,height:Math.max(1,Math.min(1440,Math.round(800*el('canvas').clientHeight/el('canvas').clientWidth))),
+        ...quality(),quality:quality(),
+        onProgress:p=>{if(!signal.aborted)refinement(p);},
         onHintChange:visible=>{el('hint').hidden=!visible;},
-        onError:error=>{status.textContent=`Render failed: ${error.message}`;}});
+        onError:error=>{if(signal.aborted)return;status.textContent=`Render failed: ${error.message}`;el('refinement').textContent='Refinement stopped';el('quality').disabled=true;}});
     },
     onState:state=>{
-      el('hint').hidden=true;
+      el('hint').hidden=true;el('quality').disabled=state.kind!=='ready';
+      if(state.kind==='loading'){el('sample-progress').value=0;el('refinement').textContent='Waiting for the first sample…';}
       if(state.kind==='loading')status.textContent=`Loading ${state.asset.name} and checking its files…`;
       else if(state.kind==='ready') {
         status.textContent=`${state.asset.review_status==='needs-fix'?'Rendered — visual defect recorded':'Ready'} · ${state.asset.name} · ${state.runtime.triangleCount.toLocaleString()} triangles · ${state.runtime.primitiveCount} mesh primitives`;
         el('metrics').textContent=`${state.runtime.triangleCount.toLocaleString()} triangles · ${state.asset.inspection.materials} source materials`;
-      } else {status.textContent=state.message;el('canvas').hidden=true;}
+      } else {status.textContent=state.message;el('canvas').hidden=true;el('refinement').textContent='Refinement unavailable';}
     },
   });
   const change=()=>{
@@ -48,10 +61,16 @@ export async function mountLibrary({document:doc=globalThis.document,window:win=
   el('model').value=assets.find(a=>a.entry).key;
   el('model').addEventListener('change',change);
   el('model').disabled=false;
+  const qualityChange=async()=>{
+    try{await controller.setQuality(quality());}catch(error){status.textContent=`Render failed: ${error.message}`;}
+  };
+  for(const id of ['samples','bounces','resolution','denoise'])el(id).addEventListener('change',qualityChange);
+  const visibility=()=>controller.setPaused(doc.hidden===true);
+  doc.addEventListener('visibilitychange',visibility);visibility();
   let resizeTimer;
-  const resize=()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(change,250);};
+  const resize=()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(qualityChange,250);};
   win.addEventListener('resize',resize);
-  const destroy=()=>{clearTimeout(resizeTimer);controller.destroy();el('model').removeEventListener('change',change);win.removeEventListener('pagehide',destroy);win.removeEventListener('resize',resize);};
+  const destroy=()=>{for(const id of ['samples','bounces','resolution','denoise'])el(id).removeEventListener('change',qualityChange);doc.removeEventListener('visibilitychange',visibility);clearTimeout(resizeTimer);controller.destroy();el('model').removeEventListener('change',change);win.removeEventListener('pagehide',destroy);win.removeEventListener('resize',resize);};
   win.addEventListener('pagehide',destroy);
   await change();return {destroy};
 }

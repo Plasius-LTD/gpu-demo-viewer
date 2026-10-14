@@ -2,7 +2,7 @@
 
 Eleven original assets are installed with 56 verified files (70,599,653 bytes, about 67.3 MiB). The first-twelve shortlist remains intact; the user supplied Medieval house after the initial ten-model review. Only Gem remains deferred. Files and credits remain in `model-library/assets/`; `catalogue.json` records their source URLs, exact sizes and SHA-256 checksums. Source files have not been altered.
 
-The preview uses the Plasius wavefront renderer at eight samples per pixel and six bounces, with shared glTF import and camera gestures. Geometry is uniformly normalized to the inspection frame. It has no model-specific ageing or environment staging. “Rendered” is not a visual-fidelity approval.
+The initial review used the Plasius wavefront renderer at eight samples per pixel and six bounces, with shared glTF import and camera gestures. Geometry is uniformly normalized to the inspection frame. It has no model-specific ageing or environment staging. “Rendered” is not a visual-fidelity approval.
 
 | Model | Rendered triangles | Result / next improvement |
 |---|---:|---|
@@ -32,3 +32,7 @@ All eleven were selected and visually inspected in the local browser. Desktop, 3
 Local validation passed: 33 viewer tests, 100% changed-source line coverage (97.7% overall measured branches), lint/type checks, build, package checks and a dependency audit with zero reported vulnerabilities. The shared runtime passed 177 tests; its two added source modules have 100% line coverage. The package dry run excludes downloaded asset binaries. Keyboard orbit, approach and Home reset were visually checked; the final browser error log was empty.
 
 No production route or entitlement was changed. The shared-package release and consumer final dependency pin remain blocked while the organisational runners are offline. The consumer PR must stay draft until the upstream package is published, its dependency is updated and the published runtime is revalidated. See ADR 0003 for the local-only rollout and rollback controls.
+
+## Progressive quality review (2026-10-14)
+
+The preview now defaults to a 64-sample target, six bounces, 800px width and denoising. Quality controls adjust all four, retain the camera and restart accumulation. It refines unfiltered linear radiance in bounded GPU batches while still and pauses when hidden. Existing model findings above describe the initial eight-sample review; higher sampling does not resolve importer, material or animation defects automatically. Upstream renderer/shared releases and final package-pin validation are still required before publication.

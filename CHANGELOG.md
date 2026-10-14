@@ -6,6 +6,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- Model-library sample target, bounce, resolution and denoising controls with progressive still-camera refinement and completed-sample progress.
+
 - **Added**
   - Local model-library review with eleven acquired fixtures, including the manually supplied Medieval house GLB, source credits, integrity manifests, shared camera inspection and explicit visual-defect/deferred states.
 

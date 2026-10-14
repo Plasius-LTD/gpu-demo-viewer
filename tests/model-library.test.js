@@ -48,3 +48,15 @@ test('all twelve exact shortlisted identities retain licensing and provenance',a
   assert.equal(house.inspection.triangles,83046);
   assert.equal(assets.find(a=>a.key==='sf-gem').entry,null);
 });
+
+test('a cancelled quality update cannot overwrite the next model state',async()=>{
+  let rejectQuality;
+  const states=[];
+  const controller=createReviewController({onState:s=>states.push(s),load:async()=>({destroy(){},setQuality:()=>new Promise((resolve,reject)=>{rejectQuality=reject;})})});
+  await controller.select(asset);
+  const quality=controller.setQuality({maxDepth:8});
+  await controller.select({...asset,key:'new-model'});
+  rejectQuality(new Error('old render cancelled'));await quality;
+  assert.equal(states.at(-1).asset.key,'new-model');assert.equal(states.at(-1).kind,'ready');
+  controller.destroy();
+});

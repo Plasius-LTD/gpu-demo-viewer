@@ -13,7 +13,7 @@ export function fixtureRequest(asset, base) {
     integrity: Object.fromEntries(asset.files.map(f => [new URL(f.path, root).href, f.integrity])) };
 }
 export function createReviewController({ load, onState }) {
-  let abort, active, generation = 0, disposed = false;
+  let abort, active, generation = 0, disposed = false, paused = false;
   return {
     async select(asset) {
       if (disposed) return;
@@ -25,11 +25,17 @@ export function createReviewController({ load, onState }) {
       try {
         const runtime = await load(asset, abort.signal);
         if (disposed || id !== generation) { runtime.destroy(); return; }
-        active = runtime; onState({kind:'ready',asset,runtime});
+        active = runtime; active.setPaused?.(paused); onState({kind:'ready',asset,runtime});
       } catch (error) {
         if (!disposed && id === generation) onState({kind:'error',asset,message:error.message});
       }
     },
+    async setQuality(quality) {
+      const runtime=active;
+      try { await runtime?.setQuality(quality); }
+      catch(error) { if(!disposed && active===runtime) throw error; }
+    },
+    setPaused(value) { paused=value;active?.setPaused?.(value); },
     reset() { active?.reset(); },
     destroy() {
       if (disposed) return;
