@@ -6,6 +6,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.1.6] - 2026-10-14
+
 - Bind fixed progressive/UHD model review to published renderer and shared inspection APIs; retain experimental adaptive controls in their qualification branch.
 
 - Add exact Full HD, QHD and 4K UHD model-review presets, one-sample inspection and aspect-preserving canvas presentation.
@@ -172,3 +186,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.1.3]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.3
 [0.1.4]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.4
 [0.1.5]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.5
+[0.1.6]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.6
