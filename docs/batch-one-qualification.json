@@ -145,5 +145,17 @@
         }
       ]
     }
-  ]
+  ],
+  "registryConsumptionCheck": {
+    "renderer": "0.2.51",
+    "shared": "1.1.8",
+    "sourceOverrides": false,
+    "completedFixedSamples": 64,
+    "cameraResetAndRefinement": true,
+    "consoleErrors": 0,
+    "evidence": {
+      "file": "Factory-released-packages.png",
+      "sha256": "57ad9a850dfffdf642bc2e641fe19484ba343df27f245fac20af02cec4ec00eb"
+    }
+  }
 }

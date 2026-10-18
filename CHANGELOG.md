@@ -6,6 +6,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- Consume released renderer 0.2.51 and shared 1.1.8 for responsive camera updates and material reuse on repeated modular-kit meshes.
+
 - Export the existing bounded Node asset-acquisition helper for hash-pinned build-time consumers; record five further acquired foliage/terrain models and four LOD holds.
 
 - Prepare six original Poly Haven models for the next review batch and bound acquisition to an explicitly selected batch.

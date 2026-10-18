@@ -165,7 +165,7 @@ During upstream progressive-renderer development, also set `PLASIUS_RENDERER_SOU
 
 The model review includes native 1920 × 1080, 2560 × 1440 and 3840 × 2160 quality presets. These trace the exact selected pixel dimensions independently of viewport size; the canvas contains the image without stretching. A one-sample target supports quick full-resolution checks. See [UHD inspection design](docs/model-inspection-uhd.md).
 
-The released model review uses fixed progressive sampling with native UHD sizes and requires renderer0.2.49/shared1.1.7 or newer. Adaptive controls remain in a separate qualification branch. See [release scope](docs/model-review-release.md); the local inspection catalogue explicitly retains unresolved visual findings.
+The released model review uses fixed progressive sampling with native UHD sizes and requires renderer 0.2.51/shared 1.1.8 or newer. Adaptive controls remain in a separate qualification branch. See [release scope](docs/model-review-release.md); the local inspection catalogue explicitly retains unresolved visual findings.
 
 ## Complete model catalogue rollout
 
@@ -199,3 +199,5 @@ resource maximum). Existing files must match; missing manual sources fail closed
 This Node subpath is build tooling and must not enter browser bundles. Binary
 assets are not included in the npm package. Site build-time use retains stricter
 resource limits and verifies the complete source dependency closure.
+
+The review now consumes published renderer 0.2.51 and shared 1.1.8: camera movement reuses unchanged scene geometry, and repeated source primitives share their authored materials during import.

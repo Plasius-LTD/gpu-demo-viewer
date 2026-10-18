@@ -104,7 +104,11 @@ Production remains pending registry consumption and approved site deployment.
 ## Batch 2 acquisition
 
 Grass Medium 01, Searsia Lucida, Boulder 01, Coastal Cliff 01 and Dead Tree Trunk
-are acquired unchanged (25 files, 48,818,088 bytes), pending visual qualification.
+are acquired unchanged (25 files, 48,818,088 bytes). All five completed fixed64,
+camera reset/refinement and native UHD1 inspection; see
+[batch two evidence](batch-two-qualification.json). The workshop consumes
+published renderer 0.2.51 and shared 1.1.8, including the camera scene-reuse fix.
+Quality changes still reallocate the renderer; dense models can take several seconds.
 Four LOD0 tree sources exceed the unchanged 500,000-triangle limit: Fir Tree 01
 (6,982,937), Island Tree 01 (1,599,403), Jacaranda Tree (3,863,832) and Pine Tree 01
 (17,182,252). These need deliberate LOD preparation before admission; increasing

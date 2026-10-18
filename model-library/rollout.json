@@ -141,8 +141,8 @@
     {
       "key": "grass_medium_01",
       "batch": 2,
-      "status": "acquired",
-      "note": "Original 1K sources acquired and provider checksums/hash inventory verified. Visual qualification pending."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement and native UHD1 checks passed. Released renderer 0.2.51 and shared 1.1.8 are required; production verification pending."
     },
     {
       "key": "island_tree_01",
@@ -165,26 +165,26 @@
     {
       "key": "searsia_lucida",
       "batch": 2,
-      "status": "acquired",
-      "note": "Original 1K sources acquired and provider checksums/hash inventory verified. Visual qualification pending."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement and native UHD1 checks passed. Released renderer 0.2.51 and shared 1.1.8 are required; production verification pending."
     },
     {
       "key": "boulder_01",
       "batch": 2,
-      "status": "acquired",
-      "note": "Original 1K sources acquired and provider checksums/hash inventory verified. Visual qualification pending."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement and native UHD1 checks passed. Released renderer 0.2.51 and shared 1.1.8 are required; production verification pending."
     },
     {
       "key": "coastal_cliff_01",
       "batch": 2,
-      "status": "acquired",
-      "note": "Original 1K sources acquired and provider checksums/hash inventory verified. Visual qualification pending."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement and native UHD1 checks passed. Released renderer 0.2.51 and shared 1.1.8 are required; production verification pending."
     },
     {
       "key": "dead_tree_trunk",
       "batch": 2,
-      "status": "acquired",
-      "note": "Original 1K sources acquired and provider checksums/hash inventory verified. Visual qualification pending."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement and native UHD1 checks passed. Released renderer 0.2.51 and shared 1.1.8 are required; production verification pending."
     },
     {
       "key": "food_pomegranate_01",

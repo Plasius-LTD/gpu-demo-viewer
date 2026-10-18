@@ -52,7 +52,7 @@ test('batch two admits five bounded sources and holds oversized original trees f
  const entries=selectBatch(rollout.entries,2);
  for(const asset of acquired){
   assert.ok(asset.entry&&asset.files.length);
-  assert.equal(entries.find(entry=>entry.key===asset.key)?.status,'acquired');
+  assert.equal(entries.find(entry=>entry.key===asset.key)?.status,'qualified');
  }
  for(const key of ['fir_tree_01','island_tree_01','jacaranda_tree','pine_tree_01']){
   assert.equal(entries.find(entry=>entry.key===key)?.status,'held');
