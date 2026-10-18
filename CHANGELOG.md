@@ -6,6 +6,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.1.9] - 2026-10-18
+
 - Add nine original natural-object and textile models with fixed64/UHD inspection evidence, pinned Khronos resources and explicit default-material limits.
 
 - **Added**
@@ -229,3 +243,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.1.6]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.6
 [0.1.7]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.7
 [0.1.8]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.8
+[0.1.9]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.9
