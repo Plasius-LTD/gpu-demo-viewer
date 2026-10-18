@@ -2053,6 +2053,829 @@
           "OPAQUE"
         ]
       }
+    },
+    {
+      "key": "food_pomegranate_01",
+      "category": "Terrain and natural objects",
+      "renderer_target": "Organic colour variation and surface roughness",
+      "preparation": "Keep the material physically plausible without adding a uniform clearcoat.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Fixed-progressive source inspection qualified locally on 2026-10-18; production verification pending.",
+      "name": "Food Pomegranate 01",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/food_pomegranate_01",
+      "authors": "Oliver Harries (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 8142,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 0.58,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/food_pomegranate_01",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/food_pomegranate_01/food_pomegranate_01_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/food_pomegranate_01",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 23,
+      "entry": "food_pomegranate_01_1k.gltf",
+      "files": [
+        {
+          "path": "food_pomegranate_01_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/food_pomegranate_01/food_pomegranate_01_1k.gltf",
+          "bytes": 2761,
+          "sha256": "75e8bac9feda588189245fe8d145313fe382ee11766101d4b97f1c63476d6698",
+          "integrity": "sha256-dei6yf7aWIGJJF/o0UUxP+OC7hF2YQHUuX8cY0dtZpg="
+        },
+        {
+          "path": "textures/food_pomegranate_01_rough_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/food_pomegranate_01/food_pomegranate_01_rough_1k.jpg",
+          "bytes": 154956,
+          "sha256": "9d7de886f101623d0d5beec5067734eed455a760445d27fbc7cdf4c7a9704898",
+          "integrity": "sha256-nX3ohvEBYj0NW+7FBnc07tRVp2BEXSf7x830x6lwSJg="
+        },
+        {
+          "path": "textures/food_pomegranate_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/food_pomegranate_01/food_pomegranate_01_diff_1k.jpg",
+          "bytes": 164205,
+          "sha256": "b5223d9988b083d850404faf995a23c607ecbcc6ddefed341f67d20fc4a495aa",
+          "integrity": "sha256-tSI9mYiwg9hQQE+vmVojxgfsvMbd7+00H2fSD8Sklao="
+        },
+        {
+          "path": "food_pomegranate_01.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/food_pomegranate_01/food_pomegranate_01.bin",
+          "bytes": 195828,
+          "sha256": "29df7ac780b968c82958f881dba50837811c6d0b428db5099ba3f418969a1951",
+          "integrity": "sha256-Kd96x4C5aMgpWPiB26UIN4EcbQtCjbUJm6P0GJaaGVE="
+        },
+        {
+          "path": "textures/food_pomegranate_01_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/food_pomegranate_01/food_pomegranate_01_nor_gl_1k.jpg",
+          "bytes": 93096,
+          "sha256": "1e040ab1af8c27f390eaf70d0dbef973554df31ecac6395375f1aed9d2d64df9",
+          "integrity": "sha256-HgQKsa+MJ/OQ6vcNDb75c1VN8x7KxjlTdfGu2dLWTfk="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 3,
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "lambis_shell",
+      "category": "Terrain and natural objects",
+      "renderer_target": "Curved glossy organic surface and ridges",
+      "preparation": "Useful close-up of small natural surface detail.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Fixed-progressive source inspection qualified locally on 2026-10-18; production verification pending.",
+      "name": "Lambis Shell",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/lambis_shell",
+      "authors": "Kuutti Siitonen (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 12498,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 2.14,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/lambis_shell",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/lambis_shell/lambis_shell_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/lambis_shell",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 24,
+      "entry": "lambis_shell_1k.gltf",
+      "files": [
+        {
+          "path": "lambis_shell_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/lambis_shell/lambis_shell_1k.gltf",
+          "bytes": 2772,
+          "sha256": "3fbfbe990b12f33af079671bc9ea9b1dd46b50f823692b72aa0d89fe850328e3",
+          "integrity": "sha256-P7++mQsS8zrweWcbyeqbHdRrUPgjaStyqg2J/oUDKOM="
+        },
+        {
+          "path": "lambis_shell.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/lambis_shell/lambis_shell.bin",
+          "bytes": 310540,
+          "sha256": "3129e3a175dbeba8375b21b8f5dec3b559a173f116dc4c402d79afd8751df7aa",
+          "integrity": "sha256-MSnjoXXb66g3WyG49d7DtVmhc/EW3ExALXmv2HUd96o="
+        },
+        {
+          "path": "textures/lambis_shell_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/lambis_shell/lambis_shell_diff_1k.jpg",
+          "bytes": 785669,
+          "sha256": "0b9296a51b8a157fff2245fced2a7723db9db4c7ea3e976802e1f9d3f93b7cc8",
+          "integrity": "sha256-C5KWpRuKFX//IkX87Sp3I9udtMfqPpdoAuH50/k7fMg="
+        },
+        {
+          "path": "textures/lambis_shell_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/lambis_shell/lambis_shell_arm_1k.jpg",
+          "bytes": 567463,
+          "sha256": "360e5e637404cd8999914ba679d4bcc726b73016b69697631ba7ab33b31b4d2c",
+          "integrity": "sha256-Ng5eY3QEzYmZkUumedS8xya3MBa2lpdjG6erM7MbTSw="
+        },
+        {
+          "path": "textures/lambis_shell_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/lambis_shell/lambis_shell_nor_gl_1k.jpg",
+          "bytes": 582208,
+          "sha256": "285344a5bd1ea5710fdd0447be0fb7b86bd2b5a8d67f1c93d01d4201d8f3e369",
+          "integrity": "sha256-KFNEpb0epXEP3QRHvg+3uGvStajWfxyT0B1CAdjz42k="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 3,
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "rock_face_01",
+      "category": "Terrain and natural objects",
+      "renderer_target": "Layered stone and grazing-light normal detail",
+      "preparation": "Useful cliff wall component for the original floating-citadel composition.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Fixed-progressive source inspection qualified locally on 2026-10-18; production verification pending.",
+      "name": "Rock Face 01",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/rock_face_01",
+      "authors": "Dario Barresi (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 20174,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 2.91,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/rock_face_01",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/rock_face_01/rock_face_01_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/rock_face_01",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 25,
+      "entry": "rock_face_01_1k.gltf",
+      "files": [
+        {
+          "path": "rock_face_01_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/rock_face_01/rock_face_01_1k.gltf",
+          "bytes": 2793,
+          "sha256": "96c332c01d173a2431115f3bac29be101fba341e5500e2a08e384f4edd17299e",
+          "integrity": "sha256-lsMywB0XOiQxEV87rCm+EB+6NB5VAOKgjjhPTt0XKZ4="
+        },
+        {
+          "path": "textures/rock_face_01_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rock_face_01/rock_face_01_arm_1k.jpg",
+          "bytes": 693610,
+          "sha256": "59128c79d207a50a69a38002986135ade3b19642d26158cec141eca41578c9ca",
+          "integrity": "sha256-WRKMedIHpQppo4ACmGE1reOxlkLSYVjOwUHspBV4yco="
+        },
+        {
+          "path": "textures/rock_face_01_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rock_face_01/rock_face_01_nor_gl_1k.jpg",
+          "bytes": 1023400,
+          "sha256": "9a9d85b9a01f4e24fc9ceec8baf96c019f552bca69591ff544c7a725e28b1d97",
+          "integrity": "sha256-mp2FuaAfTiT8nO7IuvlsAZ9VK8ppWR/1RMenJeKLHZc="
+        },
+        {
+          "path": "textures/rock_face_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rock_face_01/rock_face_01_diff_1k.jpg",
+          "bytes": 853749,
+          "sha256": "41bd26ed2db1332b1ebb4b1326fd8af4d21f0f0eb57b8ea385033115c722cfdb",
+          "integrity": "sha256-Qb0m7S2xMyseu0sTJv2K9NIfDw61e46jhQMxFcciz9s="
+        },
+        {
+          "path": "rock_face_01.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/rock_face_01/rock_face_01.bin",
+          "bytes": 476436,
+          "sha256": "873eac0319333e92bc96ddeedf8ebf69dc3c68ff1dfe32d8c14ddc165cdb20ac",
+          "integrity": "sha256-hz6sAxkzPpK8lt3u346/adw8aP8d/jLYwU3cFlzbIKw="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 3,
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "tree_stump_01",
+      "category": "Terrain and natural objects",
+      "renderer_target": "Decayed wood, bark normals and crevice shadows",
+      "preparation": "Useful close-up beside smoother varnished wood.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Fixed-progressive source inspection qualified locally on 2026-10-18; production verification pending.",
+      "name": "Tree Stump 01",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/tree_stump_01",
+      "authors": "Rob Tuytel (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 41046,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 3.76,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/tree_stump_01",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/tree_stump_01/tree_stump_01_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/tree_stump_01",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 27,
+      "entry": "tree_stump_01_1k.gltf",
+      "files": [
+        {
+          "path": "tree_stump_01_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/tree_stump_01/tree_stump_01_1k.gltf",
+          "bytes": 2793,
+          "sha256": "9c66ba87d693f35eb404acaa96e0eeff831c295b61a0a903795584cbcc3527c9",
+          "integrity": "sha256-nGa6h9aT8160BKyqluDu/4McKVthoKkDeVWEy8w1J8k="
+        },
+        {
+          "path": "tree_stump_01.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/tree_stump_01/tree_stump_01.bin",
+          "bytes": 965380,
+          "sha256": "b4d9ca70b3c908c4a638fbd6a23ed96c84055bbbf14cf44b89e31ad59fa21e0a",
+          "integrity": "sha256-tNnKcLPJCMSmOPvWoj7ZbIQFW7vxTPRLieMa1Z+iHgo="
+        },
+        {
+          "path": "textures/tree_stump_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/tree_stump_01/tree_stump_01_diff_1k.jpg",
+          "bytes": 907451,
+          "sha256": "781ebe420ac4d84f2e44b9e9937a596e3d5d90711d978a1392f8bf3771b5bf31",
+          "integrity": "sha256-eB6+QgrE2E8uRLnpk3pZbj1dkHEdl4oTkvi/N3G1vzE="
+        },
+        {
+          "path": "textures/tree_stump_01_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/tree_stump_01/tree_stump_01_nor_gl_1k.jpg",
+          "bytes": 1238404,
+          "sha256": "425117514b0386bb6df41cb64a61a624d2596472e05777483d4021b3285e3ceb",
+          "integrity": "sha256-QlEXUUsDhrtt9By2SmGmJNJZZHLgV3dIPUAhsyhePOs="
+        },
+        {
+          "path": "textures/tree_stump_01_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/tree_stump_01/tree_stump_01_arm_1k.jpg",
+          "bytes": 825646,
+          "sha256": "d845cd6ab45288c546267d059ebe1f8a737e174330fe9375e5f99e753f2f95d8",
+          "integrity": "sha256-2EXNarRSiMVGJn0Fnr4finN+F0Mw/pN15fmedT8vldg="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 3,
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "ArmChair_01",
+      "category": "Wood, rope and textiles",
+      "renderer_target": "Varnished carved wood versus upholstery",
+      "preparation": "Useful for testing selective coating and material masks.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Fixed-progressive source inspection qualified locally on 2026-10-18; production verification pending.",
+      "name": "Arm Chair 01",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/ArmChair_01",
+      "authors": "Kirill Sannikov (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 5626,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 0.73,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/ArmChair_01",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/ArmChair_01/ArmChair_01_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/ArmChair_01",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 28,
+      "entry": "ArmChair_01_1k.gltf",
+      "files": [
+        {
+          "path": "ArmChair_01_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/ArmChair_01/ArmChair_01_1k.gltf",
+          "bytes": 2643,
+          "sha256": "91e39d5b35f36c8074b7b6432f6fd77f5f1a257c4d6af3924c0b263eb674286b",
+          "integrity": "sha256-keOdWzXzbIB0t7ZDL2/Xf18aJXxNavOSTAsmPrZ0KGs="
+        },
+        {
+          "path": "textures/Armchair_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ArmChair_01/Armchair_01_diff_1k.jpg",
+          "bytes": 184246,
+          "sha256": "db30fc9ab61ac50c91ab7573583d2855a2910df1ecade02b89e3e8ab8d4e4c2d",
+          "integrity": "sha256-2zD8mrYaxQyRq3VzWD0oVaKRDfHsreAriePoq41OTC0="
+        },
+        {
+          "path": "ArmChair_01.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/ArmChair_01/ArmChair_01.bin",
+          "bytes": 154012,
+          "sha256": "42a4206ea8bb3f7c3c1500ca3e408e084e8687cd3cc9cbf095b3344e215e0db6",
+          "integrity": "sha256-QqQgbqi7P3w8FQDKPkCOCE6Gh808ycvwlbM0TiFeDbY="
+        },
+        {
+          "path": "textures/Armchair_01_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ArmChair_01/Armchair_01_nor_gl_1k.jpg",
+          "bytes": 289916,
+          "sha256": "f5e4a43a12e79537e53e27c2bd4c5296b3e191cd6b301afce9fafd9d38238dde",
+          "integrity": "sha256-9eSkOhLnlTflPifCvUxSlrPhkc1rMBr86fr9nTgjjd4="
+        },
+        {
+          "path": "textures/Armchair_01_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ArmChair_01/Armchair_01_arm_1k.jpg",
+          "bytes": 138327,
+          "sha256": "d272c68e8180f2a381314ac0cef5a9165d15d951a0558cb40a17af71cf6a51c6",
+          "integrity": "sha256-0nLGjoGA8qOBMUrAzvWpFl0V2VGgVYy0Chevcc9qUcY="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 3,
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "fishermans_hat",
+      "category": "Wood, rope and textiles",
+      "renderer_target": "Canvas weave, seams and soft grazing highlights",
+      "preparation": "Cloth sheen must be tuned separately from metal eyelets.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Fixed-progressive source inspection qualified locally on 2026-10-18; production verification pending.",
+      "name": "Fishermans Hat",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/fishermans_hat",
+      "authors": "PierreB3D (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 10304,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 2.23,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/fishermans_hat",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/fishermans_hat/fishermans_hat_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/fishermans_hat",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 29,
+      "entry": "fishermans_hat_1k.gltf",
+      "files": [
+        {
+          "path": "fishermans_hat_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/fishermans_hat/fishermans_hat_1k.gltf",
+          "bytes": 2788,
+          "sha256": "5178f62b9238f27624f99b32b590085233bfa373f97e5b999eb111f8b3f1c473",
+          "integrity": "sha256-UXj2K5I48nYk+ZsytZAIUjO/o3P5fluZnrER+LPxxHM="
+        },
+        {
+          "path": "textures/fishermans_hat_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/fishermans_hat/fishermans_hat_nor_gl_1k.jpg",
+          "bytes": 831090,
+          "sha256": "906540073940562861e555f05f9359edec554272fcfa89452ac70e275a0f1430",
+          "integrity": "sha256-kGVABzlAVihh5VXwX5NZ7exVQnL8+olFKscOJ1oPFDA="
+        },
+        {
+          "path": "textures/fishermans_hat_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/fishermans_hat/fishermans_hat_diff_1k.jpg",
+          "bytes": 458124,
+          "sha256": "68d281ac3b8d01a195ea4fc68dd6e403b7589a2c8fa950b7a732ae2e7bea6e5d",
+          "integrity": "sha256-aNKBrDuNAaGV6k/GjdbkA7dYmiyPqVC3pzKuLnvqbl0="
+        },
+        {
+          "path": "textures/fishermans_hat_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/fishermans_hat/fishermans_hat_arm_1k.jpg",
+          "bytes": 771591,
+          "sha256": "345aee18896df5879d845dd3852b734fbb53551e1110245d6e5a4297b64e959d",
+          "integrity": "sha256-NFruGIlt9YedhF3ThStzT7tTVR4RECRdblpCl7ZOlZ0="
+        },
+        {
+          "path": "fishermans_hat.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/fishermans_hat/fishermans_hat.bin",
+          "bytes": 276096,
+          "sha256": "793a27019bd1d99302452729a3feb0cd271b3f268f059a8fec60ec0c23a443e1",
+          "integrity": "sha256-eTonAZvR2ZMCRScpo/6wzScbPyaPBZqP7GDsDCOkQ+E="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 3,
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "rubber_boots",
+      "category": "Wood, rope and textiles",
+      "renderer_target": "Rubber sheen, dirt and surface scuffs",
+      "preparation": "A useful contrast to cloth and wood; keep highlights broad.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Fixed-progressive source inspection qualified locally on 2026-10-18; production verification pending.",
+      "name": "Rubber Boots",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/rubber_boots",
+      "authors": "L (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 35004,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 1.92,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/rubber_boots",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/rubber_boots/rubber_boots_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/rubber_boots",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 31,
+      "entry": "rubber_boots_1k.gltf",
+      "files": [
+        {
+          "path": "rubber_boots_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/rubber_boots/rubber_boots_1k.gltf",
+          "bytes": 6106,
+          "sha256": "28d05445827905a3ef77bdc2c9afd9d0dd0cf066b743a9ab7627dd32cb155222",
+          "integrity": "sha256-KNBURYJ5BaPvd73Cya/Z0N0M8Ga3Q6mrdifdMssVUiI="
+        },
+        {
+          "path": "textures/rubber_boots_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rubber_boots/rubber_boots_nor_gl_1k.jpg",
+          "bytes": 204450,
+          "sha256": "19b1adab8853b829e4e803f1c6920fe78767343e4bc49a63e59129ecaff47394",
+          "integrity": "sha256-GbGtq4hTuCnk6APxxpIP54dnND5LxJpj5ZEp7K/0c5Q="
+        },
+        {
+          "path": "textures/rubber_boots_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rubber_boots/rubber_boots_diff_1k.jpg",
+          "bytes": 122413,
+          "sha256": "23785002747feb5b8042025889cdc6d9b822e7f02ef56e41605bf22fdb9e2a68",
+          "integrity": "sha256-I3hQAnR/61uAQgJYic3G2bgi5/Au9W5BYFvyL9ueKmg="
+        },
+        {
+          "path": "textures/rubber_boots_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rubber_boots/rubber_boots_arm_1k.jpg",
+          "bytes": 111952,
+          "sha256": "138bc0281bf63053b667009e3ddd68ae692e7d31d6eb9d12b145fcd586c8c090",
+          "integrity": "sha256-E4vAKBv2MFO2ZwCePd1ormkufTHW650SsUX81YbIwJA="
+        },
+        {
+          "path": "textures/rubber_boots_dirty_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rubber_boots/rubber_boots_dirty_nor_gl_1k.jpg",
+          "bytes": 248492,
+          "sha256": "7ccf35399431feeb2257887e852e6bd340e958b9b7c1eb7b0ccc095faf63ffc2",
+          "integrity": "sha256-fM81OZQx/usiV4h+hS5r00DpWLm3wet7DMwJX69j/8I="
+        },
+        {
+          "path": "textures/rubber_boots_dirty_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rubber_boots/rubber_boots_dirty_diff_1k.jpg",
+          "bytes": 291900,
+          "sha256": "4de29d2cfd4864cb97fcc7dd976ffc4dedb713896ffad7690086c7402c34ec85",
+          "integrity": "sha256-TeKdLP1IZMuX/Mfdl2/8Te23E4lv+tdpAIbHQCw07IU="
+        },
+        {
+          "path": "textures/rubber_boots_dirty_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/rubber_boots/rubber_boots_dirty_arm_1k.jpg",
+          "bytes": 373800,
+          "sha256": "a6996bfb9b003574aa244fee1f6f455c94453ad33716d601fe7b7cb3d9c8e09e",
+          "integrity": "sha256-pplr+5sANXSqJE/uH29FXJRFOtM3FtYB/nt8s9nI4J4="
+        },
+        {
+          "path": "rubber_boots.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/rubber_boots/rubber_boots.bin",
+          "bytes": 653312,
+          "sha256": "2b0aa0fcf7ed8363bdb9a7f200c64620780ef3581f44b63cc55ef5f7bc6c6a9c",
+          "integrity": "sha256-Kwqg/Pftg2O9uafyAMZGIHgO81gfRLY8xV7197xsapw="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 3,
+      "inspection": {
+        "materials": 2,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "SheenChair",
+      "category": "Wood, rope and textiles",
+      "renderer_target": "Upholstery sheen, texture transforms and material variants",
+      "preparation": "Qualify sheen and variant selection before public display.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Fixed-progressive source inspection qualified locally on 2026-10-18; production verification pending.",
+      "name": "Sheen Chair",
+      "provider": "Khronos sample assets",
+      "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/SheenChair",
+      "authors": "Eric Chadwick (Everything); \u00a9 2020 Wayfair, LLC",
+      "licence": "CC0-1.0",
+      "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/SheenChair/README.md",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, glTF-Binary",
+      "geometry_count": null,
+      "geometry_unit": "Not measured",
+      "package_mib": null,
+      "package_basis": "Not measured; JSON buffer length excludes external textures",
+      "format_evidence_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenChair/glTF/SheenChair.gltf",
+      "download_entry_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenChair/glTF/SheenChair.gltf",
+      "extensions": "KHR_texture_transform, KHR_materials_sheen, KHR_materials_variants",
+      "source_metadata_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenChair/metadata.json",
+      "lods_advertised": false,
+      "authoring_style": "Material / rendering reference",
+      "cost": "Free",
+      "attribution_required": false,
+      "material_count": 6,
+      "animation_count": 0,
+      "legal_records": [
+        {
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "artist": "Eric Chadwick",
+          "year": "2020",
+          "owner": "Wayfair, LLC",
+          "what": "Everything",
+          "text": "Creative Commons Zero v1.0 Universal",
+          "spdx": "CC0-1.0",
+          "icon": "https://licensebuttons.net/p/zero/1.0/88x31.png"
+        }
+      ],
+      "number": 32,
+      "entry": "SheenChair.gltf",
+      "files": [
+        {
+          "path": "SheenChair.gltf",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenChair/glTF/SheenChair.gltf",
+          "bytes": 20723,
+          "sha256": "1dd2807082c8ed132b67f19b0e2897d1dc0a03682069b9fdb489aafdead2fb26",
+          "integrity": "sha256-HdKAcILI7RMrZ/GbDiiX0dwKA2ggabn9tImq/erS+yY="
+        },
+        {
+          "path": "SheenChair.bin",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenChair/glTF/SheenChair.bin",
+          "bytes": 1137976,
+          "sha256": "bb80869cbb73e6dbacbbcdee8c430cdaa92a7447cce22abbf818b6c673cee427",
+          "integrity": "sha256-u4CGnLtz5tusu83ujEMM2qkqdEfM4iq7+Bi2xnPO5Cc="
+        },
+        {
+          "path": "./chair_fabric_normal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenChair/glTF/chair_fabric_normal.png",
+          "bytes": 1744462,
+          "sha256": "38d8f40054c43370aeb85ae286efcdaf34d15b58af3eb4ef71c579cf9cef34ad",
+          "integrity": "sha256-ONj0AFTEM3CuuFrihu/NrzTRW1ivPrTvccV5z5zvNK0="
+        },
+        {
+          "path": "./chair_occlusion.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenChair/glTF/chair_occlusion.png",
+          "bytes": 109972,
+          "sha256": "0623123fbc212728589129fdacd5db5f36a162099a7ba8388e99a4948192e0be",
+          "integrity": "sha256-BiMSP7whJyhYkSn9rNXbXzahYgmae6g4jpmklIGS4L4="
+        },
+        {
+          "path": "./chair_fabric_albedo.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenChair/glTF/chair_fabric_albedo.png",
+          "bytes": 133702,
+          "sha256": "f70cffab27db1c53211d3882354adf25752096e17e4f02dced5fc48c4b042b28",
+          "integrity": "sha256-9wz/qyfbHFMhHTiCNUrfJXUgluF+TwLc7V/EjEsEKyg="
+        },
+        {
+          "path": "./chair_wood_albedo.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenChair/glTF/chair_wood_albedo.png",
+          "bytes": 181170,
+          "sha256": "b090fa7da19eb6553c70dd7e355a198961740f81d834135b70f51f0589e0f133",
+          "integrity": "sha256-sJD6faGetlU8cN1+NVoZiWF0D4HYNBNbcPUfBYng8TM="
+        },
+        {
+          "path": "./chair_woodbrown_roughnessmetallic.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenChair/glTF/chair_woodbrown_roughnessmetallic.png",
+          "bytes": 146100,
+          "sha256": "ee96adac2b6da29ee778b9b61fa9e4ff74ad6a72d67d92754abe39d488c3911f",
+          "integrity": "sha256-7patrCttop7neLm2H6nk/3StanLWfZJ1Sr451IjDkR8="
+        },
+        {
+          "path": "./chair_label.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenChair/glTF/chair_label.png",
+          "bytes": 567793,
+          "sha256": "23ee1533678d2460e993286ff81d40d3148386e5f512d85e0b4a3cd4b0d013e1",
+          "integrity": "sha256-I+4VM2eNJGDpkyhv+B1A0xSDhuX1EtheC0o81LDQE+E="
+        },
+        {
+          "path": "./chair_woodblack_roughnessmetallic.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenChair/glTF/chair_woodblack_roughnessmetallic.png",
+          "bytes": 96313,
+          "sha256": "ae9fdb308858ddec38803b23c57a425b557c8cc106df339adee30c6ea6334bbb",
+          "integrity": "sha256-rp/bMIhY3ew4gDsjxXpCW1V8jMEG3zOa3uMMbqYzS7s="
+        }
+      ],
+      "batch": 3,
+      "status": "downloaded",
+      "review_status": "qualified",
+      "source_revision": "edc7c9e67c639d230715049ee31f9a96a6babbbe",
+      "inspection": {
+        "materials": 6,
+        "animations": [],
+        "skins": 0,
+        "extensions": [
+          "KHR_texture_transform",
+          "KHR_materials_sheen",
+          "KHR_materials_variants"
+        ],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      },
+      "observed_issue": "Authored default material only. Material variants are not selectable in this inspection."
+    },
+    {
+      "key": "SheenCloth",
+      "category": "Wood, rope and textiles",
+      "renderer_target": "Fabric weave and grazing-angle sheen",
+      "preparation": "A static cloth material study; no cloth simulation is implied.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Fixed-progressive source inspection qualified locally on 2026-10-18; production verification pending.",
+      "name": "Sheen Cloth",
+      "provider": "Khronos sample assets",
+      "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/SheenCloth",
+      "authors": "Microsoft (Everything); \u00a9 2020 Microsoft",
+      "licence": "CC0-1.0",
+      "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/SheenCloth/README.md",
+      "licence_status": "Source licence verified",
+      "formats": "glTF",
+      "geometry_count": null,
+      "geometry_unit": "Not measured",
+      "package_mib": null,
+      "package_basis": "Not measured; JSON buffer length excludes external textures",
+      "format_evidence_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenCloth/glTF/SheenCloth.gltf",
+      "download_entry_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenCloth/glTF/SheenCloth.gltf",
+      "extensions": "KHR_texture_transform, KHR_materials_sheen",
+      "source_metadata_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenCloth/metadata.json",
+      "lods_advertised": false,
+      "authoring_style": "Material / rendering reference",
+      "cost": "Free",
+      "attribution_required": false,
+      "material_count": 1,
+      "animation_count": 0,
+      "legal_records": [
+        {
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "artist": "Microsoft",
+          "year": "2020",
+          "owner": "Microsoft",
+          "what": "Everything",
+          "text": "Creative Commons Zero v1.0 Universal",
+          "spdx": "CC0-1.0",
+          "icon": "https://licensebuttons.net/p/zero/1.0/88x31.png"
+        }
+      ],
+      "number": 33,
+      "entry": "SheenCloth.gltf",
+      "files": [
+        {
+          "path": "SheenCloth.gltf",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenCloth/glTF/SheenCloth.gltf",
+          "bytes": 6854,
+          "sha256": "00a2cbc0d2ad4788dbfc00da3c51f252fd8e6003dbfda80b087a548fe3550f02",
+          "integrity": "sha256-AKLLwNKtR4jb/ADaPFHyUv2OYAPb/agLCHpUj+NVDwI="
+        },
+        {
+          "path": "SheenCloth.bin",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenCloth/glTF/SheenCloth.bin",
+          "bytes": 3479088,
+          "sha256": "4ed1f49797ce52b9f653b8650a31fa249fac99524303b0e153804365fb7e45b1",
+          "integrity": "sha256-TtH0l5fOUrn2U7hlCjH6JJ+smVJDA7DhU4BDZft+RbE="
+        },
+        {
+          "path": "technicalFabricSmall_normal_256.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenCloth/glTF/technicalFabricSmall_normal_256.png",
+          "bytes": 127852,
+          "sha256": "299b1ccf8957d451d7841672b1750b5cfcea65fee1c97eec6b086dc3fdeea838",
+          "integrity": "sha256-KZscz4lX1FHXhBZysXULXPzqZf7hyX7sawhtw/3uqDg="
+        },
+        {
+          "path": "technicalFabricSmall_orm_256.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenCloth/glTF/technicalFabricSmall_orm_256.png",
+          "bytes": 131303,
+          "sha256": "41c04abdb9531d00a4ac832d41f02cd549c7be74886c4d492475cfb95d239a20",
+          "integrity": "sha256-QcBKvblTHQCkrIMtQfAs1UnHvnSIbE1JJHXPuV0jmiA="
+        },
+        {
+          "path": "technicalFabricSmall_basecolor_256.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenCloth/glTF/technicalFabricSmall_basecolor_256.png",
+          "bytes": 125026,
+          "sha256": "e945c0b2aa6e3987d8bb8af23aca58a3f75cce2992bb4803bec8cac6cde8474e",
+          "integrity": "sha256-6UXAsqpuOYfYu4ryOspYo/dczimSu0gDvsjKxs3oR04="
+        },
+        {
+          "path": "technicalFabricSmall_sheen_256.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenCloth/glTF/technicalFabricSmall_sheen_256.png",
+          "bytes": 170368,
+          "sha256": "479c3c65b1b9161701c5587cdfccf42a2de38d4d5365b6b904daf9ba8b7b9aab",
+          "integrity": "sha256-R5w8ZbG5FhcBxVh838z0Ki3jjU1TZba5BNr5uot7mqs="
+        },
+        {
+          "path": "SheenCloth_AO.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/SheenCloth/glTF/SheenCloth_AO.jpg",
+          "bytes": 139947,
+          "sha256": "5b40abcf27c3c8a3ccf16e4672da35a1b27680c4037c1b27f390398aaaa896ff",
+          "integrity": "sha256-W0CrzyfDyKPM8W5Gcto1obJ2gMQDfBsn85A5iqqolv8="
+        }
+      ],
+      "batch": 3,
+      "status": "downloaded",
+      "review_status": "qualified",
+      "source_revision": "edc7c9e67c639d230715049ee31f9a96a6babbbe",
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [
+          "KHR_texture_transform",
+          "KHR_materials_sheen"
+        ],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
     }
   ]
 }

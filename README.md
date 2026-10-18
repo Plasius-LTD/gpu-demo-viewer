@@ -201,3 +201,8 @@ assets are not included in the npm package. Site build-time use retains stricter
 resource limits and verifies the complete source dependency closure.
 
 The review now consumes published renderer 0.2.51 and shared 1.1.8: camera movement reuses unchanged scene geometry, and repeated source primitives share their authored materials during import.
+
+Batch three adds nine locally inspected natural objects and textile studies,
+including the original Khronos sheen chair and cloth. All 31 acquired models
+retain their source hashes and credits. Local qualification does not mark the
+new batch live; the sheen chair currently supports only its default material.

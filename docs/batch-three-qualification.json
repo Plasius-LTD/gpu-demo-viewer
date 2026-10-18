@@ -1,0 +1,234 @@
+{
+  "date": "2026-10-18",
+  "renderer": "0.2.51",
+  "shared": "1.1.8",
+  "sourceOverrides": false,
+  "mode": "fixed-progressive",
+  "productionVerified": false,
+  "consoleErrors": 0,
+  "limitations": [
+    "Static geometry only; adaptive transport and animation are not qualified.",
+    "Sheen Chair uses its authored default material; variants are not selectable.",
+    "The source Rubber Boots set contains four boot meshes.",
+    "Physical touch hardware and screen-reader speech were not tested.",
+    "Completed images support source inspection, not full physical-fidelity approval."
+  ],
+  "models": [
+    {
+      "key": "food_pomegranate_01",
+      "triangles": 8142,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Food-Pomegranate-01.png",
+          "sha256": "b884838f06ae474122623228954630e1ce56ab5540dbb98bdb013be9ef5d70ac"
+        },
+        {
+          "file": "Food-Pomegranate-01-UHD.png",
+          "sha256": "c6bf16fae502a0da2a030d5e0cef4c4375af62bbedde069ff039823bd534a3a4"
+        }
+      ]
+    },
+    {
+      "key": "lambis_shell",
+      "triangles": 12498,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Lambis-Shell.png",
+          "sha256": "33b954c771bb4aaaf8bb9ad78f736546cfd7344885370535e989aaad1e872585"
+        },
+        {
+          "file": "Lambis-Shell-UHD.png",
+          "sha256": "b8f04147705a144a85688eb74a0dbee878bf4401275cfde11fb8eaa02ca901f5"
+        }
+      ]
+    },
+    {
+      "key": "rock_face_01",
+      "triangles": 20174,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Rock-Face-01.png",
+          "sha256": "33c7d7b6230b455e70cddab45344052ee125d47196c58943c0607a17e0fc8de8"
+        },
+        {
+          "file": "Rock-Face-01-UHD.png",
+          "sha256": "b369e857112218f79542bfe2039e677d4c45ac34fb9d912ee58c10aee80a7708"
+        }
+      ]
+    },
+    {
+      "key": "tree_stump_01",
+      "triangles": 41046,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Tree-Stump-01.png",
+          "sha256": "01b6cce2016364555fcc8fce3af3554b2380458f44efe91082df13e61ce83293"
+        },
+        {
+          "file": "Tree-Stump-01-UHD.png",
+          "sha256": "e649c3490bdac8096fde3b8aa50dd31ab92942eb40350ada9b64a4f0d0d24a4d"
+        }
+      ]
+    },
+    {
+      "key": "ArmChair_01",
+      "triangles": 5626,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Arm-Chair-01.png",
+          "sha256": "2880f3e3554562b46eefff8e00bc468ec502481c584fc13c4ddeb4b0127e6581"
+        },
+        {
+          "file": "Arm-Chair-01-UHD.png",
+          "sha256": "7529879e264de2b7f25bd5ea8e2df39ac5b3183bda21406578a6beb015990d00"
+        }
+      ]
+    },
+    {
+      "key": "fishermans_hat",
+      "triangles": 10304,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Fishermans-Hat.png",
+          "sha256": "8059b74c6dfc1074540dea7fb009f0c0634646cd5ed60b63ede9e9f524d8f01e"
+        },
+        {
+          "file": "Fishermans-Hat-UHD.png",
+          "sha256": "8d8dffb568abdcda33f922bb875536bcd9c7116c5c7bb5a05730a7d1edec9a7d"
+        }
+      ]
+    },
+    {
+      "key": "rubber_boots",
+      "triangles": 56128,
+      "primitives": 4,
+      "materials": 2,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Rubber-Boots.png",
+          "sha256": "4630658b9360eb26ef582db9ab7f7b727a5191e36dcda20b0b37d7123eab8b23"
+        },
+        {
+          "file": "Rubber-Boots-UHD.png",
+          "sha256": "9a1cb02dcee8b517a94d282af2dedc1f318b6a269b8949f7a1dca8cacc2f590c"
+        }
+      ]
+    },
+    {
+      "key": "SheenChair",
+      "triangles": 39936,
+      "primitives": 4,
+      "materials": 6,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Sheen-Chair.png",
+          "sha256": "a77903d6ead6cbcc9a03f9974ae7fe6d879c24c091bb7d384f7698b3fe3e8bb2"
+        },
+        {
+          "file": "Sheen-Chair-UHD.png",
+          "sha256": "1252911713a6a0fbb46238c06cc5845eaece04ac4cd0ff27d215a4db73875c36"
+        }
+      ]
+    },
+    {
+      "key": "SheenCloth",
+      "triangles": 115200,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Sheen-Cloth.png",
+          "sha256": "c6b485a30af21fcafa949bc1e5d0dc7ee9f8304e6613a86617bcdd953185d247"
+        },
+        {
+          "file": "Sheen-Cloth-UHD.png",
+          "sha256": "4d41f377201f9fe4c4db329391981d1ac4c61efc3ec350c072f9dcacbe1ae7a2"
+        }
+      ]
+    }
+  ]
+}

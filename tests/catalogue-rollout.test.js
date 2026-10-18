@@ -59,3 +59,20 @@ test('batch two admits five bounded sources and holds oversized original trees f
   assert.ok(!acquired.some(asset=>asset.key===key));
  }
 });
+
+
+test('batch three preserves nine original sources with verified resources and source identities',()=>{
+ const acquired=installed.assets.filter(asset=>asset.batch===3);
+ assert.equal(acquired.length,9);
+ for(const asset of acquired){
+  assert.ok(asset.entry&&asset.files.length);
+  assert.equal(asset.licence,'CC0-1.0');
+  assert.equal(rollout.entries.find(entry=>entry.key===asset.key)?.status,'qualified');
+  for(const file of asset.files){assert.match(file.sha256,/^[a-f0-9]{64}$/);assert.ok(file.bytes<=20*1048576);}
+ }
+ for(const key of ['SheenChair','SheenCloth']){
+  const asset=acquired.find(item=>item.key===key);
+  assert.match(asset.source_revision,/^[a-f0-9]{40}$/);
+  assert.ok(asset.files.every(file=>file.url.includes('/'+asset.source_revision+'/')));
+ }
+});

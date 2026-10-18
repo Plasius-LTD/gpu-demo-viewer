@@ -6,6 +6,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- Add nine original natural-object and textile models with fixed64/UHD inspection evidence, pinned Khronos resources and explicit default-material limits.
+
 - **Added**
   - (placeholder)
 
