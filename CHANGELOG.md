@@ -6,6 +6,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.1.7] - 2026-10-18
+
 - Exclude Gem at user request and record the original Amber fixed-transport qualification; the production target is 74 models.
 
 - Track all 75 model candidates, their first-twelve/seven-batch membership and explicit acquisition, held and production states before the later voxel pass.
@@ -191,3 +205,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.1.4]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.4
 [0.1.5]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.5
 [0.1.6]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.6
+[0.1.7]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.7
