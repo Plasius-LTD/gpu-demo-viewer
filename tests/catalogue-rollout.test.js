@@ -1,0 +1,34 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {validateRollout, selectBatch} from '../model-library/rollout.js';
+const json=async name=>JSON.parse(await readFile(new URL(`../model-library/${name}.json`,import.meta.url),'utf8'));
+const research=await json('research-catalogue'),rollout=await json('rollout'),installed=await json('catalogue');
+
+test('all 75 distinct research identities have exactly one tracked batch',()=>{
+ assert.equal(research.assets.length,75);
+ assert.deepEqual(validateRollout(research.assets,rollout.entries),{total:75,first:12,remaining:63,batches:7});
+ for(let batch=1;batch<=7;batch++)assert.equal(selectBatch(rollout.entries,batch).length,9);
+});
+test('missing, duplicate and invented identities fail validation',()=>{
+ assert.throws(()=>validateRollout(research.assets,rollout.entries.slice(1)),/identity/);
+ assert.throws(()=>validateRollout(research.assets,[...rollout.entries,rollout.entries[0]]),/identity/);
+ assert.throws(()=>validateRollout(research.assets,rollout.entries.map((a,i)=>i===0?{...a,key:'invented'}:a)),/identity/);
+});
+test('invalid batches and unrecognized status cannot silently admit candidates',()=>{
+ assert.throws(()=>validateRollout(research.assets,rollout.entries.map((a,i)=>i===0?{...a,batch:1}:a)),/batch/);
+ assert.throws(()=>validateRollout(research.assets,rollout.entries.map((a,i)=>i===0?{...a,status:'ready-maybe'}:a)),/status/);
+ assert.throws(()=>selectBatch(rollout.entries,-1),/batch/);
+ assert.throws(()=>selectBatch(rollout.entries,1.5),/batch/);
+ assert.throws(()=>selectBatch(rollout.entries,8),/batch/);
+});
+test('public candidates have acquired files; qualified Amber and excluded Gem are not yet live',()=>{
+ const live=rollout.entries.filter(a=>a.status==='production');
+ assert.equal(live.length,10);
+ for(const a of live)assert.ok(installed.assets.some(b=>b.key===a.key&&b.entry&&b.files.length));
+ assert.equal(rollout.entries.find(a=>a.key==='MosquitoInAmber').status,'qualified');
+ assert.equal(rollout.entries.find(a=>a.key==='sf-gem').status,'excluded');
+ assert.equal(rollout.productionTarget,74);
+ assert.equal(rollout.entries.filter(a=>a.status!=='excluded').length,74);
+ assert.equal(rollout.voxelPhase,'after-original-production-qualification');
+});

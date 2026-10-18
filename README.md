@@ -151,13 +151,13 @@ fallback. Rollback disables CD; it never rewrites published package history.
 
 ## Model library review
 
-`npm run models:download` installs the ten reviewed, freely licensed Poly Haven and Khronos fixtures from `model-library/catalogue.json`, including all buffer/image dependencies. Downloads are bounded and SHA-256 checked; binaries are ignored by Git and npm. `npm run models:dev` opens the localhost server on port 5291. Visit `http://127.0.0.1:5291/?review=first-twelve`. The Medieval house is a manually supplied eleventh asset; only Gem remains deferred. Source links, creators and licences are available beside each model.
+`npm run models:download` installs the ten reviewed, freely licensed Poly Haven and Khronos fixtures from `model-library/catalogue.json`, including all buffer/image dependencies. Downloads are bounded and SHA-256 checked; binaries are ignored by Git and npm. `npm run models:dev` opens the localhost server on port 5291. Visit `http://127.0.0.1:5291/?review=first-twelve`. The Medieval house is a manually supplied eleventh asset; Gem is excluded from the rollout by request. Source links, creators and licences are available beside each model.
 
 For Medieval house, obtain the original GLB from its credited Sketchfab source and place it at `model-library/assets/sf-house/medieval_house.glb`, then run `npm run models:download` to verify its pinned size and SHA-256 and write its credits. This command never downloads manual assets; a missing file produces an explicit placement message. The catalogue stores no private local paths.
 
 This page consumes the shared model-inspection package entrypoint. While its upstream release is pending, development testing can set `PLASIUS_SHARED_INSPECTION_SOURCE` to an absolute path to the reviewed sibling `src/model-inspection.js`; this explicit source override is for localhost development only, not a released dependency or production deployment.
 
-Mouse/touch/keyboard inspection reuses the material-study camera. The view progressively refines while the camera is still, stopping at the selected sample target. `Home` restores framing and `?` displays a brief gesture reminder. Resizing updates resolution while preserving the camera. Fox is static here; its Survey, Walk and Run clips remain in the original download. Amber currently exposes a visible transmission/volume rendering defect. See `docs/model-library-review.md` for the initial findings; none of these fixtures is implicitly approved for the production showcase.
+Mouse/touch/keyboard inspection reuses the material-study camera. The view progressively refines while the camera is still, stopping at the selected sample target. `Home` restores framing and `?` displays a brief gesture reminder. Resizing updates resolution while preserving the camera. Fox is static here; its Survey, Walk and Run clips remain in the original download. Amber uses the fixed-continuation correction in renderer 0.2.50; its original materials are unchanged. See `docs/model-library-review.md` for the initial findings; none of these fixtures is implicitly approved for the production showcase.
 
 Render-quality controls select 8–256 total samples, 2–12 light bounces, 480/800/1280px render width and denoising. Defaults are 64/6/800/on. The first pass is one sample; idle refinement adds up to four samples per batch. Camera and quality changes restart history. Hidden tabs pause further work; the progress bar reports completed samples and actual dimensions. Settings do not reload the source model.
 
@@ -166,3 +166,15 @@ During upstream progressive-renderer development, also set `PLASIUS_RENDERER_SOU
 The model review includes native 1920 × 1080, 2560 × 1440 and 3840 × 2160 quality presets. These trace the exact selected pixel dimensions independently of viewport size; the canvas contains the image without stretching. A one-sample target supports quick full-resolution checks. See [UHD inspection design](docs/model-inspection-uhd.md).
 
 The released model review uses fixed progressive sampling with native UHD sizes and requires renderer0.2.49/shared1.1.7 or newer. Adaptive controls remain in a separate qualification branch. See [release scope](docs/model-review-release.md); the local inspection catalogue explicitly retains unresolved visual findings.
+
+## Complete model catalogue rollout
+
+The [74-model production rollout](docs/catalogue-production-rollout.md) tracks the
+eleven retained originals and seven subsequent batches of nine. The research
+manifest retains the excluded Gem identity, making 75 research records. `model-library/rollout.json`
+records acquisition/qualification state separately from production entitlement;
+`research-catalogue.json` preserves the original source identities and credits.
+Ten models are currently production-verified. Amber is locally qualified with renderer 0.2.50 and awaits production verification; Gem is excluded by request. Research entries are not a claim of downloaded or working
+models. Voxel conversion is the following pass after original-model production
+qualification. GitHub Story [2308](https://github.com/Plasius-LTD/plasius-ltd-site/issues/2308)
+owns delivery and acceptance.

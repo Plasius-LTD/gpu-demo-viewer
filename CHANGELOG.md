@@ -6,6 +6,10 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- Exclude Gem at user request and record the original Amber fixed-transport qualification; the production target is 74 models.
+
+- Track all 75 model candidates, their first-twelve/seven-batch membership and explicit acquisition, held and production states before the later voxel pass.
+
 - **Added**
   - (placeholder)
 

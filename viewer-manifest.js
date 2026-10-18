@@ -11,7 +11,7 @@ export const demos = [
     docsPath: "./docs/model-library-review.md",
     command: "npm run models:download && npm run models:dev",
     summary: "Inspect eleven acquired models with original materials, source credits and explicit rendering findings.",
-    notes: ["Requires the released shared model-inspection entrypoint, or the documented local source override.", "Gem remains deferred. Fox is static; amber has a recorded material defect."],
+    notes: ["Requires the released shared model-inspection entrypoint, or the documented local source override.", "Gem is excluded from this rollout by request. Fox is static; Amber requires renderer 0.2.50 or later for corrected fixed transmission."],
     tags: ["browser", "3d", "experimental"]
   },
   {

@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-18",
+  "rendererCorrectionCommit": "ad52d1124455807cc1355525ab9ec0c2a9b9637b",
+  "releasedBaseline": "0.2.49",
+  "candidateVersion": "0.2.50",
+  "sourceAssetsUnchanged": true,
+  "matchedComparison": {
+    "samples": 256,
+    "maxDepth": 6,
+    "width": 800,
+    "height": 282,
+    "denoise": false
+  },
+  "nativeUhd": {
+    "width": 3840,
+    "height": 2160,
+    "samples": 1,
+    "maxDepth": 6,
+    "denoise": true
+  },
+  "cameraReset": {
+    "before": 256,
+    "afterMovement": 0,
+    "refined": 256
+  },
+  "proof": [
+    {
+      "file": "released-256.png",
+      "sha256": "98e8243c5deb8bd80352af9ea24bdaf924b981be0f3495f6920530b6bccdc881"
+    },
+    {
+      "file": "bounded-256.png",
+      "sha256": "981c87a2780b779a9fc54f6d18b1cf920538aea08b5f062f5c1828cc5f23988a"
+    },
+    {
+      "file": "bounded-256-denoised.png",
+      "sha256": "23f414fe11cc727057d8b81e0c9533c8cbbcfd91f10e9a33a51126afb20bd61b"
+    },
+    {
+      "file": "Amber-UHD-1.png",
+      "sha256": "58ac9b4cda4df5f21ad21e7d7ce9718f3606646af0535cf8412b4471e29a2961"
+    },
+    {
+      "file": "Amber-camera-refined.png",
+      "sha256": "e3670b2bbc302206f533a661388177069e1d61dd382121c39e5b50de43139e0d"
+    }
+  ],
+  "limits": [
+    "Fixed sampling only; experimental adaptive transport remains unqualified.",
+    "UHD at one sample demonstrates admission and dimensions, not matched-quality or real-time performance.",
+    "Fox is static; source animations are retained but not played.",
+    "Physical touch and screen-reader speech have not been tested."
+  ]
+}
