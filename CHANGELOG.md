@@ -6,6 +6,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.1.8] - 2026-10-18
+
 - Consume released renderer 0.2.51 and shared 1.1.8 for responsive camera updates and material reuse on repeated modular-kit meshes.
 
 - Export the existing bounded Node asset-acquisition helper for hash-pinned build-time consumers; record five further acquired foliage/terrain models and four LOD holds.
@@ -212,3 +226,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.1.5]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.5
 [0.1.6]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.6
 [0.1.7]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.7
+[0.1.8]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.8
