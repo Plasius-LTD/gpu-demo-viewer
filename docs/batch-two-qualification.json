@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-18",
+  "rendererSource": "65de630819322cdd90955417d21f97dd51416e90",
+  "sharedSource": "3d119868bb9be471f71e04e1e91ed467a958b2d6",
+  "requiredPublishedPackages": {
+    "@plasius/gpu-renderer": "0.2.51",
+    "@plasius/gpu-shared": "1.1.8"
+  },
+  "mode": "fixed-progressive",
+  "productionVerified": false,
+  "limitations": [
+    "Static source geometry only; this does not qualify adaptive transport or animation.",
+    "Physical touch hardware and screen-reader speech were not tested.",
+    "Changing quality settings reallocates the renderer and can take several seconds on dense sources."
+  ],
+  "models": [
+    {
+      "key": "grass_medium_01",
+      "triangles": 24730,
+      "primitives": 17,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Grass-Medium-01.png",
+          "sha256": "c3110d79baa4cf1307cf818f694458b8e1865bdb1f3758a0210ebe0ac0e3ddc1"
+        },
+        {
+          "file": "Grass-Medium-01-UHD.png",
+          "sha256": "2bef23adc598ebaf0f6df4008444325e7425b0199edcac49e3690c2b8f44fd91"
+        }
+      ]
+    },
+    {
+      "key": "searsia_lucida",
+      "triangles": 377192,
+      "primitives": 21,
+      "materials": 3,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Searsia-Lucida.png",
+          "sha256": "571ba465753bd4aec4d063b60e72e7196ed1ce0936a335dd28c0b7266be04b15"
+        },
+        {
+          "file": "Searsia-Lucida-UHD.png",
+          "sha256": "06478a062b57dc382d37c5ae448d2b3987b99bfa77589407b470af24a888ffe1"
+        }
+      ]
+    },
+    {
+      "key": "boulder_01",
+      "triangles": 66122,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Boulder-01.png",
+          "sha256": "d5a85db2d77d54bee0a2359ee3704ad1a751952dae9da55f52ee845df8c5dc21"
+        },
+        {
+          "file": "Boulder-01-UHD.png",
+          "sha256": "0c8e927d9845c5218740c7efc65c7b282bb0f7d45166779b3244dd6aebc12793"
+        }
+      ]
+    },
+    {
+      "key": "coastal_cliff_01",
+      "triangles": 461824,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Coastal-Cliff-01.png",
+          "sha256": "13ca80f446d6ee1199c67712a9f81b3c8b1303ecea335de0217d2b723c229adb"
+        },
+        {
+          "file": "Coastal-Cliff-01-UHD.png",
+          "sha256": "532cf5b9b272ce0e395e82bf044fa964b3cd00ebbac8160c4295b78edce5ee15"
+        }
+      ]
+    },
+    {
+      "key": "dead_tree_trunk",
+      "triangles": 101802,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Dead-Tree-Trunk.png",
+          "sha256": "ae1c01085ea5d4ed1fc05bd76ffa7a1d622dc620ca67c5a578b0cfedc59de3ce"
+        },
+        {
+          "file": "Dead-Tree-Trunk-UHD.png",
+          "sha256": "3664c0101bd9d80e4993376272d1e83abe23298001dc72f7ab526acf09d83b8a"
+        }
+      ]
+    }
+  ],
+  "registryConsumptionCheck": {
+    "renderer": "0.2.51",
+    "shared": "1.1.8",
+    "sourceOverrides": false,
+    "completedFixedSamples": 64,
+    "cameraResetAndRefinement": true,
+    "consoleErrors": 0,
+    "evidence": {
+      "file": "Searsia-Lucida-released-packages.png",
+      "sha256": "2c33f63553d04e901e3386e13b83100e700631efc15b4685c79a1abf0dae7b86"
+    }
+  }
+}

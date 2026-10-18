@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-18",
+  "renderer": "0.2.50",
+  "sharedSource": "3d119868bb9be471f71e04e1e91ed467a958b2d6",
+  "mode": "fixed-progressive",
+  "sourcePolicy": "Original source resources unchanged; default modular-kit layouts retained.",
+  "productionVerified": false,
+  "limitations": [
+    "No adaptive transport qualification.",
+    "Static geometry only; no animation entitlement implied.",
+    "This is a source-model inspection catalogue, not assembled cinematic scenes.",
+    "Dandelion source contains five widely spaced plants; use camera approach/truck for leaf detail.",
+    "Physical touch hardware and screen-reader speech were not tested."
+  ],
+  "models": [
+    {
+      "key": "large_iron_gate",
+      "triangles": 38140,
+      "primitives": 4,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Large-Iron-Gate.png",
+          "sha256": "c1b6d1d907ef6dc24a2483b44b035b834dac306c780e1a3e8d05164f4bb93892"
+        },
+        {
+          "file": "Large-Iron-Gate-UHD.png",
+          "sha256": "94c3b333073b0cd572fd1f93bb1176a4caf697c3c10b48c901e7136e7d8b557c"
+        }
+      ]
+    },
+    {
+      "key": "modular_factory_facade",
+      "triangles": 175014,
+      "primitives": 263,
+      "materials": 6,
+      "completedFixedSamples": 64,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Modular-Factory-Facade.png",
+          "sha256": "afb015f2d620513b3bb88bff49df06948100fb76e9696cd5296e1da217228f25"
+        },
+        {
+          "file": "Modular-Factory-Facade-UHD.png",
+          "sha256": "6ec1279c040cb6af2d3aeb290e6c40ad3a35548882406cf659a98c3358e9f8fe"
+        }
+      ]
+    },
+    {
+      "key": "modular_fort_01",
+      "triangles": 28218,
+      "primitives": 45,
+      "materials": 3,
+      "completedFixedSamples": 64,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Modular-Fort-01.png",
+          "sha256": "c2a9b7fc1124946ed1ffc9f5cf710752422221581df81699229ff7236bd66503"
+        },
+        {
+          "file": "Modular-Fort-01-UHD.png",
+          "sha256": "992eec049485a2ba1a90ee1c3097cafdec0f7ab00220423d9e8eb5de7daba0ec"
+        }
+      ]
+    },
+    {
+      "key": "modular_urban_apartments_facade",
+      "triangles": 270045,
+      "primitives": 193,
+      "materials": 5,
+      "completedFixedSamples": 64,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Modular-Urban-Apartments-Facade.png",
+          "sha256": "0de5ba7e3e084477d871ea6a3d87d462c2cc848568184a5706ee905698ff27f7"
+        },
+        {
+          "file": "Modular-Urban-Apartments-Facade-UHD.png",
+          "sha256": "da58feb5597d1642b672812333a8d3b4591dd02288cee0ca6f00c7ddb2459935"
+        }
+      ]
+    },
+    {
+      "key": "modular_wooden_pier",
+      "triangles": 84780,
+      "primitives": 12,
+      "materials": 2,
+      "completedFixedSamples": 64,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Modular-Wooden-Pier.png",
+          "sha256": "6417b2f48258bdcaa29447984c65b504ce6e8d5b61ec5b695d3045dc3fb9afc1"
+        },
+        {
+          "file": "Modular-Wooden-Pier-UHD.png",
+          "sha256": "11625d3cb251e7fb45f125b17ed67044a8fea737d1c333713893de1dd704eb73"
+        }
+      ]
+    },
+    {
+      "key": "dandelion_01",
+      "triangles": 54764,
+      "primitives": 5,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Dandelion-01.png",
+          "sha256": "eba0dfe86dca4bfdd37203e44e9041fa832f21f6329ee57d5b8316c35bb6577b"
+        },
+        {
+          "file": "Dandelion-01-UHD.png",
+          "sha256": "342b2d313c18e2a4eda35fa1e85a66f3bdb7fb475095c23bfc292c7efe5bd62b"
+        }
+      ]
+    }
+  ],
+  "registryConsumptionCheck": {
+    "renderer": "0.2.51",
+    "shared": "1.1.8",
+    "sourceOverrides": false,
+    "completedFixedSamples": 64,
+    "cameraResetAndRefinement": true,
+    "consoleErrors": 0,
+    "evidence": {
+      "file": "Factory-released-packages.png",
+      "sha256": "57ad9a850dfffdf642bc2e641fe19484ba343df27f245fac20af02cec4ec00eb"
+    }
+  }
+}

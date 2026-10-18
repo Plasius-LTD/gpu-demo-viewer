@@ -18,7 +18,8 @@
   "exports": {
     ".": "./viewer-manifest.js",
     "./viewer-manifest": "./viewer-manifest.js",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./model-library/acquire": "./model-library/acquire.js"
   },
   "files": [
     "assets/",
@@ -53,8 +54,8 @@
     "test:coverage": "c8 --reporter=lcov --reporter=text node --test"
   },
   "dependencies": {
-    "@plasius/gpu-renderer": "^0.2.50",
-    "@plasius/gpu-shared": "^1.1.7"
+    "@plasius/gpu-renderer": "^0.2.51",
+    "@plasius/gpu-shared": "^1.1.8"
   },
   "devDependencies": {
     "c8": "^11.0.0",

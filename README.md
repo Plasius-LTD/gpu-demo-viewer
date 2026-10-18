@@ -165,7 +165,7 @@ During upstream progressive-renderer development, also set `PLASIUS_RENDERER_SOU
 
 The model review includes native 1920 × 1080, 2560 × 1440 and 3840 × 2160 quality presets. These trace the exact selected pixel dimensions independently of viewport size; the canvas contains the image without stretching. A one-sample target supports quick full-resolution checks. See [UHD inspection design](docs/model-inspection-uhd.md).
 
-The released model review uses fixed progressive sampling with native UHD sizes and requires renderer0.2.49/shared1.1.7 or newer. Adaptive controls remain in a separate qualification branch. See [release scope](docs/model-review-release.md); the local inspection catalogue explicitly retains unresolved visual findings.
+The released model review uses fixed progressive sampling with native UHD sizes and requires renderer 0.2.51/shared 1.1.8 or newer. Adaptive controls remain in a separate qualification branch. See [release scope](docs/model-review-release.md); the local inspection catalogue explicitly retains unresolved visual findings.
 
 ## Complete model catalogue rollout
 
@@ -178,3 +178,26 @@ Ten models are currently production-verified. Amber is locally qualified with re
 models. Voxel conversion is the following pass after original-model production
 qualification. GitHub Story [2308](https://github.com/Plasius-LTD/plasius-ltd-site/issues/2308)
 owns delivery and acceptance.
+
+### Review batch downloads
+
+`npm run models:download -- 1` acquires only the six checked Poly Haven models
+in the first follow-on batch. The default remains batch 0 (the original group).
+Each batch retains the existing 200 MiB total and 100 MiB per-file download
+limits, two workers and exact hashes. Downloaded models are candidates, not
+production approvals. The local workshop includes acquired candidates with
+their source credits; production remains a separately qualified catalogue.
+
+### Build-time model acquisition
+
+Node consumers may import `acquisitionPlan` and `acquireFixtures` from
+`@plasius/gpu-demo-viewer/model-library/acquire`. Pass reviewed asset metadata
+and a destination root; the helper verifies exact bytes and SHA-256, uses only
+approved HTTPS providers without redirects, and bounds concurrency, time and
+bytes. Select one explicit reviewed batch per call (200 MiB total / 100 MiB per
+resource maximum). Existing files must match; missing manual sources fail closed.
+This Node subpath is build tooling and must not enter browser bundles. Binary
+assets are not included in the npm package. Site build-time use retains stricter
+resource limits and verifies the complete source dependency closure.
+
+The review now consumes published renderer 0.2.51 and shared 1.1.8: camera movement reuses unchanged scene geometry, and repeated source primitives share their authored materials during import.

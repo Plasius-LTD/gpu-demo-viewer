@@ -34,7 +34,8 @@ test('pending download and renderer errors remain visible',async()=>{
   c.reset();c.destroy();await c.select(asset);assert.equal(count,1);
 });
 test('the eleven retained first-batch identities preserve provenance and exclude the skipped Gem',async()=>{
-  const {assets}=JSON.parse(await readFile(new URL('../model-library/catalogue.json',import.meta.url)));
+  const catalogue=JSON.parse(await readFile(new URL('../model-library/catalogue.json',import.meta.url)));
+  const assets=catalogue.assets.filter(asset=>asset.priority==='First 12');
   assert.equal(assets.length,11);assert.equal(new Set(assets.map(a=>a.key)).size,11);
   for(const a of assets){assert.ok(a.source_url&&a.authors&&a.licence_url);if(a.entry){assert.ok(a.files.length);for(const f of a.files)assert.match(f.sha256,/^[a-f0-9]{64}$/);}}
   assert.deepEqual(assets.find(a=>a.key==='Fox').inspection.animations,['Survey','Walk','Run']);
@@ -59,4 +60,11 @@ test('a cancelled quality update cannot overwrite the next model state',async()=
   rejectQuality(new Error('old render cancelled'));await quality;
   assert.equal(states.at(-1).asset.key,'new-model');assert.equal(states.at(-1).kind,'ready');
   controller.destroy();
+});
+
+test('the published Node acquisition subpath exposes the existing bounded helper', async()=>{
+ const api=await import('@plasius/gpu-demo-viewer/model-library/acquire');
+ assert.equal(typeof api.acquisitionPlan,'function');
+ assert.equal(typeof api.acquireFixtures,'function');
+ assert.deepEqual(api.acquisitionPlan([], '/tmp/model-library-empty'), []);
 });

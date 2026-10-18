@@ -114,3 +114,11 @@ test('HD through UHD presets use exact render pixels independent of viewport siz
   await el('resolution').change();assert.equal(f.changes.at(-1).width,3840);assert.equal(f.changes.at(-1).height,2160);
   page.destroy();
 });
+
+test('acquisition stays bounded to one explicitly selected batch',async()=>{
+ const result=await run(async({assets})=>assets.map(asset=>asset.key),1);
+ assert.equal(result.length,6);
+ assert.ok(result.includes('large_iron_gate'));
+ assert.ok(!result.includes('MosquitoInAmber'));
+ await assert.rejects(()=>run(async()=>{},8),/batch/);
+});

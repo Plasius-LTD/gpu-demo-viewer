@@ -6,3 +6,5 @@
 - [ADR-0002: Hosted OIDC Package Publication](./adr-0002-hosted-oidc-package-publication.md)
 
 - [ADR 0003: Reviewed model library](adr-0003-reviewed-model-library.md)
+
+- [ADR 0005: Build-time model acquisition subpath](adr-0005-build-time-model-acquisition-subpath.md)
