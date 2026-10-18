@@ -32,3 +32,16 @@ test('public candidates have acquired files; qualified Amber and excluded Gem ar
  assert.equal(rollout.entries.filter(a=>a.status!=='excluded').length,74);
  assert.equal(rollout.voxelPhase,'after-original-production-qualification');
 });
+
+test('batch one preserves six acquired Poly Haven sources without claiming production',()=>{
+ const acquired=installed.assets.filter(asset=>asset.batch===1);
+ assert.equal(acquired.length,6);
+ const batch=selectBatch(rollout.entries,1);
+ for(const asset of acquired){
+  assert.equal(asset.provider,'Poly Haven');
+  assert.equal(asset.licence,'CC0-1.0');
+  assert.equal(batch.find(entry=>entry.key===asset.key)?.status,'acquired');
+  assert.ok(asset.entry&&asset.files.length);
+  for(const file of asset.files)assert.match(file.sha256,/^[a-f0-9]{64}$/);
+ }
+});

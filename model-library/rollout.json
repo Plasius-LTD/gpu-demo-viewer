@@ -87,32 +87,32 @@
     {
       "key": "large_iron_gate",
       "batch": 1,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "acquired",
+      "note": "Original 1K glTF resources downloaded; provider checksums, SHA-256 inventory and dependency closure verified. Visual qualification pending."
     },
     {
       "key": "modular_factory_facade",
       "batch": 1,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "acquired",
+      "note": "Original 1K glTF resources downloaded; provider checksums, SHA-256 inventory and dependency closure verified. Visual qualification pending."
     },
     {
       "key": "modular_fort_01",
       "batch": 1,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "acquired",
+      "note": "Original 1K glTF resources downloaded; provider checksums, SHA-256 inventory and dependency closure verified. Visual qualification pending."
     },
     {
       "key": "modular_urban_apartments_facade",
       "batch": 1,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "acquired",
+      "note": "Original 1K glTF resources downloaded; provider checksums, SHA-256 inventory and dependency closure verified. Visual qualification pending."
     },
     {
       "key": "modular_wooden_pier",
       "batch": 1,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "acquired",
+      "note": "Original 1K glTF resources downloaded; provider checksums, SHA-256 inventory and dependency closure verified. Visual qualification pending."
     },
     {
       "key": "sf-cottage",
@@ -123,8 +123,8 @@
     {
       "key": "dandelion_01",
       "batch": 1,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "acquired",
+      "note": "Original 1K glTF resources downloaded; provider checksums, SHA-256 inventory and dependency closure verified. Visual qualification pending."
     },
     {
       "key": "DiffuseTransmissionPlant",

@@ -78,3 +78,14 @@ All retained fixture categories completed fixed64 checks; Amber additionally
 completed fixed256 with denoising off/on, camera reset/refinement and native
 3840×2160 at one sample. These checks do not qualify adaptive transport or claim
 complete cinematic presentation. Production verification remains a separate gate.
+
+## Batch 1 acquisition
+
+Six CC0 Poly Haven sources are acquired unchanged: Large Iron Gate, Modular
+Factory Facade, Modular Fort 01, Modular Urban Apartments Facade, Modular Wooden
+Pier and Dandelion 01. Their 60 files total 58,823,648 bytes. Provider MD5/length
+checks and recorded SHA-256 inventories agree; glTF dependency closure is complete.
+`models:download -- 1` selects only this batch; runtime review still loads one
+model at a time. Floating Castle, Thatched Cottage and Diffuse Transmission Plant
+remain outside the acquired set. No additional model is production-qualified by
+this acquisition record.

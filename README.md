@@ -178,3 +178,12 @@ Ten models are currently production-verified. Amber is locally qualified with re
 models. Voxel conversion is the following pass after original-model production
 qualification. GitHub Story [2308](https://github.com/Plasius-LTD/plasius-ltd-site/issues/2308)
 owns delivery and acceptance.
+
+### Review batch downloads
+
+`npm run models:download -- 1` acquires only the six checked Poly Haven models
+in the first follow-on batch. The default remains batch 0 (the original group).
+Each batch retains the existing 200 MiB total and 100 MiB per-file download
+limits, two workers and exact hashes. Downloaded models are candidates, not
+production approvals. The local workshop includes acquired candidates with
+their source credits; production remains a separately qualified catalogue.

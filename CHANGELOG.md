@@ -6,6 +6,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- Prepare six original Poly Haven models for the next review batch and bound acquisition to an explicitly selected batch.
+
 - **Added**
   - (placeholder)
 
