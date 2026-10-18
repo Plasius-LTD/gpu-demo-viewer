@@ -5,7 +5,7 @@ Feature: site#1170. First-batch Story: site#2303; production Task: site#2305.
 
 The research catalogue contains 75 distinct source assets/sets. Gem is explicitly
 excluded by the user, leaving 74 production candidates: eleven retained from
-the original twelve and 63 further models. Twenty-two have been acquired and ten
+the original twelve and 63 further models. Thirty-one have been acquired and ten
 are currently selectable in production.
 The 52 deployed files are geometry/texture resources, not 52 models.
 
@@ -113,3 +113,20 @@ Four LOD0 tree sources exceed the unchanged 500,000-triangle limit: Fir Tree 01
 (6,982,937), Island Tree 01 (1,599,403), Jacaranda Tree (3,863,832) and Pine Tree 01
 (17,182,252). These need deliberate LOD preparation before admission; increasing
 the runtime budget or silently replacing their sources is not a qualification.
+
+## Batch 3 acquisition
+
+Nine original sources are acquired: pomegranate, shell, rock face, tree stump,
+armchair, hat, boots, Sheen Chair and Sheen Cloth. Poly Haven resources retain
+the provider MD5/length and local SHA-256 inventories. Khronos sources are pinned
+to commit edc7c9e67c639d230715049ee31f9a96a6babbbe and checked against Git blob
+identities before SHA-256 inventory. Both sheen examples are CC0 in their primary
+source notices. Sheen Chair exposes its authored default material only; material
+variant selection is not claimed. This acquisition record does not admit any
+of these nine sources to production before visual qualification and site CI/CD.
+
+All nine batch-three models completed fixed64, camera reset/refinement, denoising
+off/on and native UHD1 using released packages, with no observed console errors.
+See [batch three evidence](batch-three-qualification.json). Four boot meshes are
+part of the source set; Sheen Chair retains its default authored material.
+Production verification remains pending.

@@ -189,56 +189,56 @@
     {
       "key": "food_pomegranate_01",
       "batch": 3,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
     },
     {
       "key": "lambis_shell",
       "batch": 3,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
     },
     {
       "key": "rock_face_01",
       "batch": 3,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
     },
     {
       "key": "tree_stump_01",
       "batch": 3,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
     },
     {
       "key": "ArmChair_01",
       "batch": 3,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
     },
     {
       "key": "fishermans_hat",
       "batch": 3,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
     },
     {
       "key": "rubber_boots",
       "batch": 3,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
     },
     {
       "key": "SheenChair",
       "batch": 3,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
     },
     {
       "key": "SheenCloth",
       "batch": 3,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
     },
     {
       "key": "SheenWoodLeatherSofa",
