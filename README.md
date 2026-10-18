@@ -187,3 +187,15 @@ Each batch retains the existing 200 MiB total and 100 MiB per-file download
 limits, two workers and exact hashes. Downloaded models are candidates, not
 production approvals. The local workshop includes acquired candidates with
 their source credits; production remains a separately qualified catalogue.
+
+### Build-time model acquisition
+
+Node consumers may import `acquisitionPlan` and `acquireFixtures` from
+`@plasius/gpu-demo-viewer/model-library/acquire`. Pass reviewed asset metadata
+and a destination root; the helper verifies exact bytes and SHA-256, uses only
+approved HTTPS providers without redirects, and bounds concurrency, time and
+bytes. Select one explicit reviewed batch per call (200 MiB total / 100 MiB per
+resource maximum). Existing files must match; missing manual sources fail closed.
+This Node subpath is build tooling and must not enter browser bundles. Binary
+assets are not included in the npm package. Site build-time use retains stricter
+resource limits and verifies the complete source dependency closure.

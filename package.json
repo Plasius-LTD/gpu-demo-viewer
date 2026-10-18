@@ -18,7 +18,8 @@
   "exports": {
     ".": "./viewer-manifest.js",
     "./viewer-manifest": "./viewer-manifest.js",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./model-library/acquire": "./model-library/acquire.js"
   },
   "files": [
     "assets/",

@@ -81,110 +81,110 @@
     {
       "key": "sf-castle",
       "batch": 1,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Original source not acquired; upstream scan credits must be resolved before public redistribution."
     },
     {
       "key": "large_iron_gate",
       "batch": 1,
-      "status": "acquired",
-      "note": "Original 1K glTF resources downloaded; provider checksums, SHA-256 inventory and dependency closure verified. Visual qualification pending."
+      "status": "qualified",
+      "note": "Original source fixed64 and native UHD1 render checks passed with material reuse correction 3d119868. Registry consumption and production verification pending."
     },
     {
       "key": "modular_factory_facade",
       "batch": 1,
-      "status": "acquired",
-      "note": "Original 1K glTF resources downloaded; provider checksums, SHA-256 inventory and dependency closure verified. Visual qualification pending."
+      "status": "qualified",
+      "note": "Original source fixed64 and native UHD1 render checks passed with material reuse correction 3d119868. Registry consumption and production verification pending."
     },
     {
       "key": "modular_fort_01",
       "batch": 1,
-      "status": "acquired",
-      "note": "Original 1K glTF resources downloaded; provider checksums, SHA-256 inventory and dependency closure verified. Visual qualification pending."
+      "status": "qualified",
+      "note": "Original source fixed64 and native UHD1 render checks passed with material reuse correction 3d119868. Registry consumption and production verification pending."
     },
     {
       "key": "modular_urban_apartments_facade",
       "batch": 1,
-      "status": "acquired",
-      "note": "Original 1K glTF resources downloaded; provider checksums, SHA-256 inventory and dependency closure verified. Visual qualification pending."
+      "status": "qualified",
+      "note": "Original source fixed64 and native UHD1 render checks passed with material reuse correction 3d119868. Registry consumption and production verification pending."
     },
     {
       "key": "modular_wooden_pier",
       "batch": 1,
-      "status": "acquired",
-      "note": "Original 1K glTF resources downloaded; provider checksums, SHA-256 inventory and dependency closure verified. Visual qualification pending."
+      "status": "qualified",
+      "note": "Original source fixed64 and native UHD1 render checks passed with material reuse correction 3d119868. Registry consumption and production verification pending."
     },
     {
       "key": "sf-cottage",
       "batch": 1,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Original Sketchfab source has not been acquired; no substitute is included."
     },
     {
       "key": "dandelion_01",
       "batch": 1,
-      "status": "acquired",
-      "note": "Original 1K glTF resources downloaded; provider checksums, SHA-256 inventory and dependency closure verified. Visual qualification pending."
+      "status": "qualified",
+      "note": "Original source fixed64 and native UHD1 render checks passed with material reuse correction 3d119868. Registry consumption and production verification pending."
     },
     {
       "key": "DiffuseTransmissionPlant",
       "batch": 1,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Required diffuse-transmission material support is not implemented in the released loader; source has not been admitted."
     },
     {
       "key": "fir_tree_01",
       "batch": 2,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Source LOD0 has 6,982,937 triangles, above the unchanged 500,000-triangle inspection budget. Requires suitable LOD preparation; original asset not substituted."
     },
     {
       "key": "grass_medium_01",
       "batch": 2,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "acquired",
+      "note": "Original 1K sources acquired and provider checksums/hash inventory verified. Visual qualification pending."
     },
     {
       "key": "island_tree_01",
       "batch": 2,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Source LOD0 has 1,599,403 triangles, above the unchanged 500,000-triangle inspection budget. Requires suitable LOD preparation; original asset not substituted."
     },
     {
       "key": "jacaranda_tree",
       "batch": 2,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Source LOD0 has 3,863,832 triangles, above the unchanged 500,000-triangle inspection budget. Requires suitable LOD preparation; original asset not substituted."
     },
     {
       "key": "pine_tree_01",
       "batch": 2,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Source LOD0 has 17,182,252 triangles, above the unchanged 500,000-triangle inspection budget. Requires suitable LOD preparation; original asset not substituted."
     },
     {
       "key": "searsia_lucida",
       "batch": 2,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "acquired",
+      "note": "Original 1K sources acquired and provider checksums/hash inventory verified. Visual qualification pending."
     },
     {
       "key": "boulder_01",
       "batch": 2,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "acquired",
+      "note": "Original 1K sources acquired and provider checksums/hash inventory verified. Visual qualification pending."
     },
     {
       "key": "coastal_cliff_01",
       "batch": 2,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "acquired",
+      "note": "Original 1K sources acquired and provider checksums/hash inventory verified. Visual qualification pending."
     },
     {
       "key": "dead_tree_trunk",
       "batch": 2,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "acquired",
+      "note": "Original 1K sources acquired and provider checksums/hash inventory verified. Visual qualification pending."
     },
     {
       "key": "food_pomegranate_01",

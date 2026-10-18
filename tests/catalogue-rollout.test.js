@@ -33,15 +33,29 @@ test('public candidates have acquired files; qualified Amber and excluded Gem ar
  assert.equal(rollout.voxelPhase,'after-original-production-qualification');
 });
 
-test('batch one preserves six acquired Poly Haven sources without claiming production',()=>{
+test('batch one preserves six qualified Poly Haven sources without claiming production',()=>{
  const acquired=installed.assets.filter(asset=>asset.batch===1);
  assert.equal(acquired.length,6);
  const batch=selectBatch(rollout.entries,1);
  for(const asset of acquired){
   assert.equal(asset.provider,'Poly Haven');
   assert.equal(asset.licence,'CC0-1.0');
-  assert.equal(batch.find(entry=>entry.key===asset.key)?.status,'acquired');
+  assert.equal(batch.find(entry=>entry.key===asset.key)?.status,'qualified');
   assert.ok(asset.entry&&asset.files.length);
   for(const file of asset.files)assert.match(file.sha256,/^[a-f0-9]{64}$/);
+ }
+});
+
+test('batch two admits five bounded sources and holds oversized original trees for LOD work',()=>{
+ const acquired=installed.assets.filter(asset=>asset.batch===2);
+ assert.equal(acquired.length,5);
+ const entries=selectBatch(rollout.entries,2);
+ for(const asset of acquired){
+  assert.ok(asset.entry&&asset.files.length);
+  assert.equal(entries.find(entry=>entry.key===asset.key)?.status,'acquired');
+ }
+ for(const key of ['fir_tree_01','island_tree_01','jacaranda_tree','pine_tree_01']){
+  assert.equal(entries.find(entry=>entry.key===key)?.status,'held');
+  assert.ok(!acquired.some(asset=>asset.key===key));
  }
 });

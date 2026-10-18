@@ -61,3 +61,10 @@ test('a cancelled quality update cannot overwrite the next model state',async()=
   assert.equal(states.at(-1).asset.key,'new-model');assert.equal(states.at(-1).kind,'ready');
   controller.destroy();
 });
+
+test('the published Node acquisition subpath exposes the existing bounded helper', async()=>{
+ const api=await import('@plasius/gpu-demo-viewer/model-library/acquire');
+ assert.equal(typeof api.acquisitionPlan,'function');
+ assert.equal(typeof api.acquireFixtures,'function');
+ assert.deepEqual(api.acquisitionPlan([], '/tmp/model-library-empty'), []);
+});

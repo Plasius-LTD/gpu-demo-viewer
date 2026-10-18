@@ -5,7 +5,7 @@ Feature: site#1170. First-batch Story: site#2303; production Task: site#2305.
 
 The research catalogue contains 75 distinct source assets/sets. Gem is explicitly
 excluded by the user, leaving 74 production candidates: eleven retained from
-the original twelve and 63 further models. Eleven have been acquired and ten
+the original twelve and 63 further models. Twenty-two have been acquired and ten
 are currently selectable in production.
 The 52 deployed files are geometry/texture resources, not 52 models.
 
@@ -89,3 +89,23 @@ checks and recorded SHA-256 inventories agree; glTF dependency closure is comple
 model at a time. Floating Castle, Thatched Cottage and Diffuse Transmission Plant
 remain outside the acquired set. No additional model is production-qualified by
 this acquisition record.
+
+## Batch 1 inspection
+
+The [qualification record](batch-one-qualification.json) records all six source
+models completing fixed64 and native 3840×2160 at one sample. The material reuse
+correction in shared PR150 makes the factory kit usable without duplicating its
+six materials across 263 primitives. Camera and quality controls remain the
+shared inspection APIs. The modular sources remain separate kit pieces; the
+dandelion source contains five plants spread apart. This qualification supports
+source inspection and does not claim assembled environments or cinematic quality.
+Production remains pending registry consumption and approved site deployment.
+
+## Batch 2 acquisition
+
+Grass Medium 01, Searsia Lucida, Boulder 01, Coastal Cliff 01 and Dead Tree Trunk
+are acquired unchanged (25 files, 48,818,088 bytes), pending visual qualification.
+Four LOD0 tree sources exceed the unchanged 500,000-triangle limit: Fir Tree 01
+(6,982,937), Island Tree 01 (1,599,403), Jacaranda Tree (3,863,832) and Pine Tree 01
+(17,182,252). These need deliberate LOD preparation before admission; increasing
+the runtime budget or silently replacing their sources is not a qualification.
