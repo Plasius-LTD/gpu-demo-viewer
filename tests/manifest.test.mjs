@@ -79,7 +79,7 @@ test("model studies launch with the local review gate and map shared runtime dep
   const demo = demos.find(({ id }) => id === "model-library");
   const launch = new URL(demo.launchPath, manifestBaseUrl);
   assert.equal(launch.searchParams.get("review"), "first-twelve");
-  assert.match(demo.notes.join(" "), /deferred/);
+  assert.match(demo.notes.join(" "), /excluded/);
   const html = readFileSync(new URL("index.html", launch), "utf8");
   const { imports } = JSON.parse(html.match(/<script type="importmap">([\s\S]*?)<\/script>/)[1]);
   for (const name of ["@plasius/gpu-shared/model-inspection", "@plasius/gpu-shared/feedback-diagnostics",

@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-10-18",
+  "story": "https://github.com/Plasius-LTD/plasius-ltd-site/issues/2308",
+  "flag": "gpu-demo.scene-fidelity.enabled",
+  "phase": "original-models",
+  "voxelPhase": "after-original-production-qualification",
+  "entries": [
+    {
+      "key": "large_castle_door",
+      "batch": 0,
+      "status": "production",
+      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+    },
+    {
+      "key": "sf-house",
+      "batch": 0,
+      "status": "production",
+      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+    },
+    {
+      "key": "fern_02",
+      "batch": 0,
+      "status": "production",
+      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+    },
+    {
+      "key": "quiver_tree_01",
+      "batch": 0,
+      "status": "production",
+      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+    },
+    {
+      "key": "rock_moss_set_01",
+      "batch": 0,
+      "status": "production",
+      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+    },
+    {
+      "key": "garden_gloves_01",
+      "batch": 0,
+      "status": "production",
+      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+    },
+    {
+      "key": "wooden_crate_02",
+      "batch": 0,
+      "status": "production",
+      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+    },
+    {
+      "key": "bronze_whale_statue",
+      "batch": 0,
+      "status": "production",
+      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+    },
+    {
+      "key": "sf-gem",
+      "batch": 0,
+      "status": "excluded",
+      "note": "User explicitly excluded Gem on 2026-10-18 because its source download is unavailable."
+    },
+    {
+      "key": "antique_ceramic_vase_01",
+      "batch": 0,
+      "status": "production",
+      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+    },
+    {
+      "key": "MosquitoInAmber",
+      "batch": 0,
+      "status": "qualified",
+      "note": "Original-material fixed256 and native UHD1 checks passed with renderer correction ad52d112; production deployment verification remains pending."
+    },
+    {
+      "key": "Fox",
+      "batch": 0,
+      "status": "production",
+      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+    },
+    {
+      "key": "sf-castle",
+      "batch": 1,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "large_iron_gate",
+      "batch": 1,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "modular_factory_facade",
+      "batch": 1,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "modular_fort_01",
+      "batch": 1,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "modular_urban_apartments_facade",
+      "batch": 1,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "modular_wooden_pier",
+      "batch": 1,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "sf-cottage",
+      "batch": 1,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "dandelion_01",
+      "batch": 1,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "DiffuseTransmissionPlant",
+      "batch": 1,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "fir_tree_01",
+      "batch": 2,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "grass_medium_01",
+      "batch": 2,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "island_tree_01",
+      "batch": 2,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "jacaranda_tree",
+      "batch": 2,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "pine_tree_01",
+      "batch": 2,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "searsia_lucida",
+      "batch": 2,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "boulder_01",
+      "batch": 2,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "coastal_cliff_01",
+      "batch": 2,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "dead_tree_trunk",
+      "batch": 2,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "food_pomegranate_01",
+      "batch": 3,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "lambis_shell",
+      "batch": 3,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "rock_face_01",
+      "batch": 3,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "tree_stump_01",
+      "batch": 3,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "ArmChair_01",
+      "batch": 3,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "fishermans_hat",
+      "batch": 3,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "rubber_boots",
+      "batch": 3,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "SheenChair",
+      "batch": 3,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "SheenCloth",
+      "batch": 3,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "SheenWoodLeatherSofa",
+      "batch": 4,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "SpecularSilkPouf",
+      "batch": 4,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "spinning_wheel_01",
+      "batch": 4,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "vintage_cabinet_01",
+      "batch": 4,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "wicker_basket_01",
+      "batch": 4,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "wine_barrel_01",
+      "batch": 4,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "bench_vice_01",
+      "batch": 4,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "brass_blowtorch",
+      "batch": 4,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "Camera_01",
+      "batch": 4,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "can_rusted",
+      "batch": 5,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "circuit_board",
+      "batch": 5,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "FlightHelmet",
+      "batch": 5,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "hand_plane_no4",
+      "batch": 5,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "metal_tool_chest",
+      "batch": 5,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "rusted_spade_01",
+      "batch": 5,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "vintage_hand_drill",
+      "batch": 5,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "WaterBottle",
+      "batch": 5,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "antique_estoc",
+      "batch": 5,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "chess_set",
+      "batch": 6,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "sf-crystal",
+      "batch": 6,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "gothic_statue",
+      "batch": 6,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "kite_shield",
+      "batch": 6,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "marble_bust_01",
+      "batch": 6,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "ABeautifulGame",
+      "batch": 6,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "AnisotropyBarnLamp",
+      "batch": 6,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "brass_diya_lantern",
+      "batch": 6,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "CommercialRefrigerator",
+      "batch": 6,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "IridescenceLamp",
+      "batch": 7,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "IridescentDishWithOlives",
+      "batch": 7,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "magnifying_glass_01",
+      "batch": 7,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "StainedGlassLamp",
+      "batch": 7,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "wine_bottles_01",
+      "batch": 7,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "BarramundiFish",
+      "batch": 7,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "MaterialsVariantsShoe",
+      "batch": 7,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "ship_pinnace",
+      "batch": 7,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    },
+    {
+      "key": "ToyCar",
+      "batch": 7,
+      "status": "researched",
+      "note": "Awaiting acquisition and Plasius visual qualification."
+    }
+  ],
+  "productionTarget": 74
+}
