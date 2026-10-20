@@ -6,6 +6,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.1.10] - 2026-10-20
+
 - Restore workshop setup and current quality controls near the start of the README; separate workspace/maintainer guidance and replace stale release counts with authoritative tracking links.
 
 - **Added**
@@ -246,3 +260,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.1.7]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.7
 [0.1.8]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.8
 [0.1.9]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.9
+[0.1.10]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.10
