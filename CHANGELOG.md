@@ -6,6 +6,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- Restore workshop setup and current quality controls near the start of the README; separate workspace/maintainer guidance and replace stale release counts with authoritative tracking links.
+
 - **Added**
   - (placeholder)
 

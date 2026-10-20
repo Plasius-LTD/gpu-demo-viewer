@@ -1,6 +1,8 @@
 # Complete catalogue rollout
 
-Status: delivery in progress, 18 October 2026. Parent Epic: site#2271;
+Plan recorded 18 October 2026; counts below are a historical planning snapshot,
+not current deployment status. See [Story 2308](https://github.com/Plasius-LTD/plasius-ltd-site/issues/2308)
+for delivery evidence and current status. Parent Epic: site#2271;
 Feature: site#1170. First-batch Story: site#2303; production Task: site#2305.
 
 The research catalogue contains 75 distinct source assets/sets. Gem is explicitly
