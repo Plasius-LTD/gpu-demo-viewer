@@ -1,6 +1,6 @@
 {
   "name": "@plasius/gpu-demo-viewer",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "type": "module",
   "description": "Root validation viewer for Plasius gpu-* demos.",
   "license": "Apache-2.0",
