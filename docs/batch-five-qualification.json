@@ -1,0 +1,291 @@
+{
+  "date": "2026-10-21",
+  "renderer": "0.2.54",
+  "shared": "1.2.0",
+  "initialSourceOverrides": false,
+  "registryConsumptionVerified": true,
+  "mode": "fixed-progressive",
+  "productionVerified": false,
+  "consoleErrors": 0,
+  "consoleWarnings": 0,
+  "layout320": {
+    "viewportWidth": 320,
+    "scrollWidth": 320,
+    "completedSamples": 64,
+    "file": "WaterBottle-320.png",
+    "sha256": "3297b7e0166efc3422b1fbbd34ca6be0eaa725553a4d2fb0592dc17404639a7d"
+  },
+  "limitations": [
+    "Static authored geometry only; tool drawers, moving gears and material variants are not animated.",
+    "Original geometry, textures and material definitions are unchanged; completed inspection does not certify physical material accuracy.",
+    "Flight Helmet quality rebuilds take several seconds. A DOM automation resolution change timed out and left a blank render; fresh selection recovered and native menu 800-to-UHD and UHD-to-800 transitions completed.",
+    "Physical touch hardware and screen-reader speech were not tested."
+  ],
+  "models": [
+    {
+      "key": "can_rusted",
+      "triangles": 3520,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "can_rusted-baseline.png",
+          "sha256": "c445bc469110f11b9e4358a05b857e76b2e3a68c99196e29a37402138ea1e387"
+        },
+        {
+          "file": "can_rusted-camera-denoise-off.png",
+          "sha256": "1977dedc3b63b3eb1205dbed6a099dd4566d2596769d206fd7389a97d284593d"
+        },
+        {
+          "file": "can_rusted-uhd.png",
+          "sha256": "d1c79b183fcbb9155eb628b837921695dae3aa2b000ac97b4b7173be31600e5a"
+        }
+      ]
+    },
+    {
+      "key": "circuit_board",
+      "triangles": 14430,
+      "primitives": 2,
+      "materials": 2,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "circuit_board-baseline.png",
+          "sha256": "5b804f27a024c3ff4c9908da356363e9d374cb88b28c203005d28fb0bc58f03e"
+        },
+        {
+          "file": "circuit_board-camera-denoise-off.png",
+          "sha256": "6cb898cc6297c1767f563c1920aa570e19cb1ad85f7b3dde065060b3b487095a"
+        },
+        {
+          "file": "circuit_board-uhd.png",
+          "sha256": "678c10724f4d68b92ca5ed4498f31eb67d8923810f0edd9fdb73d972f6f57949"
+        }
+      ]
+    },
+    {
+      "key": "hand_plane_no4",
+      "triangles": 8220,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "hand_plane_no4-baseline.png",
+          "sha256": "8153d3afb879d6ea3a03f7f81d071d8066f3cc0f657e3db46516017da0f9611e"
+        },
+        {
+          "file": "hand_plane_no4-camera-denoise-off.png",
+          "sha256": "62f3a72577e2d3229698526c63e0844ee375e80b0979e0d49237cc6d99372640"
+        },
+        {
+          "file": "hand_plane_no4-uhd.png",
+          "sha256": "590cb82dbdac9cd9c911c409aded04fdc0bf8c0a3390ab97c1686ff23218152f"
+        }
+      ]
+    },
+    {
+      "key": "metal_tool_chest",
+      "triangles": 13360,
+      "primitives": 7,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "metal_tool_chest-baseline.png",
+          "sha256": "30359a54b2652926b5f5f1d7d9d60304cf93e3705ac51172ae4658dbd8029e0c"
+        },
+        {
+          "file": "metal_tool_chest-camera-denoise-off.png",
+          "sha256": "9a267f8c589da28b58e20d3c8fad7ec28ddf6683f46bfafa88ed251a94167766"
+        },
+        {
+          "file": "metal_tool_chest-uhd.png",
+          "sha256": "da486b8befd3c3b92d350c72648d235dc5caa689caa75e1eb695680a7663bc54"
+        }
+      ]
+    },
+    {
+      "key": "rusted_spade_01",
+      "triangles": 11436,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "rusted_spade_01-baseline.png",
+          "sha256": "a1d29779c66c28e9edda61701663d589341ba1e08f7fec9dbb5ebc9fa5946c66"
+        },
+        {
+          "file": "rusted_spade_01-camera-denoise-off.png",
+          "sha256": "8b597bfc6a295ad582770801d0353cbdee741f92149223590a29e17db482aecf"
+        },
+        {
+          "file": "rusted_spade_01-uhd.png",
+          "sha256": "2bc94892642819ca3449ef7114f9094e3eebe3e496ac2b139fb4c8be93d62eb7"
+        }
+      ]
+    },
+    {
+      "key": "vintage_hand_drill",
+      "triangles": 8338,
+      "primitives": 5,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "vintage_hand_drill-baseline.png",
+          "sha256": "9ca8ee574b8e19b01f7fa3ed0251a733339ff1ef917960448e595a4a3450090b"
+        },
+        {
+          "file": "vintage_hand_drill-camera-denoise-off.png",
+          "sha256": "7d5d615387b2da2136cfbdec7cb95ea36687c37706e71731ccb384283f3e5e88"
+        },
+        {
+          "file": "vintage_hand_drill-uhd.png",
+          "sha256": "98cf549a3c1ef24eec867dd19cc1d9191a5c48d98fb3c189e7429671ae75d66f"
+        }
+      ]
+    },
+    {
+      "key": "antique_estoc",
+      "triangles": 8246,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "antique_estoc-baseline.png",
+          "sha256": "b85b2d0d9c152d7144fd1ec3c7d06696f8af8ce307d176b74e2db10801791844"
+        },
+        {
+          "file": "antique_estoc-camera-denoise-off.png",
+          "sha256": "6326b286e02db3b8ca2a28539464a8d82622e139d52f72e934627928e4c54f7c"
+        },
+        {
+          "file": "antique_estoc-uhd.png",
+          "sha256": "55def5ee7bcffb3e9781d603f68a3712b58a06d7fd2900194ce1aac07e1f7f49"
+        }
+      ]
+    },
+    {
+      "key": "FlightHelmet",
+      "triangles": 94722,
+      "primitives": 6,
+      "materials": 6,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "FlightHelmet-baseline.png",
+          "sha256": "cfcea5508d6d160bb57231c5e88f0a5cbbd0bcf7af197079c611a0a6212c3ec9"
+        },
+        {
+          "file": "FlightHelmet-camera-denoise-off.png",
+          "sha256": "2a73f6c767b2579e992d41b23a93bbf8f1e55fa183d11927441568a3e7377091"
+        },
+        {
+          "file": "FlightHelmet-uhd.png",
+          "sha256": "9b61191c3521bf15b0d843c38a890ec311beee20bedebc10ff4d8a7fcf65a28d"
+        },
+        {
+          "file": "FlightHelmet-native-balanced-return.png",
+          "sha256": "0eeff675c9e449f1f159eb94f5f10f1c271016f4e715c0d8854d1c8666d6980f"
+        },
+        {
+          "file": "FlightHelmet-uhd-native-transition.png",
+          "sha256": "dfe4f527327b9ab2252aef23e7a93e5564261970ffddb0807524bae3310c927a"
+        }
+      ]
+    },
+    {
+      "key": "WaterBottle",
+      "triangles": 4510,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "WaterBottle-uhd.png",
+          "sha256": "2e77b1dba8e30ba478aa7247b252ec6d8615b19caca3d4c5b357b9155d10f013"
+        },
+        {
+          "file": "WaterBottle-baseline.png",
+          "sha256": "ab95cb557ee5b7a660d2fccf85f2cbe6c37832396e6d0e064d86df387a0c5a4e"
+        },
+        {
+          "file": "WaterBottle-camera-denoise-off.png",
+          "sha256": "5b2d0211703d687e10a790e7fff54c04cbbe8fd0b7ca1711867f4f10646d9321"
+        }
+      ]
+    }
+  ],
+  "interruptedAutomation": {
+    "file": "FlightHelmet-uhd-transition-stalled.png",
+    "sha256": "0f62daef3170b2c37885cbbe1351f251b820109ae1ac13ba6116bddf832a338d",
+    "outcome": "Recovered by model selection; native menu transition passed."
+  }
+}

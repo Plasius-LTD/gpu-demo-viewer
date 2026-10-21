@@ -22,9 +22,9 @@ test('invalid batches and unrecognized status cannot silently admit candidates',
  assert.throws(()=>selectBatch(rollout.entries,1.5),/batch/);
  assert.throws(()=>selectBatch(rollout.entries,8),/batch/);
 });
-test('production records match the verified 31-model release and preserve the Gem exclusion',()=>{
+test('production records match the verified 40-model release and preserve the Gem exclusion',()=>{
  const live=rollout.entries.filter(a=>a.status==='production');
- assert.equal(live.length,31);
+ assert.equal(live.length,40);
  for(const a of live)assert.ok(installed.assets.some(b=>b.key===a.key&&b.entry&&b.files.length));
  assert.equal(rollout.entries.find(a=>a.key==='MosquitoInAmber').status,'production');
  assert.equal(rollout.entries.find(a=>a.key==='sf-gem').status,'excluded');
@@ -84,7 +84,7 @@ test('batch four qualifies original furniture and workshop sources with bounded 
   'wicker_basket_01','wine_barrel_01','bench_vice_01','brass_blowtorch','Camera_01',
  ].sort());
  for(const asset of acquired){
-  assert.equal(rollout.entries.find(entry=>entry.key===asset.key)?.status,'qualified');
+  assert.equal(rollout.entries.find(entry=>entry.key===asset.key)?.status,'production');
   assert.ok(asset.entry&&asset.files.some(file=>file.path===asset.entry));
   for(const file of asset.files){assert.match(file.sha256,/^[a-f0-9]{64}$/);assert.ok(file.bytes<=20*1048576);}
  }
@@ -101,4 +101,38 @@ test('batch four qualifies original furniture and workshop sources with bounded 
   assert.equal(model.denoisingOffOn,true);
   assert.deepEqual(model.completedUhd,{width:3840,height:2160,samples:1});
  }
+});
+
+
+test('batch five preserves the nine original tool and material sources with registry qualification',async()=>{
+ const assets=installed.assets.filter(asset=>asset.batch===5);
+ assert.deepEqual(assets.map(asset=>asset.key).sort(),[
+  'can_rusted','circuit_board','FlightHelmet','hand_plane_no4','metal_tool_chest',
+  'rusted_spade_01','vintage_hand_drill','WaterBottle','antique_estoc',
+ ].sort());
+ assert.equal(assets.flatMap(asset=>asset.files).length,58);
+ assert.equal(assets.flatMap(asset=>asset.files).reduce((n,file)=>n+file.bytes,0),75722699);
+ for(const asset of assets){
+  assert.equal(asset.licence,'CC0-1.0');
+  assert.ok(asset.entry&&asset.files.some(file=>file.path===asset.entry));
+  assert.equal(rollout.entries.find(entry=>entry.key===asset.key)?.status,'qualified');
+  assert.equal(asset.review_status,'qualified');
+  for(const file of asset.files){assert.match(file.sha256,/^[a-f0-9]{64}$/);assert.ok(file.bytes<=100*1048576);}
+ }
+ assert.ok(assets.find(a=>a.key==='FlightHelmet').inspection.extensions.includes('KHR_materials_transmission'));
+ assert.ok(assets.find(a=>a.key==='circuit_board').inspection.alphaModes.includes('BLEND'));
+ assert.equal(installed.assets.filter(a=>a.batch>5).length,0);
+ const evidence=JSON.parse(await readFile(new URL('../docs/batch-five-qualification.json',import.meta.url),'utf8'));
+ assert.equal(evidence.registryConsumptionVerified,true);
+ assert.equal(evidence.initialSourceOverrides,false);
+ assert.equal(evidence.productionVerified,false);
+ assert.deepEqual(evidence.models.map(a=>a.key).sort(),assets.map(a=>a.key).sort());
+ for(const model of evidence.models){
+  assert.equal(model.completedFixedSamples,64);
+  assert.equal(model.cameraResetAndRefinement,true);
+  assert.equal(model.denoisingOffOn,true);
+  assert.deepEqual(model.completedUhd,{width:3840,height:2160,samples:1});
+  assert.ok(model.evidence.length>=3);
+ }
+ assert.equal(evidence.layout320.scrollWidth,320);
 });

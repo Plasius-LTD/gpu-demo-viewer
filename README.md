@@ -48,6 +48,9 @@ npm run models:download -- 1
 npm run models:dev -- --port 5292
 ```
 
+Batch `5` adds tool and material studies: a rusted can, circuit board, hand
+plane, tool chest, spade, hand drill, estoc, flight helmet and water bottle.
+
 Select one batch at a time. A catalogue record can still be held for acquisition,
 licensing or visual review; it is not a claim that the model is available locally
 or enabled on the production site. The download helper admits only configured
@@ -57,7 +60,7 @@ Source, creator, licence and review notes appear beside each model.
 Two composite studies appear after the individual models in **Choose a model or
 study**: a furnished interior and a workshop still life. They arrange four and
 five credited originals under shared lighting and one camera. They are additional
-views of existing models, so the catalogue still contains forty models. Each
+views of existing models rather than additional source assets. Each
 study lists its sources, licences and chosen dimensions; these are static review
 arrangements, not verified physical-scale scenes. See the
 [composite study guide](https://github.com/Plasius-LTD/gpu-demo-viewer/blob/main/docs/composite-model-studies.md).
