@@ -7,7 +7,7 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ## [Unreleased]
 
 - **Added**
-  - (placeholder)
+  - Relic collection and tool-chest composite studies using five credited originals each, with shared camera and render-quality controls.
 
 - **Changed**
   - (placeholder)

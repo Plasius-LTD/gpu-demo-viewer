@@ -130,7 +130,7 @@ test('composites retain all credits and use the shared scene runtime and quality
   const api=await f.options.importRuntime();
   f.options.importRuntime=async()=>({...api,createSceneInspection:api.createModelInspection});
   const page=await mountLibrary(f.options),el=id=>f.doc.getElementById(id);
-  assert.equal(el('model').children.length,catalogue.assets.length+2);
+  assert.equal(el('model').children.length,catalogue.assets.length+4);
   el('model').value='study-furnished-interior';await el('model').change();
   assert.equal(f.loads.at(-1).models.length,4);
   assert.equal(el('composite-credits').children.length,4);
@@ -142,6 +142,13 @@ test('composites retain all credits and use the shared scene runtime and quality
   assert.equal(f.changes.at(-1).samplesPerPixel,128);
   el('model').value='study-workshop';await el('model').change();
   assert.equal(f.loads.at(-1).models.length,5);
+  for (const key of ['study-relic-collection','study-tool-chest']) {
+    el('model').value=key;await el('model').change();
+    assert.equal(f.loads.at(-1).models.length,5);
+    assert.equal(el('composite-credits').children.length,5);
+    assert.match(el('note').textContent,/5 original models/);
+    assert.equal(el('source-line').hidden,true);
+  }
   el('model').value=catalogue.assets[0].key;await el('model').change();
   assert.equal(el('source-line').hidden,false);assert.equal(el('composite-credits').children.length,0);
   page.destroy();
