@@ -243,110 +243,110 @@
     {
       "key": "SheenWoodLeatherSofa",
       "batch": 4,
-      "status": "qualified",
-      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
+      "status": "production",
+      "note": "Verified in the 40-model production release on 2026-10-21; site commit a23291758540e97d13b347c8521daac5be0d3c82. All 263 resources and nine additions passed live checks."
     },
     {
       "key": "SpecularSilkPouf",
       "batch": 4,
-      "status": "qualified",
-      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
+      "status": "production",
+      "note": "Verified in the 40-model production release on 2026-10-21; site commit a23291758540e97d13b347c8521daac5be0d3c82. All 263 resources and nine additions passed live checks."
     },
     {
       "key": "spinning_wheel_01",
       "batch": 4,
-      "status": "qualified",
-      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
+      "status": "production",
+      "note": "Verified in the 40-model production release on 2026-10-21; site commit a23291758540e97d13b347c8521daac5be0d3c82. All 263 resources and nine additions passed live checks."
     },
     {
       "key": "vintage_cabinet_01",
       "batch": 4,
-      "status": "qualified",
-      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
+      "status": "production",
+      "note": "Verified in the 40-model production release on 2026-10-21; site commit a23291758540e97d13b347c8521daac5be0d3c82. All 263 resources and nine additions passed live checks."
     },
     {
       "key": "wicker_basket_01",
       "batch": 4,
-      "status": "qualified",
-      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
+      "status": "production",
+      "note": "Verified in the 40-model production release on 2026-10-21; site commit a23291758540e97d13b347c8521daac5be0d3c82. All 263 resources and nine additions passed live checks."
     },
     {
       "key": "wine_barrel_01",
       "batch": 4,
-      "status": "qualified",
-      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
+      "status": "production",
+      "note": "Verified in the 40-model production release on 2026-10-21; site commit a23291758540e97d13b347c8521daac5be0d3c82. All 263 resources and nine additions passed live checks."
     },
     {
       "key": "bench_vice_01",
       "batch": 4,
-      "status": "qualified",
-      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
+      "status": "production",
+      "note": "Verified in the 40-model production release on 2026-10-21; site commit a23291758540e97d13b347c8521daac5be0d3c82. All 263 resources and nine additions passed live checks."
     },
     {
       "key": "brass_blowtorch",
       "batch": 4,
-      "status": "qualified",
-      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
+      "status": "production",
+      "note": "Verified in the 40-model production release on 2026-10-21; site commit a23291758540e97d13b347c8521daac5be0d3c82. All 263 resources and nine additions passed live checks."
     },
     {
       "key": "Camera_01",
       "batch": 4,
-      "status": "qualified",
-      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
+      "status": "production",
+      "note": "Verified in the 40-model production release on 2026-10-21; site commit a23291758540e97d13b347c8521daac5be0d3c82. All 263 resources and nine additions passed live checks."
     },
     {
       "key": "can_rusted",
       "batch": 5,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera/refinement, denoising off/on and native UHD1 passed with registry renderer0.2.54/shared1.2.0. Site production verification pending; Flight Helmet quality transitions retain the recorded timing limitation."
     },
     {
       "key": "circuit_board",
       "batch": 5,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera/refinement, denoising off/on and native UHD1 passed with registry renderer0.2.54/shared1.2.0. Site production verification pending; Flight Helmet quality transitions retain the recorded timing limitation."
     },
     {
       "key": "FlightHelmet",
       "batch": 5,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera/refinement, denoising off/on and native UHD1 passed with registry renderer0.2.54/shared1.2.0. Site production verification pending; Flight Helmet quality transitions retain the recorded timing limitation."
     },
     {
       "key": "hand_plane_no4",
       "batch": 5,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera/refinement, denoising off/on and native UHD1 passed with registry renderer0.2.54/shared1.2.0. Site production verification pending; Flight Helmet quality transitions retain the recorded timing limitation."
     },
     {
       "key": "metal_tool_chest",
       "batch": 5,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera/refinement, denoising off/on and native UHD1 passed with registry renderer0.2.54/shared1.2.0. Site production verification pending; Flight Helmet quality transitions retain the recorded timing limitation."
     },
     {
       "key": "rusted_spade_01",
       "batch": 5,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera/refinement, denoising off/on and native UHD1 passed with registry renderer0.2.54/shared1.2.0. Site production verification pending; Flight Helmet quality transitions retain the recorded timing limitation."
     },
     {
       "key": "vintage_hand_drill",
       "batch": 5,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera/refinement, denoising off/on and native UHD1 passed with registry renderer0.2.54/shared1.2.0. Site production verification pending; Flight Helmet quality transitions retain the recorded timing limitation."
     },
     {
       "key": "WaterBottle",
       "batch": 5,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera/refinement, denoising off/on and native UHD1 passed with registry renderer0.2.54/shared1.2.0. Site production verification pending; Flight Helmet quality transitions retain the recorded timing limitation."
     },
     {
       "key": "antique_estoc",
       "batch": 5,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original-source fixed64, camera/refinement, denoising off/on and native UHD1 passed with registry renderer0.2.54/shared1.2.0. Site production verification pending; Flight Helmet quality transitions retain the recorded timing limitation."
     },
     {
       "key": "chess_set",

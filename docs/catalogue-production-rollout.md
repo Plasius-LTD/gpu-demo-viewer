@@ -162,3 +162,31 @@ sofa WebP maps are present. The [qualification record](batch-four-qualification.
 retains the prior source-check context and binds the fresh screenshots by hash.
 This is static inspection qualification, not animation playback or a claim of
 complete material fidelity. Site production verification remains pending.
+
+## Batch 5: tools and material studies
+
+Continue Task #62 under Story site#2308 / Feature site#1170, inheriting
+`gpu-demo.scene-fidelity.enabled` and the existing site capability. Qualify the
+nine batch-five originals against released renderer0.2.54/shared1.2.0 with no
+source overrides. The 58 resources total 75,722,699 bytes; preserve the existing
+source manifests and attribution. Flight Helmet retains its original full texture
+set and transmission material. Circuit Board retains its authored alpha modes.
+
+Require source hash/length and glTF dependency closure checks, fixed64 sampling,
+camera reset/refinement, denoising off/on and native UHD1 for each model. Record
+actual GPU results and any unsupported material behavior before changing status
+to qualified. Tests must pin the nine identities and keep unqualified batches
+out of the published catalogue. Publish through viewer main/production CD, then
+consume that release in the site and verify the 49-model candidate through the
+site CI/CD path, public hashes/credits and live GPU checks. Failed candidates
+remain held; the original-model target remains 74, with Gem excluded.
+
+All nine batch-five originals completed the checks above; see the
+[registry qualification record](batch-five-qualification.json). The flight
+helmet's full texture set makes quality rebuilds take several seconds. A DOM
+automation timeout left one transition incomplete; fresh selection recovered,
+and native menu round trips between balanced and UHD completed. This limitation
+and the interrupted capture are retained. The 320px layout completed fixed64
+without horizontal overflow. No GPU console warnings or errors were observed.
+Physical touch and screen-reader speech remain untested. Public verification
+still depends on the approved package and site releases.

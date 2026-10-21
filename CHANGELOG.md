@@ -7,7 +7,7 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ## [Unreleased]
 
 - **Added**
-  - (placeholder)
+  - Nine original tool and material studies in acquisition batch five, with source hashes, licences and released-renderer qualification evidence.
 
 - **Changed**
   - (placeholder)
