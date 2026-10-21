@@ -7,6 +7,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ## [Unreleased]
 
 - **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.4.0] - 2026-10-21
+
+- **Added**
   - Source-owned curated showcase diagnostics with integrity-pinned public assets, remote access checks, explicit consent, accessible preview/copy, and fail-closed provenance; no client-pixel capture or diagnostic transport.
 
 - **Changed**
@@ -353,3 +367,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.2.2]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.2.2
 [0.2.3]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.2.3
 [0.3.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.3.0
+[0.4.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.4.0
