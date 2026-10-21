@@ -7,6 +7,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ## [Unreleased]
 
 - **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.2.0] - 2026-10-21
+
+- **Added**
   - Furnished-interior and workshop composite studies in the local model workshop, with shared inspection controls and individual source credits.
 
 - **Changed**
@@ -278,3 +292,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.1.9]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.9
 [0.1.10]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.10
 [0.1.11]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.11
+[0.2.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.2.0
