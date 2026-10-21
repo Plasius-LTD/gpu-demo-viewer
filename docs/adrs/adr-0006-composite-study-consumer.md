@@ -19,3 +19,12 @@ browser review with the registry package before release.
 The existing scene-fidelity feature flag and route capability continue to govern
 hosted product access. This local review does not add public-site navigation or
 change the existing localhost review gate.
+
+## Host-consumer contract — 21 October 2026
+
+Story site#2321 / viewer Task #83 adds the typed `model-library/studies` subpath.
+A pure function returns fresh copies of the same four layout definitions used by
+the workshop. This keeps placement ownership here without coupling host apps to
+the workshop UI, catalogue loading or its localhost gate. Hosts resolve their
+own admitted sources and retain capability/rollout ownership. Shared inspection
+still owns all rendering and resource limits. The local gate remains unchanged.

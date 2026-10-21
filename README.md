@@ -12,7 +12,7 @@ plus a workspace launcher for the `gpu-*` package demos. The workshop provides
 camera gestures, progressive rendering, quality controls and model credits.
 
 The npm package includes the viewer source, manifest and build-time acquisition
-helper. Model binaries are downloaded separately; they are not bundled in npm.
+helper and typed composite layout definitions. Model binaries are downloaded separately; they are not bundled in npm.
 
 ## Run the model workshop
 
@@ -202,3 +202,26 @@ npm 11.5.1 or newer, uses the protected `production` environment and
 short-lived npm OIDC with provenance, and has no long-lived npm write-token
 fallback. Rollback disables CD; it never rewrites published package history.
 <!-- END PLASIUS RELEASE INTEGRITY -->
+
+## Reuse composite layouts
+
+Import the small data-only subpath to offer the workshop's four arrangements in
+another application:
+
+```ts
+import { compositeStudyDefinitions } from '@plasius/gpu-demo-viewer/model-library/studies';
+
+const layouts = compositeStudyDefinitions();
+const interior = layouts.find(layout => layout.key === 'study-furnished-interior');
+// Each placement is [sourceKey, bottomCentreAnchor, longestDimension, yawRadians].
+console.log(interior?.placements);
+```
+
+Every call returns independent arrays. The import performs no asset requests,
+DOM work or GPU allocation. Resolve each source key against your admitted asset
+catalogue and pass its URL, complete integrity map and placement to
+`createSceneInspection` from `@plasius/gpu-shared/model-inspection`. Omit a layout
+if any source is unavailable. Keep source licences/credits, translate the supplied
+review copy as needed, and enforce the host application's access controls before
+loading models. Dimensions are illustrative scene units. See the
+[host integration contract](https://github.com/Plasius-LTD/gpu-demo-viewer/blob/main/docs/public-composite-definitions.md).
