@@ -6,6 +6,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.1.11] - 2026-10-21
+
 - Add the nine qualified furniture/workshop source models and their integrity inventories, using released shared1.1.12 and renderer0.2.54; reconcile the prior 31-model production records.
 
 - **Added**
@@ -263,3 +277,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.1.8]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.8
 [0.1.9]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.9
 [0.1.10]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.10
+[0.1.11]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.11
