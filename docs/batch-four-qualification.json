@@ -1,0 +1,241 @@
+{
+  "registryConsumptionVerified": true,
+  "mode": "fixed-progressive",
+  "productionVerified": false,
+  "consoleErrors": 0,
+  "limitations": [
+    "Static authored geometry only; the vice skin is present but animation playback is not qualified.",
+    "Source textures and materials are retained, including the sofa WebP maps.",
+    "Original camera branding is retained in this technical inspection, not a sponsor or endorsement claim.",
+    "Physical touch hardware and screen-reader speech were not tested.",
+    "Completed images are source inspection evidence, not full physical-fidelity approval."
+  ],
+  "models": [
+    {
+      "key": "SheenWoodLeatherSofa",
+      "triangles": 46492,
+      "primitives": 6,
+      "materials": 6,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "SheenWoodLeatherSofa-camera-denoise-off.png",
+          "sha256": "e0fc6e782da4dbc665b4c7b5756f48235a2c36a33ba2292718a6d2f0b12b7d20"
+        },
+        {
+          "file": "SheenWoodLeatherSofa-uhd.png",
+          "sha256": "2331328a89877651e80db4477519927a0d73256f49e8c812f5f5253b1a93563a"
+        }
+      ]
+    },
+    {
+      "key": "SpecularSilkPouf",
+      "triangles": 81280,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "SpecularSilkPouf-camera-denoise-off.png",
+          "sha256": "408377ed01bd330a8bc38f5fff20a8ee73e341d3f705532bf005dd44da9758ca"
+        },
+        {
+          "file": "SpecularSilkPouf-uhd.png",
+          "sha256": "8494aff57ff86f7f67aace72f610074b065260e869abb0fe17438d6f5674d8b5"
+        }
+      ]
+    },
+    {
+      "key": "spinning_wheel_01",
+      "triangles": 52023,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "spinning_wheel_01-camera-denoise-off.png",
+          "sha256": "988d0c57af6b80eab0ceb3cc7a3fbfe9d01690033ccee288ff0590c3479738b1"
+        },
+        {
+          "file": "spinning_wheel_01-uhd.png",
+          "sha256": "66e0e5954edc057f864650fcae3df1f87c283007e1d9d6abce1369607109203a"
+        }
+      ]
+    },
+    {
+      "key": "vintage_cabinet_01",
+      "triangles": 61096,
+      "primitives": 12,
+      "materials": 3,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "vintage_cabinet_01-camera-denoise-off.png",
+          "sha256": "dd02748e8b3b186d4b8b1e8e1b6e69fef21d6f34681788f12cf97ba924c9392e"
+        },
+        {
+          "file": "vintage_cabinet_01-uhd.png",
+          "sha256": "c1dd6883cfe28c39022fd15125480f0ae6e5c3f1cb8e16151b32e2b753b19ff0"
+        }
+      ]
+    },
+    {
+      "key": "wicker_basket_01",
+      "triangles": 22276,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "wicker_basket_01-camera-denoise-off.png",
+          "sha256": "64765edbb558e8bfe0b885a43a6ad583f3f09610188ea95d2de92916256da38b"
+        },
+        {
+          "file": "wicker_basket_01-uhd.png",
+          "sha256": "b501910a48a952dda9094e35bf9ce3933b9d1db1793ff34b54b2d44412f596bc"
+        }
+      ]
+    },
+    {
+      "key": "wine_barrel_01",
+      "triangles": 10820,
+      "primitives": 4,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "wine_barrel_01-camera-denoise-off.png",
+          "sha256": "ee17ce713e68bc6eb84f51451628ee5744042be398bb8f4e3a2261d0889da590"
+        },
+        {
+          "file": "wine_barrel_01-uhd.png",
+          "sha256": "71b63030b37a6ae8775f44994f17ade3af95c3320c5e2b6db877d0f348abb686"
+        }
+      ]
+    },
+    {
+      "key": "bench_vice_01",
+      "triangles": 2864,
+      "primitives": 4,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "bench_vice_01-camera-denoise-off.png",
+          "sha256": "9d0c386f9f11de5a1fc04eea5eaad4396f50c26fe28e8756b7d23812eb1dad28"
+        },
+        {
+          "file": "bench_vice_01-uhd.png",
+          "sha256": "d72590b975e2de4d587e9cb0a1a92c6fefd3ecfa79435a0364bf0af8df28c79b"
+        }
+      ]
+    },
+    {
+      "key": "brass_blowtorch",
+      "triangles": 11750,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "brass_blowtorch-camera-denoise-off.png",
+          "sha256": "0e60c0b69d4ab16343e49151704a1e7dbeabedaf20933a9f35a402a81703f615"
+        },
+        {
+          "file": "brass_blowtorch-uhd.png",
+          "sha256": "16d14ae5787880e92917698f5cb4e7d7005d4120c181dcdbd933a141e31e7bc6"
+        }
+      ]
+    },
+    {
+      "key": "Camera_01",
+      "triangles": 26987,
+      "primitives": 5,
+      "materials": 4,
+      "completedFixedSamples": 64,
+      "denoisingOffOn": true,
+      "cameraResetAndRefinement": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "Camera_01-camera-denoise-off.png",
+          "sha256": "d526ce8a27947ed61b1defb6c314bccbdf1404199294f1937d3f4baacca2d0b2"
+        },
+        {
+          "file": "Camera_01-uhd.png",
+          "sha256": "c70be2048687be430424d70a8db0e46081223f9f26f54ba73cf7128a529ccca2"
+        }
+      ]
+    }
+  ],
+  "historicalSourceQualification": {
+    "date": "2026-10-18",
+    "renderer": "0.2.51",
+    "sharedSourceCommit": "665efda20a312084bf58e5db707bbaec7e209364",
+    "initialSourceOverrides": true
+  },
+  "date": "2026-10-21",
+  "renderer": "0.2.54",
+  "shared": "1.1.12",
+  "sourceOverrides": false
+}
