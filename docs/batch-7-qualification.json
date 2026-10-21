@@ -1,0 +1,289 @@
+{
+  "date": "2026-10-21",
+  "renderer": "0.2.54",
+  "shared": "1.2.0",
+  "initialSourceOverrides": false,
+  "registryConsumptionVerified": true,
+  "mode": "fixed-progressive",
+  "productionVerified": false,
+  "models": [
+    {
+      "key": "magnifying_glass_01",
+      "admitted": true,
+      "triangles": 7240,
+      "primitives": 2,
+      "materials": 2,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "magnifying_glass_01-baseline.png",
+          "sha256": "4b1fe1f52f746ca72ac6ffea5b6d615c10c80c9b40c3a4663f0df2df30989ff1"
+        },
+        {
+          "file": "magnifying_glass_01-camera-denoise-off.png",
+          "sha256": "660bc17e3d88219807093afc3e4dac75a1d69645cd0cb2948df72f4901b07e05"
+        },
+        {
+          "file": "magnifying_glass_01-uhd.png",
+          "sha256": "788a815270fba106a51eb66bfdeaf38ee1afbc49c83f2df45378331855e3ad67"
+        }
+      ]
+    },
+    {
+      "key": "wine_bottles_01",
+      "admitted": false,
+      "triangles": 28848,
+      "primitives": 16,
+      "materials": 12,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "wine_bottles_01-baseline.png",
+          "sha256": "6704514a84b352ad0ef1cd2cad2feae605dfc8bd69fe83181ad6777d91a96e91"
+        },
+        {
+          "file": "wine_bottles_01-camera-denoise-off.png",
+          "sha256": "4bd02e4c78bd127caaa7e2b402fc679e2f0e8efea5fa6715581b2c8bb85f6353"
+        },
+        {
+          "file": "wine_bottles_01-uhd.png",
+          "sha256": "25c09286eb9e96d98941563d96300306ee07050bfea9335a0e3865e016e1028a"
+        },
+        {
+          "file": "wine_bottles_01-detailed-256.png",
+          "sha256": "82089271f41cf7d9065dcc3fd9e2818296ba32adc0198f34fd14c9f19490bd38"
+        }
+      ],
+      "holdReason": "Conspicuous glass speckling remains at 64 samples and 256 samples at 1280px; layered transmission needs a rendering fix."
+    },
+    {
+      "key": "ship_pinnace",
+      "admitted": true,
+      "triangles": 168317,
+      "primitives": 7,
+      "materials": 7,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "ship_pinnace-baseline.png",
+          "sha256": "464843191f737503cf2aff7c73a97c577a3f616b413dfacde0cd5b09bfd10875"
+        },
+        {
+          "file": "ship_pinnace-camera-denoise-off.png",
+          "sha256": "a773d1cfe103f74c9865ca32f8ef282d4b972490a17e17966f3b2d99e80b8354"
+        },
+        {
+          "file": "ship_pinnace-uhd.png",
+          "sha256": "8b7bd0256ded796087bc9132bbe90121874c21a592d2efde8bd35c389113d737"
+        }
+      ]
+    },
+    {
+      "key": "IridescenceLamp",
+      "admitted": false,
+      "triangles": 18866,
+      "primitives": 3,
+      "materials": 3,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "IridescenceLamp-baseline.png",
+          "sha256": "77535f418cc5a28cf42a70780667118ff5313cddf36c078765f7be1496298932"
+        },
+        {
+          "file": "IridescenceLamp-camera-denoise-off.png",
+          "sha256": "d3c28d6803720cee70434fbd0d117d02b3f15d097d0f2f56ad9b48a2f9835d1d"
+        },
+        {
+          "file": "IridescenceLamp-uhd.png",
+          "sha256": "f59bf497698b01fa396b0167e75ee49932be8a13cd64ac762b03cdeb4f559dda"
+        }
+      ],
+      "holdReason": "Transmissive lamp base has visible dark patching and its intended iridescent appearance is not established in the inspection lighting."
+    },
+    {
+      "key": "IridescentDishWithOlives",
+      "admitted": false,
+      "triangles": 24448,
+      "primitives": 4,
+      "materials": 4,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "IridescentDishWithOlives-baseline.png",
+          "sha256": "329c2150ef64a842531f7894a6b464277a8e7dce5ae2134c2b2d96be168f8482"
+        },
+        {
+          "file": "IridescentDishWithOlives-camera-denoise-off.png",
+          "sha256": "1339245f615a5094273042c2b5023b2c98510c6303abe206b7f70314ab488c50"
+        },
+        {
+          "file": "IridescentDishWithOlives-uhd.png",
+          "sha256": "799a5f19475f69f194806ddbba342a1b696d7ca662c06ee4952d349982e96ea2"
+        }
+      ],
+      "holdReason": "The authored transmissive glass cover renders nearly opaque and dark; retain for optical-material correction."
+    },
+    {
+      "key": "StainedGlassLamp",
+      "admitted": true,
+      "triangles": 35132,
+      "primitives": 8,
+      "materials": 13,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "StainedGlassLamp-baseline.png",
+          "sha256": "7a1d6bac61d69561563751a3caf64b3804e013b30e9421c998a9fd6a98810ea1"
+        },
+        {
+          "file": "StainedGlassLamp-camera-denoise-off.png",
+          "sha256": "38ef6ab51c1fe906ed867f48373c8ba7a535b3bfd132b86ee9a1d316b37204a7"
+        },
+        {
+          "file": "StainedGlassLamp-uhd.png",
+          "sha256": "a2727d44c9c5ead490ab8a1a0603ea0b42495e84fe3c032e3a16be2fc7ec7d6a"
+        }
+      ]
+    },
+    {
+      "key": "BarramundiFish",
+      "admitted": true,
+      "triangles": 3864,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "BarramundiFish-baseline.png",
+          "sha256": "68ae2444f1246a6912f2fac7272eed34414545e1a2fbbf8c9ac6e0f56f85902a"
+        },
+        {
+          "file": "BarramundiFish-camera-denoise-off.png",
+          "sha256": "ecd9ab09ea82c3c38289e78ab439ca20daf8768d2a9f2113462f6128a45a62b4"
+        },
+        {
+          "file": "BarramundiFish-uhd.png",
+          "sha256": "b2b41ff21343726cdad4ab5f12645db09963aae17c3045e4297f446e3e7a420a"
+        }
+      ]
+    },
+    {
+      "key": "MaterialsVariantsShoe",
+      "admitted": true,
+      "triangles": 22700,
+      "primitives": 1,
+      "materials": 3,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "MaterialsVariantsShoe-baseline.png",
+          "sha256": "b33bb0870ab16537d7f177cfd40d164d4166f61946d629450c67a0fa8d0d4b93"
+        },
+        {
+          "file": "MaterialsVariantsShoe-camera-denoise-off.png",
+          "sha256": "57936f1e8cf8492315b5a40a52f23c822a2b4172ff6aa97e182a1bf3444e3b33"
+        },
+        {
+          "file": "MaterialsVariantsShoe-uhd.png",
+          "sha256": "007ff6c280d6d3e1b9e5cd64dbb2cbf5434f5947f2801d8acf5259a8592a5042"
+        }
+      ]
+    },
+    {
+      "key": "ToyCar",
+      "admitted": false,
+      "triangles": 108936,
+      "primitives": 3,
+      "materials": 3,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": null,
+      "evidence": [
+        {
+          "file": "ToyCar-baseline.png",
+          "sha256": "00f98292b50f9d0fe3c742a1aec51190d062dedcaf0616bc9967deb4711331da"
+        },
+        {
+          "file": "ToyCar-camera-denoise-off.png",
+          "sha256": "1394c220e32cd4940c252529041c1e35ac19b6f097fc6d99a2b866d4b81e5b82"
+        }
+      ],
+      "holdReason": "Native 3840x2160 at one sample failed twice, including a fresh page lifecycle, with a valid external Instance reference no longer existing. A subsequent simple model could not acquire a WebGPU adapter."
+    }
+  ],
+  "limitations": [
+    "Static authored geometry only; animation and material-variant playback are not introduced.",
+    "Original geometry, textures and material definitions remain unchanged. Inspection readiness does not certify optical accuracy.",
+    "Commercial Refrigerator, Ship Pinnace and Stained Glass Lamp require several seconds for quality rebuilds; native keyboard transitions completed. A DOM-triggered refrigerator UHD transition stalled and recovered through native controls.",
+    "Physical touch hardware and screen-reader speech were not tested.",
+    "Toy Car UHD failed twice and later adapter acquisition was unavailable; Toy Car is excluded from the release catalogue."
+  ],
+  "failures": [
+    {
+      "file": "ToyCar-uhd-failure.png",
+      "sha256": "e22c86656461791f243de93d13a037a4cd5ee36e548f4a59e476b39d5a1815e8"
+    },
+    {
+      "file": "ToyCar-uhd-fresh-failure.png",
+      "sha256": "e22c86656461791f243de93d13a037a4cd5ee36e548f4a59e476b39d5a1815e8"
+    }
+  ]
+}

@@ -351,110 +351,126 @@
     {
       "key": "chess_set",
       "batch": 6,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Registry shared1.2.0/renderer0.2.54 static inspection, fixed64, camera/refinement, denoising and native UHD1 completed; production pending."
     },
     {
       "key": "sf-crystal",
       "batch": 6,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Signed-in Sketchfab GLB download returned HTTP 403 on 2026-10-18. No original file acquired."
     },
     {
       "key": "gothic_statue",
       "batch": 6,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Registry shared1.2.0/renderer0.2.54 static inspection, fixed64, camera/refinement, denoising and native UHD1 completed; production pending."
     },
     {
       "key": "kite_shield",
       "batch": 6,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Registry shared1.2.0/renderer0.2.54 static inspection, fixed64, camera/refinement, denoising and native UHD1 completed; production pending."
     },
     {
       "key": "marble_bust_01",
       "batch": 6,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Registry shared1.2.0/renderer0.2.54 static inspection, fixed64, camera/refinement, denoising and native UHD1 completed; production pending."
     },
     {
       "key": "ABeautifulGame",
       "batch": 6,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Original source has 574,528 triangles, above the unchanged 500,000-triangle inspection budget. Requires suitable LOD preparation; not substituted."
     },
     {
       "key": "AnisotropyBarnLamp",
       "batch": 6,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Registry shared1.2.0/renderer0.2.54 static inspection, fixed64, camera/refinement, denoising and native UHD1 completed; production pending."
     },
     {
       "key": "brass_diya_lantern",
       "batch": 6,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Registry shared1.2.0/renderer0.2.54 static inspection, fixed64, camera/refinement, denoising and native UHD1 completed; production pending."
     },
     {
       "key": "CommercialRefrigerator",
       "batch": 6,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Registry shared1.2.0/renderer0.2.54 static inspection, fixed64, camera/refinement, denoising and native UHD1 completed; production pending."
     },
     {
       "key": "IridescenceLamp",
       "batch": 7,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Transmissive lamp base has visible dark patching and its intended iridescent appearance is not established in the inspection lighting."
     },
     {
       "key": "IridescentDishWithOlives",
       "batch": 7,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "The authored transmissive glass cover renders nearly opaque and dark; retain for optical-material correction."
     },
     {
       "key": "magnifying_glass_01",
       "batch": 7,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Registry shared1.2.0/renderer0.2.54 static inspection, fixed64, camera/refinement, denoising and native UHD1 completed; production pending."
     },
     {
       "key": "StainedGlassLamp",
       "batch": 7,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Registry shared1.2.0/renderer0.2.54 static inspection, fixed64, camera/refinement, denoising and native UHD1 completed; production pending."
     },
     {
       "key": "wine_bottles_01",
       "batch": 7,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Conspicuous glass speckling remains at 64 samples and 256 samples at 1280px; layered transmission needs a rendering fix."
     },
     {
       "key": "BarramundiFish",
       "batch": 7,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Registry shared1.2.0/renderer0.2.54 static inspection, fixed64, camera/refinement, denoising and native UHD1 completed; production pending."
     },
     {
       "key": "MaterialsVariantsShoe",
       "batch": 7,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Registry shared1.2.0/renderer0.2.54 static inspection, fixed64, camera/refinement, denoising and native UHD1 completed; production pending."
     },
     {
       "key": "ship_pinnace",
       "batch": 7,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Registry shared1.2.0/renderer0.2.54 static inspection, fixed64, camera/refinement, denoising and native UHD1 completed; production pending."
     },
     {
       "key": "ToyCar",
       "batch": 7,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "held",
+      "note": "Original resources verified; registry renderer0.2.54/shared1.2.0 visual qualification pending.",
+      "notes": "Native 3840x2160 at one sample failed twice, including a fresh page lifecycle, with a valid external Instance reference no longer existing. A subsequent simple model could not acquire a WebGPU adapter."
     }
   ],
   "productionTarget": 74

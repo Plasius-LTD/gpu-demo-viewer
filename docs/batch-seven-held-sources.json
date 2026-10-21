@@ -1,0 +1,562 @@
+{
+  "assets": [
+    {
+      "key": "wine_bottles_01",
+      "category": "Glass, ceramics and lighting",
+      "renderer_target": "Tinted glass, labels and multiple transparent layers",
+      "preparation": "One bottle set; inspect thickness and any branding.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Wine Bottles 01",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/wine_bottles_01",
+      "authors": "Rico Cilliers (modeling); Jurita Burger (graphic design)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 28848,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 3.73,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/wine_bottles_01",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wine_bottles_01/wine_bottles_01_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/wine_bottles_01",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 70,
+      "entry": "wine_bottles_01_1k.gltf",
+      "files": [
+        {
+          "path": "wine_bottles_01_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/wine_bottles_01/wine_bottles_01_1k.gltf",
+          "bytes": 29107,
+          "sha256": "70a8a5eabeac24cf298774aca78bbcf39145ca6bf5ebdf2f296edab73fbce039",
+          "integrity": "sha256-cKil6r6sJM8ph3Ssp4u885FFymv1698vKW7atz+84Dk="
+        },
+        {
+          "path": "textures/wine_bottles_01_label_ftero_vinea_02_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wine_bottles_01/wine_bottles_01_label_ftero_vinea_02_arm_1k.jpg",
+          "bytes": 152387,
+          "sha256": "c07bcbd4cde7bf713b0512d52345b949c4684ec0735c5798ac79a0fb4719b92c",
+          "integrity": "sha256-wHvL1M3nv3E7BRLVI0W5ScRoTsBzXFeYrHmg+0cZuSw="
+        },
+        {
+          "path": "textures/wine_bottles_01_label_ftero_vinea_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wine_bottles_01/wine_bottles_01_label_ftero_vinea_01_diff_1k.jpg",
+          "bytes": 323568,
+          "sha256": "3d1f02a201c8d573b155b2ea2265b31bf1d532e4c9a7baf2dfe54e2633e5e9c0",
+          "integrity": "sha256-PR8CogHI1XOxVbLqImWzG/HVMuTJp7ry3+VOJjPl6cA="
+        },
+        {
+          "path": "textures/wine_bottles_01_label_intertwine_01_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wine_bottles_01/wine_bottles_01_label_intertwine_01_arm_1k.jpg",
+          "bytes": 104730,
+          "sha256": "712d20fa4caabdf830e454ddc240643319700843e3bda349ae0c3c98dccbd582",
+          "integrity": "sha256-cS0g+kyqvfgw5FTdwkBkMxlwCEPjvaNJrgw8mNzL1YI="
+        },
+        {
+          "path": "textures/wine_bottles_01_label_clearwater_crystals_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wine_bottles_01/wine_bottles_01_label_clearwater_crystals_01_diff_1k.jpg",
+          "bytes": 148172,
+          "sha256": "fca5e598c73d877c636e3c28345254fb9f6320e765fdd0b923fdb4ead5769ccf",
+          "integrity": "sha256-/KXlmMc9h3xjbjwoNFJU+59jIOdl/dC5I/206tV2nM8="
+        },
+        {
+          "path": "textures/wine_bottles_01_label_ftero_vinea_01_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wine_bottles_01/wine_bottles_01_label_ftero_vinea_01_arm_1k.jpg",
+          "bytes": 214807,
+          "sha256": "5808aed6b27b1812bbead8c6d733d412c1ed56adf587770dedf5f5e9d2e5310f",
+          "integrity": "sha256-WAiu1rJ7GBK76tjG1zPUEsHtVq31h3cN7fX16dLlMQ8="
+        },
+        {
+          "path": "textures/wine_bottles_01_label_clearwater_crystals_01_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wine_bottles_01/wine_bottles_01_label_clearwater_crystals_01_arm_1k.jpg",
+          "bytes": 148023,
+          "sha256": "67041443fc09702bc93c9481d1492aeaad659cdb9a5a5dab478a86f41017e83c",
+          "integrity": "sha256-ZwQUQ/wJcCvJPJSB0Ukq6q1lnNuaWl2rR4qG9BAX6Dw="
+        },
+        {
+          "path": "textures/wine_bottles_01_label_ftero_vinea_02_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wine_bottles_01/wine_bottles_01_label_ftero_vinea_02_diff_1k.jpg",
+          "bytes": 207588,
+          "sha256": "5a35e83b08e3be62ae42773727d94d5c41da3df55b79fd7e53fca3fadc382a17",
+          "integrity": "sha256-WjXoOwjjvmKuQnc3J9lNXEHaPfVbef1+U/yj+tw4Khc="
+        },
+        {
+          "path": "textures/wine_bottles_01_paper_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wine_bottles_01/wine_bottles_01_paper_nor_gl_1k.jpg",
+          "bytes": 980529,
+          "sha256": "b05b6f021b942032d45f23e46066da715c4f9624acea7d8db77928a90076a049",
+          "integrity": "sha256-sFtvAhuUIDLUXyPkYGbacVxPliSs6n2Nt3koqQB2oEk="
+        },
+        {
+          "path": "wine_bottles_01.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/wine_bottles_01/wine_bottles_01.bin",
+          "bytes": 688000,
+          "sha256": "a520b717c7f9d15b7f114d1be5f454f18b2cfd056757fb4d4c5f5054de5db6d6",
+          "integrity": "sha256-pSC3F8f50Vt/EU0b5fRU8Yss/QVnV/tNTF9QVN5dttY="
+        },
+        {
+          "path": "textures/wine_bottles_01_label_intertwine_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wine_bottles_01/wine_bottles_01_label_intertwine_01_diff_1k.jpg",
+          "bytes": 143130,
+          "sha256": "e5571a24e0f025361dfeecd7a09f4c3ee9be36dadf817177ee75919078002513",
+          "integrity": "sha256-5VcaJODwJTYd/uzXoJ9MPum+NtrfgXF37nWRkHgAJRM="
+        },
+        {
+          "path": "textures/wine_bottles_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wine_bottles_01/wine_bottles_01_diff_1k.jpg",
+          "bytes": 110230,
+          "sha256": "f440b6364c87eb440c9ca201759cfdaf2735e3147488eadc24be334f1e457a09",
+          "integrity": "sha256-9EC2NkyH60QMnKIBdZz9ryc14xR0iOrcJL4zTx5Fegk="
+        },
+        {
+          "path": "textures/wine_bottles_01_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wine_bottles_01/wine_bottles_01_nor_gl_1k.jpg",
+          "bytes": 194721,
+          "sha256": "ed92387b827b7aebf4602e655c8e9cbaf53bbed24b7228106b04b3456e2d779c",
+          "integrity": "sha256-7ZI4e4J7euv0YC5lXI6cuvU7vtJLcigQawSzRW4td5w="
+        },
+        {
+          "path": "textures/wine_bottles_01_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/wine_bottles_01/wine_bottles_01_arm_1k.jpg",
+          "bytes": 464325,
+          "sha256": "c3deadf0db4c9c98ad39f389e95fe2b09d8df0e3abb95a47f01478f31fd261a9",
+          "integrity": "sha256-w96t8NtMnJitOfOJ6V/isJ2N8OOruVpH8BR48x/SYak="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "held",
+      "batch": 7,
+      "inspection": {
+        "materials": 12,
+        "animations": [],
+        "skins": 0,
+        "extensions": [
+          "KHR_materials_transmission"
+        ],
+        "alphaModes": [
+          "MASK",
+          "OPAQUE"
+        ]
+      },
+      "review_notes": "Conspicuous glass speckling remains at 64 samples and 256 samples at 1280px; layered transmission needs a rendering fix."
+    },
+    {
+      "key": "IridescenceLamp",
+      "category": "Glass, ceramics and lighting",
+      "renderer_target": "Thin-film colour, glass thickness and IOR",
+      "preparation": "Advanced material qualification, not a guaranteed current-renderer feature.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Iridescence Lamp",
+      "provider": "Khronos sample assets",
+      "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/IridescenceLamp",
+      "authors": "Eric Chadwick (Everything); \u00a9 2022 Wayfair, LLC",
+      "licence": "CC-BY-4.0",
+      "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/IridescenceLamp/README.md",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, glTF-Binary",
+      "geometry_count": null,
+      "geometry_unit": "Not measured",
+      "package_mib": null,
+      "package_basis": "Not measured; JSON buffer length excludes external textures",
+      "format_evidence_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/IridescenceLamp/glTF/IridescenceLamp.gltf",
+      "download_entry_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/IridescenceLamp/glTF/IridescenceLamp.gltf",
+      "extensions": "KHR_materials_transmission, KHR_materials_volume, KHR_materials_iridescence, KHR_materials_ior",
+      "source_metadata_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/IridescenceLamp/metadata.json",
+      "lods_advertised": false,
+      "authoring_style": "Material / rendering reference",
+      "cost": "Free",
+      "attribution_required": true,
+      "material_count": 3,
+      "animation_count": 0,
+      "legal_records": [
+        {
+          "license": "CC-BY-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "artist": "Eric Chadwick",
+          "year": "2022",
+          "owner": "Wayfair, LLC",
+          "what": "Everything",
+          "text": "Creative Commons Attribution 4.0 International",
+          "spdx": "CC-BY-4.0",
+          "icon": "https://licensebuttons.net/l/by/4.0/88x31.png"
+        }
+      ],
+      "number": 65,
+      "entry": "IridescenceLamp.gltf",
+      "files": [
+        {
+          "path": "IridescenceLamp.gltf",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescenceLamp/glTF/IridescenceLamp.gltf",
+          "bytes": 8973,
+          "sha256": "54cb508979d689169582983d6015c407b01b020e69302d150bcd5ba26ba7ce1f",
+          "integrity": "sha256-VMtQiXnWiRaVgpg9YBXEB7AbAg5pMC0VC81bomunzh8="
+        },
+        {
+          "path": "IridescenceLamp.bin",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescenceLamp/glTF/IridescenceLamp.bin",
+          "bytes": 455052,
+          "sha256": "a09473d5e50ea95a1e4d4bf49781f585338ad300db9cdd4689ddb0e6a06b1c78",
+          "integrity": "sha256-oJRz1eUOqVoeTUv0l4H1hTOK0wDbnN1Gid2w5qBrHHg="
+        },
+        {
+          "path": "IridescenceLamp_BaseColor.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescenceLamp/glTF/IridescenceLamp_BaseColor.png",
+          "bytes": 867297,
+          "sha256": "3122f67d519d5d7686dc38c45d8b117d0a0e81534b4f91e247467b2a5d3257e7",
+          "integrity": "sha256-MSL2fVGdXXaG3DjEXYsRfQoOgVNLT5HiR0Z7Kl0yV+c="
+        },
+        {
+          "path": "IridescenceLamp_OcclusionRoughnessMetalness.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescenceLamp/glTF/IridescenceLamp_OcclusionRoughnessMetalness.png",
+          "bytes": 2387557,
+          "sha256": "4ec4794ae7377bd9af14df614b28532da4be8943f28fd59a3cae6ff28bb59401",
+          "integrity": "sha256-TsR5Suc3e9mvFN9hSyhTLaS+iUPyj9WaPK5v8ou1lAE="
+        },
+        {
+          "path": "IridescenceLamp_Iridescence.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescenceLamp/glTF/IridescenceLamp_Iridescence.png",
+          "bytes": 369639,
+          "sha256": "e19f22e6163e818712824c307af8aec37ea1e5b88ab030d851d878628da222a2",
+          "integrity": "sha256-4Z8i5hY+gYcSgkwweviuw36h5biKsDDYUdh4Yo2iIqI="
+        }
+      ],
+      "batch": 7,
+      "status": "downloaded",
+      "review_status": "held",
+      "source_revision": "edc7c9e67c639d230715049ee31f9a96a6babbbe",
+      "inspection": {
+        "materials": 3,
+        "animations": [],
+        "skins": 0,
+        "extensions": [
+          "KHR_materials_transmission",
+          "KHR_materials_volume",
+          "KHR_materials_iridescence",
+          "KHR_materials_ior"
+        ],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      },
+      "review_notes": "Transmissive lamp base has visible dark patching and its intended iridescent appearance is not established in the inspection lighting."
+    },
+    {
+      "key": "IridescentDishWithOlives",
+      "category": "Glass, ceramics and lighting",
+      "renderer_target": "Iridescence, transmission and contrasting opaque objects",
+      "preparation": "Includes an animation; inspect material animation/import behaviour.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Iridescent Dish with Olives",
+      "provider": "Khronos sample assets",
+      "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/IridescentDishWithOlives",
+      "authors": "Eric Chadwick (Everything); \u00a9 2020 Wayfair, LLC",
+      "licence": "CC-BY-4.0",
+      "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/IridescentDishWithOlives/README.md",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, glTF-Binary",
+      "geometry_count": null,
+      "geometry_unit": "Not measured",
+      "package_mib": null,
+      "package_basis": "Not measured; JSON buffer length excludes external textures",
+      "format_evidence_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/IridescentDishWithOlives/glTF/IridescentDishWithOlives.gltf",
+      "download_entry_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/IridescentDishWithOlives/glTF/IridescentDishWithOlives.gltf",
+      "extensions": "KHR_materials_ior, KHR_materials_iridescence, KHR_materials_transmission, KHR_materials_volume",
+      "source_metadata_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/IridescentDishWithOlives/metadata.json",
+      "lods_advertised": false,
+      "authoring_style": "Material / rendering reference",
+      "cost": "Free",
+      "attribution_required": true,
+      "material_count": 4,
+      "animation_count": 1,
+      "legal_records": [
+        {
+          "license": "CC-BY-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "artist": "Eric Chadwick",
+          "year": "2020",
+          "owner": "Wayfair, LLC",
+          "what": "Everything",
+          "text": "Creative Commons Attribution 4.0 International",
+          "spdx": "CC-BY-4.0",
+          "icon": "https://licensebuttons.net/l/by/4.0/88x31.png"
+        }
+      ],
+      "number": 66,
+      "entry": "IridescentDishWithOlives.gltf",
+      "files": [
+        {
+          "path": "IridescentDishWithOlives.gltf",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/IridescentDishWithOlives.gltf",
+          "bytes": 16987,
+          "sha256": "a32ef775a2b2100bdda47b8684cec35f3512e200c97787d9f4287b8be40b89cd",
+          "integrity": "sha256-oy73daKyEAvdpHuGhM7DXzUS4gDJd4fZ9Ch7i+QLic0="
+        },
+        {
+          "path": "IridescentDishWithOlives.bin",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/IridescentDishWithOlives.bin",
+          "bytes": 830680,
+          "sha256": "9e7c1110ecd32180378101beba430f827c96da74d4f4d9b79c0d17aa57b0dfca",
+          "integrity": "sha256-nnwREOzTIYA3gQG+ukMPgnyW2nTU9Nm3nA0Xqlew38o="
+        },
+        {
+          "path": "glassdish_irid.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/glassdish_irid.png",
+          "bytes": 418795,
+          "sha256": "c8836f90ae6dff366ae7303855fc75f67df60afde02fbaa760eb1068f32145a8",
+          "integrity": "sha256-yINvkK5t/zZq5zA4Vfx19n32Cv3gL7qnYOsQaPMhRag="
+        },
+        {
+          "path": "olives_nrm.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/olives_nrm.png",
+          "bytes": 191297,
+          "sha256": "99f88fc6d4fc6d9051133942f9e3688d2f06c2cfe4dff6110c0330260dc19da5",
+          "integrity": "sha256-mfiPxtT8bZBREzlC+eNojS8Gws/k3/YRDAMwJg3BnaU="
+        },
+        {
+          "path": "olives_orm.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/olives_orm.png",
+          "bytes": 323206,
+          "sha256": "4e0d5ea7f68214dec6331241b4699550339df2e297e3dff5311c8d3707f0ae06",
+          "integrity": "sha256-Tg1ep/aCFN7GMxJBtGmVUDOd8uKX49/1MRyNNwfwrgY="
+        },
+        {
+          "path": "olives_col.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/olives_col.png",
+          "bytes": 151821,
+          "sha256": "f7ca2045e69f8ef8a44eca76f41c98e72d00f9eeacd41ff936932d18cc8dc035",
+          "integrity": "sha256-98ogReafjvikTsp29ByY5y0A+e6s1B/5NpMtGMyNwDU="
+        },
+        {
+          "path": "glasscover_nrm.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/glasscover_nrm.png",
+          "bytes": 280389,
+          "sha256": "eed7776fd7787b922552684f1ebf91b3dc6c484e3791622b272f8e3563c760e7",
+          "integrity": "sha256-7td3b9d4e5IlUmhPHr+Rs9xsSE43kWIrJy+ONWPHYOc="
+        },
+        {
+          "path": "glasscover_thick.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/glasscover_thick.png",
+          "bytes": 306632,
+          "sha256": "dbd87d262530cfd3a20641900e3b51fc512dd4562d5ae638103cb8ce176428f8",
+          "integrity": "sha256-29h9JiUwz9OiBkGQDjtR/FEt1FYtWuY4EDy4zhdkKPg="
+        },
+        {
+          "path": "glasscover_irid.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/glasscover_irid.png",
+          "bytes": 699795,
+          "sha256": "7c58817cb2e0874592a9d8afc40f69e71f249b34687b1281a0d330d04b439b1a",
+          "integrity": "sha256-fFiBfLLgh0WSqdivxA9p5x8kmzRoexKBoNMw0EtDmxo="
+        },
+        {
+          "path": "goldleaf_nrm.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/goldleaf_nrm.png",
+          "bytes": 1434505,
+          "sha256": "512f1845e408c3e460f5feda958be7f8131de0c918cd251ca746fc27fde5ae14",
+          "integrity": "sha256-US8YReQIw+Rg9f7alYvn+BMd4MkYzSUcp0b8J/3lrhQ="
+        },
+        {
+          "path": "goldleaf_orm.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/goldleaf_orm.png",
+          "bytes": 315078,
+          "sha256": "6a03c5dc70b8eb082e297b22aa4da389083d15e10b73ff4cd0e11ac398b610ee",
+          "integrity": "sha256-agPF3HC46wguKXsiqk2jiQg9FeELc/9M0OEaw5i2EO4="
+        },
+        {
+          "path": "goldleaf_col.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/goldleaf_col.png",
+          "bytes": 781211,
+          "sha256": "bbd86bc0daf3b4a5b1f09b2cbe32a21df372f15cfb63a329dcb95509a83bd06c",
+          "integrity": "sha256-u9hrwNrztKWx8JssvjKiHfNy8Vz7Y6Mp3LlVCag70Gw="
+        },
+        {
+          "path": "glasscover_orm.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/IridescentDishWithOlives/glTF/glasscover_orm.png",
+          "bytes": 1213,
+          "sha256": "db0dd18c68d273e6c4d5c7f6fdad06ecd7e7ee36c340f175cccc569ced5defa2",
+          "integrity": "sha256-2w3RjGjSc+bE1cf2/a0G7Nfn7jbDQPF1zMxWnO1d76I="
+        }
+      ],
+      "batch": 7,
+      "status": "downloaded",
+      "review_status": "held",
+      "source_revision": "edc7c9e67c639d230715049ee31f9a96a6babbbe",
+      "inspection": {
+        "materials": 4,
+        "animations": [
+          "glassCover rotation"
+        ],
+        "skins": 0,
+        "extensions": [
+          "KHR_materials_ior",
+          "KHR_materials_iridescence",
+          "KHR_materials_transmission",
+          "KHR_materials_volume"
+        ],
+        "alphaModes": [
+          "MASK",
+          "OPAQUE"
+        ]
+      },
+      "review_notes": "The authored transmissive glass cover renders nearly opaque and dark; retain for optical-material correction."
+    },
+    {
+      "key": "ToyCar",
+      "category": "Vehicles, animals and product variants",
+      "renderer_target": "Clearcoat, transmission and cloth in a small scene",
+      "preparation": "Useful controlled coating benchmark; not a full-scale vehicle.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Not imported or visually qualified in this research",
+      "name": "Toy Car",
+      "provider": "Khronos sample assets",
+      "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/ToyCar",
+      "authors": "Guido Odendahl (Initial car model); \u00a9 2020 Public; Eric Chadwick (Extensions and scene composition); \u00a9 2020 Public",
+      "licence": "CC0-1.0",
+      "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/ToyCar/README.md",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, glTF-Binary",
+      "geometry_count": null,
+      "geometry_unit": "Not measured",
+      "package_mib": null,
+      "package_basis": "Not measured; JSON buffer length excludes external textures",
+      "format_evidence_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/ToyCar/glTF/ToyCar.gltf",
+      "download_entry_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/ToyCar/glTF/ToyCar.gltf",
+      "extensions": "KHR_texture_transform, KHR_materials_clearcoat, KHR_materials_transmission, KHR_materials_sheen",
+      "source_metadata_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/ToyCar/metadata.json",
+      "lods_advertised": false,
+      "authoring_style": "Material / rendering reference",
+      "cost": "Free",
+      "attribution_required": false,
+      "material_count": 3,
+      "animation_count": 0,
+      "legal_records": [
+        {
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "artist": "Guido Odendahl",
+          "year": "2020",
+          "owner": "Public",
+          "what": "Initial car model",
+          "text": "Creative Commons Zero v1.0 Universal",
+          "spdx": "CC0-1.0",
+          "icon": "https://licensebuttons.net/p/zero/1.0/88x31.png"
+        },
+        {
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "artist": "Eric Chadwick",
+          "year": "2020",
+          "owner": "Public",
+          "what": "Extensions and scene composition",
+          "text": "Creative Commons Zero v1.0 Universal",
+          "spdx": "CC0-1.0",
+          "icon": "https://licensebuttons.net/p/zero/1.0/88x31.png"
+        }
+      ],
+      "number": 75,
+      "entry": "ToyCar.gltf",
+      "files": [
+        {
+          "path": "ToyCar.gltf",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/ToyCar/glTF/ToyCar.gltf",
+          "bytes": 17626,
+          "sha256": "8e7341dfb0429663d0e93455757ea151cfd4fc5e4a7bc9e55d577bb5b498beb5",
+          "integrity": "sha256-jnNB37BClmPQ6TRVdX6hUc/U/F5Ke8nlXVd7tbSYvrU="
+        },
+        {
+          "path": "ToyCar.bin",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/ToyCar/glTF/ToyCar.bin",
+          "bytes": 3664368,
+          "sha256": "2f264fe41cedb20914817b891a9f02438f2e5049e17f0983b13245f93aeb9ceb",
+          "integrity": "sha256-LyZP5BztsgkUgXuJGp8CQ48uUEnhfwmDsTJF+TrrnOs="
+        },
+        {
+          "path": "ToyCar_normal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/ToyCar/glTF/ToyCar_normal.png",
+          "bytes": 98429,
+          "sha256": "f3af8fd862a8a1ed13b6cf508d4edc3df6a484c43ed32bc5927a03b452515833",
+          "integrity": "sha256-86+P2GKooe0Tts9QjU7cPfakhMQ+0yvFknoDtFJRWDM="
+        },
+        {
+          "path": "ToyCar_emissive.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/ToyCar/glTF/ToyCar_emissive.png",
+          "bytes": 83739,
+          "sha256": "f35fdda6764b6b6521296326143a654f6cae13c082fd6021e766677c422cf7e6",
+          "integrity": "sha256-81/dpnZLa2UhKWMmFDplT2yuE8CC/WAh52ZnfEIs9+Y="
+        },
+        {
+          "path": "ToyCar_basecolor.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/ToyCar/glTF/ToyCar_basecolor.png",
+          "bytes": 196648,
+          "sha256": "7d51b5df33344f00dbc248f9a6043a7eaa6864b9f7ece1fb90f884a425423ed7",
+          "integrity": "sha256-fVG13zM0TwDbwkj5pgQ6fqpoZLn37OH7kPiEpCVCPtc="
+        },
+        {
+          "path": "ToyCar_occlusion_roughness_metallic.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/ToyCar/glTF/ToyCar_occlusion_roughness_metallic.png",
+          "bytes": 457137,
+          "sha256": "22911f36dc5e9a3b2acc6dfb8f7946f4c963b5296ab10e8dc6cce260140ce8a3",
+          "integrity": "sha256-IpEfNtxemjsqzG37j3lG9MljtSlqsQ6NxsziYBQM6KM="
+        },
+        {
+          "path": "Fabric_normal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/ToyCar/glTF/Fabric_normal.png",
+          "bytes": 294759,
+          "sha256": "24aee901f99facf761329b374b46a83d83060fecac88aa290e2cb92c2f6b90c2",
+          "integrity": "sha256-JK7pAfmfrPdhMps3S0aoPYMGD+ysiKopDiy5LC9rkMI="
+        },
+        {
+          "path": "Fabric_occlusion.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/ToyCar/glTF/Fabric_occlusion.png",
+          "bytes": 191518,
+          "sha256": "b9e421842b576be7cf98a8fb8103ebf371b1d3d13eb226379ec4b5d8b8db3fcd",
+          "integrity": "sha256-ueQhhCtXa+fPmKj7gQPr83Gx09E+siY3nsS12LjbP80="
+        },
+        {
+          "path": "Fabric_baseColor.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/ToyCar/glTF/Fabric_baseColor.png",
+          "bytes": 412812,
+          "sha256": "2d37e6edee4d5249c7076847cd47a732596c0385ce596d8a8d92746b4b902ef7",
+          "integrity": "sha256-LTfm7e5NUknHB2hHzUenMllsA4XOWW2KjZJ0a0uQLvc="
+        },
+        {
+          "path": "ToyCar_clearcoat.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/ToyCar/glTF/ToyCar_clearcoat.png",
+          "bytes": 15362,
+          "sha256": "0dee4964f011c50bb1942cdc4f373f7e85277a3bbd75ae9f45261b763618f0ec",
+          "integrity": "sha256-De5JZPARxQuxlCzcTzc/foUneju9da6fRSYbdjYY8Ow="
+        }
+      ],
+      "batch": 7,
+      "status": "downloaded",
+      "review_status": "held",
+      "source_revision": "edc7c9e67c639d230715049ee31f9a96a6babbbe",
+      "inspection": {
+        "materials": 3,
+        "animations": [],
+        "skins": 0,
+        "extensions": [
+          "KHR_texture_transform",
+          "KHR_materials_clearcoat",
+          "KHR_materials_transmission",
+          "KHR_materials_sheen"
+        ],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      },
+      "review_notes": "Native 3840x2160 at one sample failed twice, including a fresh page lifecycle, with a valid external Instance reference no longer existing. A subsequent simple model could not acquire a WebGPU adapter."
+    }
+  ]
+}

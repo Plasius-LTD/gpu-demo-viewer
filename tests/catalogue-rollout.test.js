@@ -121,7 +121,7 @@ test('batch five preserves the nine original tool and material sources with regi
  }
  assert.ok(assets.find(a=>a.key==='FlightHelmet').inspection.extensions.includes('KHR_materials_transmission'));
  assert.ok(assets.find(a=>a.key==='circuit_board').inspection.alphaModes.includes('BLEND'));
- assert.equal(installed.assets.filter(a=>a.batch>5).length,0);
+ assert.equal(selectBatch(rollout.entries,5).length,9);
  const evidence=JSON.parse(await readFile(new URL('../docs/batch-five-qualification.json',import.meta.url),'utf8'));
  assert.equal(evidence.registryConsumptionVerified,true);
  assert.equal(evidence.initialSourceOverrides,false);
@@ -135,4 +135,38 @@ test('batch five preserves the nine original tool and material sources with regi
   assert.ok(model.evidence.length>=3);
  }
  assert.equal(evidence.layout320.scrollWidth,320);
+});
+
+
+test('sculpture and optical batches admit only reviewed sources and keep optical failures held',async()=>{
+ const six=installed.assets.filter(a=>a.batch===6),seven=installed.assets.filter(a=>a.batch===7);
+ assert.deepEqual(six.map(a=>a.key).sort(),['chess_set','gothic_statue','kite_shield','marble_bust_01','brass_diya_lantern','AnisotropyBarnLamp','CommercialRefrigerator'].sort());
+ assert.deepEqual(seven.map(a=>a.key).sort(),['magnifying_glass_01','ship_pinnace','StainedGlassLamp','BarramundiFish','MaterialsVariantsShoe'].sort());
+ assert.equal(six.flatMap(a=>a.files).length,52);
+ assert.equal(seven.length,5);
+ for(const asset of [...six,...seven]){
+  assert.equal(rollout.entries.find(e=>e.key===asset.key)?.status,'qualified');
+  assert.equal(asset.review_status,'qualified');
+  assert.ok(asset.entry&&asset.files.some(f=>f.path===asset.entry));
+  for(const file of asset.files){assert.match(file.sha256,/^[a-f0-9]{64}$/);assert.ok(file.bytes<=20*1048576);}
+ }
+ for(const key of ['sf-crystal','ABeautifulGame','wine_bottles_01','IridescenceLamp','IridescentDishWithOlives','ToyCar']){
+  assert.equal(rollout.entries.find(e=>e.key===key)?.status,'held');
+  assert.ok(!installed.assets.some(a=>a.key===key));
+ }
+ for(const [batch,assets] of [[6,six],[7,seven]]){
+  const evidence=JSON.parse(await readFile(new URL(`../docs/batch-${batch}-qualification.json`,import.meta.url),'utf8'));
+  assert.equal(evidence.registryConsumptionVerified,true);
+  assert.equal(evidence.initialSourceOverrides,false);
+  assert.equal(evidence.productionVerified,false);
+  assert.deepEqual(evidence.models.filter(m=>m.admitted).map(m=>m.key).sort(),assets.map(a=>a.key).sort());
+  for(const model of evidence.models){
+   assert.equal(model.completedFixedSamples,64);
+   assert.equal(model.cameraResetAndRefinement,true);
+   assert.equal(model.denoisingOffOn,true);
+   if(model.admitted)assert.deepEqual(model.completedUhd,{width:3840,height:2160,samples:1});
+   assert.ok(model.evidence.length>=(model.admitted?3:2));
+   if(!model.admitted)assert.ok(model.holdReason);
+  }
+ }
 });
