@@ -22,6 +22,26 @@ const definitions = [
       // uniformly scaled to its chosen 1.2-unit longest dimension.
       ['brass_blowtorch', [0, .47735, .7], .55, 0],
     ] },
+  { key: 'study-relic-collection', name: 'Relic collection',
+    renderer_target: 'Compare carved stone, chess pieces and aged metal under shared light.',
+    preparation: 'Inspect silhouette, surface detail and contact shadows across five originals. Dimensions are illustrative scene units.',
+    placements: [
+      ['gothic_statue', [-1.2, 0, -.7], 1.8, .15],
+      ['marble_bust_01', [.65, 0, -.7], .85, -.25],
+      ['chess_set', [0, 0, .8], 1.15, .1],
+      ['kite_shield', [1.5, 0, .15], 1.15, -.4],
+      ['antique_estoc', [-1.5, 0, .8], 1.25, .25],
+    ] },
+  { key: 'study-tool-chest', name: 'Tool-chest arrangement',
+    renderer_target: 'Compare painted metal, rust and wooden handles in one working collection.',
+    preparation: 'Inspect relative scale, worn surfaces and small contact shadows. These are static originals placed on a shared inspection floor.',
+    placements: [
+      ['metal_tool_chest', [0, 0, -.8], 1.7, 0],
+      ['hand_plane_no4', [-.65, 0, .8], .5, -.25],
+      ['vintage_hand_drill', [.25, 0, .9], .55, .3],
+      ['rusted_spade_01', [1.25, 0, .05], 1.5, -.3],
+      ['can_rusted', [-1.25, 0, .2], .4, 0],
+    ] },
 ];
 
 export function compositeStudies(assets) {
