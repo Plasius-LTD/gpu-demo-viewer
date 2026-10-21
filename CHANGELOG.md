@@ -7,7 +7,7 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ## [Unreleased]
 
 - **Added**
-  - (placeholder)
+  - Typed, data-only composite study definitions for host applications, sharing the four workshop arrangements without copying placements.
 
 - **Changed**
   - (placeholder)
