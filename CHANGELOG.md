@@ -7,7 +7,7 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ## [Unreleased]
 
 - **Added**
-  - (placeholder)
+  - Furnished-interior and workshop composite studies in the local model workshop, with shared inspection controls and individual source credits.
 
 - **Changed**
   - (placeholder)
@@ -16,7 +16,7 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - (placeholder)
 
 - **Security**
-  - (placeholder)
+  - Update the workshop's Vite development dependency to the patched 8.3.5 release.
 
 ## [0.1.11] - 2026-10-21
 

@@ -54,6 +54,16 @@ or enabled on the production site. The download helper admits only configured
 resources and keeps two workers, a 100 MiB per-file limit and a 200 MiB batch limit.
 Source, creator, licence and review notes appear beside each model.
 
+Two composite studies appear after the individual models in **Choose a model or
+study**: a furnished interior and a workshop still life. They arrange four and
+five credited originals under shared lighting and one camera. They are additional
+views of existing models, so the catalogue still contains forty models. Each
+study lists its sources, licences and chosen dimensions; these are static review
+arrangements, not verified physical-scale scenes. See the
+[composite study guide](https://github.com/Plasius-LTD/gpu-demo-viewer/blob/main/docs/composite-model-studies.md).
+Keep `?review=first-twelve` in the local URL and append
+`&model=study-furnished-interior` or `&model=study-workshop` to bookmark a study.
+
 ## Camera and render quality
 
 Drag or use one finger to orbit; Shift/right-drag trucks, Alt-drag pans, and the

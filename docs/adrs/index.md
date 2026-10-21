@@ -8,3 +8,4 @@
 - [ADR 0003: Reviewed model library](adr-0003-reviewed-model-library.md)
 
 - [ADR 0005: Build-time model acquisition subpath](adr-0005-build-time-model-acquisition-subpath.md)
+- [ADR 0006: Composite study consumer](adr-0006-composite-study-consumer.md)

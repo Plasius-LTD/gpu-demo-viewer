@@ -20,7 +20,7 @@ export function createReviewController({ load, onState }) {
       const id = ++generation;
       abort?.abort(); active?.destroy(); active = undefined;
       abort = new AbortController();
-      if (!asset.entry) { onState({kind:'missing', asset, message:'Download deferred. This model is not installed.'}); return; }
+      if (!asset.entry && !asset.models?.length) { onState({kind:'missing', asset, message:'Download deferred. This model is not installed.'}); return; }
       onState({kind:'loading',asset});
       try {
         const runtime = await load(asset, abort.signal);

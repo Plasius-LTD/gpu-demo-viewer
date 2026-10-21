@@ -33,6 +33,17 @@ test('pending download and renderer errors remain visible',async()=>{
   await c.select(asset);assert.equal(states.at(-1).kind,'error');assert.match(states.at(-1).message,/Integrity mismatch/);
   c.reset();c.destroy();await c.select(asset);assert.equal(count,1);
 });
+
+test('a composite selection uses the same cancellation and teardown lifecycle', async () => {
+  let destroyed = 0; const states = [];
+  const c = createReviewController({ load: async () => ({ destroy: () => destroyed++ }),
+    onState: state => states.push(state) });
+  await c.select({ key: 'room', models: [{ asset }] });
+  assert.equal(states.at(-1).kind, 'ready');
+  await c.select(asset);
+  assert.equal(destroyed, 1);
+  c.destroy(); assert.equal(destroyed, 2);
+});
 test('the eleven retained first-batch identities preserve provenance and exclude the skipped Gem',async()=>{
   const catalogue=JSON.parse(await readFile(new URL('../model-library/catalogue.json',import.meta.url)));
   const assets=catalogue.assets.filter(asset=>asset.priority==='First 12');
