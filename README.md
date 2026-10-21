@@ -11,6 +11,48 @@ A browser workshop for inspecting source models with the Plasius GPU renderer,
 plus a workspace launcher for the `gpu-*` package demos. The workshop provides
 camera gestures, progressive rendering, quality controls and model credits.
 
+## Optional consented renderer diagnostics
+
+Hosts can mount the fixed public baseline harbour and an accessible optional
+diagnostics panel through the focused subpath:
+
+```js
+import { mountDiagnosticShowcase } from '@plasius/gpu-demo-viewer/feedback-diagnostics';
+
+const viewer = await mountDiagnosticShowcase({
+  root: document.getElementById('scene'),
+  feedbackRoot: document.getElementById('feedback'),
+  resolveAccess: async () => {
+    const decisions = await readCurrentRemoteAccess(); // host source-of-truth evaluator
+    return {
+      featureEnabled: decisions.flags['feedback.game-diagnostics.enabled'] === true,
+      capabilityGranted: decisions.capabilities['feedback.game-diagnostics.attach'] === true,
+      sceneEnabled: decisions.flags['gpu-demo.scene-fidelity.enabled'] === true,
+    };
+  },
+});
+// On a pushed access/flag change: viewer.refreshAccess();
+// On route exit: viewer.destroy(); remount after changing the scene rollout.
+```
+
+Approved routes are exactly `/gpu-demo`, `/gpu-demo/`, and the workspace
+`/gpu-demo-viewer/showcase/` (including its `index.html`). The API accepts no
+surface ID, existing runtime, model, renderer loader or provenance override.
+Only the fixed four integrity-pinned procedural public assets and a live native
+WebGPU frame are eligible. Open model-library studies, generator and
+`/player-system` are excluded. This does not add controls to the existing demo
+launcher or grant a product capability; downstream site integration is tracked
+in site#1677.
+
+Consent starts unchecked. Preview and copy both verify current remote access;
+copy also verifies that the surface still matches the reviewed packet. Only
+coarse renderer/backend/viewport fields and closed codes leave this module;
+synthetic timing stays unknown. Nothing is automatically captured, sent,
+logged or stored. Clipboard denial leaves a selectable read-only preview.
+Disabling `feedback.game-diagnostics.enabled` restores structured-only reporting.
+See [the design and validation contract](docs/consented-diagnostics.md) and
+[ADR 0007](docs/adrs/adr-0007-consented-curated-showcase-diagnostics.md).
+
 The npm package includes the viewer source, manifest and build-time acquisition
 helper and typed composite layout definitions. Model binaries are downloaded separately; they are not bundled in npm.
 
