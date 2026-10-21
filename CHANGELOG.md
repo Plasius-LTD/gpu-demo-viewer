@@ -7,7 +7,7 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ## [Unreleased]
 
 - **Added**
-  - (placeholder)
+  - Source-owned curated showcase diagnostics with integrity-pinned public assets, remote access checks, explicit consent, accessible preview/copy, and fail-closed provenance; no client-pixel capture or diagnostic transport.
 
 - **Changed**
   - (placeholder)

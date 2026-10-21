@@ -24,7 +24,9 @@ test('documented npm commands exist in the package', () => {
 
 test('the documented acquisition helper uses public exports', async () => {
   const api = await import('@plasius/gpu-demo-viewer/model-library/acquire');
-  const example = readme.match(/```js\n([\s\S]*?)\n```/)[1];
+  const example = [...readme.matchAll(/```js\n([\s\S]*?)\n```/g)]
+    .map(match => match[1]).find(code => code.includes("@plasius/gpu-demo-viewer/model-library/acquire"));
+  assert.ok(example, 'Missing public acquisition example');
   const bindings = example.match(/import \{([^}]+)\}/)[1].split(',').map(name => name.trim());
   for (const binding of bindings) assert.equal(typeof api[binding], 'function');
 });

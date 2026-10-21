@@ -23,7 +23,8 @@
     "./model-library/studies": {
       "types": "./model-library/studies.d.ts",
       "default": "./model-library/studies.js"
-    }
+    },
+    "./feedback-diagnostics": "./diagnostics/index.js"
   },
   "files": [
     "assets/",
@@ -39,7 +40,8 @@
     "main.js",
     "styles.css",
     "viewer-manifest.js",
-    "model-library/"
+    "model-library/",
+    "diagnostics/"
   ],
   "engines": {
     "node": ">=24"
@@ -51,7 +53,7 @@
     "lint": "npm run typecheck",
     "pack:check": "node scripts/verify-public-package.cjs",
     "prepublishOnly": "npm run build && npm run pack:check",
-    "typecheck": "node --check index.js && node --check main.js && node --check viewer-manifest.js && node --check showcase/index.js && node --check showcase/main.js && node --check wavefront/main.js && node --check model-library/main.js && node --check model-library/controller.js && node --check model-library/scenes.js && node --check model-library/acquire.js && node --check model-library/rollout.js && node --check model-library/studies.js",
+    "typecheck": "node --check index.js && node --check main.js && node --check viewer-manifest.js && node --check showcase/index.js && node --check showcase/main.js && node --check wavefront/main.js && node --check model-library/main.js && node --check model-library/controller.js && node --check model-library/scenes.js && node --check model-library/acquire.js && node --check model-library/rollout.js && node --check model-library/studies.js && node --check diagnostics/index.js && node --check diagnostics/source.js && node --check diagnostics/panel.js && node --check diagnostics/assets.js",
     "test": "node --test",
     "models:download": "node scripts/acquire-model-library.mjs",
     "models:dev": "vite --config model-library/vite.config.js",
@@ -59,7 +61,7 @@
   },
   "dependencies": {
     "@plasius/gpu-renderer": "^0.2.54",
-    "@plasius/gpu-shared": "^1.2.0"
+    "@plasius/gpu-shared": "1.3.0"
   },
   "devDependencies": {
     "c8": "^11.0.0",
