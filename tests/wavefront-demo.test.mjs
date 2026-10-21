@@ -22,7 +22,7 @@ test("wavefront demo imports the renderer package public surface", () => {
   const packageJson = JSON.parse(read("package.json"));
   const html = read("wavefront/index.html");
   assert.equal(packageJson.dependencies["@plasius/gpu-renderer"], "^0.2.54");
-  assert.equal(packageJson.dependencies["@plasius/gpu-shared"], "^1.1.12");
+  assert.equal(packageJson.dependencies["@plasius/gpu-shared"], "^1.2.0");
   assert.match(html, /@plasius\/gpu-renderer/);
   assert.match(html, /\.\.\/node_modules\/@plasius\/gpu-renderer\/dist\/index\.js/);
   assert.match(html, /id="samplesSelect"/);
