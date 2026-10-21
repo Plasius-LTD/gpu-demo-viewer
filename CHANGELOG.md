@@ -7,6 +7,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ## [Unreleased]
 
 - **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.2.2] - 2026-10-21
+
+- **Added**
   - Twelve original sculpture, lighting, vessel and product studies with source integrity and registry-renderer review records; four optical/UHD failures remain held.
 
 - **Changed**
@@ -308,3 +322,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.1.11]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.1.11
 [0.2.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.2.0
 [0.2.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.2.1
+[0.2.2]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.2.2
