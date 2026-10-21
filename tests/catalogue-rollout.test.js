@@ -22,25 +22,25 @@ test('invalid batches and unrecognized status cannot silently admit candidates',
  assert.throws(()=>selectBatch(rollout.entries,1.5),/batch/);
  assert.throws(()=>selectBatch(rollout.entries,8),/batch/);
 });
-test('public candidates have acquired files; qualified Amber and excluded Gem are not yet live',()=>{
+test('production records match the verified 31-model release and preserve the Gem exclusion',()=>{
  const live=rollout.entries.filter(a=>a.status==='production');
- assert.equal(live.length,10);
+ assert.equal(live.length,31);
  for(const a of live)assert.ok(installed.assets.some(b=>b.key===a.key&&b.entry&&b.files.length));
- assert.equal(rollout.entries.find(a=>a.key==='MosquitoInAmber').status,'qualified');
+ assert.equal(rollout.entries.find(a=>a.key==='MosquitoInAmber').status,'production');
  assert.equal(rollout.entries.find(a=>a.key==='sf-gem').status,'excluded');
  assert.equal(rollout.productionTarget,74);
  assert.equal(rollout.entries.filter(a=>a.status!=='excluded').length,74);
  assert.equal(rollout.voxelPhase,'after-original-production-qualification');
 });
 
-test('batch one preserves six qualified Poly Haven sources without claiming production',()=>{
+test('batch one preserves six production-verified Poly Haven sources',()=>{
  const acquired=installed.assets.filter(asset=>asset.batch===1);
  assert.equal(acquired.length,6);
  const batch=selectBatch(rollout.entries,1);
  for(const asset of acquired){
   assert.equal(asset.provider,'Poly Haven');
   assert.equal(asset.licence,'CC0-1.0');
-  assert.equal(batch.find(entry=>entry.key===asset.key)?.status,'qualified');
+  assert.equal(batch.find(entry=>entry.key===asset.key)?.status,'production');
   assert.ok(asset.entry&&asset.files.length);
   for(const file of asset.files)assert.match(file.sha256,/^[a-f0-9]{64}$/);
  }
@@ -52,7 +52,7 @@ test('batch two admits five bounded sources and holds oversized original trees f
  const entries=selectBatch(rollout.entries,2);
  for(const asset of acquired){
   assert.ok(asset.entry&&asset.files.length);
-  assert.equal(entries.find(entry=>entry.key===asset.key)?.status,'qualified');
+  assert.equal(entries.find(entry=>entry.key===asset.key)?.status,'production');
  }
  for(const key of ['fir_tree_01','island_tree_01','jacaranda_tree','pine_tree_01']){
   assert.equal(entries.find(entry=>entry.key===key)?.status,'held');
@@ -67,12 +67,38 @@ test('batch three preserves nine original sources with verified resources and so
  for(const asset of acquired){
   assert.ok(asset.entry&&asset.files.length);
   assert.equal(asset.licence,'CC0-1.0');
-  assert.equal(rollout.entries.find(entry=>entry.key===asset.key)?.status,'qualified');
+  assert.equal(rollout.entries.find(entry=>entry.key===asset.key)?.status,'production');
   for(const file of asset.files){assert.match(file.sha256,/^[a-f0-9]{64}$/);assert.ok(file.bytes<=20*1048576);}
  }
  for(const key of ['SheenChair','SheenCloth']){
   const asset=acquired.find(item=>item.key===key);
   assert.match(asset.source_revision,/^[a-f0-9]{40}$/);
   assert.ok(asset.files.every(file=>file.url.includes('/'+asset.source_revision+'/')));
+ }
+});
+
+test('batch four qualifies original furniture and workshop sources with bounded texture inventories',async()=>{
+ const acquired=installed.assets.filter(asset=>asset.batch===4);
+ assert.deepEqual(acquired.map(asset=>asset.key).sort(),[
+  'SheenWoodLeatherSofa','SpecularSilkPouf','spinning_wheel_01','vintage_cabinet_01',
+  'wicker_basket_01','wine_barrel_01','bench_vice_01','brass_blowtorch','Camera_01',
+ ].sort());
+ for(const asset of acquired){
+  assert.equal(rollout.entries.find(entry=>entry.key===asset.key)?.status,'qualified');
+  assert.ok(asset.entry&&asset.files.some(file=>file.path===asset.entry));
+  for(const file of asset.files){assert.match(file.sha256,/^[a-f0-9]{64}$/);assert.ok(file.bytes<=20*1048576);}
+ }
+ const sofa=acquired.find(asset=>asset.key==='SheenWoodLeatherSofa');
+ assert.ok(sofa.inspection.extensions.includes('EXT_texture_webp'));
+ assert.ok(sofa.files.some(file=>file.path.endsWith('.webp')));
+ const evidence=JSON.parse(await readFile(new URL('../docs/batch-four-qualification.json',import.meta.url),'utf8'));
+ assert.equal(evidence.registryConsumptionVerified,true);
+ assert.equal(evidence.productionVerified,false);
+ assert.equal(evidence.models.length,9);
+ for(const model of evidence.models){
+  assert.equal(model.completedFixedSamples,64);
+  assert.equal(model.cameraResetAndRefinement,true);
+  assert.equal(model.denoisingOffOn,true);
+  assert.deepEqual(model.completedUhd,{width:3840,height:2160,samples:1});
  }
 });

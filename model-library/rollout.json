@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-10-18",
+  "updated": "2026-10-21",
   "story": "https://github.com/Plasius-LTD/plasius-ltd-site/issues/2308",
   "flag": "gpu-demo.scene-fidelity.enabled",
   "phase": "original-models",
@@ -10,49 +10,49 @@
       "key": "large_castle_door",
       "batch": 0,
       "status": "production",
-      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "sf-house",
       "batch": 0,
       "status": "production",
-      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "fern_02",
       "batch": 0,
       "status": "production",
-      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "quiver_tree_01",
       "batch": 0,
       "status": "production",
-      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "rock_moss_set_01",
       "batch": 0,
       "status": "production",
-      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "garden_gloves_01",
       "batch": 0,
       "status": "production",
-      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "wooden_crate_02",
       "batch": 0,
       "status": "production",
-      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "bronze_whale_statue",
       "batch": 0,
       "status": "production",
-      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "sf-gem",
@@ -64,19 +64,19 @@
       "key": "antique_ceramic_vase_01",
       "batch": 0,
       "status": "production",
-      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "MosquitoInAmber",
       "batch": 0,
-      "status": "qualified",
-      "note": "Original-material fixed256 and native UHD1 checks passed with renderer correction ad52d112; production deployment verification remains pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "Fox",
       "batch": 0,
       "status": "production",
-      "note": "Fixed-sampling production release 1b17dba6dca47003e41ad01974b92c887098c3ea; animation/material limits remain documented."
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "sf-castle",
@@ -87,32 +87,32 @@
     {
       "key": "large_iron_gate",
       "batch": 1,
-      "status": "qualified",
-      "note": "Original source fixed64 and native UHD1 render checks passed with material reuse correction 3d119868. Registry consumption and production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "modular_factory_facade",
       "batch": 1,
-      "status": "qualified",
-      "note": "Original source fixed64 and native UHD1 render checks passed with material reuse correction 3d119868. Registry consumption and production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "modular_fort_01",
       "batch": 1,
-      "status": "qualified",
-      "note": "Original source fixed64 and native UHD1 render checks passed with material reuse correction 3d119868. Registry consumption and production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "modular_urban_apartments_facade",
       "batch": 1,
-      "status": "qualified",
-      "note": "Original source fixed64 and native UHD1 render checks passed with material reuse correction 3d119868. Registry consumption and production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "modular_wooden_pier",
       "batch": 1,
-      "status": "qualified",
-      "note": "Original source fixed64 and native UHD1 render checks passed with material reuse correction 3d119868. Registry consumption and production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "sf-cottage",
@@ -123,8 +123,8 @@
     {
       "key": "dandelion_01",
       "batch": 1,
-      "status": "qualified",
-      "note": "Original source fixed64 and native UHD1 render checks passed with material reuse correction 3d119868. Registry consumption and production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "DiffuseTransmissionPlant",
@@ -141,8 +141,8 @@
     {
       "key": "grass_medium_01",
       "batch": 2,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement and native UHD1 checks passed. Released renderer 0.2.51 and shared 1.1.8 are required; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "island_tree_01",
@@ -165,134 +165,134 @@
     {
       "key": "searsia_lucida",
       "batch": 2,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement and native UHD1 checks passed. Released renderer 0.2.51 and shared 1.1.8 are required; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "boulder_01",
       "batch": 2,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement and native UHD1 checks passed. Released renderer 0.2.51 and shared 1.1.8 are required; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "coastal_cliff_01",
       "batch": 2,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement and native UHD1 checks passed. Released renderer 0.2.51 and shared 1.1.8 are required; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "dead_tree_trunk",
       "batch": 2,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement and native UHD1 checks passed. Released renderer 0.2.51 and shared 1.1.8 are required; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "food_pomegranate_01",
       "batch": 3,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "lambis_shell",
       "batch": 3,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "rock_face_01",
       "batch": 3,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "tree_stump_01",
       "batch": 3,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "ArmChair_01",
       "batch": 3,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "fishermans_hat",
       "batch": 3,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "rubber_boots",
       "batch": 3,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "SheenChair",
       "batch": 3,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "SheenCloth",
       "batch": 3,
-      "status": "qualified",
-      "note": "Original-source fixed64, camera reset/refinement, denoising off/on and native UHD1 checks passed using released renderer 0.2.51/shared 1.1.8. Static authored defaults only; production verification pending."
+      "status": "production",
+      "note": "Verified in the 31-model production review on 2026-10-20; site commit e01035f492d4e43094564707e1516c0d526cbbfb. Source and fixed-sampling limitations remain documented."
     },
     {
       "key": "SheenWoodLeatherSofa",
       "batch": 4,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
     },
     {
       "key": "SpecularSilkPouf",
       "batch": 4,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
     },
     {
       "key": "spinning_wheel_01",
       "batch": 4,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
     },
     {
       "key": "vintage_cabinet_01",
       "batch": 4,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
     },
     {
       "key": "wicker_basket_01",
       "batch": 4,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
     },
     {
       "key": "wine_barrel_01",
       "batch": 4,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
     },
     {
       "key": "bench_vice_01",
       "batch": 4,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
     },
     {
       "key": "brass_blowtorch",
       "batch": 4,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
     },
     {
       "key": "Camera_01",
       "batch": 4,
-      "status": "researched",
-      "note": "Awaiting acquisition and Plasius visual qualification."
+      "status": "qualified",
+      "note": "Original source fixed64, camera/refinement, denoising off/on and native UHD1 passed on registry renderer0.2.54/shared1.1.12. Site production verification pending."
     },
     {
       "key": "can_rusted",

@@ -153,6 +153,7 @@ and `PLASIUS_RENDERER_SOURCE` (absolute `src/index.js` or built `dist/index.js`)
 These overrides are local development tools. Production consumes published,
 qualified package versions and approved source assets.
 
+- [Furniture and workshop batch qualification](https://github.com/Plasius-LTD/gpu-demo-viewer/blob/main/docs/batch-four-qualification.json): nine additional sources, including authored WebP materials, checked with released packages.
 - [Initial model findings](https://github.com/Plasius-LTD/gpu-demo-viewer/blob/main/docs/model-library-review.md).
 - [UHD inspection contract](https://github.com/Plasius-LTD/gpu-demo-viewer/blob/main/docs/model-inspection-uhd.md).
 - [Catalogue rollout requirements](https://github.com/Plasius-LTD/gpu-demo-viewer/blob/main/docs/catalogue-production-rollout.md) and [live delivery tracking](https://github.com/Plasius-LTD/plasius-ltd-site/issues/2308).

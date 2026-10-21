@@ -6,10 +6,11 @@ for delivery evidence and current status. Parent Epic: site#2271;
 Feature: site#1170. First-batch Story: site#2303; production Task: site#2305.
 
 The research catalogue contains 75 distinct source assets/sets. Gem is explicitly
-excluded by the user, leaving 74 production candidates: eleven retained from
-the original twelve and 63 further models. Thirty-one have been acquired and ten
-are currently selectable in production.
-The 52 deployed files are geometry/texture resources, not 52 models.
+excluded by the user, leaving 74 production candidates. The 31-model release was
+production-verified on 20 October 2026; its 199 resources are files, not models.
+This next candidate adds nine qualified furniture/workshop sources with 64
+resources (30,610,988 bytes). Source acquisition for later batches remains in
+progress separately; those records are not included in this release candidate.
 
 ## Delivery sequence
 
@@ -132,3 +133,32 @@ off/on and native UHD1 using released packages, with no observed console errors.
 See [batch three evidence](batch-three-qualification.json). Four boot meshes are
 part of the source set; Sheen Chair retains its default authored material.
 Production verification remains pending.
+
+## Next release: furniture and workshop sources
+
+Resume viewer Task #62 and site Story #2308 with the nine original batch-four
+models. Recheck all nine with registry-installed shared and renderer packages,
+without source overrides. Retain the prior source qualification as historical
+evidence, add exact released-version checks and admit only models whose source,
+materials, camera/refinement, denoising and native UHD checks pass. Keep later
+acquired batches separate until their qualification is complete. Publish the
+viewer catalogue and then the site through their approved workflows; verify the
+40-model public selector and resource hashes before calling the batch live.
+
+The next scene review will combine qualified assets into a furnished interior
+and a workshop. Reuse the existing scene/loading/model packages and preserve
+original model files, material maps, licences and source identities. Define and
+track composition requirements before implementing reusable scene support. Test
+scale, placement, shadows, colour interaction and combined resource budgets.
+These composite scenes follow this model release and precede any voxel conversion.
+
+## Batch 4 registry qualification
+
+All nine original furniture/workshop models completed fixed64, camera reset and
+refinement, denoising off/on and native 3840×2160 at one sample with released
+renderer0.2.54 and shared1.1.12, without source overrides. No console warnings or
+errors were observed. Source geometry, materials and textures remain unchanged;
+sofa WebP maps are present. The [qualification record](batch-four-qualification.json)
+retains the prior source-check context and binds the fresh screenshots by hash.
+This is static inspection qualification, not animation playback or a claim of
+complete material fidelity. Site production verification remains pending.

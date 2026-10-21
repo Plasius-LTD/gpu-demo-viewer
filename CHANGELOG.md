@@ -6,6 +6,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- Add the nine qualified furniture/workshop source models and their integrity inventories, using released shared1.1.12 and renderer0.2.54; reconcile the prior 31-model production records.
+
 - **Added**
   - (placeholder)
 
