@@ -4633,6 +4633,1460 @@
           "OPAQUE"
         ]
       }
+    },
+    {
+      "key": "chess_set",
+      "category": "Fantasy, sculpture and gems",
+      "renderer_target": "Repeated small forms, glossy surfaces and contact shadows",
+      "preparation": "One source set, not a separate count for every chess piece.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Static registry-package inspection qualified on 2026-10-21; site production verification pending.",
+      "name": "Chess Set",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/chess_set",
+      "authors": "Riley Queen (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 76920,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 6.66,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/chess_set",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/chess_set/chess_set_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/chess_set",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 54,
+      "entry": "chess_set_1k.gltf",
+      "files": [
+        {
+          "path": "chess_set_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/chess_set/chess_set_1k.gltf",
+          "bytes": 53740,
+          "sha256": "3e21ecd0c2ffb703dfdb3f3ea7a379c1dbd4ec513ba2cb8e6cb1e5f276d7eb91",
+          "integrity": "sha256-PiHs0ML/twPf2z8+p6N5wdvU7FE7osuObLHl8nbX65E="
+        },
+        {
+          "path": "textures/chess_set_pieces_white_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/chess_set/chess_set_pieces_white_nor_gl_1k.jpg",
+          "bytes": 443642,
+          "sha256": "51c31dc44d1d0f01c10b759be7903bea9d5b04781b63dc45738dd70a6e31dd6c",
+          "integrity": "sha256-UcMdxE0dDwHBC3Wb55A76p1bBHgbY9xFc43XCm4x3Ww="
+        },
+        {
+          "path": "textures/chess_set_pieces_black_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/chess_set/chess_set_pieces_black_nor_gl_1k.jpg",
+          "bytes": 421230,
+          "sha256": "b92343bba552e82f271f86def504e806e73c6f5dfc4469a90fa5b4f66013bfcd",
+          "integrity": "sha256-uSNDu6VS6C8nH4be9QToBuc8b138RGmpD6W09mATv80="
+        },
+        {
+          "path": "textures/chess_set_pieces_black_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/chess_set/chess_set_pieces_black_arm_1k.jpg",
+          "bytes": 833327,
+          "sha256": "e0413b36e970c645bd9b6192bfe788b318d9bd9f4f3746cf137552bfee118982",
+          "integrity": "sha256-4EE7NulwxkW9m2GSv+eIsxjZvZ9PN0bPE3VSv+4RiYI="
+        },
+        {
+          "path": "textures/chess_set_board_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/chess_set/chess_set_board_diff_1k.jpg",
+          "bytes": 602985,
+          "sha256": "cca44d214f48ebe2205362a3996265d1fed727e094835bec2c873e91c653eaa5",
+          "integrity": "sha256-zKRNIU9I6+IgU2KjmWJl0f7XJ+CUg1vsLIc+kcZT6qU="
+        },
+        {
+          "path": "textures/chess_set_board_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/chess_set/chess_set_board_nor_gl_1k.jpg",
+          "bytes": 227381,
+          "sha256": "bc5657ec58e0e04a2e8fa6d50ec0f6e3009b1c22b8391ccdde1a4d5d9db30d4d",
+          "integrity": "sha256-vFZX7Fjg4Eouj6bVDsD24wCbHCK4ORzN3hpNXZ2zDU0="
+        },
+        {
+          "path": "textures/chess_set_board_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/chess_set/chess_set_board_arm_1k.jpg",
+          "bytes": 756404,
+          "sha256": "67387308ce3a6424a1666e742c6556853344c01fbfcda8453b6e2e2f62bc6d30",
+          "integrity": "sha256-ZzhzCM46ZCShZm50LGVWhTNEwB+/zahFO24uL2K8bTA="
+        },
+        {
+          "path": "chess_set.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/chess_set/chess_set.bin",
+          "bytes": 1732220,
+          "sha256": "c73476fd032a2cb4a9c256f70573eed260708132fdc42fec161c6216711560b3",
+          "integrity": "sha256-xzR2/QMqLLSpwlb3BXPu0mBwgTL9xC/sFhxiFnEVYLM="
+        },
+        {
+          "path": "textures/chess_set_pieces_white_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/chess_set/chess_set_pieces_white_arm_1k.jpg",
+          "bytes": 841156,
+          "sha256": "9604c461ee6d5d4f5937891b0468ff7efd354299074b139d04029b03c326e434",
+          "integrity": "sha256-lgTEYe5tXU9ZN4kbBGj/fv01QpkHSxOdBAKbA8Mm5DQ="
+        },
+        {
+          "path": "textures/chess_set_pieces_black_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/chess_set/chess_set_pieces_black_diff_1k.jpg",
+          "bytes": 480796,
+          "sha256": "74471018f96f197c963cc89e7dae19960b03bc2e4bf448e4b0beb51bfee5b85d",
+          "integrity": "sha256-dEcQGPlvGXyWPMiefa4ZlgsDvC5L9EjksL61G/7luF0="
+        },
+        {
+          "path": "textures/chess_set_pieces_white_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/chess_set/chess_set_pieces_white_diff_1k.jpg",
+          "bytes": 590948,
+          "sha256": "d9e06002509d73c3f343e1643f0c89ef84e24602f1f6858b5628e8f3e55ae77d",
+          "integrity": "sha256-2eBgAlCdc8PzQ+FkPwyJ74TiRgLx9oWLVijo8+Va530="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 6,
+      "inspection": {
+        "materials": 3,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "gothic_statue",
+      "category": "Fantasy, sculpture and gems",
+      "renderer_target": "Stone weathering, moss and deep folds",
+      "preparation": "Pairs with fort walls for a fantasy courtyard.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Static registry-package inspection qualified on 2026-10-21; site production verification pending.",
+      "name": "Gothic Statue",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/gothic_statue",
+      "authors": "Benny Weimer (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 27739,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 3.79,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/gothic_statue",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/gothic_statue/gothic_statue_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/gothic_statue",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 57,
+      "entry": "gothic_statue_1k.gltf",
+      "files": [
+        {
+          "path": "gothic_statue_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/gothic_statue/gothic_statue_1k.gltf",
+          "bytes": 2900,
+          "sha256": "eecbc67793a1e1efa1359d57fa497cb267fc7a4039823d3feecb6d0fcd2ad2db",
+          "integrity": "sha256-7svGd5Oh4e+hNZ1X+kl8smf8ekA5gj0/7sttD80q0ts="
+        },
+        {
+          "path": "textures/gothic_statue_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/gothic_statue/gothic_statue_nor_gl_1k.jpg",
+          "bytes": 1064867,
+          "sha256": "f0d1de09cb49f38ea5de9fb3b0af80834837616188d0504f07ee0cfc39a1ca91",
+          "integrity": "sha256-8NHeCctJ846l3p+zsK+Ag0g3YWGI0FBPB+4M/DmhypE="
+        },
+        {
+          "path": "textures/gothic_statue_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/gothic_statue/gothic_statue_diff_1k.jpg",
+          "bytes": 1037433,
+          "sha256": "7c74e5a4e5af689d5c7556bb8b0bd60c8cc6c0cac9d8445fbd9f153abd1eddf1",
+          "integrity": "sha256-fHTlpOWvaJ1cdVa7iwvWDIzGwMrJ2ERfvZ8VOr0e3fE="
+        },
+        {
+          "path": "textures/gothic_statue_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/gothic_statue/gothic_statue_arm_1k.jpg",
+          "bytes": 960949,
+          "sha256": "fbe7cec4c4745fb796c98a03209b6d664fca81b8b20d155e39509f85daa61fbb",
+          "integrity": "sha256-++fOxMR0X7eWyYoDIJttZk/KgbiyDRVeOVCfhdqmH7s="
+        },
+        {
+          "path": "gothic_statue.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/gothic_statue/gothic_statue.bin",
+          "bytes": 912484,
+          "sha256": "8608701ecff6b56e9fd9cddd130541f831ff8131a7758d54e7964af3d0152b9c",
+          "integrity": "sha256-hghwHs/2tW6f2c3dEwVB+DH/gTGndY1U55ZK89AVK5w="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 6,
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "kite_shield",
+      "category": "Fantasy, sculpture and gems",
+      "renderer_target": "Painted wood, exposed grain and iron wear",
+      "preparation": "Keep paint loss, wood ageing and metal corrosion independent.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Static registry-package inspection qualified on 2026-10-21; site production verification pending.",
+      "name": "Kite Shield",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/kite_shield",
+      "authors": "Ulan Cabanilla (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 10306,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 3.64,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/kite_shield",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/kite_shield/kite_shield_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/kite_shield",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 58,
+      "entry": "kite_shield_1k.gltf",
+      "files": [
+        {
+          "path": "kite_shield_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/kite_shield/kite_shield_1k.gltf",
+          "bytes": 6826,
+          "sha256": "269a2467ca0c52df75bc5272a5246e2bcaf6cfe128eecf801542696a7bfef61d",
+          "integrity": "sha256-JpokZ8oMUt91vFJypSRuK8r2z+Eo7s+AFUJpanv+9h0="
+        },
+        {
+          "path": "textures/kite_shield_body_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/kite_shield/kite_shield_body_diff_1k.jpg",
+          "bytes": 761392,
+          "sha256": "7ed490545ccf4df0902d9b9cd71910cdbacb2f4cfef9aac72ca04134436d471b",
+          "integrity": "sha256-ftSQVFzPTfCQLZuc1xkQzbrLL0z++arHLKBBNENtRxs="
+        },
+        {
+          "path": "textures/kite_shield_body_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/kite_shield/kite_shield_body_nor_gl_1k.jpg",
+          "bytes": 843237,
+          "sha256": "562b943c11ff3ba16cc0e10b49976faba38f7602c83d501cb36dee5b3ea027db",
+          "integrity": "sha256-ViuUPBH/O6FswOELSZdvq6OPdgLIPVAcs23uWz6gJ9s="
+        },
+        {
+          "path": "textures/kite_shield_clamps_trim_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/kite_shield/kite_shield_clamps_trim_diff_1k.jpg",
+          "bytes": 417567,
+          "sha256": "fd786e98045804fc772b1a3005b38a936fe30852919644a30d9241c7beb67f98",
+          "integrity": "sha256-/XhumARYBPx3KxowBbOKk2/jCFKRlkSjDZJBx762f5g="
+        },
+        {
+          "path": "textures/kite_shield_clamps_trim_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/kite_shield/kite_shield_clamps_trim_arm_1k.jpg",
+          "bytes": 521972,
+          "sha256": "2e1fe58aab65306124a63b8878fece977382b4662e23a2957c434e71272dc190",
+          "integrity": "sha256-Lh/liqtlMGEkpjuIeP7Ol3OCtGYuI6KVfENOcSctwZA="
+        },
+        {
+          "path": "kite_shield.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/kite_shield/kite_shield.bin",
+          "bytes": 289804,
+          "sha256": "5f936bc82f628fe243b062f2a240ea11549995fbf24d1c1055bdc29292cf96a9",
+          "integrity": "sha256-X5NryC9ij+JDsGLyokDqEVSZlfvyTRwQVb3CkpLPlqk="
+        },
+        {
+          "path": "textures/kite_shield_clamps_trim_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/kite_shield/kite_shield_clamps_trim_nor_gl_1k.jpg",
+          "bytes": 413510,
+          "sha256": "e430f8032662bccd15ef42037e6971c94277da6eb3549d00965d61b7e3f604d2",
+          "integrity": "sha256-5DD4AyZivM0V70IDfmlxyUJ32m6zVJ0All1ht+P2BNI="
+        },
+        {
+          "path": "textures/kite_shield_body_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/kite_shield/kite_shield_body_arm_1k.jpg",
+          "bytes": 563372,
+          "sha256": "a4b6e349a5f33cae71c00f9ab98ee41b2b06817d87d0ef07e8e815f0dc628e38",
+          "integrity": "sha256-pLbjSaXzPK5xwA+auY7kGysGgX2H0O8H6OgV8Nxijjg="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 6,
+      "inspection": {
+        "materials": 2,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "marble_bust_01",
+      "category": "Fantasy, sculpture and gems",
+      "renderer_target": "Sculpted form, stone roughness and fine shading",
+      "preparation": "Subsurface scattering would be an added material experiment.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Static registry-package inspection qualified on 2026-10-21; site production verification pending.",
+      "name": "Marble Bust 01",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/marble_bust_01",
+      "authors": "Rico Cilliers (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 17456,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 0.86,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/marble_bust_01",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/marble_bust_01/marble_bust_01_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/marble_bust_01",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 59,
+      "entry": "marble_bust_01_1k.gltf",
+      "files": [
+        {
+          "path": "marble_bust_01_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/marble_bust_01/marble_bust_01_1k.gltf",
+          "bytes": 2793,
+          "sha256": "b6f192fc01be4349470b66f6f6948bd37620267bdbc86f4568e4d078f97ff09b",
+          "integrity": "sha256-tvGS/AG+Q0lHC2b29pSL03YgJnvbyG9FaOTQePl/8Js="
+        },
+        {
+          "path": "marble_bust_01.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/marble_bust_01/marble_bust_01.bin",
+          "bytes": 416608,
+          "sha256": "0bb757c1bd00bfe42005c84e7f76df98ce04a532e595a2ddda8a0335cd959e33",
+          "integrity": "sha256-C7dXwb0Av+QgBchOf3bfmM4EpTLllaLd2ooDNc2VnjM="
+        },
+        {
+          "path": "textures/marble_bust_01_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/marble_bust_01/marble_bust_01_nor_gl_1k.jpg",
+          "bytes": 124627,
+          "sha256": "3d355904cd54c2de90d5d4310b80d43816fa2dd509f0a3445d654eab8e237c5f",
+          "integrity": "sha256-PTVZBM1Uwt6Q1dQxC4DUOBb6LdUJ8KNEXWVOq44jfF8="
+        },
+        {
+          "path": "textures/marble_bust_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/marble_bust_01/marble_bust_01_diff_1k.jpg",
+          "bytes": 160337,
+          "sha256": "cbb7dccdc62d7eaa240eef7b4956969bf6e73c7338b64f1378629838ea22383c",
+          "integrity": "sha256-y7fczcYtfqokDu97SVaWm/bnPHM4tk8TeGKYOOoiODw="
+        },
+        {
+          "path": "textures/marble_bust_01_rough_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/marble_bust_01/marble_bust_01_rough_1k.jpg",
+          "bytes": 193918,
+          "sha256": "1c4502352dc936dd1f1c1a81b418706df1ce0445949874215015325f9b8921fb",
+          "integrity": "sha256-HEUCNS3JNt0fHBqBtBhwbfHOBEWUmHQhUBUyX5uJIfs="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 6,
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "brass_diya_lantern",
+      "category": "Glass, ceramics and lighting",
+      "renderer_target": "Glass panels, aged brass and small light sources",
+      "preparation": "Verify glass export; actual scene lights may need authoring.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Static registry-package inspection qualified on 2026-10-21; site production verification pending.",
+      "name": "Brass Diya Lantern",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/brass_diya_lantern",
+      "authors": "Bhargav Kubal (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 12742,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 1.88,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/brass_diya_lantern",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/brass_diya_lantern/brass_diya_lantern_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/brass_diya_lantern",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 63,
+      "entry": "brass_diya_lantern_1k.gltf",
+      "files": [
+        {
+          "path": "brass_diya_lantern_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/brass_diya_lantern/brass_diya_lantern_1k.gltf",
+          "bytes": 10202,
+          "sha256": "6b908c48f0f5300ba561cbcfe38e938863e8d1d33569e9a1fab6c7e9c16f8e95",
+          "integrity": "sha256-a5CMSPD1MAulYcvP446TiGPo0dM1aemh+rbH6cFvjpU="
+        },
+        {
+          "path": "textures/brass_diya_lantern_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_diya_lantern/brass_diya_lantern_nor_gl_1k.jpg",
+          "bytes": 263044,
+          "sha256": "a618606a35c73adc13bee3b807502063ba7319517c5616b4728db3729ba65437",
+          "integrity": "sha256-phhgajXHOtwTvuO4B1AgY7pzGVF8Vha0co2zcpumVDc="
+        },
+        {
+          "path": "textures/brass_diya_lantern_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_diya_lantern/brass_diya_lantern_arm_1k.jpg",
+          "bytes": 704276,
+          "sha256": "e69d8679e7515c3e65126d93c2d8abc20f5bf3c0a3ad143a640f09d5f5375a66",
+          "integrity": "sha256-5p2GeedRXD5lEm2Twtirwg9b88CjrRQ6ZA8J1fU3WmY="
+        },
+        {
+          "path": "brass_diya_lantern.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/brass_diya_lantern/brass_diya_lantern.bin",
+          "bytes": 455708,
+          "sha256": "7060383d23c5ef19eed274ff70ead72001be1c8397c39ba924c35bbeca4795dc",
+          "integrity": "sha256-cGA4PSPF7xnu0nT/cOrXIAG+HIOXw5upJMNbvspHldw="
+        },
+        {
+          "path": "textures/brass_diya_lantern_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_diya_lantern/brass_diya_lantern_diff_1k.jpg",
+          "bytes": 536573,
+          "sha256": "b7d308d1950640e5d0160df5c948e44b3367f7f916922c27715b2a3fb2d19a54",
+          "integrity": "sha256-t9MI0ZUGQOXQFg31yUjkSzNn9/kWkiwncVsqP7LRmlQ="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 6,
+      "inspection": {
+        "materials": 3,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "BLEND",
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "AnisotropyBarnLamp",
+      "category": "Glass, ceramics and lighting",
+      "renderer_target": "Directional metal highlights, clearcoat and emissive materials",
+      "preparation": "Qualify the listed glTF extensions and use the uncompressed variant first.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Static registry-package inspection qualified on 2026-10-21; site production verification pending.",
+      "name": "Anisotropy Barn Lamp",
+      "provider": "Khronos sample assets",
+      "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/AnisotropyBarnLamp",
+      "authors": "Eric Chadwick (Everything); \u00a9 2023 Copyright 2023 Wayfair, LLC",
+      "licence": "CC-BY-4.0",
+      "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/AnisotropyBarnLamp/README.md",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, glTF-Binary, glTF-KTX-BasisU",
+      "geometry_count": null,
+      "geometry_unit": "Not measured",
+      "package_mib": null,
+      "package_basis": "Not measured; JSON buffer length excludes external textures",
+      "format_evidence_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/AnisotropyBarnLamp/glTF/AnisotropyBarnLamp.gltf",
+      "download_entry_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/AnisotropyBarnLamp/glTF/AnisotropyBarnLamp.gltf",
+      "extensions": "KHR_materials_anisotropy, KHR_materials_clearcoat, KHR_materials_emissive_strength, KHR_materials_transmission, KHR_materials_volume",
+      "source_metadata_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/AnisotropyBarnLamp/metadata.json",
+      "lods_advertised": false,
+      "authoring_style": "Material / rendering reference",
+      "cost": "Free",
+      "attribution_required": true,
+      "material_count": 3,
+      "animation_count": 0,
+      "legal_records": [
+        {
+          "license": "CC-BY-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "artist": "Eric Chadwick",
+          "year": "2023",
+          "owner": "Copyright 2023 Wayfair, LLC",
+          "what": "Everything",
+          "text": "Creative Commons Attribution 4.0 International",
+          "spdx": "CC-BY-4.0",
+          "icon": "https://licensebuttons.net/l/by/4.0/88x31.png"
+        }
+      ],
+      "number": 61,
+      "entry": "AnisotropyBarnLamp.gltf",
+      "files": [
+        {
+          "path": "AnisotropyBarnLamp.gltf",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/AnisotropyBarnLamp/glTF/AnisotropyBarnLamp.gltf",
+          "bytes": 6805,
+          "sha256": "a9cd85ee50b263cee9a8bd5436cb2af1bb0759d6c20e24c1d698b2ad9743dffc",
+          "integrity": "sha256-qc2F7lCyY87pqL1UNssq8bsHWdbCDiTB1piyrZdD3/w="
+        },
+        {
+          "path": "AnisotropyBarnLamp.bin",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/AnisotropyBarnLamp/glTF/AnisotropyBarnLamp.bin",
+          "bytes": 409580,
+          "sha256": "50f196f7613c3cf40886c0058c8f4a51f6118d5654879f41bb2fcdb5ba989871",
+          "integrity": "sha256-UPGW92E8PPQIhsAFjI9KUfYRjVZUh59Buy/NtbqYmHE="
+        },
+        {
+          "path": "AnisotropyBarnLamp_normalbump.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/AnisotropyBarnLamp/glTF/AnisotropyBarnLamp_normalbump.png",
+          "bytes": 177708,
+          "sha256": "30749a9c852e8179164678e315657f5da37e60e4915f6000fb9dca8f42fd10c7",
+          "integrity": "sha256-MHSanIUugXkWRnjjFWV/XaN+YOSRX2AA+53Kj0L9EMc="
+        },
+        {
+          "path": "AnisotropyBarnLamp_occlusionroughnessmetal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/AnisotropyBarnLamp/glTF/AnisotropyBarnLamp_occlusionroughnessmetal.png",
+          "bytes": 2369841,
+          "sha256": "b70aef816e86ec7c2867e7babbaa94d818d9fd587dd2fcd447fc8af0a8055577",
+          "integrity": "sha256-twrvgW6G7HwoZ+e6u6qU2BjZ/Vh90vzUR/yK8KgFVXc="
+        },
+        {
+          "path": "AnisotropyBarnLamp_basecolor.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/AnisotropyBarnLamp/glTF/AnisotropyBarnLamp_basecolor.png",
+          "bytes": 3634673,
+          "sha256": "3827208d4de41289a1f698b0153778b14e713b00dd05ba3c5be55f2e19c5a264",
+          "integrity": "sha256-OCcgjU3kEomh9piwFTd4sU5xOwDdBbo8W+VfLhnFomQ="
+        },
+        {
+          "path": "AnisotropyBarnLamp_anisotropy.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/AnisotropyBarnLamp/glTF/AnisotropyBarnLamp_anisotropy.png",
+          "bytes": 1237273,
+          "sha256": "a6984933a23e9b01be337e22944abd332300c3f87a0db7debf2d96dd067cb393",
+          "integrity": "sha256-pphJM6I+mwG+M34ilEq9MyMAw/h6Dbfevy2W3QZ8s5M="
+        }
+      ],
+      "batch": 6,
+      "status": "downloaded",
+      "review_status": "qualified",
+      "source_revision": "edc7c9e67c639d230715049ee31f9a96a6babbbe",
+      "inspection": {
+        "materials": 3,
+        "animations": [],
+        "skins": 0,
+        "extensions": [
+          "KHR_materials_anisotropy",
+          "KHR_materials_clearcoat",
+          "KHR_materials_emissive_strength",
+          "KHR_materials_transmission",
+          "KHR_materials_volume"
+        ],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "CommercialRefrigerator",
+      "category": "Glass, ceramics and lighting",
+      "renderer_target": "Glass doors, coated metal and static interior detail",
+      "preparation": "Inspect door animation and transparency sorting; commercial use licence is attribution-based.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Static registry-package inspection qualified on 2026-10-21; site production verification pending.",
+      "name": "Commercial Refrigerator",
+      "provider": "Khronos sample assets",
+      "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CommercialRefrigerator",
+      "authors": "Eric Chadwick (Model and textures and all images in the README.md); \u00a9 2025 Darmstadt Graphics Group GmbH; Sean Thomas (This work is based on 'Commercial Fridge' (https://sketchfab.com/3d-models/commercial-fridge-2174e1e4f1f24f1a95aa110ee060f473) by Sean Thomas (https://sketchfab.com/foon.) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)); \u00a9 2025 Sean Thomas",
+      "licence": "CC-BY-4.0",
+      "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/CommercialRefrigerator/README.md",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, glTF-Binary",
+      "geometry_count": null,
+      "geometry_unit": "Not measured",
+      "package_mib": null,
+      "package_basis": "Not measured; JSON buffer length excludes external textures",
+      "format_evidence_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/CommercialRefrigerator/glTF/CommercialRefrigerator.gltf",
+      "download_entry_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/CommercialRefrigerator/glTF/CommercialRefrigerator.gltf",
+      "extensions": "KHR_materials_clearcoat, KHR_materials_transmission",
+      "source_metadata_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/CommercialRefrigerator/metadata.json",
+      "lods_advertised": false,
+      "authoring_style": "Material / rendering reference",
+      "cost": "Free",
+      "attribution_required": true,
+      "material_count": 6,
+      "animation_count": 1,
+      "legal_records": [
+        {
+          "license": "CC-BY-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "artist": "Eric Chadwick",
+          "year": "2025",
+          "owner": "Darmstadt Graphics Group GmbH",
+          "what": "Model and textures and all images in the README.md",
+          "text": "Creative Commons Attribution 4.0 International",
+          "spdx": "CC-BY-4.0",
+          "icon": "https://licensebuttons.net/l/by/4.0/88x31.png"
+        },
+        {
+          "license": "CC-BY-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "artist": "Sean Thomas",
+          "year": "2025",
+          "owner": "Sean Thomas",
+          "what": "This work is based on 'Commercial Fridge' (https://sketchfab.com/3d-models/commercial-fridge-2174e1e4f1f24f1a95aa110ee060f473) by Sean Thomas (https://sketchfab.com/foon.) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+          "text": "Creative Commons Attribution 4.0 International",
+          "spdx": "CC-BY-4.0",
+          "icon": "https://licensebuttons.net/l/by/4.0/88x31.png"
+        }
+      ],
+      "number": 64,
+      "entry": "CommercialRefrigerator.gltf",
+      "files": [
+        {
+          "path": "CommercialRefrigerator.gltf",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CommercialRefrigerator/glTF/CommercialRefrigerator.gltf",
+          "bytes": 21426,
+          "sha256": "8d9c3c5931d0b81c475c3d6473f463a2bd1f55c83a01af09fe33e1266033c519",
+          "integrity": "sha256-jZw8WTHQuBxHXD1kc/Rjor0fVcg6Aa8J/jPhJmAzxRk="
+        },
+        {
+          "path": "CommercialRefrigerator.data.bin",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CommercialRefrigerator/glTF/CommercialRefrigerator.data.bin",
+          "bytes": 8029440,
+          "sha256": "9d909393a8d83754d45cc6b8c7c9f7483f40c40a8cbe39b97987c7c57de51579",
+          "integrity": "sha256-nZCTk6jYN1TUXMa4x8n3SD9AxAqMvjm5eYfHxX3lFXk="
+        },
+        {
+          "path": "ChampagneLabel_Color.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CommercialRefrigerator/glTF/ChampagneLabel_Color.jpg",
+          "bytes": 17325,
+          "sha256": "1925737348cd459d8303921e6be9e9b16635aaf5fce8125e7db06117c71bd8eb",
+          "integrity": "sha256-GSVzc0jNRZ2DA5Iea+npsWY1qvX86BJefbBhF8cb2Os="
+        },
+        {
+          "path": "Glass_Normal.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CommercialRefrigerator/glTF/Glass_Normal.jpg",
+          "bytes": 968182,
+          "sha256": "d0b525df03fba9552ce834754e42d19fd0176cff1fb8a538326ed09d0710634f",
+          "integrity": "sha256-0LUl3wP7qVUs6DR1TkLRn9AXbP8fuKU4Mm7QnQcQY08="
+        },
+        {
+          "path": "ChampagneLabel_RM.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CommercialRefrigerator/glTF/ChampagneLabel_RM.jpg",
+          "bytes": 7964,
+          "sha256": "b2793e05626878830de62fd3d4097f87ffab69803c7ab5f87213411eca70feab",
+          "integrity": "sha256-snk+BWJoeIMN5i/T1Al/h/+raYA8erX4chNBHspw/qs="
+        },
+        {
+          "path": "ChampagneFoil_Normal.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CommercialRefrigerator/glTF/ChampagneFoil_Normal.jpg",
+          "bytes": 4038,
+          "sha256": "58f89caaa43378423dcb59fe42a4112651d0b7bb626fdadfba81298c69e434b2",
+          "integrity": "sha256-WPicqqQzeEI9y1n+QqQRJlHQt7tib9rfuoEpjGnkNLI="
+        },
+        {
+          "path": "Case_ORM.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CommercialRefrigerator/glTF/Case_ORM.jpg",
+          "bytes": 95760,
+          "sha256": "c9671cb9a1fb95d7b7b353413a3203a568087bac9e3f5faa4f8c8dfcea5adbec",
+          "integrity": "sha256-yWccuaH7lde3s1NBOjIDpWgIe6yeP1+qT4yN/Opa2+w="
+        },
+        {
+          "path": "Glass_RM.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CommercialRefrigerator/glTF/Glass_RM.jpg",
+          "bytes": 176417,
+          "sha256": "f2f6b70ee8cd14b8ea8123c84610371ee989ef83aa455f3ee7f542939fa9b356",
+          "integrity": "sha256-8va3DujNFLjqgSPIRhA3HumJ74OqRV8+5/VCk5+ps1Y="
+        },
+        {
+          "path": "Interior_Color.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CommercialRefrigerator/glTF/Interior_Color.jpg",
+          "bytes": 312533,
+          "sha256": "fef4afd88ed5d7181c0eb22efc931a2d69b227128696e4fea1829c0fb2501d55",
+          "integrity": "sha256-/vSv2I7V1xgcDrIu/JMaLWmyJxKGluT+oYKcD7JQHVU="
+        },
+        {
+          "path": "Interior_Emissive.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CommercialRefrigerator/glTF/Interior_Emissive.jpg",
+          "bytes": 277609,
+          "sha256": "e664d2b81300f6dba944fcf3f11bcf4867ff318ba0ab88d8745cd43dc7db81c0",
+          "integrity": "sha256-5mTSuBMA9tupRPzz8RvPSGf/MYugq4jYdFzUPcfbgcA="
+        },
+        {
+          "path": "Interior_ORM.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CommercialRefrigerator/glTF/Interior_ORM.jpg",
+          "bytes": 108125,
+          "sha256": "369e549907b9ab7e69e89f01dfe8af0c184e6bc5df88c7bdb10db6c651a0a264",
+          "integrity": "sha256-Np5UmQe5q35p6J8B3+ivDBhOa8XfiMe9sQ22xlGgomQ="
+        },
+        {
+          "path": "Case_Color.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/CommercialRefrigerator/glTF/Case_Color.jpg",
+          "bytes": 121211,
+          "sha256": "55b774cb254b6b1e4c5c83ffb11043f668147cb01a968bff8a1bccddddbe526a",
+          "integrity": "sha256-Vbd0yyVLax5MXIP/sRBD9mgUfLAalov/ihvM3d2+Umo="
+        }
+      ],
+      "batch": 6,
+      "status": "downloaded",
+      "review_status": "qualified",
+      "source_revision": "edc7c9e67c639d230715049ee31f9a96a6babbbe",
+      "inspection": {
+        "materials": 6,
+        "animations": [
+          "0"
+        ],
+        "skins": 0,
+        "extensions": [
+          "KHR_materials_clearcoat",
+          "KHR_materials_transmission"
+        ],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "magnifying_glass_01",
+      "category": "Glass, ceramics and lighting",
+      "renderer_target": "Curved glass and refraction over a background",
+      "preparation": "Qualify transmission and thickness; texture transparency alone will not magnify.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Static registry-package inspection qualified on 2026-10-21; site production verification pending.",
+      "name": "Magnifying Glass 01",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/magnifying_glass_01",
+      "authors": "Nazar Borodavka (All)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 7240,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 0.45,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/magnifying_glass_01",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/magnifying_glass_01/magnifying_glass_01_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/magnifying_glass_01",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 67,
+      "entry": "magnifying_glass_01_1k.gltf",
+      "files": [
+        {
+          "path": "magnifying_glass_01_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/magnifying_glass_01/magnifying_glass_01_1k.gltf",
+          "bytes": 4929,
+          "sha256": "6f370a5ec6f2412f3390e18305e89def8e35f0e00a8e4532a683140a091e82fd",
+          "integrity": "sha256-bzcKXsbyQS8zkOGDBeid74418OAKjkUypoMUCgkegv0="
+        },
+        {
+          "path": "textures/magnifying_glass_01_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/magnifying_glass_01/magnifying_glass_01_arm_1k.jpg",
+          "bytes": 114589,
+          "sha256": "0f8a96d523fff27168717410b2b1a31ee5822dc4fae037ae74b79efca1bf840f",
+          "integrity": "sha256-D4qW1SP/8nFocXQQsrGjHuWCLcT64DeudLee/KG/hA8="
+        },
+        {
+          "path": "textures/magnifying_glass_01_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/magnifying_glass_01/magnifying_glass_01_nor_gl_1k.jpg",
+          "bytes": 21380,
+          "sha256": "802214b2a5442611aef857981eb5c2fd70c64645d3e92534579d8b1d4f8f4cd9",
+          "integrity": "sha256-gCIUsqVEJhGu+FeYHrXC/XDGRkXT6SU0V52LHU+PTNk="
+        },
+        {
+          "path": "textures/magnifying_glass_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/magnifying_glass_01/magnifying_glass_01_diff_1k.jpg",
+          "bytes": 55904,
+          "sha256": "6f0142ef415cb12492354689dc1bab6fed5200846fe5df4227a1c9b6bff20b7a",
+          "integrity": "sha256-bwFC70FcsSSSNUaJ3Burb+1SAIRv5d9CJ6HJtr/yC3o="
+        },
+        {
+          "path": "textures/magnifying_glass_01_rough_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/magnifying_glass_01/magnifying_glass_01_rough_1k.jpg",
+          "bytes": 88074,
+          "sha256": "d3460756046001dd158c794aacb8bfe5b6277e5a07a1061975a6b6f9b4e4ef80",
+          "integrity": "sha256-00YHVgRgAd0VjHlKrLi/5bYnfloHoQYZdaa2+bTk74A="
+        },
+        {
+          "path": "magnifying_glass_01.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/magnifying_glass_01/magnifying_glass_01.bin",
+          "bytes": 182032,
+          "sha256": "04b21b47548e3ab8555a26451808f0077493b9b24dafb5ac765b9d1da28a7859",
+          "integrity": "sha256-BLIbR1SOOrhVWiZFGAjwB3STubJNr7WsdludHaKKeFk="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 7,
+      "inspection": {
+        "materials": 2,
+        "animations": [],
+        "skins": 0,
+        "extensions": [
+          "KHR_materials_transmission"
+        ],
+        "alphaModes": [
+          "BLEND",
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "ship_pinnace",
+      "category": "Vehicles, animals and product variants",
+      "renderer_target": "Hull detail, rope rigging and sails over water",
+      "preparation": "Keep the existing harbour baseline if already adopted; source rig does not supply buoyancy.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Static registry-package inspection qualified on 2026-10-21; site production verification pending.",
+      "name": "Ship Pinnace",
+      "provider": "Poly Haven",
+      "source_url": "https://polyhaven.com/a/ship_pinnace",
+      "authors": "James Ray Cock (model, textures, cleanup); Rico Cilliers (sails model, textures); Nicol\u00f2 Zubbini (original model); Yann Kervran (Rigging)",
+      "licence": "CC0-1.0",
+      "licence_url": "https://polyhaven.com/license",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, Blender, FBX, USD",
+      "geometry_count": 183837,
+      "geometry_unit": "Source-reported polygons (not a verified triangle count)",
+      "package_mib": 20.1,
+      "package_basis": "1K glTF + all manifest dependencies; not GPU memory",
+      "format_evidence_url": "https://api.polyhaven.com/files/ship_pinnace",
+      "download_entry_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/ship_pinnace/ship_pinnace_1k.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://api.polyhaven.com/info/ship_pinnace",
+      "lods_advertised": false,
+      "authoring_style": "Realistic / PBR candidate",
+      "cost": "Free",
+      "attribution_required": false,
+      "number": 74,
+      "entry": "ship_pinnace_1k.gltf",
+      "files": [
+        {
+          "path": "ship_pinnace_1k.gltf",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/ship_pinnace/ship_pinnace_1k.gltf",
+          "bytes": 17175,
+          "sha256": "668298cada1731ec93886bb7ec2f170bbbf45575d341b838a09580199fdf5ec5",
+          "integrity": "sha256-ZoKYytoXMeyTiGu37C8XC7v0VXXTQbg4oJWAGZ/fXsU="
+        },
+        {
+          "path": "textures/ship_pinnace_rigging_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_rigging_diff_1k.jpg",
+          "bytes": 669629,
+          "sha256": "8964c211b0462bc0546ad175cd492718b3a4019a47ae2c23c82eb824272c032a",
+          "integrity": "sha256-iWTCEbBGK8BUatF1zUknGLOkAZpHriwjyC64JCcsAyo="
+        },
+        {
+          "path": "textures/ship_pinnace_sails_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_sails_diff_1k.jpg",
+          "bytes": 593277,
+          "sha256": "8aedb5c11ce8fec0ee9e2c369848e5fa3d41df299e1f886a25f0ae3b6587f5c0",
+          "integrity": "sha256-iu21wRzo/sDuniw2mEjl+j1B3ymeH4hqJfCuO2WH9cA="
+        },
+        {
+          "path": "textures/ship_pinnace_deck_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_deck_diff_1k.jpg",
+          "bytes": 739906,
+          "sha256": "24ff82bf815607a3f4376d0fdb8df2a70437e9d4df77a059da39d685de8837ec",
+          "integrity": "sha256-JP+Cv4FWB6P0N20P243ypwQ36dTfd6BZ2jnWhd6IN+w="
+        },
+        {
+          "path": "textures/ship_pinnace_aft_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_aft_arm_1k.jpg",
+          "bytes": 553685,
+          "sha256": "4ad6d2bf79e7e0aab89519543c65cf2a122ece1c940b7fd23846151131b1a061",
+          "integrity": "sha256-StbSv3nn4Kq4lRlUPGXPKhIuzhyUC3/SOEYVETGxoGE="
+        },
+        {
+          "path": "textures/ship_pinnace_rigging_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_rigging_arm_1k.jpg",
+          "bytes": 700773,
+          "sha256": "86d7d6e3c8f2753db4fb22ad44cf52e361b858a4f3ad76c13435b8d385a2197e",
+          "integrity": "sha256-htfW48jydT20+yKtRM9S42G4WKTzrXbBNDW404WiGX4="
+        },
+        {
+          "path": "textures/ship_pinnace_details_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_details_nor_gl_1k.jpg",
+          "bytes": 712283,
+          "sha256": "d38b20a57225153d97214184893b4e785b9312f776556af2f297aa6a446fcb56",
+          "integrity": "sha256-04sgpXIlFT2XIUGEiTtOeFuTEvd2VWry8peqakRvy1Y="
+        },
+        {
+          "path": "textures/ship_pinnace_deck_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_deck_nor_gl_1k.jpg",
+          "bytes": 530854,
+          "sha256": "1362d0b0e48a7ce8ebcb154fd1d366efff2ba62fbf6398e15a89240fa4c84c9f",
+          "integrity": "sha256-E2LQsOSKfOjryxVP0dNm7/8rpi+/Y5jhWokkD6TITJ8="
+        },
+        {
+          "path": "textures/ship_pinnace_rigging_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_rigging_nor_gl_1k.jpg",
+          "bytes": 713868,
+          "sha256": "d6d895880d64043288771bfdf0db79511c2e5d4541fd60bc693a4464f826a763",
+          "integrity": "sha256-1tiViA1kBDKIdxv98Nt5URwuXUVB/WC8aTpEZPgmp2M="
+        },
+        {
+          "path": "textures/ship_pinnace_interior_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_interior_nor_gl_1k.jpg",
+          "bytes": 365806,
+          "sha256": "47b7da411c5936c755e935f20f6480af0dd9e8bc6c47d1b16464014e15d733d9",
+          "integrity": "sha256-R7faQRxZNsdV6TXyD2SArw3Z6LxsR9GxZGQBThXXM9k="
+        },
+        {
+          "path": "ship_pinnace.bin",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/ship_pinnace/ship_pinnace.bin",
+          "bytes": 7127428,
+          "sha256": "2066c551c756ca1bef9a03d8b2f7ee980b56f69eddf1682531899e9bcf2539db",
+          "integrity": "sha256-IGbFUcdWyhvvmgPYsvfumAtW9p7d8WglMYmem88lOds="
+        },
+        {
+          "path": "textures/ship_pinnace_hull_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_hull_diff_1k.jpg",
+          "bytes": 602406,
+          "sha256": "0fc6ae7bab8fb36aa3ae58bd5dc0d794854370b3be3ed72eb25c52f801877d00",
+          "integrity": "sha256-D8aue6uPs2qjrli9XcDXlIVDcLO+PtcuslxS+AGHfQA="
+        },
+        {
+          "path": "textures/ship_pinnace_hull_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_hull_nor_gl_1k.jpg",
+          "bytes": 642694,
+          "sha256": "0c303af6b5f28d0cd1d366e264cfbfb0021e4b297478e7f9948c0435ef7e2028",
+          "integrity": "sha256-DDA69rXyjQzR02biZM+/sAIeSyl0eOf5lIwENe9+ICg="
+        },
+        {
+          "path": "textures/ship_pinnace_sails_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_sails_arm_1k.jpg",
+          "bytes": 531487,
+          "sha256": "625a1a3e82d20ddba3ad6a05c5a9223ad0f1ab7690b04f1acec9be526a63a1df",
+          "integrity": "sha256-YloaPoLSDdujrWoFxakiOtDxq3aQsE8azsm+Umpjod8="
+        },
+        {
+          "path": "textures/ship_pinnace_hull_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_hull_arm_1k.jpg",
+          "bytes": 686048,
+          "sha256": "938e234941aa39fc514f14025c4f1941fa5ab59f18b426f96b8e0057a7731c2b",
+          "integrity": "sha256-k44jSUGqOfxRTxQCXE8ZQfpatZ8YtCb5a44AV6dzHCs="
+        },
+        {
+          "path": "textures/ship_pinnace_interior_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_interior_diff_1k.jpg",
+          "bytes": 720138,
+          "sha256": "82fcb97bf757f97ddba5a72e0ccee76a163a2f13e574b13f480d06bc1a8e8e57",
+          "integrity": "sha256-gvy5e/dX+X3bpacuDM7nahY6LxPldLE/SA0GvBqOjlc="
+        },
+        {
+          "path": "textures/ship_pinnace_interior_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_interior_arm_1k.jpg",
+          "bytes": 720399,
+          "sha256": "0bd7db3c15984cd3abb63e3aa185f4e07132bc30a8e96d64a8070d4cff50e6f9",
+          "integrity": "sha256-C9fbPBWYTNOrtj46oYX04HEyvDCo6W1kqAcNTP9Q5vk="
+        },
+        {
+          "path": "textures/ship_pinnace_aft_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_aft_diff_1k.jpg",
+          "bytes": 659920,
+          "sha256": "1f068682360f7f1a99bb8f6da817ef1264c8f648de505555eeff84d2c5b76c6a",
+          "integrity": "sha256-HwaGgjYPfxqZu49tqBfvEmTI9kjeUFVV7v+E0sW3bGo="
+        },
+        {
+          "path": "textures/ship_pinnace_deck_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_deck_arm_1k.jpg",
+          "bytes": 778067,
+          "sha256": "438d31dfa17b043242ec4984edbc719be217b5a42dfd05f28a670a862c123a9d",
+          "integrity": "sha256-Q40x36F7BDJC7EmE7bxxm+IXtaQt/QXyimcKhiwSOp0="
+        },
+        {
+          "path": "textures/ship_pinnace_sails_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_sails_nor_gl_1k.jpg",
+          "bytes": 767155,
+          "sha256": "f27589c79ebb986e865e4492506e4ce6633c2896a721f980734f159c13fd00ef",
+          "integrity": "sha256-8nWJx567mG6GXkSSUG5M5mM8KJanIfmAc08VnBP9AO8="
+        },
+        {
+          "path": "textures/ship_pinnace_details_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_details_arm_1k.jpg",
+          "bytes": 884789,
+          "sha256": "e0f4f97183c5559fd549c3ef35385646d613acd666338c4062643d2890d3e73c",
+          "integrity": "sha256-4PT5cYPFVZ/VScPvNThWRtYTrNZmM4xAYmQ9KJDT5zw="
+        },
+        {
+          "path": "textures/ship_pinnace_aft_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_aft_nor_gl_1k.jpg",
+          "bytes": 728770,
+          "sha256": "927077bb68b306e5eac3c7aaabb5ea07b26d66b91b1efdfee2ea2c0ece4da053",
+          "integrity": "sha256-knB3u2izBuXqw8eqq7XqB7JtZrkbHv3+4uosDs5NoFM="
+        },
+        {
+          "path": "textures/ship_pinnace_details_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/ship_pinnace/ship_pinnace_details_diff_1k.jpg",
+          "bytes": 628000,
+          "sha256": "ef2359e86687fc4b5527ab622f9c7d787960cbe2d5ca56266b433ae42f678534",
+          "integrity": "sha256-7yNZ6GaH/EtVJ6tiL5x9eHlgy+LVylYma0M65C9nhTQ="
+        }
+      ],
+      "status": "downloaded",
+      "review_status": "qualified",
+      "batch": 7,
+      "inspection": {
+        "materials": 7,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "MASK",
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "StainedGlassLamp",
+      "category": "Glass, ceramics and lighting",
+      "renderer_target": "Coloured glass, clearcoat and material variants",
+      "preparation": "Start with the JPG/PNG variant where appropriate; test overlapping glass.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Static registry-package inspection qualified on 2026-10-21; site production verification pending.",
+      "name": "Stained Glass Lamp",
+      "provider": "Khronos sample assets",
+      "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/StainedGlassLamp",
+      "authors": "Eric Chadwick (Everything); \u00a9 2021 Wayfair",
+      "licence": "CC-BY-4.0",
+      "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/StainedGlassLamp/README.md",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, glTF-JPG-PNG, glTF-KTX-BasisU",
+      "geometry_count": null,
+      "geometry_unit": "Not measured",
+      "package_mib": null,
+      "package_basis": "Not measured; JSON buffer length excludes external textures",
+      "format_evidence_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/StainedGlassLamp/glTF/StainedGlassLamp.gltf",
+      "download_entry_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/StainedGlassLamp/glTF/StainedGlassLamp.gltf",
+      "extensions": "KHR_materials_transmission, KHR_materials_clearcoat, KHR_materials_variants, KHR_materials_ior, KHR_materials_volume",
+      "source_metadata_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/StainedGlassLamp/metadata.json",
+      "lods_advertised": false,
+      "authoring_style": "Material / rendering reference",
+      "cost": "Free",
+      "attribution_required": true,
+      "material_count": 13,
+      "animation_count": 0,
+      "legal_records": [
+        {
+          "license": "CC-BY-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "artist": "Eric Chadwick",
+          "year": "2021",
+          "owner": "Wayfair",
+          "what": "Everything",
+          "text": "Creative Commons Attribution 4.0 International",
+          "spdx": "CC-BY-4.0",
+          "icon": "https://licensebuttons.net/l/by/4.0/88x31.png"
+        }
+      ],
+      "number": 69,
+      "entry": "StainedGlassLamp.gltf",
+      "files": [
+        {
+          "path": "StainedGlassLamp.gltf",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp.gltf",
+          "bytes": 29827,
+          "sha256": "333ca209284d02d40862e058f4e5b52c4a6ace75ac42debd69714b700e1a2938",
+          "integrity": "sha256-MzyiCShNAtQIYuBY9OW1LEpqznWsQt69aXFLcA4aKTg="
+        },
+        {
+          "path": "StainedGlassLamp.bin",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp.bin",
+          "bytes": 1847592,
+          "sha256": "7873a6f30835589b3b6fc3b0d749b8fe80f1ea29f4f170fba6d8ac11083d9397",
+          "integrity": "sha256-eHOm8wg1WJs7b8Ow10m4/oDx6in08XD7ptisEQg9k5c="
+        },
+        {
+          "path": "StainedGlassLamp_grill_normal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_grill_normal.png",
+          "bytes": 2416452,
+          "sha256": "fd0d28aa717c5fe73d868eec86435f12758f0678621d5f0be24f1cd75d8f3173",
+          "integrity": "sha256-/Q0oqnF8X+c9ho7shkNfEnWPBnhiHV8L4k8c112PMXM="
+        },
+        {
+          "path": "StainedGlassLamp_grill_occlusion-rough-metal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_grill_occlusion-rough-metal.png",
+          "bytes": 1912373,
+          "sha256": "f98364ba920f42b4c4bfd7806344681d88eaadfe9459ffdc986159998aa4ada7",
+          "integrity": "sha256-+YNkupIPQrTEv9eAY0RoHYjqrf6UWf/cmGFZmYqkrac="
+        },
+        {
+          "path": "StainedGlassLamp_grill_emissive.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_grill_emissive.png",
+          "bytes": 909172,
+          "sha256": "489c479d59a46d75160429faab6061dad8227f486bd3db2d866681be3207ab4e",
+          "integrity": "sha256-SJxHnVmkbXUWBCn6q2Bh2tgif0hr09sthmaBvjIHq04="
+        },
+        {
+          "path": "StainedGlassLamp_grill_basecolor-alpha.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_grill_basecolor-alpha.png",
+          "bytes": 1908644,
+          "sha256": "34ebdd2045586dae22edce1f5947414785a93cb3c7ac3e475435a6b8f4b2a0dc",
+          "integrity": "sha256-NOvdIEVYba4i7c4fWUdBR4WpPLPHrD5HVDWmuPSyoNw="
+        },
+        {
+          "path": "StainedGlassLamp_steel_occlusion.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_steel_occlusion.png",
+          "bytes": 28783,
+          "sha256": "f179328a54bda12e97860dbadb7abc4d1c55514ab364467fa8ca3bca94f41532",
+          "integrity": "sha256-8XkyilS9oS6Xhg2623q8TRxVUUqzZEZ/qMo7ypT0FTI="
+        },
+        {
+          "path": "StainedGlassLamp_hardware_normal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_hardware_normal.png",
+          "bytes": 2134787,
+          "sha256": "27b9c1cc187a6b492e8598eac98443847c7f91397b5f2554df21a7955de64680",
+          "integrity": "sha256-J7nBzBh6a0kuhZjqyYRDhHx/kTl7XyVU3yGnlV3mRoA="
+        },
+        {
+          "path": "StainedGlassLamp_hardware_occlusion-rough-metal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_hardware_occlusion-rough-metal.png",
+          "bytes": 2296132,
+          "sha256": "1675a23fbebd5bd49d41965cdb7e67d7341aec68fa25e89c5f93c2320e282d81",
+          "integrity": "sha256-FnWiP769W9SdQZZc235n1zQa7Gj6JeicX5PCMg4oLYE="
+        },
+        {
+          "path": "StainedGlassLamp_hardware_emissive.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_hardware_emissive.png",
+          "bytes": 2755570,
+          "sha256": "edf2f87f088a60692c30fcf4e3e58e377dde34fbf7fed1995d94cd1fb83d9aea",
+          "integrity": "sha256-7fL4fwiKYGksMPz04+WON33eNPv3/tGZXZTNH7g9muo="
+        },
+        {
+          "path": "StainedGlassLamp_hardware_basecolor.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_hardware_basecolor.png",
+          "bytes": 462877,
+          "sha256": "9ec70581d5101c84ede44ed49bed5a7a91651e9df4c0b84ca03df6b28db2f7f4",
+          "integrity": "sha256-nscFgdUQHITt5E7Um+1aepFlHp30wLhMoD32so2y9/Q="
+        },
+        {
+          "path": "StainedGlassLamp_base_normal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_base_normal.png",
+          "bytes": 1540173,
+          "sha256": "5cc524fe2cb56446b38b50537b3a48b22a965b2f5630b238783d625ffad9a3ba",
+          "integrity": "sha256-XMUk/iy1ZEazi1BTezpIsiqWWy9WMLI4eD1iX/rZo7o="
+        },
+        {
+          "path": "StainedGlassLamp_base_occlusion-rough-metal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_base_occlusion-rough-metal.png",
+          "bytes": 3608281,
+          "sha256": "fc9c61af6a3908925f46758434e70f5e8086a02019eba4cf3a585950de4ee75b",
+          "integrity": "sha256-/Jxhr2o5CJJfRnWENOcPXoCGoCAZ66TPOlhZUN5O51s="
+        },
+        {
+          "path": "StainedGlassLamp_base_emissive.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_base_emissive.png",
+          "bytes": 2363300,
+          "sha256": "0fab04b357696b5a85477f87b3bbf6f9c0bd6b5726e0b78a5adf32120b8990d3",
+          "integrity": "sha256-D6sEs1dpa1qFR3+Hs7v2+cC9a1cm4LeKWt8yEguJkNM="
+        },
+        {
+          "path": "StainedGlassLamp_base_basecolor.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_base_basecolor.png",
+          "bytes": 1389634,
+          "sha256": "a1dd9943830b09195b333411bcf1690f6330fa477e5afd40f5e0c06e74f4ae85",
+          "integrity": "sha256-od2ZQ4MLCRlbMzQRvPFpD2Mw+kd+Wv1A9eDAbnT0roU="
+        },
+        {
+          "path": "StainedGlassLamp_bulbs_occlusion.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_bulbs_occlusion.png",
+          "bytes": 28535,
+          "sha256": "45a55bffc5c025c4c397fdd83ebf723b6bb22e53a4e1bda9ffb6aa27b17d13d7",
+          "integrity": "sha256-RaVb/8XAJcTDl/3YPr9yO2uyLlOk4b2p/7aqJ7F9E9c="
+        },
+        {
+          "path": "StainedGlassLamp_glass_normal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_glass_normal.png",
+          "bytes": 1920736,
+          "sha256": "304fdcdbf9ab92bce5ac3c152b27a760be0f03ef9bb830b013ee096ca604eb57",
+          "integrity": "sha256-ME/c2/mrkrzlrDwVKyenYL4PA++buDCwE+4JbKYE61c="
+        },
+        {
+          "path": "StainedGlassLamp_glass_occlusion-rough-metal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_glass_occlusion-rough-metal.png",
+          "bytes": 1852778,
+          "sha256": "d565c51c13e8a18e644f998998ab2b15c735011a1cc4828e6da90cd2cbd2e941",
+          "integrity": "sha256-1WXFHBPooY5kT5mJmKsrFcc1ARocxIKObakM0svS6UE="
+        },
+        {
+          "path": "StainedGlassLamp_glass_emissive.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_glass_emissive.png",
+          "bytes": 1986007,
+          "sha256": "d467bf4675fcbf65b887dba4769711d764659253e005bf09c75402c5d7200ca4",
+          "integrity": "sha256-1Ge/RnX8v2W4h9ukdpcR12RlklPgBb8Jx1QCxdcgDKQ="
+        },
+        {
+          "path": "StainedGlassLamp_glass_basecolor-alpha.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_glass_basecolor-alpha.png",
+          "bytes": 2433976,
+          "sha256": "8b2ce87d7a7eda447f29595e2ccac3e27e097f845d8f8263ef09cd2574abc2a1",
+          "integrity": "sha256-iyzofXp+2kR/KVleLMrD4n4Jf4Rdj4Jj7wnNJXSrwqE="
+        },
+        {
+          "path": "StainedGlassLamp_glass_transmission-clearcoat.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/StainedGlassLamp/glTF/StainedGlassLamp_glass_transmission-clearcoat.png",
+          "bytes": 1300181,
+          "sha256": "9599538f90d21b4b332f0800ce81c3a5c0e328bc27b81ea8b9ecfeae5a00a63d",
+          "integrity": "sha256-lZlTj5DSG0szLwgAzoHDpcDjKLwnuB6ouez+rloApj0="
+        }
+      ],
+      "batch": 7,
+      "status": "downloaded",
+      "review_status": "qualified",
+      "source_revision": "edc7c9e67c639d230715049ee31f9a96a6babbbe",
+      "inspection": {
+        "materials": 13,
+        "animations": [],
+        "skins": 0,
+        "extensions": [
+          "KHR_materials_transmission",
+          "KHR_materials_clearcoat",
+          "KHR_materials_variants",
+          "KHR_materials_ior",
+          "KHR_materials_volume"
+        ],
+        "alphaModes": [
+          "MASK",
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "BarramundiFish",
+      "category": "Vehicles, animals and product variants",
+      "renderer_target": "Curved textured organic surfaces and fine normals",
+      "preparation": "Static model; swimming or fin motion would need separate authoring.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Static registry-package inspection qualified on 2026-10-21; site production verification pending.",
+      "name": "Barramundi Fish",
+      "provider": "Khronos sample assets",
+      "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/BarramundiFish",
+      "authors": "Microsoft (Everything); \u00a9 2017 Public",
+      "licence": "CC0-1.0",
+      "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/BarramundiFish/README.md",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, glTF-Binary, glTF-Draco",
+      "geometry_count": null,
+      "geometry_unit": "Not measured",
+      "package_mib": null,
+      "package_basis": "Not measured; JSON buffer length excludes external textures",
+      "format_evidence_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BarramundiFish/glTF/BarramundiFish.gltf",
+      "download_entry_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BarramundiFish/glTF/BarramundiFish.gltf",
+      "extensions": "",
+      "source_metadata_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BarramundiFish/metadata.json",
+      "lods_advertised": false,
+      "authoring_style": "Material / rendering reference",
+      "cost": "Free",
+      "attribution_required": false,
+      "material_count": 1,
+      "animation_count": 0,
+      "legal_records": [
+        {
+          "license": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "artist": "Microsoft",
+          "year": "2017",
+          "owner": "Public",
+          "what": "Everything",
+          "text": "Creative Commons Zero v1.0 Universal",
+          "spdx": "CC0-1.0",
+          "icon": "https://licensebuttons.net/p/zero/1.0/88x31.png"
+        }
+      ],
+      "number": 71,
+      "entry": "BarramundiFish.gltf",
+      "files": [
+        {
+          "path": "BarramundiFish.gltf",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/BarramundiFish/glTF/BarramundiFish.gltf",
+          "bytes": 2554,
+          "sha256": "15e2c26d308ef73f227655703ba88c37cf817e60e25229fab5cbfd0bf6888d2e",
+          "integrity": "sha256-FeLCbTCO9z8idlVwO6iMN8+BfmDiUin6tcv9C/aIjS4="
+        },
+        {
+          "path": "BarramundiFish.bin",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/BarramundiFish/glTF/BarramundiFish.bin",
+          "bytes": 128208,
+          "sha256": "5d6ca35ff4e498d84597956091cf5de8ce0f236cd9b8ebf48e19d372e4187112",
+          "integrity": "sha256-XWyjX/TkmNhFl5Vgkc9d6M4PI2zZuOv0jhnTcuQYcRI="
+        },
+        {
+          "path": "BarramundiFish_baseColor.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/BarramundiFish/glTF/BarramundiFish_baseColor.png",
+          "bytes": 4985099,
+          "sha256": "c80f0a2b9752fb6fe1eda851afdad071b289982be036c1e6ee621592d64547c6",
+          "integrity": "sha256-yA8KK5dS+2/h7ahRr9rQcbKJmCvgNsHm7mIVktZFR8Y="
+        },
+        {
+          "path": "BarramundiFish_occlusionRoughnessMetallic.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/BarramundiFish/glTF/BarramundiFish_occlusionRoughnessMetallic.png",
+          "bytes": 4355820,
+          "sha256": "4a89d8a0bf9d960e17177411fb846eb9acbb737ab3c6c7716a8d97672e22fafc",
+          "integrity": "sha256-SonYoL+dlg4XF3QR+4Ruuay7c3qzxsdxao2XZy4i+vw="
+        },
+        {
+          "path": "BarramundiFish_normal.png",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/BarramundiFish/glTF/BarramundiFish_normal.png",
+          "bytes": 3017384,
+          "sha256": "089f8ff777a1ab63ceb26f5b77bc758ff9db944b59f579dc3aee4143e3bc8f9d",
+          "integrity": "sha256-CJ+P93ehq2POsm9bd7x1j/nblEtZ9XncOu5BQ+O8j50="
+        }
+      ],
+      "batch": 7,
+      "status": "downloaded",
+      "review_status": "qualified",
+      "source_revision": "edc7c9e67c639d230715049ee31f9a96a6babbbe",
+      "inspection": {
+        "materials": 1,
+        "animations": [],
+        "skins": 0,
+        "extensions": [],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
+    },
+    {
+      "key": "MaterialsVariantsShoe",
+      "category": "Vehicles, animals and product variants",
+      "renderer_target": "Authored default shoe material and texture consistency",
+      "preparation": "Three source materials; verify variant support and credits.",
+      "priority": "Later study",
+      "checked": "2026-10-18",
+      "import_status": "Static registry-package inspection qualified on 2026-10-21; site production verification pending.",
+      "name": "Materials Variants Shoe",
+      "provider": "Khronos sample assets",
+      "source_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe",
+      "authors": "Shopify (Everthing); \u00a9 2021 Shopify",
+      "licence": "CC-BY-4.0",
+      "licence_url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/MaterialsVariantsShoe/README.md",
+      "licence_status": "Source licence verified",
+      "formats": "glTF, glTF-Binary",
+      "geometry_count": null,
+      "geometry_unit": "Not measured",
+      "package_mib": null,
+      "package_basis": "Not measured; JSON buffer length excludes external textures",
+      "format_evidence_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/MaterialsVariantsShoe/glTF/MaterialsVariantsShoe.gltf",
+      "download_entry_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/MaterialsVariantsShoe/glTF/MaterialsVariantsShoe.gltf",
+      "extensions": "KHR_materials_variants",
+      "source_metadata_url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/MaterialsVariantsShoe/metadata.json",
+      "lods_advertised": false,
+      "authoring_style": "Material / rendering reference",
+      "cost": "Free",
+      "attribution_required": true,
+      "material_count": 3,
+      "animation_count": 0,
+      "legal_records": [
+        {
+          "year": "2021",
+          "owner": "Shopify",
+          "license": "CC-BY-4.0",
+          "artist": "Shopify",
+          "what": "Everthing",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "text": "Creative Commons Attribution 4.0 International",
+          "spdx": "CC-BY-4.0",
+          "icon": "https://licensebuttons.net/l/by/4.0/88x31.png"
+        }
+      ],
+      "number": 73,
+      "entry": "MaterialsVariantsShoe.gltf",
+      "files": [
+        {
+          "path": "MaterialsVariantsShoe.gltf",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MaterialsVariantsShoe/glTF/MaterialsVariantsShoe.gltf",
+          "bytes": 7005,
+          "sha256": "80f0a8feff5494ad1cfb978578502cc980fe75d8f585a5346033c3108d90906f",
+          "integrity": "sha256-gPCo/v9UlK0c+5eFeFAsyYD+ddj1haU0YDPDEI2QkG8="
+        },
+        {
+          "path": "MaterialsVariantsShoe.bin",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MaterialsVariantsShoe/glTF/MaterialsVariantsShoe.bin",
+          "bytes": 705680,
+          "sha256": "76396a934f53ca9ef39fab20fe27178a5b00e726b710432089b924b6c3d87c4c",
+          "integrity": "sha256-djlqk09Typ7zn6sg/icXilsA5ya3EEMgibkktsPYfEw="
+        },
+        {
+          "path": "occlusionRougnessMetalness.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MaterialsVariantsShoe/glTF/occlusionRougnessMetalness.jpg",
+          "bytes": 1119084,
+          "sha256": "6605285c31653f8d6a5932f0ca2e1aa75b2087e348521fc81fbd66e7f70125ec",
+          "integrity": "sha256-ZgUoXDFlP41qWTLwyi4ap1sgh+NIUh/IH71m5/cBJew="
+        },
+        {
+          "path": "diffuseMidnight.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MaterialsVariantsShoe/glTF/diffuseMidnight.jpg",
+          "bytes": 1252316,
+          "sha256": "eb6494b455690649f6fe4cf415f21cad4620293a3de8768c2b0c74d82201e46c",
+          "integrity": "sha256-62SUtFVpBkn2/kz0FfIcrUYgKTo96HaMKwx02CIB5Gw="
+        },
+        {
+          "path": "normal.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MaterialsVariantsShoe/glTF/normal.jpg",
+          "bytes": 2298412,
+          "sha256": "e17e89ed886d4eaa91b9e9bccc55332b3d1adea0971a3617bc9448eb7b80055f",
+          "integrity": "sha256-4X6J7YhtTqqRuem8zFUzKz0a3qCXGjYXvJRI63uABV8="
+        },
+        {
+          "path": "diffuseBeach.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MaterialsVariantsShoe/glTF/diffuseBeach.jpg",
+          "bytes": 1249172,
+          "sha256": "05c724082f634683ebdd2c1ec278393134dcba09fe752254b97fb30628b6411c",
+          "integrity": "sha256-BcckCC9jRoPr3Swewng5MTTcugn+dSJUuX+zBii2QRw="
+        },
+        {
+          "path": "diffuseStreet.jpg",
+          "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/edc7c9e67c639d230715049ee31f9a96a6babbbe/Models/MaterialsVariantsShoe/glTF/diffuseStreet.jpg",
+          "bytes": 1204836,
+          "sha256": "78f31ec4a6d1728e69639f869c4d62bf2dfbc6d388a7e66728072e71a82056de",
+          "integrity": "sha256-ePMexKbRco5pY5+GnE1ivy37xtOIp+ZnKAcucaggVt4="
+        }
+      ],
+      "batch": 7,
+      "status": "downloaded",
+      "review_status": "qualified",
+      "source_revision": "edc7c9e67c639d230715049ee31f9a96a6babbbe",
+      "inspection": {
+        "materials": 3,
+        "animations": [],
+        "skins": 0,
+        "extensions": [
+          "KHR_materials_variants"
+        ],
+        "alphaModes": [
+          "OPAQUE"
+        ]
+      }
     }
   ]
 }

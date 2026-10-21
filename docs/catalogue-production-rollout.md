@@ -190,3 +190,38 @@ and the interrupted capture are retained. The 320px layout completed fixed64
 without horizontal overflow. No GPU console warnings or errors were observed.
 Physical touch and screen-reader speech remain untested. Public verification
 still depends on the approved package and site releases.
+
+## Remaining acquired batches: sculpture and optical materials
+
+Continue viewer Task #62 / site Story #2308 under Feature #1170 and its existing
+scene-fidelity control. Batch six has seven acquired sources: Chess Set, Gothic
+Statue, Kite Shield, Marble Bust, Brass Diya Lantern, Anisotropy Barn Lamp and
+Commercial Refrigerator. Enchanted Crystal remains unavailable and A Beautiful
+Game remains held for deliberate LOD work. Batch seven has nine acquired sources:
+Magnifying Glass, Wine Bottles, Ship Pinnace, Iridescence Lamp, Iridescent Dish
+with Olives, Stained Glass Lamp, Barramundi Fish, Materials Variants Shoe and Toy
+Car. Preserve all original source identities and unchanged resource budgets.
+
+Review each batch independently using released shared1.2.0/renderer0.2.54, no
+source overrides, fixed64, camera/refinement, denoising off/on, native UHD1 and
+source/texture/silhouette checks. Keep unsupported or visibly broken materials
+held; completion alone does not qualify optical accuracy. Material-variant and
+animation playback are not introduced. Pin complete resource hashes and credits,
+test batch eligibility and held separation, and publish only qualified models
+through approved package and site workflows. Verify all live additions and
+public resource/credit hashes before updating production counts. Original-model
+qualification precedes voxel conversion.
+
+
+The 2026-10-21 registry review admitted seven batch-six and five batch-seven
+sources. See [batch-six evidence](batch-6-qualification.json) and
+[batch-seven evidence](batch-7-qualification.json). Wine Bottles retains speckling
+at 256 samples; Iridescence Lamp has visible dark patching; the dish's glass
+cover appears nearly opaque; Toy Car failed UHD twice and was followed by adapter
+unavailability. These four remain held with their exact acquisition inventories
+in [held-source evidence](batch-seven-held-sources.json), outside the runtime
+catalogue. Do not replace their materials, reduce source fidelity silently, or
+raise resource limits to make qualification pass.
+
+The candidate contains 61 models. Production remains at the last independently
+verified release until package publication, site CD and public checks complete.

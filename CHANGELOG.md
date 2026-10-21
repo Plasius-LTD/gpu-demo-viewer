@@ -7,7 +7,7 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ## [Unreleased]
 
 - **Added**
-  - (placeholder)
+  - Twelve original sculpture, lighting, vessel and product studies with source integrity and registry-renderer review records; four optical/UHD failures remain held.
 
 - **Changed**
   - (placeholder)

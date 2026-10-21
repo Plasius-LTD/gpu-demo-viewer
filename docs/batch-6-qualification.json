@@ -1,0 +1,226 @@
+{
+  "date": "2026-10-21",
+  "renderer": "0.2.54",
+  "shared": "1.2.0",
+  "initialSourceOverrides": false,
+  "registryConsumptionVerified": true,
+  "mode": "fixed-progressive",
+  "productionVerified": false,
+  "models": [
+    {
+      "key": "chess_set",
+      "admitted": true,
+      "triangles": 76920,
+      "primitives": 37,
+      "materials": 3,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "chess_set-baseline.png",
+          "sha256": "0de7f0e20cf9db8b3ab6d45e6006ead6c55090b002bb742f90a374b5d70f3709"
+        },
+        {
+          "file": "chess_set-camera-denoise-off.png",
+          "sha256": "498b2db92b5e7660b3009936a945787f99605b9e6d9fce7fe7075a8d97f5f063"
+        },
+        {
+          "file": "chess_set-uhd.png",
+          "sha256": "ed1c7443aa16ab32eb78b4f8f38e10e62017ac045d056b4e63f69aec85cd3970"
+        }
+      ]
+    },
+    {
+      "key": "gothic_statue",
+      "admitted": true,
+      "triangles": 27739,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "gothic_statue-baseline.png",
+          "sha256": "53a206cd9a64dc237173e63cd222a12adf7b11232c44eb4bf6a0f72e464e2f9e"
+        },
+        {
+          "file": "gothic_statue-camera-denoise-off.png",
+          "sha256": "ea0d0e35ac4925375176a53d4221045965f1c839ccae96a47b82664b3bfff631"
+        },
+        {
+          "file": "gothic_statue-uhd.png",
+          "sha256": "8707e6e57e9dd0f85d348c72cf7ef4c47ed3e55fdf541412baba6be893cd3612"
+        }
+      ]
+    },
+    {
+      "key": "kite_shield",
+      "admitted": true,
+      "triangles": 10306,
+      "primitives": 3,
+      "materials": 2,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "kite_shield-baseline.png",
+          "sha256": "21170cb259a93731ca43f1e11ad920e1ec5a60332fd00575c34deae7553280b7"
+        },
+        {
+          "file": "kite_shield-camera-denoise-off.png",
+          "sha256": "4ad098a96b0904760b391e17fc662633052862bf9df79fcb10d4d91512a51f76"
+        },
+        {
+          "file": "kite_shield-uhd.png",
+          "sha256": "7fa9e51ebf8c47524a1a22e1cebbcb9dd60236520f6982b493d56c5c0d00f3ed"
+        }
+      ]
+    },
+    {
+      "key": "marble_bust_01",
+      "admitted": true,
+      "triangles": 17456,
+      "primitives": 1,
+      "materials": 1,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "marble_bust_01-baseline.png",
+          "sha256": "8b3e6eeb5bbfc32962fc55cc16772321f10a86e1d157a24fa1a0fbc4acd82a56"
+        },
+        {
+          "file": "marble_bust_01-camera-denoise-off.png",
+          "sha256": "9e82da90886a1631e193f4b7fd954d7057719609495f154c05a38fc0f58239ae"
+        },
+        {
+          "file": "marble_bust_01-uhd.png",
+          "sha256": "9646ff4cf39711d25efa4329d4e614256ed48825310e4d8f3c43e353153ee130"
+        }
+      ]
+    },
+    {
+      "key": "brass_diya_lantern",
+      "admitted": true,
+      "triangles": 12742,
+      "primitives": 5,
+      "materials": 3,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "brass_diya_lantern-baseline.png",
+          "sha256": "45e3267a5827ffa657a1b976b8f9b67644e7f36739e661c79bbb8b7cb7e0bec8"
+        },
+        {
+          "file": "brass_diya_lantern-camera-denoise-off.png",
+          "sha256": "6c3159344b58ef1a0cc07e9ec3ff5cc5e13d4baae6ea171669b43527ce45926d"
+        },
+        {
+          "file": "brass_diya_lantern-uhd.png",
+          "sha256": "5d658fd6d51c9ee66af1b790ccd3370c385925a603a41c557487e61bf887434f"
+        }
+      ]
+    },
+    {
+      "key": "AnisotropyBarnLamp",
+      "admitted": true,
+      "triangles": 10203,
+      "primitives": 3,
+      "materials": 3,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "AnisotropyBarnLamp-baseline.png",
+          "sha256": "2d5e745dc5400ea2d68b183cbeaf5db0f188995c7215d248f1b9805022ed70d7"
+        },
+        {
+          "file": "AnisotropyBarnLamp-camera-denoise-off.png",
+          "sha256": "4a78071547e00b40afbb86b935d5648751e4555925f2e358d7c89db5478e0816"
+        },
+        {
+          "file": "AnisotropyBarnLamp-uhd.png",
+          "sha256": "19ef60ac138aedd778e0245c8d5eb2f384f33c830a3e7c737edc57096af1210f"
+        }
+      ]
+    },
+    {
+      "key": "CommercialRefrigerator",
+      "admitted": true,
+      "triangles": 208679,
+      "primitives": 8,
+      "materials": 6,
+      "completedFixedSamples": 64,
+      "cameraResetAndRefinement": true,
+      "denoisingOffOn": true,
+      "completedUhd": {
+        "width": 3840,
+        "height": 2160,
+        "samples": 1
+      },
+      "evidence": [
+        {
+          "file": "CommercialRefrigerator-baseline.png",
+          "sha256": "7cc7785e29e54e93db6fe39a4fd06e8e3520e8b999d2414558582f12762bf243"
+        },
+        {
+          "file": "CommercialRefrigerator-camera-denoise-off.png",
+          "sha256": "2461343e11e85f291d8603c2cdc7c3f95652d58922b72907601e1cad5037ac65"
+        },
+        {
+          "file": "CommercialRefrigerator-uhd.png",
+          "sha256": "b62ca0030eb8491b67d584d89272bc47f74edf04def46dbc1f639740e6a16080"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Static authored geometry only; animation and material-variant playback are not introduced.",
+    "Original geometry, textures and material definitions remain unchanged. Inspection readiness does not certify optical accuracy.",
+    "Commercial Refrigerator, Ship Pinnace and Stained Glass Lamp require several seconds for quality rebuilds; native keyboard transitions completed. A DOM-triggered refrigerator UHD transition stalled and recovered through native controls.",
+    "Physical touch hardware and screen-reader speech were not tested.",
+    "Toy Car UHD failed twice and later adapter acquisition was unavailable; Toy Car is excluded from the release catalogue."
+  ],
+  "interruptedAutomation": {
+    "file": "CommercialRefrigerator-uhd-transition-stalled.png",
+    "sha256": "5038d92356e9583b63ed458210cb0e12a033e1deb745566079496e47305586db",
+    "outcome": "Recovered using native keyboard input; UHD completed."
+  }
+}

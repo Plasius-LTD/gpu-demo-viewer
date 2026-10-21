@@ -51,6 +51,12 @@ npm run models:dev -- --port 5292
 Batch `5` adds tool and material studies: a rusted can, circuit board, hand
 plane, tool chest, spade, hand drill, estoc, flight helmet and water bottle.
 
+Batch `6` adds seven sculpture, metal and lighting studies. Batch `7` adds five
+reviewed optical and product studies: magnifying glass, sailing ship, stained-glass
+lamp, barramundi and the shoe’s authored default material. Wine Bottles, Iridescence
+Lamp, Iridescent Dish with Olives and Toy Car remain held for recorded rendering
+failures and are excluded from the release catalogue.
+
 Select one batch at a time. A catalogue record can still be held for acquisition,
 licensing or visual review; it is not a claim that the model is available locally
 or enabled on the production site. The download helper admits only configured
