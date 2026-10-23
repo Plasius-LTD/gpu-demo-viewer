@@ -41,3 +41,9 @@ test("package is configured as a public npm package with CD", () => {
   assert.ok(packageJson.repository?.url?.includes("Plasius-LTD/gpu-demo-viewer"));
   assert.ok(existsSync(path.join(repoRoot, ".github", "workflows", "cd.yml")));
 });
+
+
+test("CI validates the package compliance contract before release", () => {
+  const ci = readFileSync(path.join(repoRoot, ".github/workflows/ci.yml"), "utf8");
+  assert.match(ci, /run: npm run pack:check/);
+});

@@ -41,7 +41,12 @@
     "styles.css",
     "viewer-manifest.js",
     "model-library/",
-    "diagnostics/"
+    "diagnostics/",
+    "SECURITY.md",
+    "CONTRIBUTING.md",
+    "legal/CLA.md",
+    "legal/INDIVIDUAL_CLA.md",
+    "legal/CORPORATE_CLA.md"
   ],
   "engines": {
     "node": ">=24"

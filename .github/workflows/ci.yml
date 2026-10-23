@@ -41,3 +41,6 @@ jobs:
 
       - name: Test
         run: npm test
+
+      - name: Verify public package compliance
+        run: npm run pack:check
