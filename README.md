@@ -68,10 +68,13 @@ with their existing catalogue records.
 Run `npm ci`, `npm run build`, `npm test`, `npm run test:coverage` and
 `npm run pack:check` to validate the contract. The pack check requires non-empty
 regular compliance files and a real `legal/` directory, then verifies their
-presence in the actual npm dry-run manifest. CI and the approved CD path run
-this check. It fails on missing documents, omitted package entries, symlinks
-or unexpected legal files in the artifact. The package allowlist names each
-legal template individually.
+presence in the actual npm dry-run manifest. SHA-256 checks pin the exact bytes
+of all three templates to schema commit `d8f8eb430c77b8a98da496a3d8382d73d6297394`
+after package-name substitution. Future legal changes require explicit review
+of the approved baseline, pinned digests and regression expectations together.
+CI and the approved CD path run this check. It fails on missing documents,
+omitted package entries, symlinks, altered template terms or unexpected legal
+files in the artifact. The package allowlist names each legal template individually.
 
 Signed agreements and contributor acceptance records belong in the approved
 access-controlled system outside source control. Never add them to this

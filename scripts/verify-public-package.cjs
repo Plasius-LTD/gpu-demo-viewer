@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const os = require("node:os");
+const { createHash } = require("node:crypto");
 const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 
@@ -11,6 +12,14 @@ const complianceFiles = [
   "legal/INDIVIDUAL_CLA.md",
   "legal/CORPORATE_CLA.md"
 ];
+
+// Approved schema d8f8eb430c77b8a98da496a3d8382d73d6297394, with only
+// @plasius/schema replaced by @plasius/gpu-demo-viewer. Hash exact bytes.
+const approvedTemplates = {
+  "legal/CLA.md": "8e7de8348013f65a551d9a3179d4927cdce4ae15497ba209a0cf2c1098ba489c",
+  "legal/INDIVIDUAL_CLA.md": "6ce945a06ee88d3c3103a6094123465440d8e9890a84956f257555cc9994fb39",
+  "legal/CORPORATE_CLA.md": "f56606b1a8a563ca1bae67a9335f32ced1ce3827dec500bc28617de604c66608"
+};
 
 function assert(condition, message) {
   if (!condition) {
@@ -65,6 +74,11 @@ function verifyPublicPackage(repoRoot = path.resolve(__dirname, "..")) {
   for (const file of complianceFiles) {
     const stat = fs.lstatSync(path.join(repoRoot, file));
     assert(stat.isFile() && stat.size > 0, `${file} must be a non-empty regular file`);
+  }
+
+  for (const [file, expected] of Object.entries(approvedTemplates)) {
+    const digest = createHash("sha256").update(fs.readFileSync(path.join(repoRoot, file))).digest("hex");
+    assert(digest === expected, `${file} must match approved schema template`);
   }
 
   const files = packDryRunFiles(repoRoot);

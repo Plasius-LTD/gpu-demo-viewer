@@ -22,7 +22,10 @@ and acceptance records stay outside source control in the approved restricted
 system; they are never package inputs.
 
 The Node-built-in verifier checks metadata for non-empty regular compliance
-files and a real legal directory before invoking a bounded npm dry-run. It then
+files and a real legal directory. It pins SHA-256 digests of all three adapted
+templates to exact approved bytes before invoking a bounded npm dry-run. Future
+legal changes require reviewed baseline/digest and test updates together;
+non-empty truncation, rewording or added terms must fail. It then
 requires all six documents in the manifest and rejects any unapproved legal
 entry. It does not read private contributor records. Its root argument permits
 isolated test fixtures without mutating the working checkout. CI and CD invoke
@@ -38,8 +41,9 @@ shared package is unnecessary for these local filesystem checks.
 ## Tests and NFR implications
 
 Requirements-derived regressions remove, empty, symlink or omit each required
-document and exercise actual npm dry-runs. Positive fixtures prove the complete
-contract passes, while synthetic unlisted records stay excluded or fail packing.
+document and exercise actual npm dry-runs. Tampering regressions truncate,
+reword and append to every template, and independently pin their approved hashes.
+Positive fixtures prove the complete contract passes, while synthetic unlisted records stay excluded or fail packing.
 Tests never create actual agreements or personal information. Source/helper
 coverage, frozen install, audit, build and package checks establish reproducible
 and maintainable validation. Viewer runtime, browser/GPU behaviour, accessibility,

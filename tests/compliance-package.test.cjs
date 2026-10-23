@@ -28,7 +28,8 @@ function fixture(t) {
   fs.writeFileSync(path.join(root, "package.json"), JSON.stringify(pkg));
   for (const file of [...otherFiles, ...complianceFiles]) {
     fs.mkdirSync(path.dirname(path.join(root, file)), { recursive: true });
-    fs.writeFileSync(path.join(root, file), `unsigned fixture: ${file}\n`);
+    if (file.startsWith("legal/")) fs.copyFileSync(path.join(repoRoot, file), path.join(root, file));
+    else fs.writeFileSync(path.join(root, file), `unsigned fixture: ${file}\n`);
   }
   return root;
 }
@@ -109,3 +110,31 @@ for (const included of [false, true]) test(`unlisted legal fixture ${included ? 
     assert.throws(() => verifyPublicPackage(root), /unapproved legal document/);
   } else verifyPublicPackage(root);
 });
+
+// These reviewed digests pin schema d8f8eb430c77b8a98da496a3d8382d73d6297394
+// after only @plasius/schema -> @plasius/gpu-demo-viewer substitution.
+const approvedTemplates = {
+  "legal/CLA.md": "8e7de8348013f65a551d9a3179d4927cdce4ae15497ba209a0cf2c1098ba489c",
+  "legal/INDIVIDUAL_CLA.md": "6ce945a06ee88d3c3103a6094123465440d8e9890a84956f257555cc9994fb39",
+  "legal/CORPORATE_CLA.md": "f56606b1a8a563ca1bae67a9335f32ced1ce3827dec500bc28617de604c66608"
+};
+test("all legal terms equal the approved adapted schema bytes", () => {
+  const { createHash } = require("node:crypto");
+  for (const [file, digest] of Object.entries(approvedTemplates)) {
+    assert.equal(createHash("sha256").update(fs.readFileSync(path.join(repoRoot, file))).digest("hex"), digest, file);
+  }
+});
+for (const file of Object.keys(approvedTemplates)) {
+  for (const mutation of ["truncate", "reword", "append"]) {
+    test(`pack contract rejects nonempty ${mutation} of approved ${file}`, (t) => {
+      const root = fixture(t);
+      const target = path.join(root, file);
+      const original = fs.readFileSync(target, "utf8");
+      const changed = mutation === "truncate" ? original.slice(0, Math.floor(original.length / 2))
+        : mutation === "reword" ? original.replace("CLA", "Altered CLA") : `${original}\nAltered terms.\n`;
+      assert.notEqual(changed, original);
+      fs.writeFileSync(target, changed);
+      assert.throws(() => verifyPublicPackage(root), /must match approved schema template/);
+    });
+  }
+}
