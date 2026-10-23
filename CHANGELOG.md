@@ -7,7 +7,7 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ## [Unreleased]
 
 - **Added**
-  - (placeholder)
+  - Approved unsigned legal templates and security/contribution policies in the npm artifact, with fail-closed compliance checks and regression tests.
 
 - **Changed**
   - (placeholder)

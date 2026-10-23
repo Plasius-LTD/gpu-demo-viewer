@@ -56,6 +56,28 @@ See [the design and validation contract](docs/consented-diagnostics.md) and
 The npm package includes the viewer source, manifest and build-time acquisition
 helper and typed composite layout definitions. Model binaries are downloaded separately; they are not bundled in npm.
 
+## Package compliance documents
+
+The npm artifact includes `LICENSE`, `SECURITY.md`, `CONTRIBUTING.md` and the
+unsigned [CLA guide](legal/CLA.md), [Individual CLA](legal/INDIVIDUAL_CLA.md)
+and [Corporate CLA](legal/CORPORATE_CLA.md) templates from the approved schema
+baseline. Only package-name references are adapted. These documents describe
+contribution and reporting policies; model-specific credits and licences remain
+with their existing catalogue records.
+
+Run `npm ci`, `npm run build`, `npm test`, `npm run test:coverage` and
+`npm run pack:check` to validate the contract. The pack check requires non-empty
+regular compliance files and a real `legal/` directory, then verifies their
+presence in the actual npm dry-run manifest. CI and the approved CD path run
+this check. It fails on missing documents, omitted package entries, symlinks
+or unexpected legal files in the artifact. The package allowlist names each
+legal template individually.
+
+Signed agreements and contributor acceptance records belong in the approved
+access-controlled system outside source control. Never add them to this
+repository, package or public build artifacts. See [ADR 0008](docs/adrs/adr-0008-public-compliance-artifact-contract.md)
+for the packaging decision and release checks.
+
 ## Run the model workshop
 
 Use Node.js 24 or later, npm, and a WebGPU-capable browser on localhost or HTTPS.
