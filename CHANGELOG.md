@@ -7,6 +7,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 ## [Unreleased]
 
 - **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.4.1] - 2026-10-23
+
+- **Added**
   - Approved unsigned legal templates and security/contribution policies in the npm artifact, with fail-closed compliance checks, pinned template hashes and regression tests.
 
 - **Changed**
@@ -368,3 +382,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.2.3]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.2.3
 [0.3.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.3.0
 [0.4.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.4.0
+[0.4.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.4.1
