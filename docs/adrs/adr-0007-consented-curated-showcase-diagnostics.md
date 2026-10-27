@@ -40,3 +40,7 @@ cover explicit user flow, mobile/keyboard access and network/cache isolation.
 Release uses PR CI followed by exact-main `cd.yml` in `production`; verify the
 npm artifact before downstream site#1677 adopts it. No backend or secret mapping
 changes occur in this static package release.
+
+The 27 October 2026 dependency update in ADR 0009 preserves all four asset hashes
+against published shared 1.4.0. The source-admission and consent decisions above
+remain unchanged; model-library stress scenes are still excluded.

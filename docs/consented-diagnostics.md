@@ -50,6 +50,15 @@ signature/attestation verification cover the new locked graph. A future shared
 version requires an explicit asset/hash compatibility review rather than
 silently accepting changed assets.
 
+## Instancing dependency qualification — 27 October 2026
+
+The dense-scene release advances the exact shared dependency to 1.4.0 and the
+renderer range/lock to ^0.2.57/0.2.57. The existing four SHA-384 asset pins match
+the published 1.4.0 bytes without changes; tests also confirm their resources
+remain self-contained. The diagnostics public exports, access/consent boundaries
+and source-owned mount are unchanged. Instanced model studies do not become
+eligible diagnostics sources. See [ADR 0009](adrs/adr-0009-instanced-crowd-studies.md).
+
 ## Browser qualification — 21 October 2026
 
 An isolated in-app Chromium tab mounted the actual published shared/native
