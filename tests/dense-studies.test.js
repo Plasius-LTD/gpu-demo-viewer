@@ -38,7 +38,7 @@ test('dense requests use instancing and distinct-source materials; missing sourc
 test('astronaut benchmark has pinned immutable source, integrity and attribution outside original rollout',()=>{
  assert.equal(catalogue.benchmarkAssets.length,1);const a=catalogue.benchmarkAssets[0];
  assert.equal(a.key,'Astronaut');assert.equal(a.authors,'Poly');assert.equal(a.licence,'CC-BY-2.0');
- assert.match(a.licence_url,/creativecommons.org\/licenses\/by\/2.0\//);
+ assert.equal(a.licence_url,'https://creativecommons.org/licenses/by/2.0/');
  assert.equal(a.files[0].bytes,2869044);assert.equal(a.files[0].sha256,'313d48882e2ba7bb25a340dbfd3d6f9bbc7f012372d54f518dc52e4299e3a24e');
  assert.ok(a.files[0].url.includes('/'+a.source_revision+'/'));assert.equal(a.entry,'Astronaut.glb');
  assert.ok(!catalogue.assets.some(s=>s.key===a.key));
