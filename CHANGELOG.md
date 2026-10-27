@@ -6,6 +6,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.5.0] - 2026-10-27
+
 - Keep quality controls available after resource/device failures and add explicit scene retry with the latest settings.
 
 - **Added**
@@ -385,3 +399,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.3.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.3.0
 [0.4.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.4.0
 [0.4.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.4.1
+[0.5.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.5.0
