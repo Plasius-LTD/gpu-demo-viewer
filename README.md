@@ -270,6 +270,16 @@ short-lived npm OIDC with provenance, and has no long-lived npm write-token
 fallback. Rollback disables CD; it never rewrites published package history.
 <!-- END PLASIUS RELEASE INTEGRITY -->
 
+## Dense scene studies
+
+Use `npm run models:download -- crowd` to acquire the separately tracked Poly
+Astronaut benchmark and the two existing vegetation sources. The workshop adds
+50- and 100-astronaut groves using shared geometry, six trees and twelve full shrub
+groups. Credits, unique geometry counts and requested GPU allocation bytes remain
+visible. These static studies do not alter the original model-release target.
+See the [dense-scene guide](docs/dense-scene-studies.md) for controls, instancing
+options, limits and qualification requirements.
+
 ## Reuse composite layouts
 
 Import the small data-only subpath to offer the workshop's four arrangements in

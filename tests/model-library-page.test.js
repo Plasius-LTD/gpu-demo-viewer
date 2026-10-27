@@ -130,7 +130,7 @@ test('composites retain all credits and use the shared scene runtime and quality
   const api=await f.options.importRuntime();
   f.options.importRuntime=async()=>({...api,createSceneInspection:api.createModelInspection});
   const page=await mountLibrary(f.options),el=id=>f.doc.getElementById(id);
-  assert.equal(el('model').children.length,catalogue.assets.length+4);
+  assert.equal(el('model').children.length,catalogue.assets.length+(catalogue.benchmarkAssets?.length??0)+6);
   el('model').value='study-furnished-interior';await el('model').change();
   assert.equal(f.loads.at(-1).models.length,4);
   assert.equal(el('composite-credits').children.length,4);
@@ -167,4 +167,51 @@ test('a bookmarked study opens only a known installed selection', async () => {
   const fallback=await mountLibrary(f.options);
   assert.equal(f.doc.getElementById('model').value,catalogue.assets[0].key);
   fallback.destroy();
+});
+
+test('dense studies use genuine instances, unique credits and allocation progress without overstating VRAM',async()=>{
+ const f=fixture(),catalogue=JSON.parse(await readFile(new URL('../model-library/catalogue.json',import.meta.url)));
+ f.options.fetch=async()=>({ok:true,json:async()=>catalogue});
+ const api=await f.options.importRuntime();
+ f.options.importRuntime=async()=>({...api,createSceneInspection:async o=>{
+  f.loads.push(o);return {triangleCount:528922,primitiveCount:25,sourceCount:3,instanceCount:365,
+   geometryMode:'instanced',destroy(){},setQuality:async q=>f.changes.push(q),setPaused(){}};
+ }});
+ f.win.location.href+='&model=study-astronaut-grove-100';
+ const page=await mountLibrary(f.options),el=id=>f.doc.getElementById(id),request=f.loads.at(-1);
+ assert.equal(request.instancing,true);assert.equal(request.models.length,118);
+ assert.deepEqual(request.camera.eye,[25,22,33]);assert.equal(el('composite-credits').children.length,3);
+ assert.match(el('metrics').textContent,/3 unique sources.*365 mesh instances/);
+ assert.match(el('note').textContent,/Geometry counts are unique/);
+ request.onProgress({phase:'complete',samples:64,target:64,width:800,height:500,allocations:{allocatedBytes:450*1048576,budgetBytes:1024**3}});
+ assert.match(el('refinement').textContent,/450.0 MiB requested GPU storage.*1024 MiB budget/);
+ request.onProgress({phase:'complete',samples:64,target:64,width:800,height:500,allocations:{allocatedBytes:450*1048576,budgetBytes:null}});
+ assert.doesNotMatch(el('refinement').textContent,/budget/);
+ el('model').value=catalogue.assets[0].key;await el('model').change();
+ request.onProgress({phase:'complete',samples:999,target:999,width:1,height:1});
+ assert.doesNotMatch(el('refinement').textContent,/999/);
+ page.destroy();
+});
+
+test('explicit crowd acquisition contains exactly the three reviewed sources',async()=>{
+ const result=await run(async({assets})=>assets,'crowd');
+ assert.deepEqual(result.map(a=>a.key).sort(),['Astronaut','quiver_tree_01','searsia_lucida']);
+ assert.ok(result.every(a=>a.files.length&&a.entry));
+});
+
+test('failed allocation keeps quality choices and requires an explicit retry with the new settings',async()=>{
+ const f=fixture(),el=id=>f.doc.getElementById(id);let calls=0;
+ f.options.importRuntime=async()=>({createModelInspection:async o=>{
+  f.loads.push(o);if(++calls===1)throw new Error('GPU budget exceeded');
+  return {triangleCount:12,primitiveCount:1,destroy(){},setQuality:async q=>f.changes.push(q)};
+ }});
+ const page=await mountLibrary(f.options);
+ assert.equal(el('quality').disabled,false);assert.equal(el('retry').hidden,false);
+ el('resolution').value='480';await el('resolution').change();assert.equal(f.changes.length,0);assert.equal(calls,1);
+ await el('retry').click();assert.equal(calls,2);assert.equal(f.loads[1].width,480);assert.equal(el('retry').hidden,true);
+ f.loads[1].onError(new Error('device lost'));assert.equal(el('quality').disabled,false);assert.equal(el('retry').hidden,false);
+ el('samples').value='8';await el('samples').change();assert.equal(f.changes.length,0);
+ await el('retry').click();assert.equal(f.loads[2].quality.samplesPerPixel,8);
+ f.loads[1].onHintChange(true);assert.equal(el('hint').hidden,true);
+ page.destroy();assert.equal(el('retry').click,undefined);
 });

@@ -6,11 +6,13 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- Keep quality controls available after resource/device failures and add explicit scene retry with the latest settings.
+
 - **Added**
-  - (placeholder)
+  - Static 50/100-astronaut grove studies using shared geometry, trees and complete shrub groups; typed dense layout definitions and a separate integrity-pinned, attributed benchmark source.
 
 - **Changed**
-  - (placeholder)
+  - Report requested GPU resource storage and distinct instance/source counts; deduplicate repeated source credits while preserving placement counts and the original catalogue rollout.
 
 - **Fixed**
   - (placeholder)

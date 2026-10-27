@@ -7,3 +7,5 @@
 
 /* Preserve the traced camera aspect when fixed-size frames fit the viewport. */
 canvas{object-fit:contain}
+
+#retry{min-height:44px;padding:.7rem 1rem;background:#222d37;color:#f2eee5;border:1px solid #dfc88d;border-radius:.35rem;font:inherit;cursor:pointer}#retry:focus-visible{outline:3px solid #edd7a1;outline-offset:3px}

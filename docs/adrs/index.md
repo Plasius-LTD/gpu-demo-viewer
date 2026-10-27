@@ -12,3 +12,5 @@
 - [ADR 0007: Consented curated showcase diagnostics](adr-0007-consented-curated-showcase-diagnostics.md)
 
 - [ADR 0008: Public compliance artifact contract](adr-0008-public-compliance-artifact-contract.md)
+
+- [ADR 0009: Instanced crowd studies](adr-0009-instanced-crowd-studies.md)

@@ -49,3 +49,18 @@ export function compositeStudyDefinitions() {
     placements: placements.map(([key, anchor, size, yaw]) => [key, [...anchor], size, yaw]),
   }));
 }
+
+/** Dense static scenes share three source models; shrub placements retain all authored variants. */
+export function denseStudyDefinitions() {
+  return [50,100].map(count => ({
+    key: `study-astronaut-grove-${count}`, name: `Astronaut grove — ${count} astronauts`,
+    renderer_target: `Trace ${count} astronauts, six trees and twelve shrub groups with shared geometry.`,
+    preparation: 'Inspect overlapping silhouettes, vegetation transparency and contact shadows. Each shrub group retains seven authored variants. Static instances; dimensions are chosen scene units.',
+    instancing: true, camera: {eye:[25,22,33],target:[0,1,0],fov:42},
+    placements: [
+      ...Array.from({length:count},(_,i)=>['Astronaut',[(i%10-4.5)*1.75,0,(Math.floor(i/10)-(count/10-1)/2)*1.75],1.8,(i*.618)%(Math.PI*2)]),
+      ...Array.from({length:6},(_,i)=>['quiver_tree_01',[i%2?12:-12,0,Math.floor(i/2)*9-9],7,(i*.618)%(Math.PI*2)]),
+      ...Array.from({length:12},(_,i)=>['searsia_lucida',[i%2?10.5:-10.5,0,Math.floor(i/2)*4-10],3,(i*.618)%(Math.PI*2)]),
+    ],
+  }));
+}

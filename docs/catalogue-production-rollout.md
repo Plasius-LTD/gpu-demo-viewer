@@ -225,3 +225,11 @@ raise resource limits to make qualification pass.
 
 The candidate contains 61 models. Production remains at the last independently
 verified release until package publication, site CD and public checks complete.
+
+## Instanced scene admission — 27 October 2026
+
+Shared 1.4.0 replaces the historical 500,000-triangle guard with requested GPU
+resource accounting and device limits. The four large tree sources above remain
+unqualified: removing that guard does not establish their performance or memory
+suitability. Dense studies reuse already reviewed vegetation and a separate pinned
+Astronaut fixture; see [the dense-scene guide](dense-scene-studies.md).
