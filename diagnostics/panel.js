@@ -4,7 +4,7 @@ const available = value => value?.featureEnabled===true && value?.capabilityGran
 
 // Source is private to the public mount; this internal seam permits hostile-data
 // and race tests without making arbitrary registrations a supported public API.
-export function createFeedbackPanel({root,source,resolveAccess,initialAccess,document=globalThis.document,
+export function createFeedbackPanel({root,source,resolveAccess,initialAccess,isSourceMounted=()=>true,document=globalThis.document,
   copy=text=>globalThis.navigator.clipboard.writeText(text)}) {
   const make=(tag,text)=>{const e=document.createElement(tag);if(text)e.textContent=text;return e;};
   const section=make('section'),heading=make('h2','Optional renderer diagnostics');
@@ -25,7 +25,7 @@ export function createFeedbackPanel({root,source,resolveAccess,initialAccess,doc
     [data-feedback-diagnostics] :focus-visible {outline:3px solid #ffce64;outline-offset:3px}
     [data-feedback-diagnostics] button:disabled {color:#526071;background:#d7e7fa}`);
   section.setAttribute('data-feedback-diagnostics','');
-  section.hidden=!available(initialAccess);
+  section.hidden=!(isSourceMounted() && available(initialAccess));
   section.append(style,heading,help,label,prepare,copyButton,previewLabel,status);root.append(section);
   let revision=0,destroyed=false,text='';
   function clear(message) {
@@ -36,9 +36,9 @@ export function createFeedbackPanel({root,source,resolveAccess,initialAccess,doc
   const consentChanged=()=>clear('Consent changed. Prepare a new preview before copying.');
   async function permitted(token) {
     try {
-      const decision=await resolveAccess();
+      const decision=await resolveAccess(()=>!destroyed && token===revision && consent.checked);
       if(destroyed || token!==revision || !consent.checked)return false;
-      if(!available(decision)){revoke('Diagnostics are unavailable. Ordinary bug reporting remains available.');return false;}
+      if(!available(decision) || !isSourceMounted()){revoke('Diagnostics are unavailable. Ordinary bug reporting remains available.');return false;}
       return true;
     } catch {
       if(!destroyed && token===revision)revoke('Diagnostics access could not be verified. Try again later.');
@@ -76,11 +76,18 @@ export function createFeedbackPanel({root,source,resolveAccess,initialAccess,doc
   prepare.addEventListener('click',preparePreview);copyButton.addEventListener('click',copyPreview);
   return Object.freeze({
     async refreshAccess() {
+      if(destroyed)return Object.freeze({status:'disposed'});
       revoke('Access changed. Select consent and prepare a new preview.');const token=revision;
       try {
-        const decision=await resolveAccess();
-        if(!destroyed && token===revision)section.hidden=!available(decision);
+        const decision=await resolveAccess(()=>!destroyed && token===revision);
+        if(destroyed)return Object.freeze({status:'disposed'});
+        if(token!==revision)return Object.freeze({status:'superseded'});
+        if(!available(decision))return Object.freeze({status:'unavailable'});
+        if(!isSourceMounted())return Object.freeze({status:'remount-required'});
+        section.hidden=false;
+        return Object.freeze({status:'available'});
       } catch { /* Missing remote decisions leave the controls hidden. */ }
+      return Object.freeze({status:destroyed?'disposed':token!==revision?'superseded':'unavailable'});
     },
     destroy() {if(destroyed)return;destroyed=true;revoke();consent.removeEventListener('change',consentChanged);
       prepare.removeEventListener('click',preparePreview);copyButton.removeEventListener('click',copyPreview);section.remove();},

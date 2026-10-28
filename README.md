@@ -31,8 +31,12 @@ const viewer = await mountDiagnosticShowcase({
     };
   },
 });
-// On a pushed access/flag change: viewer.refreshAccess();
-// On route exit: viewer.destroy(); remount after changing the scene rollout.
+// On a pushed access/flag change:
+const recovery = await viewer.refreshAccess();
+if (recovery.status === 'remount-required') {
+  viewer.destroy(); // mount again with fresh remote decisions when the host is ready
+}
+// On route exit: viewer.destroy();
 ```
 
 Approved routes are exactly `/gpu-demo`, `/gpu-demo/`, and the workspace
@@ -43,6 +47,15 @@ WebGPU frame are eligible. Open model-library studies, generator and
 `/player-system` are excluded. This does not add controls to the existing demo
 launcher or grant a product capability; downstream site integration is tracked
 in site#1677.
+
+`refreshAccess()` clears consent and returns a status: `available`, `unavailable`,
+`remount-required`, `superseded` (a newer action won), or `disposed`. Initial
+resolver failure/scene denial creates no source. A later grant keeps controls
+hidden and requests an explicit host remount. Scene revocation or an unavailable
+scene decision disposes the private renderer; restoring access also requires a
+remount. Feature/capability denial with a still-authorized scene can recover
+through refresh. Access is rechecked after the asynchronous mount. Recovery
+never reloads assets automatically.
 
 Consent starts unchecked. Preview and copy both verify current remote access;
 copy also verifies that the surface still matches the reviewed packet. Only
