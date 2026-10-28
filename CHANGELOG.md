@@ -6,6 +6,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.6.0] - 2026-10-28
+
 - Add lazy 1,000/5,000/10,000-of-each astronaut, tree and individual-shrub study definitions, selection-aware requests and shared source manifests.
 
 - **Added**
@@ -417,3 +431,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.4.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.4.1
 [0.5.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.5.0
 [0.5.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.5.1
+[0.6.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.6.0
