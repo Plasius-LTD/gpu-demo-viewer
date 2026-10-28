@@ -13,6 +13,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - (placeholder)
 
 - **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.5.1] - 2026-10-28
+
+- **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
   - Keep diagnostics controls hidden when no source exists, return an explicit remount recovery status, and recheck remote access after asynchronous scene mounting.
 
 - **Security**
@@ -400,3 +414,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.4.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.4.0
 [0.4.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.4.1
 [0.5.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.5.0
+[0.5.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.5.1
