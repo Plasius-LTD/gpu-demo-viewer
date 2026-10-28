@@ -40,3 +40,24 @@ timings, JSON and screenshots are retained in the task workspace under
 output/scalable-scenes-2026-10-28. These are session measurements; another GPU
 workshop was open in Chrome, so they are not isolated throughput benchmarks.
 Registry package and production-host qualification remain separate gates.
+
+Additional local qualification: the 30,000-placement tier completed native
+1920×1080 at 16 and 64 SPP, six bounces and denoising. The 64-SPP run reached its
+first sample in 8.887 s and completed in 106.450 s; requested and peak storage
+remained 391,041,216 bytes (372.93 MiB). These are session measurements, with the
+same concurrency caveat as the base-tier results.
+
+The additional native 3840×2160 / 16-SPP trial failed before its first sample
+with an external-instance `OperationError`, after requesting 664,948,416 bytes
+(634.14 MiB), within the 1 GiB budget. Disposal reported zero tracked bytes. This
+is evidence that resource admission alone cannot guarantee driver execution.
+UHD for these forest tiers is **not qualified**; retain the 800×500 / 64-SPP /
+six-bounce / denoising baseline and explicit recovery controls. The failure and
+subsequent recovery observations are retained with the local evidence.
+
+After the UHD failure, retrying the largest tier at 800×500 / 16 SPP completed
+in 13.609 s without reloading the page, then disposed to zero tracked bytes.
+
+Adapter evidence reports vendor `apple`, architecture `metal-3`; the browser
+does not expose the precise device name. A subsequent largest-tier baseline run
+completed 16 SPP in 14.999 s and again disposed to zero tracked GPU bytes.
