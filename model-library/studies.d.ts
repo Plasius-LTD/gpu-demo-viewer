@@ -7,8 +7,15 @@ export interface CompositeStudyDefinition {
   instancing?: boolean;
   camera?: { eye: [number, number, number]; target: [number, number, number]; fov: number };
   /** Source key, bottom-centre anchor, longest dimension in scene units, Y rotation in radians. */
-  placements: [string, [number, number, number], number, number][];
+  placements: [string, [number, number, number], number, number, number[]?][];
 }
 export function compositeStudyDefinitions(): CompositeStudyDefinition[];
 
 export function denseStudyDefinitions(): CompositeStudyDefinition[];
+
+export interface ScalableStudyDefinition extends Omit<CompositeStudyDefinition, 'placements'> {
+  sourceKeys: string[];
+  modelCount: number;
+  createPlacements(): CompositeStudyDefinition['placements'];
+}
+export function scalableStudyDefinitions(): ScalableStudyDefinition[];
