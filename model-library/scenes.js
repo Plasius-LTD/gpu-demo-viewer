@@ -1,5 +1,5 @@
 import { fixtureRequest } from './controller.js';
-import { compositeStudyDefinitions, denseStudyDefinitions } from './studies.js';
+import { compositeStudyDefinitions, denseStudyDefinitions, scalableStudyDefinitions } from './studies.js';
 
 export function compositeStudies(assets) {
   return resolveStudies(compositeStudyDefinitions(),assets);
@@ -7,6 +7,21 @@ export function compositeStudies(assets) {
 
 export function denseStudies(assets) {
   return resolveStudies(denseStudyDefinitions(),assets);
+}
+
+export function scalableStudies(assets) {
+  return scalableStudyDefinitions().flatMap(definition => {
+    const sources=definition.sourceKeys.map(key=>assets.find(a=>a.key===key));
+    if(sources.some(asset=>!asset?.entry))return [];
+    let models;
+    return [{...definition,category:'Composite study',
+      inspection:{materials:sources.reduce((n,a)=>n+a.inspection.materials,0)},
+      get models(){
+        return models??=definition.createPlacements().map(([key,anchor,size,yaw,primitiveIndices])=>({
+          asset:sources.find(a=>a.key===key),anchor,size,yaw,primitiveIndices,
+        }));
+      }}];
+  });
 }
 
 function resolveStudies(definitions,assets) {
@@ -21,9 +36,11 @@ function resolveStudies(definitions,assets) {
 }
 
 export function compositeRequest(study, base) {
-  return { ...(study.instancing?{instancing:true,camera:study.camera}:{}), models: study.models.map(({ asset, anchor, size, yaw }) => ({
-    ...fixtureRequest(asset, base), anchor, size, yaw,
-  })) };
+  const requests=new Map();
+  return { ...(study.instancing?{instancing:true,camera:study.camera}:{}), models: study.models.map(({ asset, anchor, size, yaw, primitiveIndices }) => {
+    if(!requests.has(asset.key))requests.set(asset.key,fixtureRequest(asset,base));
+    return {...requests.get(asset.key),anchor,size,yaw,...(primitiveIndices?{primitiveIndices}:{} )};
+  }) };
 }
 
 export function renderCompositeCredits(doc, container, models) {

@@ -1,5 +1,5 @@
 import { createReviewController, fixtureRequest, reviewEnabled } from './controller.js';
-import { compositeStudies, denseStudies, compositeRequest, renderCompositeCredits } from './scenes.js';
+import { compositeStudies, denseStudies, scalableStudies, compositeRequest, renderCompositeCredits } from './scenes.js';
 
 export async function mountLibrary({document:doc=globalThis.document,window:win=globalThis.window,
   fetch:request=globalThis.fetch,importRuntime=()=>import('@plasius/gpu-shared/model-inspection')}={}) {
@@ -11,10 +11,10 @@ export async function mountLibrary({document:doc=globalThis.document,window:win=
   const response=await request(new URL('./catalogue.json',win.location.href));
   if (!response.ok) throw new Error('Model catalogue could not be loaded.');
   const catalogue=await response.json(),assets=[...catalogue.assets,...(catalogue.benchmarkAssets??[])];
-  const studies=[...compositeStudies(assets),...denseStudies(assets)], selections=[...assets,...studies];
+  const studies=[...compositeStudies(assets),...denseStudies(assets),...scalableStudies(assets)], selections=[...assets,...studies];
   for(const asset of selections) {
     const option=doc.createElement('option');option.value=asset.key;
-    option.textContent=asset.name+(asset.models?' — composite study':asset.entry?'':' — deferred');el('model').append(option);
+    option.textContent=asset.name+(asset.category==='Composite study'?' — composite study':asset.entry?'':' — deferred');el('model').append(option);
   }
   const {createModelInspection,createSceneInspection}=await importRuntime();
   el('samples').value='64';el('bounces').value='6';el('resolution').value='800';el('denoise').checked=true;
@@ -73,7 +73,7 @@ export async function mountLibrary({document:doc=globalThis.document,window:win=
     return controller.select(asset);
   };
   const requested=new URL(win.location.href).searchParams.get('model');
-  el('model').value=selections.find(a=>a.key===requested&&(a.entry||a.models))?.key??assets.find(a=>a.entry).key;
+  el('model').value=selections.find(a=>a.key===requested&&(a.entry||a.category==='Composite study'))?.key??assets.find(a=>a.entry).key;
   el('model').addEventListener('change',change);
   el('retry').addEventListener('click',change);
   el('model').disabled=false;

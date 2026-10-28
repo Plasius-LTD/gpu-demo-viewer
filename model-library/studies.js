@@ -64,3 +64,26 @@ export function denseStudyDefinitions() {
     ],
   }));
 }
+
+/** Large static tiers construct placement arrays only when a host selects one. */
+export function scalableStudyDefinitions() {
+  return [1000,5000,10000].map(count => {
+    const columns=Math.ceil(Math.sqrt(count)), spacing=10, extent=columns*spacing/2;
+    return {
+      key:`study-astronaut-forest-${count}`, name:`Astronaut forest — ${count.toLocaleString('en-GB')} of each`,
+      renderer_target:`Trace ${count.toLocaleString('en-GB')} astronauts, ${count.toLocaleString('en-GB')} trees and ${count.toLocaleString('en-GB')} individual shrubs with shared geometry.`,
+      preparation:'Static instances in a measured stress scene. Each shrub selects the first authored Searsia variant (three mesh primitives). Requested GPU storage excludes driver overhead; rendering cost still depends on visible detail and sampling.',
+      sourceKeys:['Astronaut','quiver_tree_01','searsia_lucida'],modelCount:count*3,
+      instancing:true,camera:{eye:[extent*1.15,extent*1.2,extent*1.55],target:[0,2,0],fov:46},
+      createPlacements:()=>Array.from({length:count},(_,i)=>{
+        const x=(i%columns-(columns-1)/2)*spacing,z=(Math.floor(i/columns)-(columns-1)/2)*spacing;
+        const yaw=(i*.618)%(Math.PI*2);
+        return [
+          ['Astronaut',[x-2.5,0,z-2.5],1.8,yaw],
+          ['quiver_tree_01',[x+2,0,z+2],7,yaw],
+          ['searsia_lucida',[x+2.5,0,z-2.5],2,yaw,[0,1,2]],
+        ];
+      }).flat(),
+    };
+  });
+}

@@ -315,3 +315,23 @@ if any source is unavailable. Keep source licences/credits, translate the suppli
 review copy as needed, and enforce the host application's access controls before
 loading models. Dimensions are illustrative scene units. See the
 [host integration contract](https://github.com/Plasius-LTD/gpu-demo-viewer/blob/main/docs/public-composite-definitions.md).
+
+
+### Scalable astronaut forests
+
+The model workshop includes local qualification tiers with 1,000, 5,000 or 10,000
+**each** of astronauts, trees and individual shrubs. Layouts are constructed only
+when selected. Each Searsia shrub selects its first authored three-primitive
+variant; the original 50/100-astronaut studies retain their complete shrub groups.
+
+`scalableStudyDefinitions()` from `@plasius/gpu-demo-viewer/model-library/studies`
+returns metadata, source keys, camera framing and a `createPlacements()` function.
+Resolve the keys using your own licensed source catalogue and pass the resulting
+models to `createSceneInspection` with `instancing: true`. Optional fifth placement
+entries contain decoded `primitiveIndices`. Host applications retain responsibility
+for capability decisions, credits and a requested GPU resource budget.
+
+These are static stress studies, not crowd animation or guaranteed frame rates.
+Follow [qualification guidance](docs/scalable-instance-studies.md) before exposing
+a tier in a production host. No repeated source geometry should be expanded just
+to satisfy a host's placement API.

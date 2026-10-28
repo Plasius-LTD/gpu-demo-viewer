@@ -6,6 +6,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- Add lazy 1,000/5,000/10,000-of-each astronaut, tree and individual-shrub study definitions, selection-aware requests and shared source manifests.
+
 - **Added**
   - (placeholder)
 

@@ -65,8 +65,8 @@
     "test:coverage": "c8 --reporter=lcov --reporter=text node --test"
   },
   "dependencies": {
-    "@plasius/gpu-renderer": "^0.2.57",
-    "@plasius/gpu-shared": "1.4.0"
+    "@plasius/gpu-renderer": "^0.2.58",
+    "@plasius/gpu-shared": "1.5.0"
   },
   "devDependencies": {
     "c8": "^11.0.0",

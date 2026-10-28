@@ -43,3 +43,31 @@ test('astronaut benchmark has pinned immutable source, integrity and attribution
  assert.ok(a.files[0].url.includes('/'+a.source_revision+'/'));assert.equal(a.entry,'Astronaut.glb');
  assert.ok(!catalogue.assets.some(s=>s.key===a.key));
 });
+
+test('scalable tiers contain equal individual astronauts, trees and shrubs with lazy layouts',async()=>{
+ const {scalableStudyDefinitions}=await import('../model-library/studies.js');
+ const definitions=scalableStudyDefinitions();assert.equal(definitions.length,3);
+ for(const [index,definition] of definitions.entries()){
+  const count=[1000,5000,10000][index];
+  assert.equal(definition.placements,undefined);
+  assert.equal(definition.modelCount,count*3);
+  const placements=definition.createPlacements();
+  assert.equal(placements.length,count*3);
+  for(const key of ['Astronaut','quiver_tree_01','searsia_lucida'])assert.equal(placements.filter(p=>p[0]===key).length,count);
+  assert.equal(new Set(placements.map(p=>p[1].join(','))).size,count*3);
+  for(const p of placements.filter(p=>p[0]==='searsia_lucida'))assert.deepEqual(p[4],[0,1,2]);
+  assert.ok(definition.camera.eye[2]>Math.sqrt(count)*5);
+ }
+});
+
+test('scalable requests cache source manifests and preserve selected shrub primitives',async()=>{
+ const {scalableStudies}=await import('../model-library/scenes.js');
+ const studies=scalableStudies(sources);assert.equal(studies.length,3);
+ const first=studies[0],models=first.models;
+ assert.equal(first.models,models);assert.equal(models.length,3000);
+ const request=compositeRequest(first,'http://localhost/');
+ assert.equal(request.models[0].integrity,request.models[3].integrity);
+ assert.deepEqual(request.models[2].primitiveIndices,[0,1,2]);
+ assert.equal(request.instancing,true);
+ for(const key of ['Astronaut','quiver_tree_01','searsia_lucida'])assert.deepEqual(scalableStudies(sources.filter(s=>s.key!==key)),[]);
+});

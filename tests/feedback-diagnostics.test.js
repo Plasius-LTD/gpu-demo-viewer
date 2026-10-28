@@ -14,7 +14,7 @@ test('the public boundary and reviewed asset bytes are pinned to the released pa
   assert.deepEqual(Object.keys(api),['mountDiagnosticShowcase']);
   await assert.rejects(import('@plasius/gpu-demo-viewer/diagnostics/lifecycle.js'),{code:'ERR_PACKAGE_PATH_NOT_EXPORTED'});
   const manifest=JSON.parse(readFileSync(new URL('../package.json',import.meta.url)));
-  assert.ok(manifest.files.includes('diagnostics/'));assert.equal(manifest.dependencies['@plasius/gpu-shared'],'1.4.0');
+  assert.ok(manifest.files.includes('diagnostics/'));assert.equal(manifest.dependencies['@plasius/gpu-shared'],'1.5.0');
   for(const [key,digest] of Object.entries(showcaseAssetIntegrity)) {
     const bytes=readFileSync(import.meta.resolve(`@plasius/gpu-shared/assets/${key}.gltf`).replace('file://',''));
     assert.equal(digest,'sha384-'+createHash('sha384').update(bytes).digest('base64'));

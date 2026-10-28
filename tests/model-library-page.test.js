@@ -130,7 +130,7 @@ test('composites retain all credits and use the shared scene runtime and quality
   const api=await f.options.importRuntime();
   f.options.importRuntime=async()=>({...api,createSceneInspection:api.createModelInspection});
   const page=await mountLibrary(f.options),el=id=>f.doc.getElementById(id);
-  assert.equal(el('model').children.length,catalogue.assets.length+(catalogue.benchmarkAssets?.length??0)+6);
+  assert.equal(el('model').children.length,catalogue.assets.length+(catalogue.benchmarkAssets?.length??0)+9);
   el('model').value='study-furnished-interior';await el('model').change();
   assert.equal(f.loads.at(-1).models.length,4);
   assert.equal(el('composite-credits').children.length,4);

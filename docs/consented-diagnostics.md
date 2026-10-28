@@ -59,6 +59,14 @@ remain self-contained. The diagnostics public exports, access/consent boundaries
 and source-owned mount are unchanged. Instanced model studies do not become
 eligible diagnostics sources. See [ADR 0009](adrs/adr-0009-instanced-crowd-studies.md).
 
+## Scalable-scene dependency qualification — 28 October 2026
+
+The scalable-scene release advances the exact shared dependency to 1.5.0 and
+the renderer range/lock to ^0.2.58/0.2.58. The four existing SHA-384 asset pins
+are retained and checked against the installed public package by the regression
+suite. This dependency update preserves the diagnostics consent and source
+boundaries; the new forest studies do not become eligible diagnostics sources.
+
 ## Browser qualification — 21 October 2026
 
 An isolated in-app Chromium tab mounted the actual published shared/native
