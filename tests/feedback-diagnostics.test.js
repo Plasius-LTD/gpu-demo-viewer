@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createFeedbackPanel } from '../diagnostics/panel.js';
+import { mountFeedbackLifecycle } from '../diagnostics/lifecycle.js';
 import { createCuratedShowcaseSource } from '../diagnostics/source.js';
 import { showcaseAssetIntegrity } from '../diagnostics/assets.js';
 import { createHash } from 'node:crypto';
@@ -11,6 +12,7 @@ const safePacket = () => createFeedbackGameDiagnosticSnapshot({featureEnabled:tr
 test('the public boundary and reviewed asset bytes are pinned to the released package', async () => {
   const api=await import('@plasius/gpu-demo-viewer/feedback-diagnostics');
   assert.deepEqual(Object.keys(api),['mountDiagnosticShowcase']);
+  await assert.rejects(import('@plasius/gpu-demo-viewer/diagnostics/lifecycle.js'),{code:'ERR_PACKAGE_PATH_NOT_EXPORTED'});
   const manifest=JSON.parse(readFileSync(new URL('../package.json',import.meta.url)));
   assert.ok(manifest.files.includes('diagnostics/'));assert.equal(manifest.dependencies['@plasius/gpu-shared'],'1.4.0');
   for(const [key,digest] of Object.entries(showcaseAssetIntegrity)) {
@@ -21,7 +23,7 @@ test('the public boundary and reviewed asset bytes are pinned to the released pa
       if(resource.uri)assert.match(resource.uri,/^data:/,'No unpinned external resource');
     }
   }
-  for(const name of ['index','panel','source']) {
+  for(const name of ['index','panel','source','lifecycle']) {
     const code=readFileSync(new URL(`../diagnostics/${name}.js`,import.meta.url),'utf8');
     assert.doesNotMatch(code,/\b(fetch|XMLHttpRequest|sendBeacon|WebSocket|localStorage|sessionStorage|indexedDB|caches|toDataURL|toBlob|getImageData|getDisplayMedia|render_game_to_text)\b/);
   }
@@ -198,4 +200,86 @@ test('public mount rejects arbitrary surfaces, route aliases and player-system; 
     const unavailable=await mountDiagnosticShowcase({...options,resolveAccess:async()=>{throw Error('PRIVATE');}});unavailable.destroy();
     await assert.rejects(mountDiagnosticShowcase({...options,feedbackRoot:{}}),/could not be mounted/);
   } finally {globalThis.location=oldLocation;globalThis.document=oldDocument;}
+});
+
+test('public access recovery requires a remount when the initial scene source was absent', async () => {
+  const {mountDiagnosticShowcase}=await import('../diagnostics/index.js');
+  const oldLocation=globalThis.location,oldDocument=globalThis.document;
+  globalThis.location={pathname:'/gpu-demo'};
+  try {
+    for(const initial of [undefined,{...granted,sceneEnabled:false},new Error('PRIVATE')]) {
+      const f=fixture();globalThis.document=f.document;let access=initial;
+      const viewer=await mountDiagnosticShowcase({root:f.root,feedbackRoot:f.root,
+        resolveAccess:async()=>{if(access instanceof Error)throw access;return access;}});
+      assert.equal(f.get('section').hidden,true);
+      access=granted;
+      const result=await viewer.refreshAccess();
+      assert.equal(f.get('section').hidden,true,'a new grant must not reveal a permanently absent source');
+      assert.deepEqual(result,{status:'remount-required'});
+      assert.equal(f.get('input').checked,false);assert.equal(f.get('textarea').value,'');
+      viewer.destroy();
+    }
+  } finally {globalThis.location=oldLocation;globalThis.document=oldDocument;}
+});
+
+test('delayed source mount rechecks access and ends a revoked scene lifetime', async () => {
+  const previous=globalThis.document;
+  try {
+    for(const decision of [{...granted,sceneEnabled:false},new Error('PRIVATE'),{...granted,capabilityGranted:false},granted]) {
+      const f=fixture();globalThis.document=f.document;
+      let access=granted,release,started,disposed=0,reads=0;
+      const mounting=new Promise(resolve=>{started=resolve;});
+      const pending=mountFeedbackLifecycle({root:f.root,feedbackRoot:f.root,resolveAccess:async()=>{
+        reads++;if(access instanceof Error)throw access;return access;
+      },createSource:async({sceneEnabled})=>{
+        assert.equal(sceneEnabled,true);started();await new Promise(resolve=>{release=resolve;});
+        return {observe:()=>safePacket(),destroy(){disposed++;}};
+      }});
+      await mounting;access=decision;release();const viewer=await pending;
+      assert.equal(reads,2,'access must be rechecked after the asynchronous mount');
+      assert.equal(f.get('section').hidden,decision!==granted);
+      const sceneRevoked=decision instanceof Error || decision.sceneEnabled===false;
+      assert.equal(disposed,sceneRevoked?1:0);
+      access=granted;assert.deepEqual(await viewer.refreshAccess(),{status:sceneRevoked?'remount-required':'available'});
+      viewer.destroy();assert.equal(f.get('section').removed,true);
+    }
+  } finally {globalThis.document=previous;}
+});
+
+test('source-backed refreshes reject stale grants, clear consent and dispose pending work', async () => {
+  const f=fixture(),previous=globalThis.document;globalThis.document=f.document;
+  try {
+    let access=granted,disposed=0;const waiters=[];
+    const viewer=await mountFeedbackLifecycle({root:f.root,feedbackRoot:f.root,resolveAccess:async()=>access,
+      createSource:async()=>({observe:()=>safePacket(),destroy(){disposed++;}})});
+    assert.equal(f.get('section').hidden,false);
+    f.get('input').checked=true;await f.button('Preview diagnostics').listeners.get('click')();
+    assert.notEqual(f.get('textarea').value,'');
+    access=new Promise(resolve=>waiters.push(resolve));const older=viewer.refreshAccess();
+    access={...granted,featureEnabled:false};const newer=viewer.refreshAccess();await newer;
+    waiters.shift()(granted);assert.deepEqual(await older,{status:'superseded'});
+    assert.equal(f.get('section').hidden,true);assert.equal(f.get('input').checked,false);
+    assert.equal(f.get('textarea').value,'');assert.equal(disposed,0);
+    access=granted;assert.deepEqual(await viewer.refreshAccess(),{status:'available'});
+    access=new Promise(resolve=>waiters.push(resolve));const pending=viewer.refreshAccess();
+    viewer.destroy();waiters.shift()(granted);assert.deepEqual(await pending,{status:'disposed'});
+    assert.deepEqual(await viewer.refreshAccess(),{status:'disposed'});
+    assert.equal(f.get('section').hidden,true);assert.equal(f.get('section').removed,true);assert.equal(disposed,1);
+  } finally {globalThis.document=previous;}
+});
+
+test('scene revocation requires remount; failed UI mounting releases the private source', async () => {
+  const previous=globalThis.document;const f=fixture();globalThis.document=f.document;
+  try {
+    let access=granted,disposed=0;
+    const options={root:f.root,feedbackRoot:f.root,resolveAccess:async()=>access,
+      createSource:async()=>({observe:()=>safePacket(),destroy(){disposed++;}})};
+    const viewer=await mountFeedbackLifecycle(options);
+    access={...granted,sceneEnabled:false};assert.deepEqual(await viewer.refreshAccess(),{status:'unavailable'});
+    assert.equal(disposed,1);access=granted;
+    assert.deepEqual(await viewer.refreshAccess(),{status:'remount-required'});
+    assert.equal(f.get('section').hidden,true);viewer.destroy();
+    await assert.rejects(mountFeedbackLifecycle({...options,feedbackRoot:{}}),/could not be mounted/);
+    assert.equal(disposed,3);
+  } finally {globalThis.document=previous;}
 });

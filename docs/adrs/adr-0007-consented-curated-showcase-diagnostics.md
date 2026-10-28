@@ -44,3 +44,18 @@ changes occur in this static package release.
 The 27 October 2026 dependency update in ADR 0009 preserves all four asset hashes
 against published shared 1.4.0. The source-admission and consent decisions above
 remain unchanged; model-library stress scenes are still excluded.
+
+
+### Recovery clarification — 28 October 2026
+
+Rechecking access after asynchronous source mounting prevents stale initial
+grants from exposing controls. Scene denial or failed scene verification destroys
+that source. Refresh cannot resurrect an absent/destroyed source and returns an
+additive `remount-required` status instead of exposing unusable controls. The host
+explicitly destroys/remounts with fresh decisions; this preserves source ownership
+and avoids automatic heavy imports, asset reloads and retry races. Automatic
+source recreation was considered but rejected because it obscures the documented
+scene lifetime and host resource budget. Feature/capability-only denial can
+recover through refresh when scene access remains valid. Consent is always
+cleared; stale refreshes/disposal cannot restore controls. Tests and browser
+qualification cover this recovery before the normal patch-release pipeline.

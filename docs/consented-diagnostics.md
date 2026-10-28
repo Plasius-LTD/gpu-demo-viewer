@@ -89,3 +89,48 @@ focused public entrypoint and changed-source LCOV; observability uses fixed
 user-visible status messages without raw diagnostics logging. SEO is N/A for a
 package subpath that creates no public route. Backend sensitive-environment
 mapping is N/A because no backend or Azure resource changes are made.
+
+
+## Access/source recovery — Task42 regression
+
+The source lifetime follows the initial scene decision. The public mount reads
+remote access again after awaiting the source; a scene denial or resolver failure
+disposes the private runtime before revealing controls. A later scene denial also
+ends that lifetime. A grant cannot create a source during refresh. Instead,
+`refreshAccess()` resolves to `{status: 'remount-required'}` while controls stay
+hidden; the host destroys the old handle and explicitly mounts again with fresh
+decisions. This also covers an initial resolver rejection or missing scene grant.
+No automatic remount, asset retry or synthetic provenance is introduced.
+
+Other statuses are `available`, `unavailable`, `superseded` and `disposed`.
+Feature/capability-only revocation clears consent but permits refresh recovery
+when the original scene remains authorized. Overlapping actions cannot apply a
+stale grant; destruction invalidates pending refresh/preview/copy work. The handle
+still exposes only refreshAccess/destroy and hosts that ignore refresh results
+remain compatible. Hosts should surface remount recovery through their ordinary
+reporting UI; denied users never see unusable diagnostic controls.
+
+The private lifecycle coordinator is testable with delayed sources; the public
+entrypoint accepts no loader/runtime override. Regression tests cover initial
+rejection and denial then grant, revocation during delayed mounting, refresh races,
+consent clearing, disposal during pending refresh and healthy source recovery.
+The existing published shared1.4.0/renderer dependencies and all asset hashes are
+unchanged by this fix.
+
+
+Browser regression qualification on 28 October 2026 confirmed the real public
+mount stays hidden after initial resolver failure followed by a grant and returns
+`remount-required`. A deterministic private source fixture then exercised the
+changed lifecycle/panel in Chromium: explicit remount, unchecked consent, denied
+preview without consent, keyboard preview, explicit copy, scene revocation,
+hidden remount-required recovery, and disposal. The 320px panel did not overflow;
+fetches/pixel reads/storage/cache/database entries remained zero during that
+fixture flow. This fixture is not exposed through the public mount.
+
+Native WebGPU requalification was attempted but this browser session could not
+obtain a GPU adapter. An earlier local harness attempt also failed because Vite
+prebundling relocated asset URLs; disabling prebundling resolved that harness
+problem. Neither attempt is counted as a successful native-renderer run. Native
+rendering/source implementation, published dependency versions and asset bytes
+are unchanged; the prior native qualification above remains historical evidence.
+No full browser/device matrix or new native-renderer performance result is claimed.

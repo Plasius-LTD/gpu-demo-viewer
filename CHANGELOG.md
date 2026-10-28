@@ -13,7 +13,7 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
   - (placeholder)
 
 - **Fixed**
-  - (placeholder)
+  - Keep diagnostics controls hidden when no source exists, return an explicit remount recovery status, and recheck remote access after asynchronous scene mounting.
 
 - **Security**
   - (placeholder)
