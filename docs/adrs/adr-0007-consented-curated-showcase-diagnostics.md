@@ -59,3 +59,8 @@ scene lifetime and host resource budget. Feature/capability-only denial can
 recover through refresh when scene access remains valid. Consent is always
 cleared; stale refreshes/disposal cannot restore controls. Tests and browser
 qualification cover this recovery before the normal patch-release pipeline.
+
+The current-action guard covers source disposal as well as panel visibility: an
+older scene denial resolving after a newer successful refresh is superseded and
+cannot destroy the newer authorized source. The inverse race (stale grant after
+new denial) and disposal during a pending denial are regression-tested too.

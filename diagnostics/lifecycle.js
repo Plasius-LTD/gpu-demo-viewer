@@ -6,11 +6,11 @@ export async function mountFeedbackLifecycle({root,feedbackRoot,resolveAccess,cr
   const initialAccess=await readAccess();
   let sourceMounted=initialAccess?.sceneEnabled===true;
   const source=await createSource({root,sceneEnabled:sourceMounted});
-  const currentAccess=async()=>{
+  const currentAccess=async(isCurrent=()=>true)=>{
     const decision=await readAccess();
     // A scene denial ends this source lifetime. Recovery requires a fresh mount;
     // never silently reload assets or retain a renderer after scene revocation.
-    if(decision?.sceneEnabled!==true){sourceMounted=false;source.destroy();}
+    if(isCurrent() && decision?.sceneEnabled!==true){sourceMounted=false;source.destroy();}
     return decision;
   };
   try {

@@ -134,3 +134,8 @@ problem. Neither attempt is counted as a successful native-renderer run. Native
 rendering/source implementation, published dependency versions and asset bytes
 are unchanged; the prior native qualification above remains historical evidence.
 No full browser/device matrix or new native-renderer performance result is claimed.
+
+The current-action guard covers source disposal as well as panel visibility: an
+older scene denial resolving after a newer successful refresh is superseded and
+cannot destroy the newer authorized source. The inverse race (stale grant after
+new denial) and disposal during a pending denial are regression-tested too.

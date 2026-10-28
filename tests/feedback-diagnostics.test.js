@@ -262,7 +262,7 @@ test('source-backed refreshes reject stale grants, clear consent and dispose pen
     assert.equal(f.get('textarea').value,'');assert.equal(disposed,0);
     access=granted;assert.deepEqual(await viewer.refreshAccess(),{status:'available'});
     access=new Promise(resolve=>waiters.push(resolve));const pending=viewer.refreshAccess();
-    viewer.destroy();waiters.shift()(granted);assert.deepEqual(await pending,{status:'disposed'});
+    viewer.destroy();waiters.shift()({...granted,sceneEnabled:false});assert.deepEqual(await pending,{status:'disposed'});
     assert.deepEqual(await viewer.refreshAccess(),{status:'disposed'});
     assert.equal(f.get('section').hidden,true);assert.equal(f.get('section').removed,true);assert.equal(disposed,1);
   } finally {globalThis.document=previous;}
@@ -281,5 +281,22 @@ test('scene revocation requires remount; failed UI mounting releases the private
     assert.equal(f.get('section').hidden,true);viewer.destroy();
     await assert.rejects(mountFeedbackLifecycle({...options,feedbackRoot:{}}),/could not be mounted/);
     assert.equal(disposed,3);
+  } finally {globalThis.document=previous;}
+});
+
+test('a superseded scene denial cannot dispose the source behind a newer successful refresh', async () => {
+  const f=fixture(),previous=globalThis.document;globalThis.document=f.document;
+  try {
+    let access=granted,release,disposed=0;
+    const viewer=await mountFeedbackLifecycle({root:f.root,feedbackRoot:f.root,resolveAccess:async()=>access,
+      createSource:async()=>({observe:()=>safePacket(),destroy(){disposed++;}})});
+    access=new Promise(resolve=>{release=resolve;});const older=viewer.refreshAccess();
+    access=granted;assert.deepEqual(await viewer.refreshAccess(),{status:'available'});
+    release({...granted,sceneEnabled:false});assert.deepEqual(await older,{status:'superseded'});
+    assert.equal(disposed,0,'a superseded denial must have no destructive side effects');
+    assert.equal(f.get('section').hidden,false);
+    assert.deepEqual(await viewer.refreshAccess(),{status:'available'});
+    f.get('input').checked=true;await f.button('Preview diagnostics').listeners.get('click')();
+    assert.notEqual(f.get('textarea').value,'');viewer.destroy();assert.equal(disposed,1);
   } finally {globalThis.document=previous;}
 });

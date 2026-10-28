@@ -36,7 +36,7 @@ export function createFeedbackPanel({root,source,resolveAccess,initialAccess,isS
   const consentChanged=()=>clear('Consent changed. Prepare a new preview before copying.');
   async function permitted(token) {
     try {
-      const decision=await resolveAccess();
+      const decision=await resolveAccess(()=>!destroyed && token===revision && consent.checked);
       if(destroyed || token!==revision || !consent.checked)return false;
       if(!available(decision) || !isSourceMounted()){revoke('Diagnostics are unavailable. Ordinary bug reporting remains available.');return false;}
       return true;
@@ -79,7 +79,7 @@ export function createFeedbackPanel({root,source,resolveAccess,initialAccess,isS
       if(destroyed)return Object.freeze({status:'disposed'});
       revoke('Access changed. Select consent and prepare a new preview.');const token=revision;
       try {
-        const decision=await resolveAccess();
+        const decision=await resolveAccess(()=>!destroyed && token===revision);
         if(destroyed)return Object.freeze({status:'disposed'});
         if(token!==revision)return Object.freeze({status:'superseded'});
         if(!available(decision))return Object.freeze({status:'unavailable'});
