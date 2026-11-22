@@ -6,6 +6,20 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- **Added**
+  - (placeholder)
+
+- **Changed**
+  - (placeholder)
+
+- **Fixed**
+  - (placeholder)
+
+- **Security**
+  - (placeholder)
+
+## [0.6.1] - 2026-11-22
+
 - Refresh npm dependencies and patched glob/minimatch resolutions in coverage tooling.
 
 - **Added**
@@ -434,3 +448,4 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 [0.5.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.5.0
 [0.5.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.5.1
 [0.6.0]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.6.0
+[0.6.1]: https://github.com/Plasius-LTD/gpu-demo-viewer/releases/tag/v0.6.1
