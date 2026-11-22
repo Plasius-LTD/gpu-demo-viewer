@@ -6,6 +6,8 @@ The format is based on Keep a Changelog and this project adheres to SemVer.
 
 ## [Unreleased]
 
+- Refresh npm dependencies and patched glob/minimatch resolutions in coverage tooling.
+
 - **Added**
   - (placeholder)
 
